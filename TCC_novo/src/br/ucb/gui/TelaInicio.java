@@ -11,6 +11,9 @@
 
 package br.ucb.gui;
 
+import br.ucb.extration.PDFExtraction;
+import javax.swing.JScrollPane;
+
 /**
  *
  * @author GUICUNHA
@@ -20,8 +23,23 @@ public class TelaInicio extends javax.swing.JFrame {
     /** Creates new form telaInicio */
     public TelaInicio() {
         initComponents();
+        /** Setando o texto extraido no jEditorPane1 */
+        this.jEditorPane1.setText(this.extratorPDF());
     }
-
+    /** Caminho do Arquivo PDF */
+    private String caminhoArquivo(){
+        
+        String caminho = "C:/Meus documentos - Osmar Junior/Desenvolvimento/Other/PDFBox.Tutorial.pdf";
+        return caminho;
+    }
+    /** Extração do PDF */
+    private String extratorPDF(){
+        
+        PDFExtraction pdfExtraction = new PDFExtraction();
+        String texto = pdfExtraction.extrairTexto(this.caminhoArquivo());
+        
+        return texto;
+    }
     /** This method is called from within the constructor to
      * initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is
@@ -195,25 +213,19 @@ public class TelaInicio extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane3)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton1)
-                .addGap(18, 18, 18)
-                .addComponent(jButton2)
-                .addGap(22, 22, 22))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel7)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButton1)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton2))
+                    .addComponent(jLabel7)
+                    .addComponent(jButton3)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9))
                 .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jButton3)
-                .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jLabel9)
-                .addContainerGap())
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -252,8 +264,8 @@ public class TelaInicio extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addGap(288, 288, 288)
                 .addComponent(jLabel4)
-                .addContainerGap(486, Short.MAX_VALUE))
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 846, Short.MAX_VALUE)
+                .addContainerGap())
+            .addComponent(jScrollPane1)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -624,9 +636,7 @@ public class TelaInicio extends javax.swing.JFrame {
 
 
     private void jScrollPaneActionPerformed (java.awt.event.ActionEvent evt){
-        Janela janela = new Janela();
         
-       // janela.label
     }
     /**
     * @param args the command line arguments
@@ -756,5 +766,5 @@ public class TelaInicio extends javax.swing.JFrame {
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JTree jTree1;
     // End of variables declaration//GEN-END:variables
-
+   
 }

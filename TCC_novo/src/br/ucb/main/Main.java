@@ -24,8 +24,8 @@ public class Main {
         //new Janela().setVisible(true);
         //TelaPrimeira telapri = new TelaPrimeira();
         //telapri.setVisible(true);
-        //new TelaInicio().setVisible(true);
-        new TelaPrimeira().setVisible(true);
+        new TelaInicio().setVisible(true);
+        //new TelaPrimeira().setVisible(true);
         //Janela window = new Janela();
         //if(window.campoTextoExtraido
         

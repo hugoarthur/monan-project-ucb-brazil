@@ -12,7 +12,6 @@
 package br.ucb.gui;
 
 import br.ucb.extration.PDFExtraction;
-import javax.swing.JScrollPane;
 
 /**
  *
@@ -29,7 +28,7 @@ public class TelaInicio extends javax.swing.JFrame {
     /** Caminho do Arquivo PDF */
     private String caminhoArquivo(){
         
-        String caminho = "C:/Meus documentos - Osmar Junior/Desenvolvimento/Other/PDFBox.Tutorial.pdf";
+        String caminho = "../TCC_novo/ArquivosPDF/PDFBox.Tutorial.pdf";
         return caminho;
     }
     /** Extração do PDF */

@@ -263,7 +263,7 @@ public class TelaInicio extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addGap(288, 288, 288)
                 .addComponent(jLabel4)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jScrollPane1)
         );
         jPanel2Layout.setVerticalGroup(
@@ -301,6 +301,7 @@ public class TelaInicio extends javax.swing.JFrame {
         jToolBar1.setRollover(true);
         jToolBar1.add(jLabel1);
 
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/novo_projeto.png"))); // NOI18N
         jButton4.setText("Novo Projeto");
         jButton4.setFocusable(false);
         jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -312,12 +313,14 @@ public class TelaInicio extends javax.swing.JFrame {
         });
         jToolBar1.add(jButton4);
 
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/novo_arquivo.png"))); // NOI18N
         jButton5.setText("Novo Arquivo");
         jButton5.setFocusable(false);
         jButton5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton5.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jButton5);
 
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/abrir_projeto.png"))); // NOI18N
         jButton6.setText("Abrir Projeto");
         jButton6.setFocusable(false);
         jButton6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -329,36 +332,42 @@ public class TelaInicio extends javax.swing.JFrame {
         });
         jToolBar1.add(jButton6);
 
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/salvar_projeto.png"))); // NOI18N
         jButton7.setText("Salvar Projeto");
         jButton7.setFocusable(false);
         jButton7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton7.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jButton7);
 
+        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/desfazer.png"))); // NOI18N
         jButton8.setText("Desfazer");
         jButton8.setFocusable(false);
         jButton8.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton8.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jButton8);
 
+        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/refazer.png"))); // NOI18N
         jButton9.setText("Refazer");
         jButton9.setFocusable(false);
         jButton9.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton9.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jButton9);
 
+        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/excluir.png"))); // NOI18N
         jButton10.setText("Excluir");
         jButton10.setFocusable(false);
         jButton10.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton10.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jButton10);
 
+        jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/copiar.png"))); // NOI18N
         jButton11.setText("Copiar");
         jButton11.setFocusable(false);
         jButton11.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton11.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jButton11);
 
+        jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/colar.png"))); // NOI18N
         jButton12.setText("Colar");
         jButton12.setFocusable(false);
         jButton12.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);

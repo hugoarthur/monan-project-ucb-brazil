@@ -23,22 +23,9 @@ public class TelaInicio extends javax.swing.JFrame {
     public TelaInicio() {
         initComponents();
         /** Setando o texto extraido no jEditorPane1 */
-        this.jEditorPane1.setText(this.extratorPDF());
-    }
-    /** Caminho do Arquivo PDF */
-    private String caminhoArquivo(){
-        
-        String caminho = "../TCC_novo/ArquivosPDF/PDFBox.Tutorial.pdf";
-        return caminho;
-    }
-    /** Extração do PDF */
-    private String extratorPDF(){
-        
-        PDFExtraction pdfExtraction = new PDFExtraction();
-        String texto = pdfExtraction.extrairTexto(this.caminhoArquivo());
-        
-        return texto;
-    }
+        PDFExtraction pdfextraction = new PDFExtraction();
+        this.jEditorPane1.setText(pdfextraction.extrairPDF());
+    }    
     /** This method is called from within the constructor to
      * initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is
@@ -641,8 +628,6 @@ public class TelaInicio extends javax.swing.JFrame {
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton6ActionPerformed
-
-
     private void jScrollPaneActionPerformed (java.awt.event.ActionEvent evt){
         
     }
@@ -656,7 +641,6 @@ public class TelaInicio extends javax.swing.JFrame {
             }
         });
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
@@ -774,5 +758,4 @@ public class TelaInicio extends javax.swing.JFrame {
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JTree jTree1;
     // End of variables declaration//GEN-END:variables
-   
 }

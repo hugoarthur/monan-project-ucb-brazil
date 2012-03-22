@@ -43,4 +43,16 @@ public class PDFExtraction {
 		}
 		return numPaginas;
 	}
+        public String extrairPDF(){
+        
+            String texto = this.extrairTexto(this.caminhoArquivo());
+        
+            return texto;
+        }
+        private String caminhoArquivo(){
+        
+            String caminho = "../TCC_novo/ArquivosPDF/PDFBox.Tutorial.pdf";
+            return caminho;
+        
+        }
 }

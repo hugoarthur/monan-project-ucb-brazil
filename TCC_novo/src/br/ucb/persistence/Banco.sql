@@ -2,16 +2,16 @@ SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL';
 
-DROP SCHEMA IF EXISTS `mydb` ;
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci ;
-USE `mydb` ;
+DROP SCHEMA IF EXISTS `tcc` ;
+CREATE SCHEMA IF NOT EXISTS `tcc` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci ;
+USE `tcc` ;
 
 -- -----------------------------------------------------
--- Table `mydb`.`usuario`
+-- Table `tcc`.`usuario`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`usuario` ;
+DROP TABLE IF EXISTS `tcc`.`usuario` ;
 
-CREATE  TABLE IF NOT EXISTS `mydb`.`usuario` (
+CREATE  TABLE IF NOT EXISTS `tcc`.`usuario` (
   `id_usuario` INT NOT NULL ,
   `login_user` VARCHAR(45) NOT NULL ,
   `senha_user` VARCHAR(45) NOT NULL ,
@@ -22,11 +22,11 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`projeto`
+-- Table `tcc`.`projeto`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`projeto` ;
+DROP TABLE IF EXISTS `tcc`.`projeto` ;
 
-CREATE  TABLE IF NOT EXISTS `mydb`.`projeto` (
+CREATE  TABLE IF NOT EXISTS `tcc`.`projeto` (
   `id_projeto` INT NOT NULL ,
   `data_projeto` DATE NOT NULL ,
   `nom_projeto` VARCHAR(45) NOT NULL ,
@@ -36,11 +36,11 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`acompanhamento`
+-- Table `tcc`.`acompanhamento`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`acompanhamento` ;
+DROP TABLE IF EXISTS `tcc`.`acompanhamento` ;
 
-CREATE  TABLE IF NOT EXISTS `mydb`.`acompanhamento` (
+CREATE  TABLE IF NOT EXISTS `tcc`.`acompanhamento` (
   `id_acompanhamento` INT NOT NULL ,
   `data_acompanhamento` VARCHAR(45) NOT NULL ,
   `txt_acompanhamento` VARCHAR(45) NOT NULL ,
@@ -50,11 +50,11 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`situacao`
+-- Table `tcc`.`situacao`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`situacao` ;
+DROP TABLE IF EXISTS `tcc`.`situacao` ;
 
-CREATE  TABLE IF NOT EXISTS `mydb`.`situacao` (
+CREATE  TABLE IF NOT EXISTS `tcc`.`situacao` (
   `id_situacao` INT NOT NULL ,
   `des_situacao` VARCHAR(45) NOT NULL ,
   `acompanhamento_id_acompanhamento` INT NOT NULL ,
@@ -63,11 +63,11 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`tipo_categoria`
+-- Table `tcc`.`tipo_categoria`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`tipo_categoria` ;
+DROP TABLE IF EXISTS `tcc`.`tipo_categoria` ;
 
-CREATE  TABLE IF NOT EXISTS `mydb`.`tipo_categoria` (
+CREATE  TABLE IF NOT EXISTS `tcc`.`tipo_categoria` (
   `id_tipo_categoria` INT NOT NULL ,
   `nom_tipo_categoria` VARCHAR(45) NOT NULL ,
   PRIMARY KEY (`id_tipo_categoria`) )
@@ -75,11 +75,11 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`categoria`
+-- Table `tcc`.`categoria`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`categoria` ;
+DROP TABLE IF EXISTS `tcc`.`categoria` ;
 
-CREATE  TABLE IF NOT EXISTS `mydb`.`categoria` (
+CREATE  TABLE IF NOT EXISTS `tcc`.`categoria` (
   `id_categoria` INT NOT NULL ,
   `txt_categoria` VARCHAR(45) NOT NULL ,
   `tipo_categoria_id_tipo_categoria` INT NOT NULL ,
@@ -88,11 +88,11 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`projeto_has_categoria`
+-- Table `tcc`.`projeto_has_categoria`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`projeto_has_categoria` ;
+DROP TABLE IF EXISTS `tcc`.`projeto_has_categoria` ;
 
-CREATE  TABLE IF NOT EXISTS `mydb`.`projeto_has_categoria` (
+CREATE  TABLE IF NOT EXISTS `tcc`.`projeto_has_categoria` (
   `projeto_id_projeto` INT NOT NULL ,
   `categoria_id_categoria` INT NOT NULL ,
   PRIMARY KEY (`projeto_id_projeto`, `categoria_id_categoria`) )
@@ -100,25 +100,25 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Placeholder table for view `mydb`.`view1`
+-- Placeholder table for view `tcc`.`view1`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`view1` (`id` INT);
+CREATE TABLE IF NOT EXISTS `tcc`.`view1` (`id` INT);
 
 -- -----------------------------------------------------
--- Placeholder table for view `mydb`.`view2`
+-- Placeholder table for view `tcc`.`view2`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`view2` (`id` INT);
+CREATE TABLE IF NOT EXISTS `tcc`.`view2` (`id` INT);
 
 -- -----------------------------------------------------
 -- procedure routine1
 -- -----------------------------------------------------
 
-USE `mydb`;
-DROP procedure IF EXISTS `mydb`.`routine1`;
+USE `tcc`;
+DROP procedure IF EXISTS `tcc`.`routine1`;
 
 DELIMITER $$
-USE `mydb`$$
-CREATE PROCEDURE `mydb`.`routine1` ()
+USE `tcc`$$
+CREATE PROCEDURE `tcc`.`routine1` ()
 BEGIN
 
 END$$
@@ -126,19 +126,19 @@ END$$
 DELIMITER ;
 
 -- -----------------------------------------------------
--- View `mydb`.`view1`
+-- View `tcc`.`view1`
 -- -----------------------------------------------------
-DROP VIEW IF EXISTS `mydb`.`view1` ;
-DROP TABLE IF EXISTS `mydb`.`view1`;
-USE `mydb`;
+DROP VIEW IF EXISTS `tcc`.`view1` ;
+DROP TABLE IF EXISTS `tcc`.`view1`;
+USE `tcc`;
 ;
 
 -- -----------------------------------------------------
--- View `mydb`.`view2`
+-- View `tcc`.`view2`
 -- -----------------------------------------------------
-DROP VIEW IF EXISTS `mydb`.`view2` ;
-DROP TABLE IF EXISTS `mydb`.`view2`;
-USE `mydb`;
+DROP VIEW IF EXISTS `tcc`.`view2` ;
+DROP TABLE IF EXISTS `tcc`.`view2`;
+USE `tcc`;
 ;
 
 

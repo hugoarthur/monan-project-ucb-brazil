@@ -64,11 +64,11 @@ public class TelaPrimeira extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(146, Short.MAX_VALUE)
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(jButton1)
                     .add(jButton2))
-                .add(125, 125, 125))
+                .add(265, 265, 265))
         );
 
         pack();

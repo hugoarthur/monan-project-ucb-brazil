@@ -375,6 +375,8 @@ public class TelaInicio extends javax.swing.JFrame {
         jMenu1.add(jMenu8);
         jMenu1.add(jSeparator1);
 
+        jMenu9.setText("Abrir");
+
         jMenuItem2.setText("Itens Selecionados");
         jMenu9.add(jMenuItem2);
         jMenu9.add(jSeparator7);
@@ -487,7 +489,6 @@ public class TelaInicio extends javax.swing.JFrame {
 
         jMenu4.setText("Ferramentas");
 
-        jMenuItem24.setText("Nova Categoria");
         jMenuItem24.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem24ActionPerformed(evt);
@@ -535,10 +536,20 @@ public class TelaInicio extends javax.swing.JFrame {
         jMenu5.setText("Ações");
 
         jMenuItem32.setText("Acompanhamento");
+        jMenuItem32.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem32ActionPerformed(evt);
+            }
+        });
         jMenu5.add(jMenuItem32);
         jMenu5.add(jSeparator26);
 
         jMenuItem33.setText("Categorias");
+        jMenuItem33.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem33ActionPerformed(evt);
+            }
+        });
         jMenu5.add(jMenuItem33);
         jMenu5.add(jSeparator27);
 
@@ -558,18 +569,36 @@ public class TelaInicio extends javax.swing.JFrame {
         jMenu6.setText("Ajuda");
 
         jMenuItem37.setText("Ajuda do Sistema");
+        jMenuItem37.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem37ActionPerformed(evt);
+            }
+        });
         jMenu6.add(jMenuItem37);
         jMenu6.add(jSeparator30);
 
-        jMenuItem38.setText("Fale Conosco");
+        jMenuItem38.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem38ActionPerformed(evt);
+            }
+        });
         jMenu6.add(jMenuItem38);
         jMenu6.add(jSeparator31);
 
-        jMenuItem39.setText("Reportar Problema");
+        jMenuItem39.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem39ActionPerformed(evt);
+            }
+        });
         jMenu6.add(jMenuItem39);
         jMenu6.add(jSeparator32);
 
         jMenuItem40.setText("Sobre");
+        jMenuItem40.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem40ActionPerformed(evt);
+            }
+        });
         jMenu6.add(jMenuItem40);
 
         jMenuBar1.add(jMenu6);
@@ -640,6 +669,42 @@ public class TelaInicio extends javax.swing.JFrame {
         TelaNovaCategoria categoria = new TelaNovaCategoria();
         categoria.setVisible(true);
     }//GEN-LAST:event_jMenuItem24ActionPerformed
+
+    private void jMenuItem32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem32ActionPerformed
+        // TODO add your handling code here:
+        TelaAcompanhamento acompanhamento = new TelaAcompanhamento();
+        acompanhamento.setVisible(true);
+    }//GEN-LAST:event_jMenuItem32ActionPerformed
+
+    private void jMenuItem33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem33ActionPerformed
+        // TODO add your handling code here:
+        TelaCategorias categorias = new TelaCategorias();
+        categorias.setVisible(true);
+    }//GEN-LAST:event_jMenuItem33ActionPerformed
+
+    private void jMenuItem37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem37ActionPerformed
+        // TODO add your handling code here:
+        TelaAjuda ajuda = new TelaAjuda();
+        ajuda.setVisible(true);
+    }//GEN-LAST:event_jMenuItem37ActionPerformed
+
+    private void jMenuItem38ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem38ActionPerformed
+        // TODO add your handling code here:
+        TelaFale fale = new TelaFale();
+        fale.setVisible(true);
+    }//GEN-LAST:event_jMenuItem38ActionPerformed
+
+    private void jMenuItem39ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem39ActionPerformed
+        // TODO add your handling code here:
+        TelaReport report = new TelaReport();
+        report.setVisible(true);
+    }//GEN-LAST:event_jMenuItem39ActionPerformed
+
+    private void jMenuItem40ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem40ActionPerformed
+        // TODO add your handling code here:
+        TelaSobre sobre = new TelaSobre();
+        sobre.setVisible(true);
+    }//GEN-LAST:event_jMenuItem40ActionPerformed
     private void jScrollPaneActionPerformed (java.awt.event.ActionEvent evt){
         
     }

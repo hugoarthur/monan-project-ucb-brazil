@@ -375,8 +375,6 @@ public class TelaInicio extends javax.swing.JFrame {
         jMenu1.add(jMenu8);
         jMenu1.add(jSeparator1);
 
-        jMenu9.setText("Abrir");
-
         jMenuItem2.setText("Itens Selecionados");
         jMenu9.add(jMenuItem2);
         jMenu9.add(jSeparator7);
@@ -490,6 +488,11 @@ public class TelaInicio extends javax.swing.JFrame {
         jMenu4.setText("Ferramentas");
 
         jMenuItem24.setText("Nova Categoria");
+        jMenuItem24.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem24ActionPerformed(evt);
+            }
+        });
         jMenu4.add(jMenuItem24);
         jMenu4.add(jSeparator18);
 
@@ -619,7 +622,7 @@ public class TelaInicio extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-      TelaCategorias novaCategoria = new TelaCategorias();
+      TelaNovaCategoria novaCategoria = new TelaNovaCategoria();
       novaCategoria.setVisible(true);
       novaCategoria.setSize(456, 291);
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -631,6 +634,12 @@ public class TelaInicio extends javax.swing.JFrame {
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jMenuItem24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem24ActionPerformed
+        // TODO add your handling code here:
+        TelaNovaCategoria categoria = new TelaNovaCategoria();
+        categoria.setVisible(true);
+    }//GEN-LAST:event_jMenuItem24ActionPerformed
     private void jScrollPaneActionPerformed (java.awt.event.ActionEvent evt){
         
     }

@@ -8,6 +8,7 @@ package br.ucb.main;
 import br.ucb.gui.Janela;
 import br.ucb.gui.TelaPrimeira;
 import br.ucb.gui.TelaInicio;
+import br.ucb.gui.TelaLogin;
 import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
 /**
@@ -21,14 +22,9 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        //new Janela().setVisible(true);
-        //TelaPrimeira telapri = new TelaPrimeira();
-        //telapri.setVisible(true);
         //new TelaInicio().setVisible(true);
-        new TelaPrimeira().setVisible(true);
-        //Janela window = new Janela();
-        //if(window.campoTextoExtraido
-        
+        //new TelaPrimeira().setVisible(true);
+        new TelaLogin().setVisible(true);
     }
 
 }

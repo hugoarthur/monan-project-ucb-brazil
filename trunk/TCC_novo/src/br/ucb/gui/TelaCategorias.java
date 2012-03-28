@@ -90,6 +90,7 @@ public class TelaCategorias extends javax.swing.JFrame {
         jSeparator32 = new javax.swing.JPopupMenu.Separator();
         jMenuItem40 = new javax.swing.JMenuItem();
 
+        setTitle("NOVA CATEGORIA - Sistema de Avaliação Formativa");
         setResizable(false);
 
         jLabel1.setText("Nome da Categoria:");

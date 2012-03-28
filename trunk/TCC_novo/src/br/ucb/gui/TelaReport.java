@@ -4,9 +4,9 @@
  */
 
 /*
- * TelaCategorias.java
+ * TelaReport.java
  *
- * Created on 28/03/2012, 16:47:54
+ * Created on 28/03/2012, 16:44:19
  */
 
 package br.ucb.gui;
@@ -15,10 +15,10 @@ package br.ucb.gui;
  *
  * @author GUICUNHA
  */
-public class TelaCategorias extends javax.swing.JFrame {
+public class TelaReport extends javax.swing.JFrame {
 
-    /** Creates new form TelaCategorias */
-    public TelaCategorias() {
+    /** Creates new form TelaReport */
+    public TelaReport() {
         initComponents();
     }
 
@@ -53,7 +53,7 @@ public class TelaCategorias extends javax.swing.JFrame {
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaCategorias().setVisible(true);
+                new TelaReport().setVisible(true);
             }
         });
     }

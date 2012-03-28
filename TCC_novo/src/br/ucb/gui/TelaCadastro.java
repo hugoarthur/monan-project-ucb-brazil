@@ -57,6 +57,7 @@ public class TelaCadastro extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("CADASTRO - Sistema de Avaliação Formativa");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Novo Usuário", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, null, java.awt.Color.darkGray));
 
@@ -180,6 +181,8 @@ public class TelaCadastro extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        TelaLogin login = new TelaLogin();
+        login.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

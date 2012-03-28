@@ -43,6 +43,7 @@ public class TelaLogin extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("LOGIN - Sistema de Avaliação Formativa");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -154,6 +155,8 @@ public class TelaLogin extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        TelaCadastro cadastro = new TelaCadastro();
+        cadastro.setVisible(true);
 }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

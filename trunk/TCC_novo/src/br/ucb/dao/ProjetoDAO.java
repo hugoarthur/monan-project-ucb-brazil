@@ -11,4 +11,25 @@ package br.ucb.dao;
  */
 public class ProjetoDAO {
 
+
+    public ProjetoDAO(){
+        
+    }
+
+    private static void insereProjeto(){
+
+    }
+
+    private static void excluiProjeto(){
+
+    }
+
+    private static void alteraProjeto(){
+
+    }
+
+    private static void consultaProjeto(){
+        
+    }
+
 }

@@ -11,4 +11,24 @@ package br.ucb.dao;
  */
 public class UsuarioDAO {
 
+
+    private UsuarioDAO(){
+
+    }
+
+    private static void insereUsuario(){
+
+    }
+
+    private static void excluiUsuario(){
+
+    }
+
+    private static void alteraUsuario(){
+
+    }
+
+    private static void consultaUsuario(){
+        
+    }
 }

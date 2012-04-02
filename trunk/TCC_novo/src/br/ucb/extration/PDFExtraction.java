@@ -11,6 +11,7 @@ package br.ucb.extration;
  * @author GUICUNHA
  */
 
+import br.ucb.extration.directory.FileChooser;
 import java.io.File;
 import java.io.IOException;
 import org.apache.pdfbox.pdmodel.PDDocument;
@@ -51,7 +52,8 @@ public class PDFExtraction {
         }
         private String caminhoArquivo(){
         
-            String caminho = "../TCC_novo/ArquivosPDF/PDFBox.Tutorial.pdf";
+            FileChooser fileChooser = new FileChooser();
+            String caminho = fileChooser.caminho();
             return caminho;
         
         }

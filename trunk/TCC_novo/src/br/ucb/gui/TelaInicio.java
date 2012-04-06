@@ -18,13 +18,11 @@ import br.ucb.extration.PDFExtraction;
  * @author GUICUNHA
  */
 public class TelaInicio extends javax.swing.JFrame {
-
+    
     /** Creates new form telaInicio */
     public TelaInicio() {
         initComponents();
-        /** Setando o texto extraido no jEditorPane1 */
-        PDFExtraction pdfextraction = new PDFExtraction();
-        this.jEditorPane1.setText(pdfextraction.extrairPDF());
+       
     }    
     /** This method is called from within the constructor to
      * initialize the form.
@@ -253,7 +251,7 @@ public class TelaInicio extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addGap(288, 288, 288)
                 .addComponent(jLabel4)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
             .addComponent(jScrollPane1)
         );
         jPanel2Layout.setVerticalGroup(
@@ -378,6 +376,11 @@ public class TelaInicio extends javax.swing.JFrame {
         jMenu9.setText("Abrir");
 
         jMenuItem2.setText("Itens Selecionados");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         jMenu9.add(jMenuItem2);
         jMenu9.add(jSeparator7);
 
@@ -705,6 +708,12 @@ public class TelaInicio extends javax.swing.JFrame {
         TelaSobre sobre = new TelaSobre();
         sobre.setVisible(true);
     }//GEN-LAST:event_jMenuItem40ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        PDFExtraction pdfextraction = new PDFExtraction();
+        this.jEditorPane1.setText(pdfextraction.extrairPDF());
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
     private void jScrollPaneActionPerformed (java.awt.event.ActionEvent evt){
         
     }

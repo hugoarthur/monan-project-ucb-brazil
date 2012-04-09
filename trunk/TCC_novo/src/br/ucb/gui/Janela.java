@@ -61,7 +61,5 @@ public class Janela extends JFrame {
 	String caminhoArquivo = this.campoArquivo.getText();
 	PDFExtraction pdfExtraction = new PDFExtraction();
 	this.campoTextoExtraido.setText(pdfExtraction.extrairTexto(caminhoArquivo));
-	this.labelCampoTextoExtraido.setText("Texto: " + pdfExtraction.getNumeroPaginas(caminhoArquivo) + "páginas");
 	}
-
 }

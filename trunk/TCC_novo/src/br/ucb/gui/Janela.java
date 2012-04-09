@@ -9,7 +9,7 @@ package br.ucb.gui;
  *
  * @author GUICUNHA
  */
-import br.ucb.extration.PDFExtraction;
+import br.ucb.manipulacao.pdf.PDFExtraction;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;

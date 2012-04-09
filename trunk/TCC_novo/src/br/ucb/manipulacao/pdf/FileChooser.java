@@ -1,4 +1,4 @@
-package br.ucb.extration.directory;
+package br.ucb.manipulacao.pdf;
 
 
 import javax.swing.JFileChooser;

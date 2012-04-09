@@ -11,7 +11,6 @@ package br.ucb.extration;
  * @author GUICUNHA
  */
 
-import br.ucb.extration.directory.FileChooser;
 import java.io.File;
 import java.io.IOException;
 import org.apache.pdfbox.pdmodel.PDDocument;
@@ -31,30 +30,8 @@ public class PDFExtraction {
 		}
 		return textoExtraido;
 	}
-
-	public int getNumeroPaginas(String caminhoArquivo) {
-		int numPaginas = 0;
-		File doc = new File(caminhoArquivo);
-		PDDocument pdDoc;
-		try {
-			pdDoc = PDDocument.load(doc);
-			numPaginas = pdDoc.getNumberOfPages();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		return numPaginas;
-	}
-        public String extrairPDF(){
-        
-            String texto = this.extrairTexto(this.caminhoArquivo());
-        
+        public String extrairPDF(String str){        
+            String texto = this.extrairTexto(str);        
             return texto;
-        }
-        private String caminhoArquivo(){
-        
-            FileChooser fileChooser = new FileChooser();
-            String caminho = fileChooser.caminho();
-            return caminho;
-        
         }
 }

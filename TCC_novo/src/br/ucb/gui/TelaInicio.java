@@ -11,7 +11,7 @@
 
 package br.ucb.gui;
 
-import br.ucb.extration.PDFExtraction;
+import br.ucb.manipulacao.pdf.ManipulaPDF;
 
 /**
  *
@@ -711,8 +711,8 @@ public class TelaInicio extends javax.swing.JFrame {
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
-        PDFExtraction pdfextraction = new PDFExtraction();
-        this.jEditorPane1.setText(pdfextraction.extrairPDF());
+        ManipulaPDF manipulaPDF = new ManipulaPDF();        
+        this.jEditorPane1.setText(manipulaPDF.extrairPDF());
     }//GEN-LAST:event_jMenuItem2ActionPerformed
     private void jScrollPaneActionPerformed (java.awt.event.ActionEvent evt){
         

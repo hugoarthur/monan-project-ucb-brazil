@@ -13,9 +13,12 @@ public class ManipulaPDF {
     PDFExtraction extrair = new PDFExtraction();
     FileChooser caminhoPDF = new FileChooser();
     
-    public String extrairPDF(){        
+    public String extrairPDF(){
+        String texto = "";
         String caminho = this.caminhoArquivo();
-        String texto = extrair.extrairPDF(caminho);
+        if (caminho != ""){
+            texto = extrair.extrairPDF(caminho);
+        }
         return texto;        
     }
     public String caminhoArquivo (){

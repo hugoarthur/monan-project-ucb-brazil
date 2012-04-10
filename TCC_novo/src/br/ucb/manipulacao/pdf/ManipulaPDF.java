@@ -16,7 +16,7 @@ public class ManipulaPDF {
     public String extrairPDF(){
         String texto = "";
         String caminho = this.caminhoArquivo();
-        if (caminho != ""){
+        if (!"".equals(caminho)){
             texto = extrair.extrairPDF(caminho);
         }
         return texto;        

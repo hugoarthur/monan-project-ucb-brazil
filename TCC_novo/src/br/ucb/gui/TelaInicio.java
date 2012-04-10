@@ -368,6 +368,11 @@ public class TelaInicio extends javax.swing.JFrame {
         jMenu8.setText("Novo");
 
         jMenuItem1.setText("Projeto");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
         jMenu8.add(jMenuItem1);
 
         jMenu1.add(jMenu8);
@@ -661,6 +666,8 @@ public class TelaInicio extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
+        ManipulaPDF manipulaPDF = new ManipulaPDF();        
+        this.jEditorPane1.setText(manipulaPDF.extrairPDF());
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
@@ -714,6 +721,12 @@ public class TelaInicio extends javax.swing.JFrame {
         ManipulaPDF manipulaPDF = new ManipulaPDF();        
         this.jEditorPane1.setText(manipulaPDF.extrairPDF());
     }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+        ManipulaPDF manipulaPDF = new ManipulaPDF();        
+        this.jEditorPane1.setText(manipulaPDF.extrairPDF());
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
     private void jScrollPaneActionPerformed (java.awt.event.ActionEvent evt){
         
     }

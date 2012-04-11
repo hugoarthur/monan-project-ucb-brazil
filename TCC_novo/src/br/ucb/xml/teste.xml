@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : teste.xml
+    Created on : 11 de Abril de 2012, 15:39
+    Author     : guicunha
+    Description:
+        Purpose of the document follows.
+-->
+
+<root>
+
+ <usuario id="">
+   <projeto id="">
+    <categoria id="">
+        <texto>
+            
+        </texto>
+    </categoria>
+   </projeto>
+ </usuario>
+ 
+</root>

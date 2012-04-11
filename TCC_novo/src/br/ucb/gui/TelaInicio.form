@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.1" encoding="UTF-8" ?>
 
 <Form version="1.5" maxVersion="1.7" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <NonVisualComponents>
@@ -87,6 +87,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Sair"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem8ActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
@@ -173,11 +176,18 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Exibir"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jMenu3MouseClicked"/>
+          </Events>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem16">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Barra de Status"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jMenuItem16MouseClicked"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem16ActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator14">
             </MenuItem>
@@ -241,6 +251,9 @@
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem24">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Nova Categoria"/>
+              </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem24ActionPerformed"/>
               </Events>
@@ -370,6 +383,9 @@
             <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator30">
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem38">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Fale Conosco"/>
+              </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem38ActionPerformed"/>
               </Events>
@@ -377,6 +393,9 @@
             <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator31">
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem39">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Reportar Problema"/>
+              </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem39ActionPerformed"/>
               </Events>
@@ -444,13 +463,11 @@
               <Component id="jToolBar1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="jPanel3" alignment="0" min="-2" max="-2" attributes="1"/>
-                      <Component id="jPanel2" alignment="0" min="0" max="32767" attributes="1"/>
-                  </Group>
+                  <Component id="jPanel3" alignment="0" min="-2" max="-2" attributes="1"/>
                   <Component id="jPanel1" min="-2" max="-2" attributes="1"/>
+                  <Component id="jPanel2" min="0" max="32767" attributes="1"/>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -608,7 +625,7 @@
                   <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="288" max="-2" attributes="0"/>
                   <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="128" max="32767" attributes="0"/>
               </Group>
               <Component id="jScrollPane1" max="32767" attributes="0"/>
           </Group>
@@ -803,6 +820,9 @@
             <Property name="horizontalTextPosition" type="int" value="0"/>
             <Property name="verticalTextPosition" type="int" value="3"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton10ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButton11">
           <Properties>
@@ -814,6 +834,10 @@
             <Property name="horizontalTextPosition" type="int" value="0"/>
             <Property name="verticalTextPosition" type="int" value="3"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton11ActionPerformed"/>
+            <EventHandler event="inputMethodTextChanged" listener="java.awt.event.InputMethodListener" parameters="java.awt.event.InputMethodEvent" handler="jButton11InputMethodTextChanged"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButton12">
           <Properties>

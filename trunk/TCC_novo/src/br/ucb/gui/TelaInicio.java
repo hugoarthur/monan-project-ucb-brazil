@@ -12,6 +12,7 @@
 package br.ucb.gui;
 
 import br.ucb.manipulacao.pdf.ManipulaPDF;
+import java.awt.event.MouseEvent;
 
 /**
  *
@@ -251,7 +252,7 @@ public class TelaInicio extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addGap(288, 288, 288)
                 .addComponent(jLabel4)
-                .addContainerGap())
+                .addContainerGap(128, Short.MAX_VALUE))
             .addComponent(jScrollPane1)
         );
         jPanel2Layout.setVerticalGroup(
@@ -351,6 +352,11 @@ public class TelaInicio extends javax.swing.JFrame {
         jButton10.setFocusable(false);
         jButton10.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton10.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
         jToolBar1.add(jButton10);
 
         jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/copiar.png"))); // NOI18N
@@ -358,6 +364,18 @@ public class TelaInicio extends javax.swing.JFrame {
         jButton11.setFocusable(false);
         jButton11.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton11.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
+        jButton11.addInputMethodListener(new java.awt.event.InputMethodListener() {
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+            }
+            public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
+                jButton11InputMethodTextChanged(evt);
+            }
+        });
         jToolBar1.add(jButton11);
 
         jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/colar.png"))); // NOI18N
@@ -417,6 +435,11 @@ public class TelaInicio extends javax.swing.JFrame {
         jMenu1.add(jSeparator6);
 
         jMenuItem8.setText("Sair");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem8);
 
         jMenuBar1.add(jMenu1);
@@ -463,8 +486,23 @@ public class TelaInicio extends javax.swing.JFrame {
         jMenuBar1.add(jMenu2);
 
         jMenu3.setText("Exibir");
+        jMenu3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu3MouseClicked(evt);
+            }
+        });
 
         jMenuItem16.setText("Barra de Status");
+        jMenuItem16.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuItem16MouseClicked(evt);
+            }
+        });
+        jMenuItem16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem16ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem16);
         jMenu3.add(jSeparator14);
 
@@ -502,6 +540,7 @@ public class TelaInicio extends javax.swing.JFrame {
 
         jMenu4.setText("Ferramentas");
 
+        jMenuItem24.setText("Nova Categoria");
         jMenuItem24.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem24ActionPerformed(evt);
@@ -590,6 +629,7 @@ public class TelaInicio extends javax.swing.JFrame {
         jMenu6.add(jMenuItem37);
         jMenu6.add(jSeparator30);
 
+        jMenuItem38.setText("Fale Conosco");
         jMenuItem38.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem38ActionPerformed(evt);
@@ -598,6 +638,7 @@ public class TelaInicio extends javax.swing.JFrame {
         jMenu6.add(jMenuItem38);
         jMenu6.add(jSeparator31);
 
+        jMenuItem39.setText("Reportar Problema");
         jMenuItem39.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem39ActionPerformed(evt);
@@ -640,11 +681,10 @@ public class TelaInicio extends javax.swing.JFrame {
                 .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jPanel2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -656,6 +696,7 @@ public class TelaInicio extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        jEditorPane2.setText(null);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1InputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_jButton1InputMethodTextChanged
@@ -734,6 +775,38 @@ public class TelaInicio extends javax.swing.JFrame {
         ManipulaPDF manipulaPDF = new ManipulaPDF();        
         this.jEditorPane1.setText(manipulaPDF.extrairPDF());
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        // TODO add your handling code here:
+        jEditorPane1.setText(null);
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jButton11InputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_jButton11InputMethodTextChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton11InputMethodTextChanged
+
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
+
+    private void jMenuItem16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem16ActionPerformed
+        jPanel3.setVisible(false);
+    }//GEN-LAST:event_jMenuItem16ActionPerformed
+
+    private void jMenuItem16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem16MouseClicked
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_jMenuItem16MouseClicked
+
+    private void jMenu3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu3MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenu3MouseClicked
     private void jScrollPaneActionPerformed (java.awt.event.ActionEvent evt){
         
     }

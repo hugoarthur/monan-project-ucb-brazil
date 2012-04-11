@@ -39,21 +39,7 @@ public class TelaNovaCategoria extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenu8 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jSeparator1 = new javax.swing.JPopupMenu.Separator();
-        jMenu9 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jSeparator7 = new javax.swing.JPopupMenu.Separator();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jSeparator2 = new javax.swing.JPopupMenu.Separator();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jSeparator3 = new javax.swing.JPopupMenu.Separator();
         jMenuItem5 = new javax.swing.JMenuItem();
-        jSeparator4 = new javax.swing.JPopupMenu.Separator();
-        jMenuItem6 = new javax.swing.JMenuItem();
-        jSeparator5 = new javax.swing.JPopupMenu.Separator();
-        jMenuItem7 = new javax.swing.JMenuItem();
         jSeparator6 = new javax.swing.JPopupMenu.Separator();
         jMenuItem8 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
@@ -109,46 +95,24 @@ public class TelaNovaCategoria extends javax.swing.JFrame {
         });
 
         jButton2.setText("Cancelar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jMenu1.setText("Arquivo");
 
-        jMenu8.setText("Novo");
-
-        jMenuItem1.setText("Projeto");
-        jMenu8.add(jMenuItem1);
-
-        jMenu1.add(jMenu8);
-        jMenu1.add(jSeparator1);
-
-        jMenu9.setText("Abrir");
-
-        jMenuItem2.setText("Itens Selecionados");
-        jMenu9.add(jMenuItem2);
-        jMenu9.add(jSeparator7);
-
-        jMenuItem3.setText("Pasta de outro usuário");
-        jMenu9.add(jMenuItem3);
-
-        jMenu1.add(jMenu9);
-        jMenu1.add(jSeparator2);
-
-        jMenuItem4.setText("Salvar Como");
-        jMenu1.add(jMenuItem4);
-        jMenu1.add(jSeparator3);
-
         jMenuItem5.setText("Gerenciamento de arquivos de Dados");
         jMenu1.add(jMenuItem5);
-        jMenu1.add(jSeparator4);
-
-        jMenuItem6.setText("Visualização de Impressão");
-        jMenu1.add(jMenuItem6);
-        jMenu1.add(jSeparator5);
-
-        jMenuItem7.setText("Imprimir");
-        jMenu1.add(jMenuItem7);
         jMenu1.add(jSeparator6);
 
         jMenuItem8.setText("Sair");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem8);
 
         jMenuBar1.add(jMenu1);
@@ -217,8 +181,6 @@ public class TelaNovaCategoria extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu5);
 
-        jMenu6.setText("Ajuda");
-
         jMenuItem37.setText("Ajuda do Sistema");
         jMenu6.add(jMenuItem37);
         jMenu6.add(jSeparator30);
@@ -283,6 +245,16 @@ public class TelaNovaCategoria extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        setVisible(false);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        // TODO add your handling code here:
+        setVisible(false);
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -305,18 +277,13 @@ public class TelaNovaCategoria extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
-    private javax.swing.JMenu jMenu8;
-    private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem13;
     private javax.swing.JMenuItem jMenuItem14;
     private javax.swing.JMenuItem jMenuItem15;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem32;
     private javax.swing.JMenuItem jMenuItem33;
     private javax.swing.JMenuItem jMenuItem34;
@@ -325,31 +292,22 @@ public class TelaNovaCategoria extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem37;
     private javax.swing.JMenuItem jMenuItem38;
     private javax.swing.JMenuItem jMenuItem39;
-    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem40;
     private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
-    private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JPopupMenu.Separator jSeparator10;
     private javax.swing.JPopupMenu.Separator jSeparator11;
     private javax.swing.JPopupMenu.Separator jSeparator12;
     private javax.swing.JPopupMenu.Separator jSeparator13;
-    private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JPopupMenu.Separator jSeparator26;
     private javax.swing.JPopupMenu.Separator jSeparator27;
     private javax.swing.JPopupMenu.Separator jSeparator28;
     private javax.swing.JPopupMenu.Separator jSeparator29;
-    private javax.swing.JPopupMenu.Separator jSeparator3;
     private javax.swing.JPopupMenu.Separator jSeparator30;
     private javax.swing.JPopupMenu.Separator jSeparator31;
     private javax.swing.JPopupMenu.Separator jSeparator32;
-    private javax.swing.JPopupMenu.Separator jSeparator4;
-    private javax.swing.JPopupMenu.Separator jSeparator5;
     private javax.swing.JPopupMenu.Separator jSeparator6;
-    private javax.swing.JPopupMenu.Separator jSeparator7;
     private javax.swing.JPopupMenu.Separator jSeparator8;
     private javax.swing.JPopupMenu.Separator jSeparator9;
     private javax.swing.JTextField jTextField1;

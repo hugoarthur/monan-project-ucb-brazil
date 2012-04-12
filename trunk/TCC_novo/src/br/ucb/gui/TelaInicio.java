@@ -13,6 +13,9 @@ package br.ucb.gui;
 
 import br.ucb.manipulacao.pdf.ManipulaPDF;
 import java.awt.event.MouseEvent;
+import java.io.File;
+import javax.swing.JScrollPane;
+import javax.swing.tree.DefaultMutableTreeNode;
 
 /**
  *
@@ -268,6 +271,15 @@ public class TelaInicio extends javax.swing.JFrame {
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED), "Status", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Calibri", 0, 18), new java.awt.Color(102, 102, 102))); // NOI18N
 
+        jTree1.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                jTree1AncestorAdded(evt);
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
         jScrollPane2.setViewportView(jTree1);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -506,15 +518,30 @@ public class TelaInicio extends javax.swing.JFrame {
         jMenu3.add(jMenuItem16);
         jMenu3.add(jSeparator14);
 
-        jMenuItem17.setText("Barra de Repositórios");
+        jMenuItem17.setText("Barra de Ferramentas");
+        jMenuItem17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem17ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem17);
         jMenu3.add(jSeparator15);
 
         jMenuItem18.setText("Barra de Categorias");
+        jMenuItem18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem18ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem18);
         jMenu3.add(jSeparator16);
 
-        jMenuItem19.setText("Barra de Processo");
+        jMenuItem19.setText("Barra de Projeto");
+        jMenuItem19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem19ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem19);
         jMenu3.add(jSeparator17);
 
@@ -807,6 +834,25 @@ public class TelaInicio extends javax.swing.JFrame {
     private void jMenu3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu3MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenu3MouseClicked
+
+    private void jMenuItem17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem17ActionPerformed
+        // TODO add your handling code here:
+        jToolBar1.setVisible(false);
+    }//GEN-LAST:event_jMenuItem17ActionPerformed
+
+    private void jMenuItem18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem18ActionPerformed
+        // TODO add your handling code here:
+        jPanel1.setVisible(false);
+    }//GEN-LAST:event_jMenuItem18ActionPerformed
+
+    private void jMenuItem19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem19ActionPerformed
+        // TODO add your handling code here:
+        jPanel2.setVisible(false);
+    }//GEN-LAST:event_jMenuItem19ActionPerformed
+
+    private void jTree1AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jTree1AncestorAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTree1AncestorAdded
     private void jScrollPaneActionPerformed (java.awt.event.ActionEvent evt){
         
     }
@@ -817,9 +863,35 @@ public class TelaInicio extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new TelaInicio().setVisible(true);
+//                DefaultMutableTreeNode pai = new DefaultMutableTreeNode(campo.getText());
+//                varre(campo.getText(), pai);
+//                arvore = new JTree(pai);
+//                JScrollPane.removeAll();
+//                painelBaixo.add(new JScrollPane(arvore));
+//                getContentPane().validate();
             }
         });
     }
+
+    public void varre(String base, DefaultMutableTreeNode no) {
+
+      File diretorio = new File(base);
+      File[] conteudo = diretorio.listFiles();
+
+      for (int i=0; i < conteudo.length; i++) {
+
+         if (conteudo[i].isFile()) {
+            DefaultMutableTreeNode arquivo = new DefaultMutableTreeNode(conteudo[i].getName());
+            no.add(arquivo);
+         }
+         else {
+            DefaultMutableTreeNode dir = new DefaultMutableTreeNode(conteudo[i].getName());
+            varre(conteudo[i].toString(), dir);
+            no.add(dir);
+         }
+      }
+    }
+ 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;

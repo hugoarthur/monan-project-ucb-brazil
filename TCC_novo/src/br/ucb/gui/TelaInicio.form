@@ -193,8 +193,11 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem17">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Barra de Reposit&#xf3;rios"/>
+                <Property name="text" type="java.lang.String" value="Barra de Ferramentas"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem17ActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator15">
             </MenuItem>
@@ -202,13 +205,19 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Barra de Categorias"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem18ActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator16">
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem19">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Barra de Processo"/>
+                <Property name="text" type="java.lang.String" value="Barra de Projeto"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem19ActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator17">
             </MenuItem>
@@ -716,6 +725,9 @@
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
             <Component class="javax.swing.JTree" name="jTree1">
+              <Events>
+                <EventHandler event="ancestorAdded" listener="javax.swing.event.AncestorListener" parameters="javax.swing.event.AncestorEvent" handler="jTree1AncestorAdded"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

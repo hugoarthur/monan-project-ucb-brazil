@@ -16,7 +16,7 @@ import org.jdom2.output.XMLOutputter;
  * @author Osmar jr
  */
 public class ImplementaXML {
-    
+        
     private Element root = new Element ("root");
     private Document documento = new Document (root);
     

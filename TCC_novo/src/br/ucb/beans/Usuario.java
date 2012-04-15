@@ -5,16 +5,36 @@
 
 package br.ucb.beans;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  *
  * @author GUICUNHA
  */
+
+@Entity
+@Table(name="usuario")
 public class Usuario {
+    @Column(name="id_usuario")
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer idUsuario;
+    @Column(name="login_user")
     private String login;
+    @Column(name="senha_user")
     private String senha;
+    @Column(name="nome")
     private String nome;
+    @Column(name="universidade")
     private String universidade;
+
+    public Usuario() {
+    }
 
     /**
      * @return the idUsuario

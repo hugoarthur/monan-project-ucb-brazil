@@ -2,8 +2,11 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package br.ucb.dao;
+
+import br.ucb.beans.Usuario;
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
 
 /**
  *
@@ -11,24 +14,31 @@ package br.ucb.dao;
  */
 public class UsuarioDAO {
 
-
-    private UsuarioDAO(){
-
+    public UsuarioDAO() {
     }
 
-    private static void insereUsuario(){
+    public static void insereUsuario(Usuario usuario) {
+        EntityManager em = DataBase.getInstance().getEntityManager();
 
+        em.getTransaction().begin();
+        em.persist(usuario);
+        em.getTransaction().commit();
     }
 
-    private static void excluiUsuario(){
-
+    public static void excluiUsuario() {
     }
 
-    private static void alteraUsuario(){
-
+    public static void alteraUsuario() {
     }
 
-    private static void consultaUsuario(){
-        
+    public static Usuario buscaUsuario(String login, String senha) {
+        EntityManager em = DataBase.getInstance().getEntityManager();
+        em.getTransaction().begin();
+        Query query = em.createQuery("SELECT u FROM usuario u WHERE u.login = :login AND u.senha = :senha");
+        query.setParameter("login", login);
+        query.setParameter("senha", senha);
+        Usuario user = (Usuario) query.getSingleResult();
+        em.close();
+        return user;
     }
 }

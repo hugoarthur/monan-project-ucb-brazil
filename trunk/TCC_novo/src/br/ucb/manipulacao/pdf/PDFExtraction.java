@@ -13,6 +13,7 @@ package br.ucb.manipulacao.pdf;
 
 import java.io.File;
 import java.io.IOException;
+import javax.swing.JOptionPane;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.util.PDFTextStripper;
 
@@ -26,7 +27,7 @@ public class PDFExtraction {
 			PDFTextStripper stripper = new PDFTextStripper();
 			textoExtraido = stripper.getText(pdDoc);
 		} catch (IOException e) {
-			e.printStackTrace();
+			JOptionPane.showMessageDialog(null, "É preciso selecionar um Arquivo PDF.", "Erro", JOptionPane.ERROR_MESSAGE);
 		}
 		return textoExtraido;
 	}

@@ -46,7 +46,7 @@ public class ImplementaXML {
     public void gerarXML(){
         XMLOutputter xout = new XMLOutputter();
         try {
-            FileWriter arquivo = new FileWriter(new File("C:/Meus documentos - Osmar Junior/Desenvolvimento/Other/arquivo.xml"));
+            FileWriter arquivo = new FileWriter(new File("xml/arquivo"+this.usuario.getAttributeValue("id")+".xml"));
             xout.output(this.documento, arquivo);
         } catch (IOException e) {
             

@@ -11,9 +11,13 @@
 
 package br.ucb.gui;
 
+import br.ucb.manipulacao.pdf.Arvore;
+import br.ucb.manipulacao.pdf.FileChooser;
 import br.ucb.manipulacao.pdf.ManipulaPDF;
 //import br.ucb.xml.Teste;
+import java.awt.event.ActionEvent;
 import java.io.File;
+import javax.swing.JScrollPane;
 import javax.swing.tree.DefaultMutableTreeNode;
 
 /**
@@ -259,7 +263,7 @@ public class TelaInicio extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addGap(288, 288, 288)
                 .addComponent(jLabel4)
-                .addContainerGap())
+                .addContainerGap(160, Short.MAX_VALUE))
             .addComponent(jScrollPane1)
         );
         jPanel2Layout.setVerticalGroup(
@@ -274,14 +278,19 @@ public class TelaInicio extends javax.swing.JFrame {
         );
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED), "Status", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Calibri", 0, 18), new java.awt.Color(102, 102, 102))); // NOI18N
-
-        jTree1.addAncestorListener(new javax.swing.event.AncestorListener() {
+        jPanel3.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
-                jTree1AncestorAdded(evt);
+                jPanel3AncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
+
+        jTree1.addContainerListener(new java.awt.event.ContainerAdapter() {
+            public void componentAdded(java.awt.event.ContainerEvent evt) {
+                jTree1ComponentAdded(evt);
             }
         });
         jScrollPane2.setViewportView(jTree1);
@@ -290,16 +299,14 @@ public class TelaInicio extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
-                .addGap(20, 20, 20))
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(96, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(11, 11, 11))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(90, 90, 90)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 355, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jToolBar1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -857,13 +864,23 @@ public class TelaInicio extends javax.swing.JFrame {
         jPanel2.setVisible(false);
     }//GEN-LAST:event_jMenuItem19ActionPerformed
 
-    private void jTree1AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jTree1AncestorAdded
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTree1AncestorAdded
-
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void jPanel3AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jPanel3AncestorAdded
+        // TODO add your handling code here:
+//        Arvore lista = new Arvore();
+//        jPanel3.add(lista);
+//        repaint();
+//        lista.setVisible(true);
+        
+
+    }//GEN-LAST:event_jPanel3AncestorAdded
+
+    private void jTree1ComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_jTree1ComponentAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTree1ComponentAdded
     private void jScrollPaneActionPerformed (java.awt.event.ActionEvent evt){
         
     }
@@ -874,6 +891,9 @@ public class TelaInicio extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new TelaInicio().setVisible(true);
+                Arvore lista = new Arvore();
+                TelaInicio tela = new TelaInicio();
+                lista.add(tela);
 //                DefaultMutableTreeNode pai = new DefaultMutableTreeNode(campo.getText());
 //                varre(campo.getText(), pai);
 //                arvore = new JTree(pai);
@@ -884,24 +904,6 @@ public class TelaInicio extends javax.swing.JFrame {
         });
     }
 
-    public void varre(String base, DefaultMutableTreeNode no) {
-
-      File diretorio = new File(base);
-      File[] conteudo = diretorio.listFiles();
-
-      for (int i=0; i < conteudo.length; i++) {
-
-         if (conteudo[i].isFile()) {
-            DefaultMutableTreeNode arquivo = new DefaultMutableTreeNode(conteudo[i].getName());
-            no.add(arquivo);
-         }
-         else {
-            DefaultMutableTreeNode dir = new DefaultMutableTreeNode(conteudo[i].getName());
-            varre(conteudo[i].toString(), dir);
-            no.add(dir);
-         }
-      }
-    }
  
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

@@ -18,7 +18,7 @@ public class DataBase {
     private static DataBase bd;
 
     private DataBase() {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("TCCPU");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("TCC_UNIT");
         setEntityManager(emf.createEntityManager());
     }
 

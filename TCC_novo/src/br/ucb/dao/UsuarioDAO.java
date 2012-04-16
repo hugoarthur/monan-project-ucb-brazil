@@ -34,7 +34,7 @@ public class UsuarioDAO {
     public static Usuario buscaUsuario(String login, String senha) {
         EntityManager em = DataBase.getInstance().getEntityManager();
         em.getTransaction().begin();
-        Query query = em.createQuery("SELECT u FROM usuario u WHERE u.login = :login AND u.senha = :senha");
+        Query query = em.createQuery("SELECT u FROM Usuario u WHERE u.login = :login AND u.senha = :senha");
         query.setParameter("login", login);
         query.setParameter("senha", senha);
         Usuario user = (Usuario) query.getSingleResult();

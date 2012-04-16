@@ -12,13 +12,8 @@
 package br.ucb.gui;
 
 import br.ucb.manipulacao.pdf.Arvore;
-import br.ucb.manipulacao.pdf.FileChooser;
 import br.ucb.manipulacao.pdf.ManipulaPDF;
 //import br.ucb.xml.Teste;
-import java.awt.event.ActionEvent;
-import java.io.File;
-import javax.swing.JScrollPane;
-import javax.swing.tree.DefaultMutableTreeNode;
 
 /**
  *

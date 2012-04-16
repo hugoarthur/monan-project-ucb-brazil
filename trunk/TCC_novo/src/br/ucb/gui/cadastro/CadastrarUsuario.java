@@ -31,6 +31,7 @@ public class CadastrarUsuario implements ActionListener {
     public void insereUsuario(){
         Usuario user = new Usuario();
         user.setNome(getTelaCadastro().getNomeTextField().getText());
+        user.setLogin(getTelaCadastro().getLoginTextField().getText());
         user.setSenha(new String(getTelaCadastro().getSenhaSenhaPasswordField().getPassword()));
         user.setUniversidade((String)getTelaCadastro().getUniversidadeComboBox().getSelectedItem());
         UsuarioDAO.insereUsuario(user);

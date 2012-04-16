@@ -12,7 +12,7 @@
 package br.ucb.gui;
 
 import br.ucb.manipulacao.pdf.ManipulaPDF;
-import br.ucb.xml.Teste;
+//import br.ucb.xml.Teste;
 import java.io.File;
 import javax.swing.tree.DefaultMutableTreeNode;
 
@@ -723,9 +723,9 @@ public class TelaInicio extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        Teste teste = new Teste();
+//        Teste teste = new Teste();
         String texto = jEditorPane2.getText();
-        teste.CriaXML(texto);
+//        teste.CriaXML(texto);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

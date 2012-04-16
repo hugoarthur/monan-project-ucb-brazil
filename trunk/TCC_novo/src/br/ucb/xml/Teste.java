@@ -4,7 +4,7 @@
  */
 package br.ucb.xml;
 
-import br.ucb.gui.TelaInicio;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -18,7 +18,11 @@ public class Teste {
         String usuario = "1";
         String projeto = "1";
         String categoria = "1";
-        xml.escreverXML(usuario, projeto, categoria, texto);
-        
+        if (!"".equals(texto)){
+            xml.escreverXML(usuario, projeto, categoria, texto);
+            JOptionPane.showMessageDialog(null, "Salvo no banco de dados e xml gerado com sucesso");
+        }
+        else
+            JOptionPane.showMessageDialog(null, "Nenhum texto foi cadastrado");        
     }
 }

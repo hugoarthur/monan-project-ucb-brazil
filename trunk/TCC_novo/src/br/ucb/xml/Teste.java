@@ -12,7 +12,7 @@ public class Teste {
     
     public void CriaXML(){
         
-        ImplementaXML xml = new ImplementaXML();
+        ImplementaXml xml = new ImplementaXml();
         String usuario = "1";
         String projeto = "1";
         String categoria = "1";

@@ -164,6 +164,11 @@ public class TelaInicio extends javax.swing.JFrame {
         jLabel7.setText("Nome da Categoria:");
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
 
         jButton1.setText("Salvar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -254,7 +259,7 @@ public class TelaInicio extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addGap(288, 288, 288)
                 .addComponent(jLabel4)
-                .addContainerGap(128, Short.MAX_VALUE))
+                .addContainerGap())
             .addComponent(jScrollPane1)
         );
         jPanel2Layout.setVerticalGroup(
@@ -719,7 +724,8 @@ public class TelaInicio extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         Teste teste = new Teste();
-        teste.CriaXML();
+        String texto = jEditorPane2.getText();
+        teste.CriaXML(texto);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -854,6 +860,10 @@ public class TelaInicio extends javax.swing.JFrame {
     private void jTree1AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jTree1AncestorAdded
         // TODO add your handling code here:
     }//GEN-LAST:event_jTree1AncestorAdded
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
     private void jScrollPaneActionPerformed (java.awt.event.ActionEvent evt){
         
     }

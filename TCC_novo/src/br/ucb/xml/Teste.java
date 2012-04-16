@@ -18,6 +18,7 @@ public class Teste {
         String usuario = "1";
         String projeto = "1";
         String categoria = "1";
+        
         if (!"".equals(texto)){
             xml.escreverXML(usuario, projeto, categoria, texto);
             JOptionPane.showMessageDialog(null, "Salvo no banco de dados e xml gerado com sucesso");

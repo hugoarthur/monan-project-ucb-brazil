@@ -15,10 +15,10 @@ package br.ucb.gui;
  *
  * @author guicunha
  */
-public class TelaNovaCategoria extends javax.swing.JFrame {
+public class TelaNovaCelula extends javax.swing.JFrame {
 
     /** Creates new form telaCategorias */
-    public TelaNovaCategoria() {
+    public TelaNovaCelula() {
         initComponents();
     }
 
@@ -79,9 +79,9 @@ public class TelaNovaCategoria extends javax.swing.JFrame {
         setTitle("NOVA CATEGORIA - Sistema de Avaliação Formativa");
         setResizable(false);
 
-        jLabel1.setText("Nome da Categoria:");
+        jLabel1.setText("Nome da Célula:");
 
-        jLabel2.setText("Tipo de Categoria:");
+        jLabel2.setText("Tipo de Célula:");
 
         jTextField1.setText("jTextField1");
 
@@ -164,7 +164,7 @@ public class TelaNovaCategoria extends javax.swing.JFrame {
         jMenu5.add(jMenuItem32);
         jMenu5.add(jSeparator26);
 
-        jMenuItem33.setText("Categorias");
+        jMenuItem33.setText("Células");
         jMenu5.add(jMenuItem33);
         jMenu5.add(jSeparator27);
 
@@ -218,7 +218,7 @@ public class TelaNovaCategoria extends javax.swing.JFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE)))
-                .addContainerGap(80, Short.MAX_VALUE))
+                .addContainerGap(98, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -261,7 +261,7 @@ public class TelaNovaCategoria extends javax.swing.JFrame {
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaNovaCategoria().setVisible(true);
+                new TelaNovaCelula().setVisible(true);
             }
         });
     }

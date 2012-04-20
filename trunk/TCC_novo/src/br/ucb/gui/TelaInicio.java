@@ -36,7 +36,7 @@ public class TelaInicio extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        categoriaPanel = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox();
         jButton1 = new javax.swing.JButton();
@@ -157,10 +157,10 @@ public class TelaInicio extends javax.swing.JFrame {
         setTitle("PROJETO - Sistema de Avaliação Formativa");
         setBackground(new java.awt.Color(153, 153, 153));
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED), "Categoria", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Calibri", 0, 18), java.awt.Color.darkGray)); // NOI18N
-        jPanel1.setToolTipText("");
+        categoriaPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED), "Célula", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Calibri", 0, 18), java.awt.Color.darkGray)); // NOI18N
+        categoriaPanel.setToolTipText("");
 
-        jLabel7.setText("Nome da Categoria:");
+        jLabel7.setText("Escolha a Célula:");
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -195,21 +195,21 @@ public class TelaInicio extends javax.swing.JFrame {
         jEditorPane2.setDragEnabled(true);
         jScrollPane3.setViewportView(jEditorPane2);
 
-        jButton3.setText("Nova Categoria");
+        jButton3.setText("Nova Célula");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout categoriaPanelLayout = new javax.swing.GroupLayout(categoriaPanel);
+        categoriaPanel.setLayout(categoriaPanelLayout);
+        categoriaPanelLayout.setHorizontalGroup(
+            categoriaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane3)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(categoriaPanelLayout.createSequentialGroup()
+                .addGroup(categoriaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(categoriaPanelLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jButton1)
                         .addGap(18, 18, 18)
@@ -220,9 +220,9 @@ public class TelaInicio extends javax.swing.JFrame {
                     .addComponent(jLabel9))
                 .addContainerGap())
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        categoriaPanelLayout.setVerticalGroup(
+            categoriaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(categoriaPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jButton3)
                 .addGap(18, 18, 18)
@@ -234,7 +234,7 @@ public class TelaInicio extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 235, Short.MAX_VALUE)
                 .addGap(9, 9, 9)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(categoriaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
                     .addComponent(jButton1))
                 .addContainerGap())
@@ -268,8 +268,7 @@ public class TelaInicio extends javax.swing.JFrame {
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 632, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 643, Short.MAX_VALUE))
         );
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED), "Status", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Calibri", 0, 18), new java.awt.Color(102, 102, 102))); // NOI18N
@@ -496,7 +495,7 @@ public class TelaInicio extends javax.swing.JFrame {
 
         jMenu10.setText("Categorizar");
 
-        jMenuItem15.setText("Todas as Categorias");
+        jMenuItem15.setText("Todas as Células");
         jMenu10.add(jMenuItem15);
 
         jMenu2.add(jMenu10);
@@ -533,12 +532,7 @@ public class TelaInicio extends javax.swing.JFrame {
         jMenu3.add(jMenuItem17);
         jMenu3.add(jSeparator15);
 
-        jMenuItem18.setText("Barra de Categorias");
-        jMenuItem18.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem18ActionPerformed(evt);
-            }
-        });
+        jMenuItem18.setText("Barra de Células");
         jMenu3.add(jMenuItem18);
         jMenu3.add(jSeparator16);
 
@@ -573,7 +567,6 @@ public class TelaInicio extends javax.swing.JFrame {
 
         jMenu4.setText("Ferramentas");
 
-        jMenuItem24.setText("Nova Categoria");
         jMenuItem24.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem24ActionPerformed(evt);
@@ -601,8 +594,6 @@ public class TelaInicio extends javax.swing.JFrame {
 
         jMenu4.add(jMenu7);
 
-        jMenu12.setText("Importar");
-
         jMenuItem29.setText("Projeto");
         jMenu12.add(jMenuItem29);
         jMenu12.add(jSeparator25);
@@ -629,7 +620,7 @@ public class TelaInicio extends javax.swing.JFrame {
         jMenu5.add(jMenuItem32);
         jMenu5.add(jSeparator26);
 
-        jMenuItem33.setText("Categorias");
+        jMenuItem33.setText("Células");
         jMenuItem33.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem33ActionPerformed(evt);
@@ -641,8 +632,6 @@ public class TelaInicio extends javax.swing.JFrame {
         jMenuItem34.setText("Modelo de Fluxo");
         jMenu5.add(jMenuItem34);
         jMenu5.add(jSeparator28);
-
-        jMenuItem35.setText("Enviar via Email");
         jMenu5.add(jMenuItem35);
         jMenu5.add(jSeparator29);
 
@@ -699,13 +688,13 @@ public class TelaInicio extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jToolBar1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 1286, Short.MAX_VALUE)
+                    .addComponent(jToolBar1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 927, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(categoriaPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -715,7 +704,7 @@ public class TelaInicio extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(categoriaPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -741,7 +730,7 @@ public class TelaInicio extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-      TelaNovaCategoria novaCategoria = new TelaNovaCategoria();
+      TelaNovaCelula novaCategoria = new TelaNovaCelula();
       novaCategoria.setVisible(true);
       novaCategoria.setSize(456, 291);
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -756,7 +745,7 @@ public class TelaInicio extends javax.swing.JFrame {
 
     private void jMenuItem24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem24ActionPerformed
         // TODO add your handling code here:
-        TelaNovaCategoria categoria = new TelaNovaCategoria();
+        TelaNovaCelula categoria = new TelaNovaCelula();
         categoria.setVisible(true);
     }//GEN-LAST:event_jMenuItem24ActionPerformed
 
@@ -768,7 +757,7 @@ public class TelaInicio extends javax.swing.JFrame {
 
     private void jMenuItem33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem33ActionPerformed
         // TODO add your handling code here:
-        TelaCategorias categorias = new TelaCategorias();
+        TelaCelulas categorias = new TelaCelulas();
         categorias.setVisible(true);
     }//GEN-LAST:event_jMenuItem33ActionPerformed
 
@@ -851,7 +840,7 @@ public class TelaInicio extends javax.swing.JFrame {
 
     private void jMenuItem18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem18ActionPerformed
         // TODO add your handling code here:
-        jPanel1.setVisible(false);
+        categoriaPanel.setVisible(false);
     }//GEN-LAST:event_jMenuItem18ActionPerformed
 
     private void jMenuItem19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem19ActionPerformed
@@ -901,6 +890,7 @@ public class TelaInicio extends javax.swing.JFrame {
 
  
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel categoriaPanel;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
@@ -976,7 +966,6 @@ public class TelaInicio extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;

@@ -15,10 +15,10 @@ package br.ucb.gui;
  *
  * @author GUICUNHA
  */
-public class TelaCategorias extends javax.swing.JFrame {
+public class TelaCelulas extends javax.swing.JFrame {
 
     /** Creates new form TelaCategorias */
-    public TelaCategorias() {
+    public TelaCelulas() {
         initComponents();
     }
 
@@ -74,7 +74,7 @@ public class TelaCategorias extends javax.swing.JFrame {
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaCategorias().setVisible(true);
+                new TelaCelulas().setVisible(true);
             }
         });
     }

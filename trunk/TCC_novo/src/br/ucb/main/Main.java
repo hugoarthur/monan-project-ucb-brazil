@@ -22,9 +22,9 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        //new TelaInicio().setVisible(true);
+        new TelaInicio().setVisible(true);
         //new TelaPrimeira().setVisible(true);
-        new TelaLogin().setVisible(true);
+        //new TelaLogin().setVisible(true);
     }
 
 }

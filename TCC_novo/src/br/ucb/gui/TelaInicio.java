@@ -12,7 +12,9 @@
 package br.ucb.gui;
 
 import br.ucb.manipulacao.pdf.Arvore;
+import br.ucb.manipulacao.pdf.FileChooser;
 import br.ucb.manipulacao.pdf.ManipulaPDF;
+import javax.swing.tree.TreePath;
 //import br.ucb.xml.Teste;
 
 /**
@@ -854,16 +856,20 @@ public class TelaInicio extends javax.swing.JFrame {
 
     private void jPanel3AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jPanel3AncestorAdded
         // TODO add your handling code here:
-//        Arvore lista = new Arvore();
-//        jPanel3.add(lista);
-//        repaint();
-//        lista.setVisible(true);
-        
+          //Arvore lista = new Arvore();
+          //jPanel3.add(lista);
+         // repaint();
+          //lista.setVisible(true);
+         // String nomeFile = FileChoose
+          //File file = new File( )
+          //TreePath treepath = new TreePath();
+          //jTree1.setSelectionPath(treepath);
 
     }//GEN-LAST:event_jPanel3AncestorAdded
 
     private void jTree1ComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_jTree1ComponentAdded
         // TODO add your handling code here:
+
     }//GEN-LAST:event_jTree1ComponentAdded
     private void jScrollPaneActionPerformed (java.awt.event.ActionEvent evt){
         

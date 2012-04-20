@@ -233,7 +233,7 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
                 String [] instituicao = {"Universidade Federal Fluminense" ,
                 "Universidade Católica de Brasília", "Universidade Federal de Santa Catarina"};
 //                universidadeCombo = new JComboBox(instituicao);
-         
+
                 
 
             }

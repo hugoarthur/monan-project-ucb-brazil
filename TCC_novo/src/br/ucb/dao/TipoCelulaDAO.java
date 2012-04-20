@@ -9,6 +9,6 @@ package br.ucb.dao;
  *
  * @author GUICUNHA
  */
-public class TipoCategoriaDAO {
+public class TipoCelulaDAO {
 
 }

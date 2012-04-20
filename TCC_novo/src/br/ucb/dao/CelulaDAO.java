@@ -10,10 +10,10 @@ package br.ucb.dao;
  *
  * @author GUICUNHA
  */
-public class CategoriaDAO {
+public class CelulaDAO {
 
 
-    public CategoriaDAO(){
+    public CelulaDAO(){
         
     }
 

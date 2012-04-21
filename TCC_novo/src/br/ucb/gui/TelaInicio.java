@@ -12,9 +12,8 @@
 package br.ucb.gui;
 
 import br.ucb.manipulacao.pdf.Arvore;
-import br.ucb.manipulacao.pdf.FileChooser;
 import br.ucb.manipulacao.pdf.ManipulaPDF;
-import javax.swing.tree.TreePath;
+import br.ucb.service.Sessao;
 //import br.ucb.xml.Teste;
 
 /**
@@ -52,6 +51,7 @@ public class TelaInicio extends javax.swing.JFrame {
         jEditorPane1 = new javax.swing.JEditorPane();
         jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTree1 = new javax.swing.JTree();
@@ -251,6 +251,8 @@ public class TelaInicio extends javax.swing.JFrame {
 
         jLabel3.setText("Nome:");
 
+        jLabel6.setText(Sessao.getInstance().getUsuario().getNome());
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -258,9 +260,11 @@ public class TelaInicio extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel3)
-                .addGap(288, 288, 288)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel6)
+                .addGap(248, 248, 248)
                 .addComponent(jLabel4)
-                .addContainerGap(160, Short.MAX_VALUE))
+                .addContainerGap())
             .addComponent(jScrollPane1)
         );
         jPanel2Layout.setVerticalGroup(
@@ -268,7 +272,8 @@ public class TelaInicio extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 643, Short.MAX_VALUE))
         );
@@ -917,6 +922,7 @@ public class TelaInicio extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;

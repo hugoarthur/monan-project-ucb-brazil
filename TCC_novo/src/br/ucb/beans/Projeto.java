@@ -5,14 +5,7 @@
 package br.ucb.beans;
 
 import java.util.Date;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
+import javax.persistence.*;
 
 /**
  *
@@ -31,8 +24,8 @@ public class Projeto {
     @Column(name = "data_projeto")
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date dataProjeto;
-    @Column(name = "usuario_id_usuario")
     @OneToOne
+    @JoinColumn(name = "usuario_id_usuario", unique=true, nullable=false)
     private Usuario usuario;
 
     public Projeto() {

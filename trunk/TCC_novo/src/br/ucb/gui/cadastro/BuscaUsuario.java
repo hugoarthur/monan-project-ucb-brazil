@@ -6,9 +6,9 @@ package br.ucb.gui.cadastro;
 
 import br.ucb.beans.Usuario;
 import br.ucb.dao.UsuarioDAO;
-import br.ucb.gui.TelaCadastroUsuario;
 import br.ucb.gui.TelaLogin;
 import br.ucb.gui.TelaPrimeira;
+import br.ucb.service.Sessao;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -36,6 +36,8 @@ public class BuscaUsuario implements ActionListener {
         if(user != null){
             getTelaLogin().setVisible(false);
             new TelaPrimeira().setVisible(true);
+            Sessao sessao = Sessao.getInstance();
+            sessao.setUsuario(user);
         }
     }
 

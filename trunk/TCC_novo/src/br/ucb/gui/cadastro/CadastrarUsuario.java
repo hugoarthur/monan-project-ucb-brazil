@@ -21,6 +21,7 @@ public class CadastrarUsuario implements ActionListener {
     public CadastrarUsuario(TelaCadastroUsuario form) {
         setTelaCadastro(form);
         insereUsuario();
+        getTelaCadastro().setVisible(false);
     }
 
     public void actionPerformed(ActionEvent e) {

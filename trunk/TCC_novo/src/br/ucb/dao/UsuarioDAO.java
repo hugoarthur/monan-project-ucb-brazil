@@ -23,6 +23,7 @@ public class UsuarioDAO {
         em.getTransaction().begin();
         em.persist(usuario);
         em.getTransaction().commit();
+        em.close();
     }
 
     public static void excluiUsuario() {

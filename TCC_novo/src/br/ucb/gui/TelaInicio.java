@@ -251,7 +251,7 @@ public class TelaInicio extends javax.swing.JFrame {
 
         jLabel3.setText("Nome:");
 
-        jLabel6.setText(Sessao.getInstance().getUsuario().getNome());
+        jLabel6.setText(Sessao.getInstance()!=null ? Sessao.getInstance().getUsuario().getNome() : "");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);

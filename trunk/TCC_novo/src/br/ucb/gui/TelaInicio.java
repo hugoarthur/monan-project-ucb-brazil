@@ -11,16 +11,12 @@
 
 package br.ucb.gui;
 
-import br.ucb.main.Main;
 import br.ucb.manipulacao.pdf.Arvore;
-import br.ucb.manipulacao.pdf.FileChooser;
 import br.ucb.manipulacao.pdf.FileTree;
 import br.ucb.manipulacao.pdf.ManipulaPDF;
 import br.ucb.service.Sessao;
-import java.awt.Container;
 import java.io.File;
 import javax.swing.BoxLayout;
-import org.eclipse.persistence.sdo.helper.FileCodeWriter;
 
 //import br.ucb.xml.Teste;
 

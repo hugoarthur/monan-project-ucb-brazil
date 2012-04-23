@@ -15,6 +15,7 @@ import br.ucb.manipulacao.pdf.Arvore;
 import br.ucb.manipulacao.pdf.FileTree;
 import br.ucb.manipulacao.pdf.ManipulaPDF;
 import br.ucb.service.Sessao;
+import br.ucb.xml.Teste;
 import java.io.File;
 import javax.swing.BoxLayout;
 
@@ -761,8 +762,9 @@ public class TelaInicio extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-
+        Teste teste = new Teste();
         String texto = jEditorPane2.getText();
+        teste.CriaXML(texto);
 
     }//GEN-LAST:event_jButton1ActionPerformed
 

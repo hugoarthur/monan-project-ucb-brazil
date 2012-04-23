@@ -47,51 +47,81 @@ public class ImplementaXml {
                 Element texto = new Element("texto");
                 texto.setText(e.getChildText("texto"));
 
+                usuario.addContent("\n");
+                usuario.addContent("\t\t");
                 usuario.addContent(projeto);
+                usuario.addContent("\n");
+                usuario.addContent("\t\t\t");
                 usuario.addContent(categoria);
+                usuario.addContent("\n");
+                usuario.addContent("\t\t\t\t");
                 usuario.addContent(texto);
+                usuario.addContent("\n");
 
+                corpos.addContent("\n");
+                corpos.addContent("\t");
                 corpos.addContent(usuario);
+                corpos.addContent("\n");
 
             }
 
             Element usuario = new Element("usuario");
             usuario.setAttribute("id", usu);
-            
+
             Element projeto = new Element("projeto");
             projeto.setText(proj);
-            
+
             Element categoria = new Element("categoria");
             categoria.setText(categ);
-            
+
             Element texto = new Element("texto");
             texto.setText(text);
 
+            usuario.addContent("\n");
+            usuario.addContent("\t\t");
             usuario.addContent(projeto);
+            usuario.addContent("\n");
+            usuario.addContent("\t\t\t");
             usuario.addContent(categoria);
+            usuario.addContent("\n");
+            usuario.addContent("\t\t\t\t");
             usuario.addContent(texto);
+            usuario.addContent("\n");
 
+            corpos.addContent("\n");
+            corpos.addContent("\t");
             corpos.addContent(usuario);
+            corpos.addContent("\n");
 
         } else {
 
             Element usuario = new Element("usuario");
             usuario.setAttribute("id", usu);
-            
+
             Element projeto = new Element("projeto");
             projeto.setText(proj);
-            
+
             Element categoria = new Element("categoria");
             categoria.setText(categ);
-            
+
             Element texto = new Element("texto");
             texto.setText(text);
 
+            usuario.addContent("\n");
+            usuario.addContent("\t\t");
             usuario.addContent(projeto);
+            usuario.addContent("\n");
+            usuario.addContent("\t\t\t");
             usuario.addContent(categoria);
+            usuario.addContent("\n");
+            usuario.addContent("\t\t\t\t");
             usuario.addContent(texto);
+            usuario.addContent("\n");
 
+            corpos.addContent("\n");
+            corpos.addContent("\t");
             corpos.addContent(usuario);
+            corpos.addContent("\n");
 
         }
 

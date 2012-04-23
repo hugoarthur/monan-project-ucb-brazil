@@ -4,6 +4,7 @@
  */
 package br.ucb.xml;
 
+import br.ucb.service.Sessao;
 import javax.swing.JOptionPane;
 
 /**
@@ -15,7 +16,7 @@ public class Teste {
     public void CriaXML(String texto){
                 
         ImplementaXml xml = new ImplementaXml();
-        String usuario = "1";
+        String usuario = Sessao.getInstance().getUsuario().getIdUsuario().toString();
         String projeto = "1";
         String categoria = "1";
         

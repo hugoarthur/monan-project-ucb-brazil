@@ -30,6 +30,7 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
     /** Creates new form TelaCadastro */
     public TelaCadastroUsuario() {
         initComponents();
+        setItemUniverdidade();
     }
 
     /** This method is called from within the constructor to
@@ -128,13 +129,13 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(NomeLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(NomeTextField))
+                                .addComponent(NomeTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 293, Short.MAX_VALUE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(UniversidadeLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(universidadeComboBox, 0, 165, Short.MAX_VALUE))
+                                .addComponent(universidadeComboBox, 0, 261, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGap(0, 178, Short.MAX_VALUE)
                                 .addComponent(Cadastrar)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Cancelar))
@@ -144,10 +145,10 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
                                     .addComponent(LoginLabel))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(LoginTextField)
-                                    .addComponent(SenhaPasswordField, javax.swing.GroupLayout.DEFAULT_SIZE, 197, Short.MAX_VALUE)))))
+                                    .addComponent(LoginTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 293, Short.MAX_VALUE)
+                                    .addComponent(SenhaPasswordField, javax.swing.GroupLayout.DEFAULT_SIZE, 293, Short.MAX_VALUE)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(67, 67, 67)
+                        .addGap(108, 108, 108)
                         .addComponent(jLabel5)))
                 .addContainerGap())
         );
@@ -174,9 +175,9 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Cadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Cancelar))
-                .addGap(44, 44, 44)
+                .addGap(41, 41, 41)
                 .addComponent(jLabel5)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -186,14 +187,14 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(59, Short.MAX_VALUE))
         );
 
         bindingGroup.bind();
@@ -217,7 +218,7 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
 
     private void universidadeComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_universidadeComboBoxActionPerformed
         // TODO add your handling code here:
-        setItemUniverdidade();
+        
     }//GEN-LAST:event_universidadeComboBoxActionPerformed
 
     private void universidadeComboBoxComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_universidadeComboBoxComponentAdded

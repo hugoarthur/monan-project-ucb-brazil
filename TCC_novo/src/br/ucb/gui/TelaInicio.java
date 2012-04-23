@@ -25,7 +25,12 @@ public class TelaInicio extends javax.swing.JFrame {
     
     /** Creates new form telaInicio */
     public TelaInicio() {
-        initComponents();
+        
+       initComponents();
+       
+       jComboBox1.addItem("Abstratct");
+       jComboBox1.addItem("Introducao");
+       jComboBox1.addItem("Conclusao");
        
     }    
     /** This method is called from within the constructor to
@@ -165,7 +170,6 @@ public class TelaInicio extends javax.swing.JFrame {
 
         jLabel7.setText("Escolha a Célula:");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);

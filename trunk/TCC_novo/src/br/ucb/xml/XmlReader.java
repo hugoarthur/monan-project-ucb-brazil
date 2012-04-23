@@ -15,7 +15,7 @@ import org.jdom2.input.SAXBuilder;
  */
 public class XmlReader {
     
-    private Document doc = null;
+    private Document doc;
     
     public List<Element> ListXml(){
         
@@ -31,7 +31,7 @@ public class XmlReader {
 
             try {
 
-                  this.doc = builder.build("xml/arquivo.xml");
+                  this.doc = builder.build("xml/arq.xml");
 
             } catch (Exception e) {                
             }

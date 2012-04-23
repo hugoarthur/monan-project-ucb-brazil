@@ -11,10 +11,17 @@
 
 package br.ucb.gui;
 
+import br.ucb.main.Main;
 import br.ucb.manipulacao.pdf.Arvore;
+import br.ucb.manipulacao.pdf.FileChooser;
+import br.ucb.manipulacao.pdf.FileTree;
 import br.ucb.manipulacao.pdf.ManipulaPDF;
 import br.ucb.service.Sessao;
-import br.ucb.xml.Teste;
+import java.awt.Container;
+import java.io.File;
+import javax.swing.BoxLayout;
+import org.eclipse.persistence.sdo.helper.FileCodeWriter;
+
 //import br.ucb.xml.Teste;
 
 /**
@@ -31,7 +38,24 @@ public class TelaInicio extends javax.swing.JFrame {
        jComboBox1.addItem("Abstratct");
        jComboBox1.addItem("Introducao");
        jComboBox1.addItem("Conclusao");
-       
+///////////////////////PAINEL JTREE 2 - CAMINHO COMPLETO////////////////////////
+       //String way = ManipulaPDF.caminhoArquivo();
+       String wayy [] = {};
+       //if (wayy.length != 0) {
+          jTree2.add(new FileTree(new File(".")));
+        //} else {
+              jTree2.setLayout(new BoxLayout(jTree2, BoxLayout.X_AXIS));
+              for (int i = 0; i < wayy.length; i++)
+                jTree2.add(new FileTree(new File(wayy[i])));
+      // }
+////////////////////////////////////////////////////////////////////////////////
+///////////////////////PAINEL JTREE 1 - PARCIAL/////////////////////////////////
+         jTree1.add(new FileTree(new File(".")));
+        //} else {
+              jTree1.setLayout(new BoxLayout(jTree1, BoxLayout.X_AXIS));
+              for (int i = 0; i < wayy.length; i++)
+                jTree1.add(new FileTree(new File(wayy[i])));
+////////////////////////////////////////////////////////////////////////////////
     }    
     /** This method is called from within the constructor to
      * initialize the form.
@@ -61,6 +85,8 @@ public class TelaInicio extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTree1 = new javax.swing.JTree();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTree2 = new javax.swing.JTree();
         jToolBar1 = new javax.swing.JToolBar();
         jLabel1 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
@@ -269,7 +295,7 @@ public class TelaInicio extends javax.swing.JFrame {
                 .addComponent(jLabel6)
                 .addGap(248, 248, 248)
                 .addComponent(jLabel4)
-                .addContainerGap())
+                .addContainerGap(135, Short.MAX_VALUE))
             .addComponent(jScrollPane1)
         );
         jPanel2Layout.setVerticalGroup(
@@ -294,6 +320,9 @@ public class TelaInicio extends javax.swing.JFrame {
             }
         });
 
+        jTree1.setBackground(new java.awt.Color(204, 255, 204));
+        jTree1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Diretório Atual", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
+        jTree1.setForeground(new java.awt.Color(0, 51, 255));
         jTree1.addContainerListener(new java.awt.event.ContainerAdapter() {
             public void componentAdded(java.awt.event.ContainerEvent evt) {
                 jTree1ComponentAdded(evt);
@@ -301,18 +330,24 @@ public class TelaInicio extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(jTree1);
 
+        jTree2.setBackground(new java.awt.Color(255, 255, 153));
+        jTree2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Documentos Processados", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
+        jScrollPane4.setViewportView(jTree2);
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
+            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(90, 90, 90)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 355, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(115, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         jToolBar1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -700,7 +735,7 @@ public class TelaInicio extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jToolBar1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 927, Short.MAX_VALUE)
+                    .addComponent(jToolBar1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 1002, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -715,8 +750,8 @@ public class TelaInicio extends javax.swing.JFrame {
                 .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(categoriaPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -726,9 +761,9 @@ public class TelaInicio extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        Teste teste = new Teste();
+
         String texto = jEditorPane2.getText();
-        teste.CriaXML(texto);
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -900,9 +935,11 @@ public class TelaInicio extends javax.swing.JFrame {
 //                JScrollPane.removeAll();
 //                painelBaixo.add(new JScrollPane(arvore));
 //                getContentPane().validate();
+                
             }
         });
     }
+    
 
  
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -988,6 +1025,7 @@ public class TelaInicio extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JPopupMenu.Separator jSeparator10;
     private javax.swing.JPopupMenu.Separator jSeparator11;
@@ -1022,5 +1060,7 @@ public class TelaInicio extends javax.swing.JFrame {
     private javax.swing.JPopupMenu.Separator jSeparator9;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JTree jTree1;
+    private javax.swing.JTree jTree2;
     // End of variables declaration//GEN-END:variables
 }
+

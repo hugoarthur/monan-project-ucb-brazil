@@ -21,8 +21,8 @@ public class ManipulaPDF {
         }
         return texto;        
     }
-    public String caminhoArquivo (){
-        String caminho = caminhoPDF.caminho();
+    public static String caminhoArquivo (){
+        String caminho = FileChooser.caminho();
         return caminho;
     }
 }

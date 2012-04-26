@@ -79,8 +79,6 @@ public class TelaNovaCelula extends javax.swing.JFrame {
 
         jLabel1.setText("Nome da Célula:");
 
-        jTextField1.setText("jTextField1");
-
         jButton1.setText("Salvar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

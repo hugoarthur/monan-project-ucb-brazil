@@ -5,6 +5,9 @@
 
 package br.ucb.dao;
 
+import br.ucb.beans.Celula;
+import javax.persistence.EntityManager;
+
 
 /**
  *
@@ -17,8 +20,13 @@ public class CelulaDAO {
         
     }
 
-    public static void insereCategoria(){
+    public static void insereCelula(Celula celula) {
+        EntityManager em = DataBase.getInstance().getEntityManager();
 
+        em.getTransaction().begin();
+        em.persist(celula);
+        em.getTransaction().commit();
+        em.close();
     }
 
     public static void excluiCategoria(){

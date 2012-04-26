@@ -5,12 +5,26 @@
 
 package br.ucb.beans;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  *
  * @author GUICUNHA
  */
+
+@Entity
+@Table(name="tipo_celula")
 public class TipoCelula {
+    @Column(name="id_tipo_celula")
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer id_tipo_celula;
+    @Column(name="nom_tipo_celula")
     private String nom_tipo_celula;
 
     /**

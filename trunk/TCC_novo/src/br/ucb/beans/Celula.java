@@ -13,7 +13,7 @@ import javax.persistence.*;
  */
 
 @Entity
-@Table(name="celular")
+@Table(name="celula")
 public class Celula {
     @Column(name="id_celula")
     @Id

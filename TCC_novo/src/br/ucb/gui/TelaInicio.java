@@ -8,7 +8,6 @@
  *
  * Created on 02/02/2012, 15:25:34
  */
-
 package br.ucb.gui;
 
 import br.ucb.manipulacao.pdf.Arvore;
@@ -18,45 +17,51 @@ import br.ucb.service.Sessao;
 import br.ucb.xml.Teste;
 import java.io.File;
 import javax.swing.BoxLayout;
+import javax.swing.JEditorPane;
 import javax.swing.JFrame;
+import javax.swing.JTree;
 
 //import br.ucb.xml.Teste;
-
 /**
  *
  * @author GUICUNHA
  */
 public class TelaInicio extends javax.swing.JFrame {
-    
+
+    // CRIA UMA VARIÁVEL DE REFERÊNCIA DE ARVORE E ADICIONA AS JTREE
+    private Arvore arvore;
+
     /** Creates new form telaInicio */
     public TelaInicio() {
         
-       initComponents();
-       
-       this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-       
-       jComboBox1.addItem("Abstratct");
-       jComboBox1.addItem("Introducao");
-       jComboBox1.addItem("Conclusao");
-///////////////////////PAINEL JTREE 2 - CAMINHO COMPLETO////////////////////////
-       //String way = ManipulaPDF.caminhoArquivo();
-       String wayy [] = {};
-       //if (wayy.length != 0) {
-          jTree2.add(new FileTree(new File(".")));
-        //} else {
-              jTree2.setLayout(new BoxLayout(jTree2, BoxLayout.X_AXIS));
-              for (int i = 0; i < wayy.length; i++)
-                jTree2.add(new FileTree(new File(wayy[i])));
-      // }
-////////////////////////////////////////////////////////////////////////////////
-///////////////////////PAINEL JTREE 1 - PARCIAL/////////////////////////////////
-         jTree1.add(new FileTree(new File(".")));
-        //} else {
-              jTree1.setLayout(new BoxLayout(jTree1, BoxLayout.X_AXIS));
-              for (int i = 0; i < wayy.length; i++)
-                jTree1.add(new FileTree(new File(wayy[i])));
-////////////////////////////////////////////////////////////////////////////////
-    }    
+        initComponents();
+        arvore = new Arvore(this);
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+
+        jComboBox1.addItem("Abstratct");
+        jComboBox1.addItem("Introducao");
+        jComboBox1.addItem("Conclusao");
+//////////////////////////////////////////////////////////////////////////////////
+//        String wayy[] = {};
+/////////////////////////PAINEL JTREE 1 - PARCIAL/////////////////////////////////
+//        FileTree fileTree1 = new FileTree(new File("."));
+//        fileTree1.jEditorPane = this.jEditorPane1;
+//        jTree1.add(fileTree1);
+//        jTree1.setLayout(new BoxLayout(jTree1, BoxLayout.X_AXIS));
+//        for (int i = 0; i < wayy.length; i++) {
+//            jTree1.add(new FileTree(new File(wayy[i])));
+//        }
+//////////////////////////////////////////////////////////////////////////////////
+/////////////////////////PAINEL JTREE 2 - CAMINHO COMPLETO////////////////////////
+//
+//        jTree2.add(new FileTree(new File(".")));
+//        jTree2.setLayout(new BoxLayout(jTree2, BoxLayout.X_AXIS));
+//        for (int i = 0; i < wayy.length; i++) {
+//            jTree2.add(new FileTree(new File(wayy[i])));
+//        }
+//        // }
+    }
+
     /** This method is called from within the constructor to
      * initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is
@@ -326,7 +331,7 @@ public class TelaInicio extends javax.swing.JFrame {
         });
 
         jTree1.setBackground(new java.awt.Color(204, 255, 204));
-        jTree1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Diretório Atual", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
+        jTree1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Diretório Atual", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 12))); // NOI18N
         jTree1.setForeground(new java.awt.Color(0, 51, 255));
         jTree1.addContainerListener(new java.awt.event.ContainerAdapter() {
             public void componentAdded(java.awt.event.ContainerEvent evt) {
@@ -336,7 +341,7 @@ public class TelaInicio extends javax.swing.JFrame {
         jScrollPane2.setViewportView(jTree1);
 
         jTree2.setBackground(new java.awt.Color(255, 255, 153));
-        jTree2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Documentos Processados", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
+        jTree2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Documentos Processados", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 12))); // NOI18N
         jScrollPane4.setViewportView(jTree2);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -790,9 +795,9 @@ public class TelaInicio extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-      TelaNovaCelula novaCategoria = new TelaNovaCelula();
-      novaCategoria.setVisible(true);
-      novaCategoria.setSize(456, 291);
+        TelaNovaCelula novaCategoria = new TelaNovaCelula();
+        novaCategoria.setVisible(true);
+        novaCategoria.setSize(456, 291);
     }//GEN-LAST:event_jButton3ActionPerformed
     //Novo Projeto
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -800,7 +805,6 @@ public class TelaInicio extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
     //Abrir Projeto
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jMenuItem24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem24ActionPerformed
@@ -847,7 +851,7 @@ public class TelaInicio extends javax.swing.JFrame {
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
-        ManipulaPDF manipulaPDF = new ManipulaPDF();        
+        ManipulaPDF manipulaPDF = new ManipulaPDF();
         this.jEditorPane1.setText(manipulaPDF.extrairPDF());
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
@@ -857,7 +861,7 @@ public class TelaInicio extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-        ManipulaPDF manipulaPDF = new ManipulaPDF();        
+        ManipulaPDF manipulaPDF = new ManipulaPDF();
         this.jEditorPane1.setText(manipulaPDF.extrairPDF());
     }//GEN-LAST:event_jButton5ActionPerformed
 
@@ -868,7 +872,6 @@ public class TelaInicio extends javax.swing.JFrame {
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         // TODO add your handling code here:
-        
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton11InputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_jButton11InputMethodTextChanged
@@ -886,7 +889,6 @@ public class TelaInicio extends javax.swing.JFrame {
 
     private void jMenuItem16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem16MouseClicked
         // TODO add your handling code here:
-
     }//GEN-LAST:event_jMenuItem16MouseClicked
 
     private void jMenu3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu3MouseClicked
@@ -914,47 +916,21 @@ public class TelaInicio extends javax.swing.JFrame {
 
     private void jPanel3AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jPanel3AncestorAdded
         // TODO add your handling code here:
-          //Arvore lista = new Arvore();
-          //jPanel3.add(lista);
-         // repaint();
-          //lista.setVisible(true);
-         // String nomeFile = FileChoose
-          //File file = new File( )
-          //TreePath treepath = new TreePath();
-          //jTree1.setSelectionPath(treepath);
-
+        //Arvore lista = new Arvore();
+        //jPanel3.add(lista);
+        // repaint();
+        //lista.setVisible(true);
+        // String nomeFile = FileChoose
+        //File file = new File( )
+        //TreePath treepath = new TreePath();
+        //jTree1.setSelectionPath(treepath);
     }//GEN-LAST:event_jPanel3AncestorAdded
 
     private void jTree1ComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_jTree1ComponentAdded
         // TODO add your handling code here:
-
     }//GEN-LAST:event_jTree1ComponentAdded
-    private void jScrollPaneActionPerformed (java.awt.event.ActionEvent evt){
-        
+    private void jScrollPaneActionPerformed(java.awt.event.ActionEvent evt) {
     }
-    /**
-    * @param args the command line arguments
-    */
-    public static void main(String args[]) {
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                Arvore lista = new Arvore();
-                TelaInicio tela = new TelaInicio();
-                tela.setVisible(true);
-                lista.add(tela);
-//                DefaultMutableTreeNode pai = new DefaultMutableTreeNode(campo.getText());
-//                varre(campo.getText(), pai);
-//                arvore = new JTree(pai);
-//                JScrollPane.removeAll();
-//                painelBaixo.add(new JScrollPane(arvore));
-//                getContentPane().validate();
-                
-            }
-        });
-    }
-    
-
- 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel categoriaPanel;
     private javax.swing.JButton jButton1;
@@ -1076,5 +1052,14 @@ public class TelaInicio extends javax.swing.JFrame {
     private javax.swing.JTree jTree1;
     private javax.swing.JTree jTree2;
     // End of variables declaration//GEN-END:variables
-}
 
+    public JEditorPane getJEditorPane() {
+        return jEditorPane1;
+    }
+     public JTree getJTree1() {
+        return jTree1;
+    }
+     public JTree getJTree2() {
+        return jTree2;
+    }
+}

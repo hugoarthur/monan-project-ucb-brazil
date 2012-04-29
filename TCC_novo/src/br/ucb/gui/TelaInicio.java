@@ -11,12 +11,9 @@
 package br.ucb.gui;
 
 import br.ucb.manipulacao.pdf.Arvore;
-import br.ucb.manipulacao.pdf.FileTree;
 import br.ucb.manipulacao.pdf.ManipulaPDF;
 import br.ucb.service.Sessao;
 import br.ucb.xml.Teste;
-import java.io.File;
-import javax.swing.BoxLayout;
 import javax.swing.JEditorPane;
 import javax.swing.JFrame;
 import javax.swing.JTree;
@@ -41,27 +38,7 @@ public class TelaInicio extends javax.swing.JFrame {
         jComboBox1.addItem("Abstratct");
         jComboBox1.addItem("Introducao");
         jComboBox1.addItem("Conclusao");
-//////////////////////////////////////////////////////////////////////////////////
-//        String wayy[] = {};
-/////////////////////////PAINEL JTREE 1 - PARCIAL/////////////////////////////////
-//        FileTree fileTree1 = new FileTree(new File("."));
-//        fileTree1.jEditorPane = this.jEditorPane1;
-//        jTree1.add(fileTree1);
-//        jTree1.setLayout(new BoxLayout(jTree1, BoxLayout.X_AXIS));
-//        for (int i = 0; i < wayy.length; i++) {
-//            jTree1.add(new FileTree(new File(wayy[i])));
-//        }
-//////////////////////////////////////////////////////////////////////////////////
-/////////////////////////PAINEL JTREE 2 - CAMINHO COMPLETO////////////////////////
-//
-//        jTree2.add(new FileTree(new File(".")));
-//        jTree2.setLayout(new BoxLayout(jTree2, BoxLayout.X_AXIS));
-//        for (int i = 0; i < wayy.length; i++) {
-//            jTree2.add(new FileTree(new File(wayy[i])));
-//        }
-//        // }
     }
-
     /** This method is called from within the constructor to
      * initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is
@@ -916,14 +893,6 @@ public class TelaInicio extends javax.swing.JFrame {
 
     private void jPanel3AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jPanel3AncestorAdded
         // TODO add your handling code here:
-        //Arvore lista = new Arvore();
-        //jPanel3.add(lista);
-        // repaint();
-        //lista.setVisible(true);
-        // String nomeFile = FileChoose
-        //File file = new File( )
-        //TreePath treepath = new TreePath();
-        //jTree1.setSelectionPath(treepath);
     }//GEN-LAST:event_jPanel3AncestorAdded
 
     private void jTree1ComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_jTree1ComponentAdded

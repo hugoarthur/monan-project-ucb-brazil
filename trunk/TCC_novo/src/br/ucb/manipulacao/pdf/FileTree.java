@@ -5,15 +5,10 @@
 package br.ucb.manipulacao.pdf;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Container;
-import java.awt.Dimension;
 import java.io.File;
 import java.util.Collections;
 import java.util.Vector;
-import javax.swing.BoxLayout;
 import javax.swing.JEditorPane;
-import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTree;
@@ -39,17 +34,21 @@ public class FileTree extends JPanel {
 
             public void valueChanged(TreeSelectionEvent e) {
                 DefaultMutableTreeNode node = (DefaultMutableTreeNode) e.getPath().getLastPathComponent();
-
+                ////////////////////////////////////////////////////////////////
+                //Classe que manipula a extraçao do PDF.
                 ManipulaPDF manipulaPDF = new ManipulaPDF();
+                //Pega o caminho do Arquivo.
                 Object[] caminhoPdf = e.getPath().getPath();
                 String caminho = "";
+                //Constroi o caminho do arquivo.
                 for( Object pdf : caminhoPdf )
                     caminho += pdf+"/";
-
                 if( new File(caminho).isFile() ) {
+                    //Add o texto extraido no campo jEditorPane.
                     manipulaPDF.setCaminho(caminho);
                     jEditorPane.setText(manipulaPDF.extrairPDF());
                 }
+                ////////////////////////////////////////////////////////////////
             }
         });
 

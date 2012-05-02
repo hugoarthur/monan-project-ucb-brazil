@@ -171,7 +171,7 @@ public class TelaInicio extends javax.swing.JFrame {
         jLabel2.setText("jLabel2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("PROJETO - Sistema de Avaliação Formativa");
+        setTitle("PROJETO - Corpus Generator\n");
         setBackground(new java.awt.Color(153, 153, 153));
         setBounds(new java.awt.Rectangle(200, 30, 0, 0));
         setMinimumSize(new java.awt.Dimension(800, 600));
@@ -194,10 +194,10 @@ public class TelaInicio extends javax.swing.JFrame {
             }
         });
         jButton1.addInputMethodListener(new java.awt.event.InputMethodListener() {
-            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
-            }
             public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
                 jButton1InputMethodTextChanged(evt);
+            }
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
             }
         });
 
@@ -282,7 +282,7 @@ public class TelaInicio extends javax.swing.JFrame {
                 .addComponent(jLabel6)
                 .addGap(248, 248, 248)
                 .addComponent(jLabel4)
-                .addContainerGap(429, Short.MAX_VALUE))
+                .addContainerGap())
             .addComponent(jScrollPane1)
         );
         jPanel2Layout.setVerticalGroup(
@@ -422,10 +422,10 @@ public class TelaInicio extends javax.swing.JFrame {
             }
         });
         jButton11.addInputMethodListener(new java.awt.event.InputMethodListener() {
-            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
-            }
             public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
                 jButton11InputMethodTextChanged(evt);
+            }
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
             }
         });
         jToolBar1.add(jButton11);

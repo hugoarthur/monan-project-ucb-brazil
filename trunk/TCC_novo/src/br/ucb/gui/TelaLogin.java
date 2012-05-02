@@ -49,7 +49,7 @@ public class TelaLogin extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("LOGIN - Sistema de Avaliação Formativa");
+        setTitle("LOGIN - Corpus Generator");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 

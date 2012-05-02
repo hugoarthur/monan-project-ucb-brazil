@@ -34,7 +34,7 @@ public class TelaAcompanhamento extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
 
-        setTitle("ACOMPANHAMENTO - Sistema de Avaliação Formativa");
+        setTitle("ACOMPANHAMENTO - Corpus Generator\n");
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

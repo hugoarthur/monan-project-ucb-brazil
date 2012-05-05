@@ -11,6 +11,10 @@
 
 package br.ucb.gui;
 
+import br.ucb.gui.cadastro.CadastraCelula;
+import javax.swing.JButton;
+import javax.swing.JTextField;
+
 /**
  *
  * @author guicunha
@@ -32,8 +36,8 @@ public class TelaNovaCelula extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        txtField = new javax.swing.JTextField();
+        salvar = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -79,10 +83,10 @@ public class TelaNovaCelula extends javax.swing.JFrame {
 
         jLabel1.setText("Nome da Célula:");
 
-        jButton1.setText("Salvar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        salvar.setText("Salvar");
+        salvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                salvarActionPerformed(evt);
             }
         });
 
@@ -202,10 +206,10 @@ public class TelaNovaCelula extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(salvar)
                         .addGap(18, 18, 18)
                         .addComponent(jButton2))
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtField, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(98, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -214,10 +218,10 @@ public class TelaNovaCelula extends javax.swing.JFrame {
                 .addGap(78, 78, 78)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
+                    .addComponent(salvar)
                     .addComponent(jButton2))
                 .addGap(29, 29, 29))
         );
@@ -225,9 +229,10 @@ public class TelaNovaCelula extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void salvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+        getSalvar().addActionListener(new CadastraCelula(this));
+    }//GEN-LAST:event_salvarActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
@@ -251,7 +256,6 @@ public class TelaNovaCelula extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
@@ -292,7 +296,24 @@ public class TelaNovaCelula extends javax.swing.JFrame {
     private javax.swing.JPopupMenu.Separator jSeparator6;
     private javax.swing.JPopupMenu.Separator jSeparator8;
     private javax.swing.JPopupMenu.Separator jSeparator9;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JButton salvar;
+    private javax.swing.JTextField txtField;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getSalvar() {
+        return salvar;
+    }
+
+    public void setSalvar(JButton butaoSalvar) {
+        this.salvar = butaoSalvar;
+    }
+
+    public JTextField getTxtField() {
+        return txtField;
+    }
+
+    public void setTxtField(JTextField txtField) {
+        this.txtField = txtField;
+    }
 
 }

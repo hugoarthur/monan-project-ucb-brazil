@@ -19,14 +19,17 @@ public class Usuario {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer idUsuario;
-    @Column(name="login_user")
+    @Column(name="login")
     private String login;
-    @Column(name="senha_user")
+    @Column(name="senha")
     private String senha;
     @Column(name="nome")
     private String nome;
     @Column(name="universidade")
     private String universidade;
+    @Column(name="tipoUsuario")
+    private Integer tipoUsuario;
+
 
     public Usuario() {
     }
@@ -99,5 +102,18 @@ public class Usuario {
      */
     public void setUniversidade(String universidade) {
         this.universidade = universidade;
+    }
+    /**
+     * @return the tipoUsuario
+     */
+    public Integer getTipoUsuario() {
+        return tipoUsuario;
+    }
+    
+    /**
+     * @param universidade the tipoUsuario to set
+     */
+    public void setTipoUsuario(Integer tipoUsuario) {
+        this.tipoUsuario = tipoUsuario;
     }
 }

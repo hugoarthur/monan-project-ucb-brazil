@@ -37,7 +37,7 @@ public class CelulaDAO {
         
     }
 
-    public static void consultaCategoria(){
+    public static void buscaCategoria(){
         
     }
 }

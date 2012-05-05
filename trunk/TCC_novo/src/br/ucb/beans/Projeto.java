@@ -24,9 +24,12 @@ public class Projeto {
     @Column(name = "data_projeto")
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date dataProjeto;
+    @ManyToMany
+    @JoinColumn(name = "id_coordenador", unique=true, nullable=false)
+    private Usuario coordenador;
     @OneToOne
-    @JoinColumn(name = "usuario_id_usuario", unique=true, nullable=false)
-    private Usuario usuario;
+    @JoinColumn(name = "id_equipe", unique=true, nullable=true)
+    private Usuario equipe;
 
     public Projeto() {
     }
@@ -73,11 +76,19 @@ public class Projeto {
         this.dataProjeto = dataProjeto;
     }
 
-    public Usuario getUsuario() {
-        return usuario;
+    public Usuario getCoordenador() {
+        return coordenador;
     }
 
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
+    public void setCoordenador(Usuario coordenador) {
+        this.coordenador = coordenador;
+    }
+
+    public Usuario getEquipe() {
+        return equipe;
+    }
+
+    public void setEquipe(Usuario equipe) {
+        this.equipe = equipe;
     }
 }

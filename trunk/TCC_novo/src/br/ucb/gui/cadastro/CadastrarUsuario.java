@@ -5,6 +5,7 @@
 package br.ucb.gui.cadastro;
 
 import br.ucb.beans.Usuario;
+import br.ucb.constants.Constants;
 import br.ucb.dao.UsuarioDAO;
 import br.ucb.gui.TelaCadastroUsuario;
 import java.awt.event.ActionEvent;
@@ -20,21 +21,35 @@ public class CadastrarUsuario implements ActionListener {
 
     public CadastrarUsuario(TelaCadastroUsuario form) {
         setTelaCadastro(form);
-        insereUsuario();
+        insereUsuarioCoordenador();
         getTelaCadastro().setVisible(false);
     }
 
     public void actionPerformed(ActionEvent e) {
-        insereUsuario();
+        if(getTelaCadastro().getName() == "TelaCadastroUsuario")
+            insereUsuarioCoordenador();
+        else
+            insereUsuarioEquipe();
         //getTelaCadastro().update(null);
     }
 
-    public void insereUsuario(){
+    public void insereUsuarioCoordenador(){
         Usuario user = new Usuario();
         user.setNome(getTelaCadastro().getNomeTextField().getText());
         user.setLogin(getTelaCadastro().getLoginTextField().getText());
         user.setSenha(new String(getTelaCadastro().getSenhaSenhaPasswordField().getPassword()));
         user.setUniversidade((String)getTelaCadastro().getUniversidadeComboBox().getSelectedItem());
+        user.setTipoUsuario(Constants.COORDENADOR);
+        UsuarioDAO.insereUsuario(user);
+    }
+    
+    public void insereUsuarioEquipe(){
+        Usuario user = new Usuario();
+        user.setNome(getTelaCadastro().getNomeTextField().getText());
+        user.setLogin(getTelaCadastro().getLoginTextField().getText());
+        user.setSenha(new String(getTelaCadastro().getSenhaSenhaPasswordField().getPassword()));
+        user.setUniversidade((String)getTelaCadastro().getUniversidadeComboBox().getSelectedItem());
+        user.setTipoUsuario(Constants.EQUIPE);
         UsuarioDAO.insereUsuario(user);
     }
 

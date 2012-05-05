@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<corpos>
+	<usuario id="1">
+		<projeto>1</projeto>
+			<categoria>1</categoria>
+				<texto>em qualquer outro ambiente de &#xD;
+desenvolvimento, sem comprometer nenhuma funcionalidade.&#xD;
+Com o objetivo  secundário,  busca  apresentar  o  Apache  Maven aos  desenvolvedores  que  estão &#xD;
+iniciando com essa ferramenta. Caso você já conheça o maven, pode pular estes  detalhes.&#xD;
+Criando o projeto</texto>
+</usuario>
+
+	<usuario id="1">
+		<projeto>1</projeto>
+			<categoria>1</categoria>
+				<texto>, 25);&#xD;
+add(this.botaoExtrair);&#xD;
+this.labelCampoTextoExtraido = new JLabel("Texto:");&#xD;
+this.labelCampoTextoExtraido.setBounds(10, 50, 150, 25);&#xD;
+add(this.labelCampoTextoExtraido);&#xD;
+this.campoTextoExtraido = new JTextArea();&#xD;
+this.scrolCampoTextoExtraido = new JScrollPane(this.campoTextoExtraido);&#xD;
+add(this.scrolCampoTextoExtraido);&#xD;
+this.scrolCampoTextoExtraido.setBounds(10, 80, 600, 400);&#xD;
+this.botaoExtrair.addActionListener(new ActionListener() {&#xD;
+public void actionPerformed(ActionEvent evt) {&#xD;
+botaoExtrairClick(evt);</texto>
+</usuario>
+
+	<usuario id="1">
+		<projeto>1</projeto>
+			<categoria>1</categoria>
+				<texto>Features&#xD;
+• PDF to text extraction &#xD;
+• Merge PDF Documents &#xD;
+• PDF Document Encryption/Decryption &#xD;
+• Lucene Search Engine Integration &#xD;
+• Fill in form data FDF and XFDF &#xD;
+• Create a PDF from a text file &#xD;
+• Create images from PDF pages &#xD;
+• Print a PDF </texto>
+</usuario>
+</corpos>

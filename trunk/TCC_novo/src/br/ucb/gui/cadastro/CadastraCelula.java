@@ -5,6 +5,7 @@
 package br.ucb.gui.cadastro;
 
 import br.ucb.beans.Celula;
+import br.ucb.dao.CelulaDAO;
 import br.ucb.dao.UsuarioDAO;
 import br.ucb.gui.TelaNovaCelula;
 import java.awt.event.ActionEvent;
@@ -30,7 +31,9 @@ public class CadastraCelula implements ActionListener{
     }
 
     public void insereCelula(){
-        
+        Celula celula = new Celula();
+        celula.setTxt_celula(getTelaCadastraCelula().getTxtField().getText());
+        CelulaDAO.insereCelula(celula);
     }
     
     public TelaNovaCelula getTelaCadastraCelula() {

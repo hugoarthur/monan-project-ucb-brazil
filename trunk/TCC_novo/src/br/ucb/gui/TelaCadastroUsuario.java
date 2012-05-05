@@ -230,13 +230,7 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaCadastroUsuario().setVisible(true);
-                String [] instituicao = {"Universidade Federal Fluminense" ,
-                "Universidade Católica de Brasília", "Universidade Federal de Santa Catarina"};
-//                universidadeCombo = new JComboBox(instituicao);
-
-                
-
+                new TelaCadastroUsuario().setVisible(true);           
             }
         });
     }

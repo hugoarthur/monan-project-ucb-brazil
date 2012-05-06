@@ -65,8 +65,6 @@ public class TelaNovaCelula extends javax.swing.JFrame {
         jMenuItem33 = new javax.swing.JMenuItem();
         jSeparator27 = new javax.swing.JPopupMenu.Separator();
         jMenuItem34 = new javax.swing.JMenuItem();
-        jSeparator28 = new javax.swing.JPopupMenu.Separator();
-        jMenuItem35 = new javax.swing.JMenuItem();
         jSeparator29 = new javax.swing.JPopupMenu.Separator();
         jMenuItem36 = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
@@ -78,11 +76,12 @@ public class TelaNovaCelula extends javax.swing.JFrame {
         jSeparator32 = new javax.swing.JPopupMenu.Separator();
         jMenuItem40 = new javax.swing.JMenuItem();
 
-        setTitle("NOVA CATEGORIA - Sistema de Avaliação Formativa");
+        setTitle("NOVA CÉLULA - Corpus Generator");
         setResizable(false);
 
         jLabel1.setText("Nome da Célula:");
 
+        salvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/salvar.png"))); // NOI18N
         salvar.setText("Salvar");
         salvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,6 +89,7 @@ public class TelaNovaCelula extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/limpar.png"))); // NOI18N
         jButton2.setText("Cancelar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -147,7 +147,7 @@ public class TelaNovaCelula extends javax.swing.JFrame {
 
         jMenu10.setText("Categorizar");
 
-        jMenuItem15.setText("Todas as Categorias");
+        jMenuItem15.setText("Todas as Células");
         jMenu10.add(jMenuItem15);
 
         jMenu2.add(jMenu10);
@@ -166,10 +166,6 @@ public class TelaNovaCelula extends javax.swing.JFrame {
 
         jMenuItem34.setText("Modelo de Fluxo");
         jMenu5.add(jMenuItem34);
-        jMenu5.add(jSeparator28);
-
-        jMenuItem35.setText("Enviar via Email");
-        jMenu5.add(jMenuItem35);
         jMenu5.add(jSeparator29);
 
         jMenuItem36.setText("Recuperar Relatório");
@@ -219,7 +215,7 @@ public class TelaNovaCelula extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(txtField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(salvar)
                     .addComponent(jButton2))
@@ -273,7 +269,6 @@ public class TelaNovaCelula extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem32;
     private javax.swing.JMenuItem jMenuItem33;
     private javax.swing.JMenuItem jMenuItem34;
-    private javax.swing.JMenuItem jMenuItem35;
     private javax.swing.JMenuItem jMenuItem36;
     private javax.swing.JMenuItem jMenuItem37;
     private javax.swing.JMenuItem jMenuItem38;
@@ -288,7 +283,6 @@ public class TelaNovaCelula extends javax.swing.JFrame {
     private javax.swing.JPopupMenu.Separator jSeparator13;
     private javax.swing.JPopupMenu.Separator jSeparator26;
     private javax.swing.JPopupMenu.Separator jSeparator27;
-    private javax.swing.JPopupMenu.Separator jSeparator28;
     private javax.swing.JPopupMenu.Separator jSeparator29;
     private javax.swing.JPopupMenu.Separator jSeparator30;
     private javax.swing.JPopupMenu.Separator jSeparator31;

@@ -33,9 +33,9 @@ public class TelaCelulas extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
 
-        setTitle("CATEGORIAS - Sistema de Avaliação Formativa");
+        setTitle("CÉLULAS - Corpus Generator");
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Categorias", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, null, java.awt.Color.darkGray));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Células", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Lucida Grande", 0, 13), java.awt.Color.darkGray)); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);

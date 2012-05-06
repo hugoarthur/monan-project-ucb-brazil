@@ -5,7 +5,7 @@ import javax.swing.JOptionPane;
 
 public class FileChooser {
 
-    public static String caminho() {
+    public String caminho() {
         String caminhoArquivo = "";
         JFileChooser arquivo = new JFileChooser();
          arquivo.setFileFilter(new ExtensionFileFilter("Arquivos PDF","pdf"));

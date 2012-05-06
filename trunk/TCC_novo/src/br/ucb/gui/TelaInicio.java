@@ -812,6 +812,8 @@ public class TelaInicio extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
     //Abrir Projeto
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        ManipulaPDF manipulaPDF = new ManipulaPDF();
+        this.jEditorPane1.setText(manipulaPDF.caminhoArquivoFileChoose());
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jMenuItem24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem24ActionPerformed
@@ -868,8 +870,6 @@ public class TelaInicio extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-        ManipulaPDF manipulaPDF = new ManipulaPDF();
-        this.jEditorPane1.setText(manipulaPDF.extrairPDF());
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed

@@ -28,7 +28,7 @@ public class TelaInicio extends javax.swing.JFrame {
     // CRIA UMA VARIÁVEL DE REFERÊNCIA DE ARVORE E ADICIONA AS JTREE
     private Arvore arvore;
     //String que guarda o texto selecionado na jEditorPane1
-    String copy;
+    private String copy;
 
     /** Creates new form telaInicio */
     public TelaInicio() {

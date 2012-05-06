@@ -40,4 +40,25 @@ botaoExtrairClick(evt);</texto>
 • Create images from PDF pages &#xD;
 • Print a PDF </texto>
 </usuario>
+
+	<usuario id="1">
+		<projeto>1</projeto>
+			<categoria>1</categoria>
+				<texto>• PDF to text extraction &#xD;
+• Merge PDF Documents &#xD;
+• PDF Document Encryption/Decryption &#xD;
+• Lucene Search Engine Integration &#xD;
+• Fill in form data FDF and XFDF &#xD;
+• Create a PDF from a text file &#xD;
+• Create images from PDF pages &#xD;
+• Print a PDF </texto>
+</usuario>
+
+	<usuario id="1">
+		<projeto>1</projeto>
+			<categoria>1</categoria>
+				<texto>private void botaoExtrairClick(java.awt.event.ActionEvent evt) {&#xD;
+String caminhoArquivo = this.campoArquivo.getText();&#xD;
+PDFExtraction pdfExtraction = new PDFExtraction();</texto>
+</usuario>
 </corpos>

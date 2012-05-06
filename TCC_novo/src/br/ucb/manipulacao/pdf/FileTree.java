@@ -8,10 +8,7 @@ import java.awt.BorderLayout;
 import java.io.File;
 import java.util.Collections;
 import java.util.Vector;
-import javax.swing.JEditorPane;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTree;
+import javax.swing.*;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -43,10 +40,14 @@ public class FileTree extends JPanel {
                 //Constroi o caminho do arquivo.
                 for( Object pdf : caminhoPdf )
                     caminho += pdf+"/";
+                //Verifica se o que foi selecionado é um arquivo
                 if( new File(caminho).isFile() ) {
-                    //Add o texto extraido no campo jEditorPane.
-                    manipulaPDF.setCaminho(caminho);
-                    jEditorPane.setText(manipulaPDF.extrairPDF());
+                    int opcao = JOptionPane.showConfirmDialog(null,"Deseja abrir esse Arquivo?",null,JOptionPane.YES_NO_OPTION);
+                    if(opcao == JOptionPane.YES_OPTION){ 
+                        //Add o texto extraido no campo jEditorPane.
+                        manipulaPDF.setCaminho(caminho);
+                        jEditorPane.setText(manipulaPDF.extrairPDF());
+                    }
                 }
                 ////////////////////////////////////////////////////////////////
             }

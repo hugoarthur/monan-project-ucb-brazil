@@ -257,6 +257,9 @@
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem24">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Nova C&#xe9;lula"/>
+              </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem24ActionPerformed"/>
               </Events>
@@ -297,6 +300,9 @@
               </SubComponents>
             </Menu>
             <Menu class="javax.swing.JMenu" name="jMenu12">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Importar"/>
+              </Properties>
               <SubComponents>
                 <MenuItem class="javax.swing.JMenuItem" name="jMenuItem29">
                   <Properties>
@@ -350,10 +356,6 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Modelo de Fluxo"/>
               </Properties>
-            </MenuItem>
-            <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator28">
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem35">
             </MenuItem>
             <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator29">
             </MenuItem>
@@ -457,7 +459,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="273" max="-2" attributes="0"/>
                       <Component id="jToolBar1" min="-2" max="-2" attributes="1"/>
-                      <EmptySpace min="0" pref="3" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -569,6 +571,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="jButton1">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/br/ucb/img/salvar.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Salvar"/>
           </Properties>
           <Events>
@@ -578,6 +583,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="jButton2">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/br/ucb/img/limpar.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Limpar"/>
           </Properties>
           <Events>
@@ -607,6 +615,9 @@
         </Container>
         <Component class="javax.swing.JButton" name="jButton3">
           <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/br/ucb/img/nova_celula.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Nova C&#xe9;lula"/>
           </Properties>
           <Events>
@@ -802,7 +813,7 @@
         </Property>
         <Property name="rollover" type="boolean" value="true"/>
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-          <Color id="Cursor Default"/>
+          <Color id="Cursor padr&#xe3;o"/>
         </Property>
       </Properties>
 
@@ -866,9 +877,9 @@
         <Component class="javax.swing.JButton" name="jButton8">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/br/ucb/img/desfazer.png"/>
+              <Image iconType="3" name="/br/ucb/img/acompanhamento.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Desfazer"/>
+            <Property name="text" type="java.lang.String" value="Acompanhamento"/>
             <Property name="focusable" type="boolean" value="false"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
             <Property name="verticalTextPosition" type="int" value="3"/>
@@ -877,9 +888,9 @@
         <Component class="javax.swing.JButton" name="jButton9">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/br/ucb/img/refazer.png"/>
+              <Image iconType="3" name="/br/ucb/img/celulas.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Refazer"/>
+            <Property name="text" type="java.lang.String" value="C&#xe9;lulas"/>
             <Property name="focusable" type="boolean" value="false"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
             <Property name="verticalTextPosition" type="int" value="3"/>
@@ -890,7 +901,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/br/ucb/img/excluir.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Limpar"/>
+            <Property name="text" type="java.lang.String" value="Limpar Projeto"/>
             <Property name="focusable" type="boolean" value="false"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
             <Property name="verticalTextPosition" type="int" value="3"/>

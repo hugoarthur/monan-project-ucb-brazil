@@ -157,8 +157,6 @@ public class TelaInicio extends javax.swing.JFrame {
         jMenuItem33 = new javax.swing.JMenuItem();
         jSeparator27 = new javax.swing.JPopupMenu.Separator();
         jMenuItem34 = new javax.swing.JMenuItem();
-        jSeparator28 = new javax.swing.JPopupMenu.Separator();
-        jMenuItem35 = new javax.swing.JMenuItem();
         jSeparator29 = new javax.swing.JPopupMenu.Separator();
         jMenuItem36 = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
@@ -189,6 +187,7 @@ public class TelaInicio extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/salvar.png"))); // NOI18N
         jButton1.setText("Salvar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -196,13 +195,14 @@ public class TelaInicio extends javax.swing.JFrame {
             }
         });
         jButton1.addInputMethodListener(new java.awt.event.InputMethodListener() {
-            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
-            }
             public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
                 jButton1InputMethodTextChanged(evt);
             }
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+            }
         });
 
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/limpar.png"))); // NOI18N
         jButton2.setText("Limpar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -215,6 +215,7 @@ public class TelaInicio extends javax.swing.JFrame {
         jEditorPane2.setDragEnabled(true);
         jScrollPane3.setViewportView(jEditorPane2);
 
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/nova_celula.png"))); // NOI18N
         jButton3.setText("Nova Célula");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -390,22 +391,22 @@ public class TelaInicio extends javax.swing.JFrame {
         jButton7.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jButton7);
 
-        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/desfazer.png"))); // NOI18N
-        jButton8.setText("Desfazer");
+        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/acompanhamento.png"))); // NOI18N
+        jButton8.setText("Acompanhamento");
         jButton8.setFocusable(false);
         jButton8.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton8.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jButton8);
 
-        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/refazer.png"))); // NOI18N
-        jButton9.setText("Refazer");
+        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/celulas.png"))); // NOI18N
+        jButton9.setText("Células");
         jButton9.setFocusable(false);
         jButton9.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton9.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jButton9);
 
         jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/excluir.png"))); // NOI18N
-        jButton10.setText("Limpar");
+        jButton10.setText("Limpar Projeto");
         jButton10.setFocusable(false);
         jButton10.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton10.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -427,10 +428,10 @@ public class TelaInicio extends javax.swing.JFrame {
             }
         });
         jButton11.addInputMethodListener(new java.awt.event.InputMethodListener() {
-            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
-            }
             public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
                 jButton11InputMethodTextChanged(evt);
+            }
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
             }
         });
         jToolBar1.add(jButton11);
@@ -615,6 +616,7 @@ public class TelaInicio extends javax.swing.JFrame {
 
         jMenu4.setText("Ferramentas");
 
+        jMenuItem24.setText("Nova Célula");
         jMenuItem24.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem24ActionPerformed(evt);
@@ -641,6 +643,8 @@ public class TelaInicio extends javax.swing.JFrame {
         jMenu7.add(jMenuItem28);
 
         jMenu4.add(jMenu7);
+
+        jMenu12.setText("Importar");
 
         jMenuItem29.setText("Projeto");
         jMenu12.add(jMenuItem29);
@@ -679,8 +683,6 @@ public class TelaInicio extends javax.swing.JFrame {
 
         jMenuItem34.setText("Modelo de Fluxo");
         jMenu5.add(jMenuItem34);
-        jMenu5.add(jSeparator28);
-        jMenu5.add(jMenuItem35);
         jMenu5.add(jSeparator29);
 
         jMenuItem36.setText("Recuperar Relatório");
@@ -745,7 +747,7 @@ public class TelaInicio extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(273, 273, 273)
                         .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 3, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -987,7 +989,6 @@ public class TelaInicio extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem32;
     private javax.swing.JMenuItem jMenuItem33;
     private javax.swing.JMenuItem jMenuItem34;
-    private javax.swing.JMenuItem jMenuItem35;
     private javax.swing.JMenuItem jMenuItem36;
     private javax.swing.JMenuItem jMenuItem37;
     private javax.swing.JMenuItem jMenuItem38;
@@ -1025,7 +1026,6 @@ public class TelaInicio extends javax.swing.JFrame {
     private javax.swing.JPopupMenu.Separator jSeparator25;
     private javax.swing.JPopupMenu.Separator jSeparator26;
     private javax.swing.JPopupMenu.Separator jSeparator27;
-    private javax.swing.JPopupMenu.Separator jSeparator28;
     private javax.swing.JPopupMenu.Separator jSeparator29;
     private javax.swing.JPopupMenu.Separator jSeparator3;
     private javax.swing.JPopupMenu.Separator jSeparator30;

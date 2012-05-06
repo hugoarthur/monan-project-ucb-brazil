@@ -813,7 +813,7 @@ public class TelaInicio extends javax.swing.JFrame {
     //Abrir Projeto
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         ManipulaPDF manipulaPDF = new ManipulaPDF();
-        this.jEditorPane1.setText(manipulaPDF.caminhoArquivoFileChoose());
+        this.jEditorPane1.setText(manipulaPDF.caminhoArquivoFileChooser());
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jMenuItem24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem24ActionPerformed

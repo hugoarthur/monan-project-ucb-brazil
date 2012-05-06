@@ -23,7 +23,7 @@ public class ManipulaPDF {
         return texto;
     }
 
-    public String caminhoArquivoFileChoose() {
+    public String caminhoArquivoFileChooser() {
         caminho = caminhoPDF.caminho();
         extrairPDF();
         return texto;

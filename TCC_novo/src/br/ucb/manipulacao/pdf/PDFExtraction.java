@@ -26,6 +26,7 @@ public class PDFExtraction {
 			pdDoc = PDDocument.load(doc);
 			PDFTextStripper stripper = new PDFTextStripper();
 			textoExtraido = stripper.getText(pdDoc);
+                        pdDoc.close();
 		} catch (IOException e) {
 			JOptionPane.showMessageDialog(null, "É preciso selecionar um Arquivo PDF.", "Erro", JOptionPane.ERROR_MESSAGE);
 		}

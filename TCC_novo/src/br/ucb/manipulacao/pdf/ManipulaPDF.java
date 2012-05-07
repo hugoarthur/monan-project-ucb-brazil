@@ -16,15 +16,15 @@ public class ManipulaPDF {
     private FileChooser caminhoPDF = new FileChooser();
 
     public String extrairPDF() {
-        texto = "";
+        this.texto = "";
         if (!"".equals(this.caminho)) {
-            texto = extrair.extrairPDF(caminho);
+            this.texto = extrair.extrairPDF(this.caminho);
         }
         return texto;
     }
 
     public String caminhoArquivoFileChooser() {
-        caminho = caminhoPDF.caminho();
+        this.caminho = caminhoPDF.caminho();
         extrairPDF();
         return texto;
     }

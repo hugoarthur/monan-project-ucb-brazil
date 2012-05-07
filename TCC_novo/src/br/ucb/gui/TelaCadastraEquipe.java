@@ -48,6 +48,7 @@ public class TelaCadastraEquipe extends javax.swing.JFrame {
         universidadeComboBox = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("NOVO USUÁRIO - Corpus Generator");
         setLocation(new java.awt.Point(350, 200));
         setResizable(false);
 

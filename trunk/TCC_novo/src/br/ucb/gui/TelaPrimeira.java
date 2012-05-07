@@ -19,7 +19,9 @@ public class TelaPrimeira extends javax.swing.JFrame {
 
     /** Creates new form TelaPrimeira */
     public TelaPrimeira() {
+        
         initComponents();
+        
     }
 
     /** This method is called from within the constructor to
@@ -44,6 +46,8 @@ public class TelaPrimeira extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setTitle("USUÁRIO - Corpus Generator");
+        setLocation(new java.awt.Point(22, 22));
+        setResizable(false);
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/novo_projeto.png"))); // NOI18N
         jButton1.setText("Novo Projeto");
@@ -110,8 +114,9 @@ public class TelaPrimeira extends javax.swing.JFrame {
                                 .add(84, 84, 84))
                             .add(jScrollPane2)))
                     .add(layout.createSequentialGroup()
-                        .add(142, 142, 142)
-                        .add(jLabel1)))
+                        .add(114, 114, 114)
+                        .add(jLabel1)
+                        .add(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -141,7 +146,7 @@ public class TelaPrimeira extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        TelaInicio novoProjeto = new TelaInicio();
+        TelaNovoProjeto novoProjeto = new TelaNovoProjeto();
         novoProjeto.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed

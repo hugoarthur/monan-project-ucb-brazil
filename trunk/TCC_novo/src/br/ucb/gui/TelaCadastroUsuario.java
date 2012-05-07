@@ -69,6 +69,7 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
         );
 
         setTitle("CADASTRO - Corpus Generator");
+        setResizable(false);
         addContainerListener(new java.awt.event.ContainerAdapter() {
             public void componentAdded(java.awt.event.ContainerEvent evt) {
                 formComponentAdded(evt);

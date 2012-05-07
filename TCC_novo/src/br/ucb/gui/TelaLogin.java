@@ -50,6 +50,7 @@ public class TelaLogin extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("LOGIN - Corpus Generator");
+        setLocation(new java.awt.Point(350, 200));
         setResizable(false);
         setUndecorated(true);
 
@@ -173,7 +174,10 @@ public class TelaLogin extends javax.swing.JFrame {
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaLogin().setVisible(true);
+                TelaLogin login = new TelaLogin();
+                login.setVisible(true);
+                login.setLocationRelativeTo(null);
+                
             }
         });
     }

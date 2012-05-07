@@ -22,22 +22,22 @@ public class CelulaDAO {
 
     public static void insereCelula(Celula celula) {
         EntityManager em = DataBase.getInstance().getEntityManager();
-
-        em.getTransaction().begin();
+        if(!em.getTransaction().isActive())
+            em.getTransaction().begin();
         em.persist(celula);
         em.getTransaction().commit();
-        em.close();
+        //em.close();
     }
 
-    public static void excluiCategoria(){
+    public static void excluiCelula(){
         
     }
 
-    public static void alteraCategoria(){
+    public static void alteraCelula(){
         
     }
 
-    public static void buscaCategoria(){
+    public static void buscaCelula(){
         
     }
 }

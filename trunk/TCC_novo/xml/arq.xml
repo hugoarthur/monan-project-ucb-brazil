@@ -61,4 +61,15 @@ botaoExtrairClick(evt);</texto>
 String caminhoArquivo = this.campoArquivo.getText();&#xD;
 PDFExtraction pdfExtraction = new PDFExtraction();</texto>
 </usuario>
+
+	<usuario id="1">
+		<projeto>1</projeto>
+			<categoria>1</categoria>
+				<texto>ackage ivansalvadori.pdfboxtutorial.view;&#xD;
+import ivansalvadori.pdfboxtutorial.extraction.PDFExtraction;&#xD;
+import java.awt.event.ActionEvent;&#xD;
+import java.awt.event.ActionListener;&#xD;
+import javax.swing.JButton;&#xD;
+import javax.swing.JFrame;</texto>
+</usuario>
 </corpos>

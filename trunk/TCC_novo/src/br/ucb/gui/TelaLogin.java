@@ -174,7 +174,7 @@ public class TelaLogin extends javax.swing.JFrame {
             public void run() {
                 TelaLogin login = new TelaLogin();
                 login.setVisible(true);
-                login.setLocationRelativeTo(null);
+                login.setLocation(350,250);
                 
             }
         });

@@ -169,6 +169,7 @@ public class TelaInicio extends javax.swing.JFrame {
         setBackground(new java.awt.Color(153, 153, 153));
         setBounds(new java.awt.Rectangle(200, 30, 0, 0));
         setMinimumSize(new java.awt.Dimension(800, 600));
+        setResizable(false);
 
         categoriaPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED), "Célula", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Calibri", 0, 18), java.awt.Color.darkGray)); // NOI18N
         categoriaPanel.setToolTipText("");

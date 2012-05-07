@@ -3,6 +3,7 @@
   <persistence-unit name="TCC_UNIT" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>br.ucb.beans.Usuario</class>
+    <class>br.ucb.beans.Celula</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/TCCPU"/>
       <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>

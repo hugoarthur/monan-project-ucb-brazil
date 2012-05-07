@@ -13,7 +13,7 @@ import javax.persistence.Persistence;
  * @author Hugo Arthur
  */
 public class DataBase {
-
+    
     private static EntityManager entityManager;
     private static DataBase bd;
 

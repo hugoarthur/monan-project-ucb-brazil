@@ -19,10 +19,11 @@ public class ProjetoDAO {
     private static void insereProjeto(Projeto projeto) {
         EntityManager em = DataBase.getInstance().getEntityManager();
 
-        em.getTransaction().begin();
+        if(!em.getTransaction().isActive())
+            em.getTransaction().begin();
         em.persist(projeto);
         em.getTransaction().commit();
-        em.close();
+        //em.close();
     }
 
     private static void excluiProjeto() {

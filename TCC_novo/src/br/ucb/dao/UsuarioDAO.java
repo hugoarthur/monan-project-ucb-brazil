@@ -19,10 +19,11 @@ public class UsuarioDAO {
 
     public static void insereUsuario(Usuario usuario) {
         EntityManager em = DataBase.getInstance().getEntityManager();
-        em.getTransaction().begin();
+        if(!em.getTransaction().isActive())
+            em.getTransaction().begin();
         em.persist(usuario);
         em.getTransaction().commit();
-        em.close();
+        //em.close();
     }
 
     public static void excluiUsuario() {
@@ -33,14 +34,10 @@ public class UsuarioDAO {
 
     public static Usuario buscaUsuario(String login, String senha) {
         EntityManager em = DataBase.getInstance().getEntityManager();
-        if(em.getTransaction() == null)
-            System.out.println("NULL!!!");
-        em.getTransaction().begin();
         Query query = em.createQuery("SELECT u FROM Usuario u WHERE u.login = :login AND u.senha = :senha");
         query.setParameter("login", login);
         query.setParameter("senha", senha);
         Usuario user = (Usuario) query.getSingleResult();
-        em.close();
         return user;
     }
 }

@@ -450,6 +450,11 @@ public class TelaInicio extends javax.swing.JFrame {
 
         jButton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/novo_membro.png"))); // NOI18N
         jButton13.setText("Novo Usuário");
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -465,7 +470,7 @@ public class TelaInicio extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(jButton13)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Usuário", jPanel1);
@@ -478,7 +483,7 @@ public class TelaInicio extends javax.swing.JFrame {
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 78, Short.MAX_VALUE)
+            .addGap(0, 80, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Equipe", jPanel4);
@@ -934,6 +939,12 @@ public class TelaInicio extends javax.swing.JFrame {
         // TODO add your handling code here:
         jEditorPane2.setText(copy);
     }//GEN-LAST:event_jButton12ActionPerformed
+
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        // TODO add your handling code here:
+        TelaCadastraEquipe equipe = new TelaCadastraEquipe();
+        equipe.setVisible(true);
+    }//GEN-LAST:event_jButton13ActionPerformed
     private void jScrollPaneActionPerformed(java.awt.event.ActionEvent evt) {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables

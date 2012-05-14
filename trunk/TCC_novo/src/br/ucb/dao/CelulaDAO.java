@@ -6,7 +6,10 @@
 package br.ucb.dao;
 
 import br.ucb.beans.Celula;
+import java.util.List;
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
+import javax.swing.JOptionPane;
 
 
 /**
@@ -37,7 +40,15 @@ public class CelulaDAO {
         
     }
 
-    public static void buscaCelula(){
-        
+    public static List<Celula> buscaListaCelulas(){
+        EntityManager em = DataBase.getInstance().getEntityManager();
+        Query query = em.createQuery("SELECT c FROM Celula c");
+        try {
+            List<Celula> celulas = (List<Celula>) query.getResultList();
+            return celulas;
+        } catch (javax.persistence.NoResultException e) {
+            JOptionPane.showMessageDialog(null, "É preciso cadastrar célula","Warning",JOptionPane.WARNING_MESSAGE);
+        }
+        return null;
     }
 }

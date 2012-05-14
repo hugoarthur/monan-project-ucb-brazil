@@ -7,6 +7,7 @@ package br.ucb.dao;
 import br.ucb.beans.Usuario;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -19,8 +20,9 @@ public class UsuarioDAO {
 
     public static void insereUsuario(Usuario usuario) {
         EntityManager em = DataBase.getInstance().getEntityManager();
-        if(!em.getTransaction().isActive())
+        if (!em.getTransaction().isActive()) {
             em.getTransaction().begin();
+        }
         em.persist(usuario);
         em.getTransaction().commit();
         //em.close();
@@ -37,7 +39,12 @@ public class UsuarioDAO {
         Query query = em.createQuery("SELECT u FROM Usuario u WHERE u.login = :login AND u.senha = :senha");
         query.setParameter("login", login);
         query.setParameter("senha", senha);
-        Usuario user = (Usuario) query.getSingleResult();
-        return user;
+        try {
+            Usuario user = (Usuario) query.getSingleResult();
+            return user;
+        } catch (javax.persistence.NoResultException e) {
+            JOptionPane.showMessageDialog(null, "Usuário não encontrado","Erro",JOptionPane.ERROR_MESSAGE);
+        }
+        return null;
     }
 }

@@ -47,21 +47,11 @@ public class ImplementaXml {
                 Element texto = new Element("texto");
                 texto.setText(e.getChildText("texto"));
 
-                usuario.addContent("\n");
-                usuario.addContent("\t\t");
                 usuario.addContent(projeto);
-                usuario.addContent("\n");
-                usuario.addContent("\t\t\t");
                 usuario.addContent(categoria);
-                usuario.addContent("\n");
-                usuario.addContent("\t\t\t\t");
                 usuario.addContent(texto);
-                usuario.addContent("\n");
-
-                corpos.addContent("\n");
-                corpos.addContent("\t");
                 corpos.addContent(usuario);
-                corpos.addContent("\n");
+
 
             }
 
@@ -77,21 +67,13 @@ public class ImplementaXml {
             Element texto = new Element("texto");
             texto.setText(text);
 
-            usuario.addContent("\n");
-            usuario.addContent("\t\t");
-            usuario.addContent(projeto);
-            usuario.addContent("\n");
-            usuario.addContent("\t\t\t");
-            usuario.addContent(categoria);
-            usuario.addContent("\n");
-            usuario.addContent("\t\t\t\t");
-            usuario.addContent(texto);
-            usuario.addContent("\n");
 
-            corpos.addContent("\n");
-            corpos.addContent("\t");
+
+            usuario.addContent(projeto);
+            usuario.addContent(categoria);
+            usuario.addContent(texto);
             corpos.addContent(usuario);
-            corpos.addContent("\n");
+
 
         } else {
 
@@ -107,21 +89,13 @@ public class ImplementaXml {
             Element texto = new Element("texto");
             texto.setText(text);
 
-            usuario.addContent("\n");
-            usuario.addContent("\t\t");
-            usuario.addContent(projeto);
-            usuario.addContent("\n");
-            usuario.addContent("\t\t\t");
-            usuario.addContent(categoria);
-            usuario.addContent("\n");
-            usuario.addContent("\t\t\t\t");
-            usuario.addContent(texto);
-            usuario.addContent("\n");
 
-            corpos.addContent("\n");
-            corpos.addContent("\t");
+
+            usuario.addContent(projeto);
+            usuario.addContent(categoria);
+            usuario.addContent(texto);
             corpos.addContent(usuario);
-            corpos.addContent("\n");
+
 
         }
 

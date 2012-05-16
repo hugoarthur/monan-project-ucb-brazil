@@ -41,14 +41,7 @@ public class TelaInicio extends javax.swing.JFrame {
         initComponents();
         arvore = new Arvore(this);
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-
-        if (CelulaDAO.buscaListaCelulas() != null) {
-            for (Celula celula : CelulaDAO.buscaListaCelulas()) {
-                jComboBox1.addItem(celula.getTxt_celula());
-            }
-        }
-        else
-            jComboBox1.addItem("Não há células cadastradas");
+        this.setCombobox();
     }
 
     /**
@@ -63,13 +56,13 @@ public class TelaInicio extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         categoriaPanel = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jEditorPane2 = new javax.swing.JEditorPane();
         jButton3 = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jEditorPane1 = new javax.swing.JEditorPane();
@@ -185,12 +178,6 @@ public class TelaInicio extends javax.swing.JFrame {
 
         jLabel7.setText("Escolha a Célula:");
 
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
-            }
-        });
-
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/salvar.png"))); // NOI18N
         jButton1.setText("Salvar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -227,6 +214,12 @@ public class TelaInicio extends javax.swing.JFrame {
             }
         });
 
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout categoriaPanelLayout = new javax.swing.GroupLayout(categoriaPanel);
         categoriaPanel.setLayout(categoriaPanelLayout);
         categoriaPanelLayout.setHorizontalGroup(
@@ -237,7 +230,6 @@ public class TelaInicio extends javax.swing.JFrame {
                     .addGroup(categoriaPanelLayout.createSequentialGroup()
                         .addGroup(categoriaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel7)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel9)
                             .addGroup(categoriaPanelLayout.createSequentialGroup()
                                 .addContainerGap()
@@ -246,7 +238,8 @@ public class TelaInicio extends javax.swing.JFrame {
                                         .addComponent(jButton1)
                                         .addGap(18, 18, 18)
                                         .addComponent(jButton2))
-                                    .addComponent(jButton3))))
+                                    .addComponent(jButton3)))
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -257,9 +250,9 @@ public class TelaInicio extends javax.swing.JFrame {
                 .addComponent(jButton3)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(13, 13, 13)
                 .addComponent(jLabel9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 235, Short.MAX_VALUE)
@@ -792,7 +785,9 @@ public class TelaInicio extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(categoriaPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(28, 28, 28)
+                                .addComponent(categoriaPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -937,8 +932,6 @@ public class TelaInicio extends javax.swing.JFrame {
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
-        jPanel4.validate();
-        jPanel4.repaint();
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void jPanel3AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jPanel3AncestorAdded
@@ -1075,9 +1068,16 @@ public class TelaInicio extends javax.swing.JFrame {
     private javax.swing.JTree jTree2;
     // End of variables declaration//GEN-END:variables
 
-    public void setJComboBox1(String str){
+    public void setJComboBox1(String str) {
         jComboBox1.addItem(str);
+        this.getContentPane().validate();
+        this.getContentPane().repaint();
     }
+
+    public JComboBox getComboBox() {
+        return jComboBox1;
+    }
+
     public JEditorPane getJEditorPane() {
         return jEditorPane1;
     }
@@ -1089,4 +1089,16 @@ public class TelaInicio extends javax.swing.JFrame {
     public JTree getJTree2() {
         return jTree2;
     }
+
+    private void setCombobox() {
+        jComboBox1.removeAllItems();
+        if (CelulaDAO.buscaListaCelulas() != null) {
+            for (Celula celula : CelulaDAO.buscaListaCelulas()) {
+                jComboBox1.addItem(celula.getTxt_celula());
+            }
+        } else {
+            jComboBox1.addItem("Não há células cadastradas");
+        }
+    }
+    
 }

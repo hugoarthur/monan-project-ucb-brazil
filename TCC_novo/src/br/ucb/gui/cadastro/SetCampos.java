@@ -18,7 +18,6 @@ import javax.swing.DefaultListModel;
 public class SetCampos {
 
     public DefaultListModel listModel() {
-
         UsuarioDAO usuDAO = new UsuarioDAO();
         DefaultListModel listModel = new DefaultListModel();
         if (usuDAO.findAll() != null) {
@@ -29,7 +28,6 @@ public class SetCampos {
             listModel.addElement("vazio");
         }
         return listModel;
-
     }
 
     public DefaultComboBoxModel comboModel() {

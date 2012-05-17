@@ -1084,14 +1084,6 @@ public class TelaInicio extends javax.swing.JFrame {
     private javax.swing.JTree jTree2;
     // End of variables declaration//GEN-END:variables
 
-    public void setJComboBox(String str) {
-        
-        jComboBox1.addItem(str);
-        this.getContentPane().validate();
-        this.getContentPane().repaint();
-        
-    }
-    
     public JComboBox getComboBox() {
         return jComboBox1;
     }

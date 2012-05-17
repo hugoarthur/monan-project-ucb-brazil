@@ -32,6 +32,7 @@ public class TelaInicio extends javax.swing.JFrame {
     private Arvore arvore;
     //String que guarda o texto selecionado na jEditorPane1
     private String copy;
+    //Seta os campos da Jlist e JComboBox
     private SetCampos setar = new SetCampos();
 
     /**

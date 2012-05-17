@@ -5,6 +5,7 @@
 package br.ucb.dao;
 
 import br.ucb.beans.Usuario;
+import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import javax.swing.JOptionPane;
@@ -27,7 +28,19 @@ public class UsuarioDAO {
         em.getTransaction().commit();
         //em.close();
     }
-
+    public static List<Usuario> findAll(){
+        
+        EntityManager em = DataBase.getInstance().getEntityManager();
+        Query query = em.createQuery("SELECT c FROM Usuario c");
+        List<Usuario> lista = null;
+        try{
+            lista = (List<Usuario>) query.getResultList();
+            return lista;
+        }catch (javax.persistence.NoResultException e) {
+            JOptionPane.showMessageDialog(null, "vazio","Warning",JOptionPane.WARNING_MESSAGE);
+        }
+        return lista;
+    }
     public static void excluiUsuario() {
     }
 

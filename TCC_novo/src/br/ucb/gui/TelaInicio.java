@@ -11,15 +11,15 @@
 package br.ucb.gui;
 
 import br.ucb.beans.Celula;
+import br.ucb.beans.Usuario;
 import br.ucb.dao.CelulaDAO;
+import br.ucb.dao.UsuarioDAO;
+import br.ucb.gui.cadastro.SetCampos;
 import br.ucb.manipulacao.pdf.Arvore;
 import br.ucb.manipulacao.pdf.ManipulaPDF;
 import br.ucb.service.Sessao;
 import br.ucb.xml.Teste;
-import javax.swing.JComboBox;
-import javax.swing.JEditorPane;
-import javax.swing.JFrame;
-import javax.swing.JTree;
+import javax.swing.*;
 
 //import br.ucb.xml.Teste;
 /**
@@ -32,16 +32,18 @@ public class TelaInicio extends javax.swing.JFrame {
     private Arvore arvore;
     //String que guarda o texto selecionado na jEditorPane1
     private String copy;
+    private SetCampos setar = new SetCampos();
 
     /**
      * Creates new form telaInicio
      */
     public TelaInicio() {
-
+        
         initComponents();
         arvore = new Arvore(this);
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         setCombo();
+        listEquipe();
         
     }
 
@@ -92,6 +94,8 @@ public class TelaInicio extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jButton13 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu8 = new javax.swing.JMenu();
@@ -476,20 +480,28 @@ public class TelaInicio extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(jButton13)
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Usuário", jPanel1);
+
+        jScrollPane5.setViewportView(jList1);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 246, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 82, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jTabbedPane1.addTab("Equipe", jPanel4);
@@ -803,16 +815,16 @@ public class TelaInicio extends javax.swing.JFrame {
         teste.CriaXML(texto);
         jEditorPane2.setText(null);
     }//GEN-LAST:event_jButton1ActionPerformed
-
+    
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         jEditorPane2.setText(null);
     }//GEN-LAST:event_jButton2ActionPerformed
-
+    
     private void jButton1InputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_jButton1InputMethodTextChanged
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1InputMethodTextChanged
-
+    
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         TelaNovaCelula novaCategoria = new TelaNovaCelula();
@@ -828,126 +840,126 @@ public class TelaInicio extends javax.swing.JFrame {
         ManipulaPDF manipulaPDF = new ManipulaPDF();
         this.jEditorPane1.setText(manipulaPDF.caminhoArquivoFileChooser());
     }//GEN-LAST:event_jButton6ActionPerformed
-
+    
     private void jMenuItem24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem24ActionPerformed
         // TODO add your handling code here:
         TelaNovaCelula categoria = new TelaNovaCelula();
         categoria.setVisible(true);
     }//GEN-LAST:event_jMenuItem24ActionPerformed
-
+    
     private void jMenuItem32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem32ActionPerformed
         // TODO add your handling code here:
         TelaAcompanhamento acompanhamento = new TelaAcompanhamento();
         acompanhamento.setVisible(true);
     }//GEN-LAST:event_jMenuItem32ActionPerformed
-
+    
     private void jMenuItem33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem33ActionPerformed
         // TODO add your handling code here:
         TelaCelulas categorias = new TelaCelulas();
         categorias.setVisible(true);
     }//GEN-LAST:event_jMenuItem33ActionPerformed
-
+    
     private void jMenuItem37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem37ActionPerformed
         // TODO add your handling code here:
         TelaAjuda ajuda = new TelaAjuda();
         ajuda.setVisible(true);
     }//GEN-LAST:event_jMenuItem37ActionPerformed
-
+    
     private void jMenuItem38ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem38ActionPerformed
         // TODO add your handling code here:
         TelaFale fale = new TelaFale();
         fale.setVisible(true);
     }//GEN-LAST:event_jMenuItem38ActionPerformed
-
+    
     private void jMenuItem39ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem39ActionPerformed
         // TODO add your handling code here:
         TelaReport report = new TelaReport();
         report.setVisible(true);
     }//GEN-LAST:event_jMenuItem39ActionPerformed
-
+    
     private void jMenuItem40ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem40ActionPerformed
         // TODO add your handling code here:
         TelaSobre sobre = new TelaSobre();
         sobre.setVisible(true);
     }//GEN-LAST:event_jMenuItem40ActionPerformed
-
+    
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
         ManipulaPDF manipulaPDF = new ManipulaPDF();
         this.jEditorPane1.setText(manipulaPDF.extrairPDF());
     }//GEN-LAST:event_jMenuItem2ActionPerformed
-
+    
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem1ActionPerformed
-
+    
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
-
+    
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         // TODO add your handling code here:
         jEditorPane1.setText(null);
     }//GEN-LAST:event_jButton10ActionPerformed
-
+    
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         // TODO add your handling code here:
         copy = jEditorPane1.getSelectedText();
     }//GEN-LAST:event_jButton11ActionPerformed
-
+    
     private void jButton11InputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_jButton11InputMethodTextChanged
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton11InputMethodTextChanged
-
+    
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_jMenuItem8ActionPerformed
-
+    
     private void jMenuItem16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem16ActionPerformed
         jPanel3.setVisible(false);
     }//GEN-LAST:event_jMenuItem16ActionPerformed
-
+    
     private void jMenuItem16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem16MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem16MouseClicked
-
+    
     private void jMenu3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu3MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenu3MouseClicked
-
+    
     private void jMenuItem17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem17ActionPerformed
         // TODO add your handling code here:
         jToolBar1.setVisible(false);
     }//GEN-LAST:event_jMenuItem17ActionPerformed
-
+    
     private void jMenuItem18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem18ActionPerformed
         // TODO add your handling code here:
         categoriaPanel.setVisible(false);
     }//GEN-LAST:event_jMenuItem18ActionPerformed
-
+    
     private void jMenuItem19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem19ActionPerformed
         // TODO add your handling code here:
         jPanel2.setVisible(false);
     }//GEN-LAST:event_jMenuItem19ActionPerformed
-
+    
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
-
+    
     private void jPanel3AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jPanel3AncestorAdded
         // TODO add your handling code here:
     }//GEN-LAST:event_jPanel3AncestorAdded
-
+    
     private void jTree1ComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_jTree1ComponentAdded
         // TODO add your handling code here:
     }//GEN-LAST:event_jTree1ComponentAdded
-
+    
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
         // TODO add your handling code here:
         jEditorPane2.setText(copy);
     }//GEN-LAST:event_jButton12ActionPerformed
-
+    
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
         // TODO add your handling code here:
         TelaCadastraEquipe equipe = new TelaCadastraEquipe();
@@ -982,6 +994,7 @@ public class TelaInicio extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JList jList1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu10;
     private javax.swing.JMenu jMenu12;
@@ -1036,6 +1049,7 @@ public class TelaInicio extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JPopupMenu.Separator jSeparator10;
     private javax.swing.JPopupMenu.Separator jSeparator11;
@@ -1070,38 +1084,38 @@ public class TelaInicio extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     public void setJComboBox(String str) {
-
+        
         jComboBox1.addItem(str);
         this.getContentPane().validate();
         this.getContentPane().repaint();
-
+        
     }
-
+    
     public JComboBox getComboBox() {
         return jComboBox1;
     }
-
+    
     public JEditorPane getJEditorPane() {
         return jEditorPane1;
     }
-
+    
     public JTree getJTree1() {
         return jTree1;
     }
-
+    
     public JTree getJTree2() {
         return jTree2;
     }
-
+    
     public void setCombo() {
         jComboBox1.removeAllItems();
-        if (CelulaDAO.findAll() != null) {
-            for (Celula celula : CelulaDAO.findAll()) {
-                jComboBox1.addItem(celula.getTxt_celula());
-            }
-        } else {
-            jComboBox1.addItem("vazio");
-        }
+        jComboBox1.setModel(setar.comboModel());
         jComboBox1.repaint();
+    }
+    
+    public void listEquipe() {
+        jList1.removeAll();
+        jList1.setModel(setar.listModel());
+        jList1.repaint();
     }
 }

@@ -42,6 +42,9 @@ public class TelaInicio extends javax.swing.JFrame {
         arvore = new Arvore(this);
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         setCombo();
+        jComboBox1.repaint();
+       this.update(this.getGraphics());
+        
     }
 
     /**
@@ -1094,8 +1097,8 @@ public class TelaInicio extends javax.swing.JFrame {
 
     public void setCombo() {
         jComboBox1.removeAllItems();
-        if (CelulaDAO.buscaListaCelulas() != null) {
-            for (Celula celula : CelulaDAO.buscaListaCelulas()) {
+        if (CelulaDAO.findAll() != null) {
+            for (Celula celula : CelulaDAO.findAll()) {
                 jComboBox1.addItem(celula.getTxt_celula());
             }
         } else {

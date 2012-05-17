@@ -29,7 +29,7 @@ public class CelulaDAO {
             em.getTransaction().begin();
         em.persist(celula);
         em.getTransaction().commit();
-        //em.close();
+        em.close();
     }
 
     public static void excluiCelula(){
@@ -50,5 +50,6 @@ public class CelulaDAO {
             JOptionPane.showMessageDialog(null, "É preciso cadastrar célula","Warning",JOptionPane.WARNING_MESSAGE);
         }
         return null;
+        
     }
 }

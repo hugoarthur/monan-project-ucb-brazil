@@ -4,6 +4,8 @@
  */
 package br.ucb.gui;
 
+import br.ucb.service.Sessao;
+
 /**
  *
  * @author guilherme
@@ -38,8 +40,6 @@ public class TelaNovoProjeto extends javax.swing.JFrame {
         setResizable(false);
 
         jLabel1.setText("Nome do Projeto:");
-
-        jTextField1.setText("jTextField1");
 
         salvarProjeto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/salvar.png"))); // NOI18N
         salvarProjeto.setText("Criar");
@@ -121,6 +121,7 @@ public class TelaNovoProjeto extends javax.swing.JFrame {
         // TODO add your handling code here:
         TelaInicio novoProjeto = new TelaInicio();
         novoProjeto.setVisible(true);
+        Sessao.getInstance().setTela(novoProjeto);
         this.setVisible(false);
     }//GEN-LAST:event_salvarProjetoActionPerformed
 

@@ -8,6 +8,7 @@ import br.ucb.beans.Celula;
 import br.ucb.dao.CelulaDAO;
 import br.ucb.gui.TelaInicio;
 import br.ucb.gui.TelaNovaCelula;
+import br.ucb.service.Sessao;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -24,6 +25,8 @@ public class CadastraCelula implements ActionListener {
         setTelaCadastraCelula(form);
         insereCelula();
         getTelaCadastraCelula().setVisible(false);
+        TelaInicio tela = (TelaInicio)Sessao.getInstance().getTela();
+        tela.setCombo();
     }
 
     public void actionPerformed(ActionEvent e) {

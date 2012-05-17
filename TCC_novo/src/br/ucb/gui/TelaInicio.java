@@ -42,8 +42,6 @@ public class TelaInicio extends javax.swing.JFrame {
         arvore = new Arvore(this);
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         setCombo();
-        jComboBox1.repaint();
-       this.update(this.getGraphics());
         
     }
 
@@ -1104,5 +1102,6 @@ public class TelaInicio extends javax.swing.JFrame {
         } else {
             jComboBox1.addItem("vazio");
         }
+        jComboBox1.repaint();
     }
 }

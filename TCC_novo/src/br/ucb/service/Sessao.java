@@ -5,6 +5,7 @@
 package br.ucb.service;
 
 import br.ucb.beans.Usuario;
+import javax.swing.JFrame;
 
 /**
  *
@@ -14,6 +15,7 @@ public class Sessao {
 
     private static Sessao instance = null;
     private Usuario usuario;
+    private JFrame tela;
 
     private Sessao() {
     }
@@ -24,6 +26,14 @@ public class Sessao {
 
     public Usuario getUsuario() {
         return usuario;
+    }
+
+    public JFrame getTela() {
+        return tela;
+    }
+
+    public void setTela(JFrame tela) {
+        this.tela = tela;
     }
 
     public static Sessao getInstance() {

@@ -41,7 +41,7 @@ public class TelaInicio extends javax.swing.JFrame {
         initComponents();
         arvore = new Arvore(this);
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        this.setCombobox();
+        setCombo();
     }
 
     /**
@@ -1068,10 +1068,12 @@ public class TelaInicio extends javax.swing.JFrame {
     private javax.swing.JTree jTree2;
     // End of variables declaration//GEN-END:variables
 
-    public void setJComboBox1(String str) {
+    public void setJComboBox(String str) {
+
         jComboBox1.addItem(str);
         this.getContentPane().validate();
         this.getContentPane().repaint();
+
     }
 
     public JComboBox getComboBox() {
@@ -1090,15 +1092,14 @@ public class TelaInicio extends javax.swing.JFrame {
         return jTree2;
     }
 
-    private void setCombobox() {
+    public void setCombo() {
         jComboBox1.removeAllItems();
         if (CelulaDAO.buscaListaCelulas() != null) {
             for (Celula celula : CelulaDAO.buscaListaCelulas()) {
                 jComboBox1.addItem(celula.getTxt_celula());
             }
         } else {
-            jComboBox1.addItem("Não há células cadastradas");
+            jComboBox1.addItem("vazio");
         }
     }
-    
 }

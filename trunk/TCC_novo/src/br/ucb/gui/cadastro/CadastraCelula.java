@@ -35,10 +35,10 @@ public class CadastraCelula implements ActionListener {
 
         Celula celula = new Celula();
         celula.setTxt_celula(getTelaCadastraCelula().getTxtField().getText());
-        String str = getTelaCadastraCelula().getTxtField().getText();
-        telaIni.setJComboBox1(str);
+//        String str = getTelaCadastraCelula().getTxtField().getText();
+//        telaIni.setJComboBox(str);
         CelulaDAO.insereCelula(celula);
-        
+        telaIni.setCombo();
     }
 
     public TelaNovaCelula getTelaCadastraCelula() {

@@ -40,16 +40,17 @@ public class CelulaDAO {
         
     }
 
-    public static List<Celula> buscaListaCelulas(){
+    public static List<Celula> findAll(){
         EntityManager em = DataBase.getInstance().getEntityManager();
         Query query = em.createQuery("SELECT c FROM Celula c");
+        List<Celula> celulas = null;
         try {
-            List<Celula> celulas = (List<Celula>) query.getResultList();
+            celulas = (List<Celula>) query.getResultList();
             return celulas;
         } catch (javax.persistence.NoResultException e) {
             JOptionPane.showMessageDialog(null, "É preciso cadastrar célula","Warning",JOptionPane.WARNING_MESSAGE);
         }
-        return null;
+        return celulas;
         
     }
 }

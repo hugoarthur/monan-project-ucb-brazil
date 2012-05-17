@@ -16,7 +16,7 @@ import javax.swing.DefaultListModel;
  * @author Osmar jr
  */
 public class SetCampos {
-
+    
     public DefaultListModel listModel() {
         UsuarioDAO usuDAO = new UsuarioDAO();
         DefaultListModel listModel = new DefaultListModel();
@@ -29,7 +29,7 @@ public class SetCampos {
         }
         return listModel;
     }
-
+    
     public DefaultComboBoxModel comboModel() {
         DefaultComboBoxModel comboModel = new DefaultComboBoxModel();
         if (CelulaDAO.findAll() != null) {
@@ -40,5 +40,19 @@ public class SetCampos {
             comboModel.addElement("vazio");
         }
         return comboModel;
+    }
+
+    public DefaultListModel listModelCel() {
+        
+        DefaultListModel listModel = new DefaultListModel();
+        if (CelulaDAO.findAll() != null) {
+            for (Celula celula : CelulaDAO.findAll()) {
+                listModel.addElement(celula.getTxt_celula());
+            }
+        } else {
+            listModel.addElement("vazio");
+        }
+        return listModel;
+        
     }
 }

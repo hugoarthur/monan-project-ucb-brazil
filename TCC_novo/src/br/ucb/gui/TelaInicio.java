@@ -424,6 +424,11 @@ public class TelaInicio extends javax.swing.JFrame {
         jButton9.setFocusable(false);
         jButton9.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton9.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
         jToolBar1.add(jButton9);
 
         jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/excluir.png"))); // NOI18N
@@ -996,6 +1001,10 @@ public class TelaInicio extends javax.swing.JFrame {
         TelaCadastraEquipe equipe = new TelaCadastraEquipe();
         equipe.setVisible(true);
     }//GEN-LAST:event_jButton13ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton9ActionPerformed
     private void jScrollPaneActionPerformed(java.awt.event.ActionEvent evt) {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables

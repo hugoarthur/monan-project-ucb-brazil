@@ -15,13 +15,12 @@ import javax.swing.DefaultListModel;
  *
  * @author Osmar jr
  */
-public class SetCampos {
+public class ConfiguraCampos {
     
     public DefaultListModel listModel() {
-        UsuarioDAO usuDAO = new UsuarioDAO();
         DefaultListModel listModel = new DefaultListModel();
-        if (usuDAO.findAll() != null) {
-            for (Usuario usuario : usuDAO.findAll()) {
+        if (UsuarioDAO.findAll() != null) {
+            for (Usuario usuario : UsuarioDAO.findAll()) {
                 listModel.addElement(usuario.getNome());
             }
         } else {
@@ -56,5 +55,9 @@ public class SetCampos {
         
         return listModel;
         
+    }
+    public DefaultListModel listNomePdf(){
+        DefaultListModel listModel = new DefaultListModel();
+        return listModel;
     }
 }

@@ -10,7 +10,7 @@
  */
 package br.ucb.gui;
 
-import br.ucb.gui.cadastro.SetCampos;
+import br.ucb.gui.cadastro.ConfiguraCampos;
 
 /**
  *
@@ -21,7 +21,7 @@ public class TelaCelulas extends javax.swing.JFrame {
     /**
      * Creates new form TelaCategorias
      */
-    private SetCampos setar = new SetCampos();
+    private ConfiguraCampos setar = new ConfiguraCampos();
 
     public TelaCelulas() {
         initComponents();

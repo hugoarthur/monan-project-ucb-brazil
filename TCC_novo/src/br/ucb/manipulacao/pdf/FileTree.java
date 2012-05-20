@@ -23,47 +23,52 @@ public class FileTree extends JPanel {
     public FileTree(File dir) {
         setLayout(new BorderLayout());
 
-        // Make a tree list with all the nodes, and make it a JTree
         JTree tree = new JTree(addNodes(null, dir));
 
-        // Add a listener
         tree.addTreeSelectionListener(new TreeSelectionListener() {
 
             public void valueChanged(TreeSelectionEvent e) {
                 DefaultMutableTreeNode node = (DefaultMutableTreeNode) e.getPath().getLastPathComponent();
-                ////////////////////////////////////////////////////////////////
-                //Classe que manipula a extraçao do PDF.
+                /*------------------------------------------------------------*/
+                //------------Classe que manipula a extraçao do PDF-------------
                 ManipulaPDF manipulaPDF = new ManipulaPDF();
-                //Pega o caminho do Arquivo.
+                //--------------------------------------------------------------
+                //---------------Pega o nome do PDF ----------------------------
+                Object nomePdf = e.getPath().getLastPathComponent();
+                //--------------------------------------------------------------
+                //---------------Pega o caminho do Arquivo----------------------
                 Object[] caminhoPdf = e.getPath().getPath();
+                //--------------------------------------------------------------
+                //---------------Constroi o caminho do arquivo------------------
                 String caminho = "";
-                //Constroi o caminho do arquivo.
                 for( Object pdf : caminhoPdf )
                     caminho += pdf+"/";
-                //Verifica se o que foi selecionado é um arquivo
+                //--------------------------------------------------------------
+                //--------Verifica se o que foi selecionado é um arquivo--------
                 if( new File(caminho).isFile() ) {
+                    //----------------Confiramacao do arquivo-------------------
                     int opcao = JOptionPane.showConfirmDialog(null,"Deseja abrir esse Arquivo?",null,JOptionPane.YES_NO_OPTION);
+                    //----------------------------------------------------------
                     if(opcao == JOptionPane.YES_OPTION){ 
-                        //Add o texto extraido no campo jEditorPane.
+                        //------Add o texto extraido no campo jEditorPane-------
                         manipulaPDF.setCaminho(caminho);
                         jEditorPane.setText(manipulaPDF.extrairPDF());
+                        //------------------------------------------------------
                     }
                 }
-                ////////////////////////////////////////////////////////////////
+                /*------------------------------------------------------------*/
             }
         });
 
-        // Lastly, put the JTree into a JScrollPane.
         JScrollPane scrollpane = new JScrollPane();
         scrollpane.getViewport().add(tree);
         add(BorderLayout.CENTER, scrollpane);
     }
 
-    /** Add nodes from under "dir" into curTop. Highly recursive. */
     DefaultMutableTreeNode addNodes(DefaultMutableTreeNode curTop, File dir) {
         String curPath = dir.getPath();
         DefaultMutableTreeNode curDir = new DefaultMutableTreeNode(curPath);
-        if (curTop != null) { // should only be null at root
+        if (curTop != null) {
             curTop.add(curDir);
         }
         Vector ol = new Vector();
@@ -74,7 +79,7 @@ public class FileTree extends JPanel {
         Collections.sort(ol, String.CASE_INSENSITIVE_ORDER);
         File f;
         Vector files = new Vector();
-        // Make two passes, one for Dirs and one for Files. This is #1.
+        
         for (int i = 0; i < ol.size(); i++) {
             String thisObject = (String) ol.elementAt(i);
             String newPath;
@@ -89,7 +94,7 @@ public class FileTree extends JPanel {
                 files.addElement(thisObject);
             }
         }
-        // Pass two: for files.
+        
         for (int fnum = 0; fnum < files.size(); fnum++) {
             curDir.add(new DefaultMutableTreeNode(files.elementAt(fnum)));
         }

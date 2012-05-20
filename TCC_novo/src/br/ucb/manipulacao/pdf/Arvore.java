@@ -16,16 +16,16 @@ import javax.swing.JTree;
 public class Arvore {
 
     private JTree jTree1 = new JTree();
-    private JTree jTree2 = new JTree();
+//    private JTree jTree2 = new JTree();
     private TelaInicio frame;
     private String wayy[] = {};
 
     public Arvore(TelaInicio frame) {
         this.frame = frame;
         jTree1 = frame.getJTree1();
-        jTree2 = frame.getJTree2();
+//        jTree2 = frame.getJTree2();
         criaArvoreUm();
-        criaArvoreDois();
+//        criaArvoreDois();
     }
 
     public void criaArvoreUm() {
@@ -39,12 +39,12 @@ public class Arvore {
         }
     }
 
-    public void criaArvoreDois() {
-
-        jTree2.add(new FileTree(new File("./ArquivosPDF")));
-        jTree2.setLayout(new BoxLayout(jTree2, BoxLayout.X_AXIS));
-        for (int i = 0; i < wayy.length; i++) {
-            jTree2.add(new FileTree(new File(wayy[i])));
-        }
-    }
+//    public void criaArvoreDois() {
+//
+//        jTree2.add(new FileTree(new File("./ArquivosPDF")));
+//        jTree2.setLayout(new BoxLayout(jTree2, BoxLayout.X_AXIS));
+//        for (int i = 0; i < wayy.length; i++) {
+//            jTree2.add(new FileTree(new File(wayy[i])));
+//        }
+//    }
 }

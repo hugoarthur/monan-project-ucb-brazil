@@ -10,16 +10,15 @@
  */
 package br.ucb.gui;
 
-import br.ucb.beans.Celula;
-import br.ucb.beans.Usuario;
-import br.ucb.dao.CelulaDAO;
-import br.ucb.dao.UsuarioDAO;
 import br.ucb.gui.cadastro.ConfiguraCampos;
 import br.ucb.manipulacao.pdf.Arvore;
 import br.ucb.manipulacao.pdf.ManipulaPDF;
 import br.ucb.service.Sessao;
 import br.ucb.xml.Teste;
-import javax.swing.*;
+import javax.swing.JComboBox;
+import javax.swing.JEditorPane;
+import javax.swing.JFrame;
+import javax.swing.JTree;
 
 //import br.ucb.xml.Teste;
 /**
@@ -330,18 +329,13 @@ public class TelaInicio extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(jTree1);
 
-        jList3.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
         jScrollPane7.setViewportView(jList3);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 181, Short.MAX_VALUE)
+            .addComponent(jScrollPane2)
             .addComponent(jScrollPane7)
         );
         jPanel3Layout.setVerticalGroup(
@@ -840,7 +834,10 @@ public class TelaInicio extends javax.swing.JFrame {
         teste.CriaXML(texto);
         jEditorPane2.setText(null);
     }//GEN-LAST:event_jButton1ActionPerformed
-    
+    private void jList3MouseClicked(java.awt.event.MouseEvent evt) {
+        // TODO add your handling code here:
+        Object nomePDF = jList3.getSelectedValue();
+    }
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         jEditorPane2.setText(null);
@@ -990,7 +987,7 @@ public class TelaInicio extends javax.swing.JFrame {
         TelaCadastraEquipe equipe = new TelaCadastraEquipe();
         equipe.setVisible(true);
     }//GEN-LAST:event_jButton13ActionPerformed
-
+    
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton9ActionPerformed
@@ -1125,11 +1122,10 @@ public class TelaInicio extends javax.swing.JFrame {
     public JTree getJTree1() {
         return jTree1;
     }
-    
+
 //    public JTree getJTree2() {
 //        return jTree2;
 //    }
-    
     public void setCombo() {
         jComboBox1.removeAllItems();
         jComboBox1.setModel(setar.comboModel());

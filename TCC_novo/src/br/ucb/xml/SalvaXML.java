@@ -11,20 +11,21 @@ import javax.swing.JOptionPane;
  *
  * @author Osmar jr
  */
-public class Teste {
+public class SalvaXML {
     
     public void CriaXML(String texto){
                 
         ImplementaXml xml = new ImplementaXml();
         String usuario = Sessao.getInstance().getUsuario().getIdUsuario().toString();
         String projeto = "1";
-        String categoria = "1";
+        String celula = "Introducao";
         
         if (!"".equals(texto)){
-            xml.escreverXML(usuario, projeto, categoria, texto);
-            JOptionPane.showMessageDialog(null, "Salvo no banco de dados e xml gerado com sucesso");
+            xml.escreverXML(usuario, projeto, celula, texto);
+            JOptionPane.showMessageDialog(null, "Salvo com Sucesso");
         }
         else
-            JOptionPane.showMessageDialog(null, "Nenhum texto foi cadastrado");        
+            JOptionPane.showMessageDialog(null, "Nenhum texto foi selecionado");     
     }
+    
 }

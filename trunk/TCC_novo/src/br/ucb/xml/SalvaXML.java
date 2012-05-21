@@ -13,15 +13,14 @@ import javax.swing.JOptionPane;
  */
 public class SalvaXML {
     
-    public void CriaXML(String texto){
+    public void CriaXML(String nomeCelula, String texto){
                 
         ImplementaXml xml = new ImplementaXml();
         String usuario = Sessao.getInstance().getUsuario().getIdUsuario().toString();
         String projeto = "1";
-        String celula = "Introducao";
         
         if (!"".equals(texto)){
-            xml.escreverXML(usuario, projeto, celula, texto);
+            xml.escreverXML(usuario, projeto, nomeCelula, texto);
             JOptionPane.showMessageDialog(null, "Salvo com Sucesso");
         }
         else

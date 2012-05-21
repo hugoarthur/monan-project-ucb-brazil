@@ -2,34 +2,36 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package br.ucb.beans;
 
+import java.util.List;
 import javax.persistence.*;
 
 /**
  *
  * @author GUICUNHA
  */
-
 @Entity
-@Table(name="usuario")
+@Table(name = "usuario")
 public class Usuario {
-    @Column(name="id_usuario")
-    @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private Integer idUsuario;
-    @Column(name="login")
-    private String login;
-    @Column(name="senha")
-    private String senha;
-    @Column(name="nome")
-    private String nome;
-    @Column(name="universidade")
-    private String universidade;
-    @Column(name="tipoUsuario")
-    private Integer tipoUsuario;
 
+    @Column(name = "id_usuario")
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer idUsuario;
+    @Column(name = "login")
+    private String login;
+    @Column(name = "senha")
+    private String senha;
+    @Column(name = "nome")
+    private String nome;
+    @Column(name = "universidade")
+    private String universidade;
+    @Column(name = "tipoUsuario")
+    private Integer tipoUsuario;
+    @ManyToMany(mappedBy = "usuarios")
+    @JoinColumn(name = "projeto", nullable = false)
+    private List<Projeto> projetos;
 
     public Usuario() {
     }
@@ -103,17 +105,26 @@ public class Usuario {
     public void setUniversidade(String universidade) {
         this.universidade = universidade;
     }
+
     /**
      * @return the tipoUsuario
      */
     public Integer getTipoUsuario() {
         return tipoUsuario;
     }
-    
+
     /**
      * @param universidade the tipoUsuario to set
      */
     public void setTipoUsuario(Integer tipoUsuario) {
         this.tipoUsuario = tipoUsuario;
+    }
+
+    public List<Projeto> getProjetos() {
+        return projetos;
+    }
+
+    public void setProjetos(List<Projeto> projetos) {
+        this.projetos = projetos;
     }
 }

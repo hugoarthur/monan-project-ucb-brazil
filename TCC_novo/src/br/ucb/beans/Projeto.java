@@ -4,7 +4,9 @@
  */
 package br.ucb.beans;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.*;
 
 /**
@@ -24,14 +26,14 @@ public class Projeto {
     @Column(name = "data_projeto")
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date dataProjeto;
-    @ManyToMany
-    @JoinColumn(name = "id_coordenador", unique=true, nullable=false)
-    private Usuario coordenador;
-    @OneToOne
-    @JoinColumn(name = "id_equipe", unique=true, nullable=true)
-    private Usuario equipe;
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_usuario", nullable = false, referencedColumnName = "id_usuario")
+    private List<Usuario> usuarios;
 
     public Projeto() {
+        if (this.usuarios == null) {
+            this.usuarios = new ArrayList<Usuario>();
+        }
     }
 
     /**
@@ -76,19 +78,11 @@ public class Projeto {
         this.dataProjeto = dataProjeto;
     }
 
-    public Usuario getCoordenador() {
-        return coordenador;
+    public List<Usuario> getUsuarios() {
+        return usuarios;
     }
 
-    public void setCoordenador(Usuario coordenador) {
-        this.coordenador = coordenador;
-    }
-
-    public Usuario getEquipe() {
-        return equipe;
-    }
-
-    public void setEquipe(Usuario equipe) {
-        this.equipe = equipe;
+    public void setUsuarios(List<Usuario> usuarios) {
+        this.usuarios = usuarios;
     }
 }

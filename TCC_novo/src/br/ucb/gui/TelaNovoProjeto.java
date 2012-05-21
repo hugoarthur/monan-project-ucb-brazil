@@ -4,7 +4,10 @@
  */
 package br.ucb.gui;
 
+import br.ucb.gui.cadastro.CadastraProjeto;
 import br.ucb.service.Sessao;
+import javax.swing.JButton;
+import javax.swing.JTextField;
 
 /**
  *
@@ -125,6 +128,7 @@ public class TelaNovoProjeto extends javax.swing.JFrame {
         TelaInicio novoProjeto = new TelaInicio();
         novoProjeto.setVisible(true);
         Sessao.getInstance().setTela(novoProjeto);
+        getSalvarProjeto().addActionListener(new CadastraProjeto(this));
         this.setVisible(false);
     }//GEN-LAST:event_salvarProjetoActionPerformed
 
@@ -182,4 +186,29 @@ public class TelaNovoProjeto extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JButton salvarProjeto;
     // End of variables declaration//GEN-END:variables
+
+    public JTextField getjTextField1() {
+        return jTextField1;
+    }
+
+    public void setjTextField1(JTextField jTextField1) {
+        this.jTextField1 = jTextField1;
+    }
+
+    public JButton getCancelarProjeto() {
+        return cancelarProjeto;
+    }
+
+    public void setCancelarProjeto(JButton cancelarProjeto) {
+        this.cancelarProjeto = cancelarProjeto;
+    }
+
+    public JButton getSalvarProjeto() {
+        return salvarProjeto;
+    }
+
+    public void setSalvarProjeto(JButton salvarProjeto) {
+        this.salvarProjeto = salvarProjeto;
+    }
+
 }

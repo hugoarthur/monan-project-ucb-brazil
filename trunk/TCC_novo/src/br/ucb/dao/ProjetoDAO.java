@@ -16,7 +16,7 @@ public class ProjetoDAO {
     public ProjetoDAO() {
     }
 
-    private static void insereProjeto(Projeto projeto) {
+    public static void insereProjeto(Projeto projeto) {
         EntityManager em = DataBase.getInstance().getEntityManager();
 
         if(!em.getTransaction().isActive())
@@ -26,12 +26,12 @@ public class ProjetoDAO {
         //em.close();
     }
 
-    private static void excluiProjeto() {
+    public static void excluiProjeto() {
     }
 
-    private static void alteraProjeto() {
+    public static void alteraProjeto() {
     }
 
-    private static void consultaProjeto() {
+    public static void consultaProjeto() {
     }
 }

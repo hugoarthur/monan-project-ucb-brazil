@@ -266,7 +266,7 @@ public class TelaInicio extends javax.swing.JFrame {
         jPanel2.setMaximumSize(new java.awt.Dimension(0, 0));
 
         jEditorPane1.setEditable(false);
-        jEditorPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jEditorPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jEditorPane1.setDragEnabled(true);
         jEditorPane1.setPreferredSize(new java.awt.Dimension(100, 50));
         jScrollPane1.setViewportView(jEditorPane1);
@@ -468,9 +468,19 @@ public class TelaInicio extends javax.swing.JFrame {
 
         jButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/usuario.png"))); // NOI18N
         jButton15.setText("Alterar");
+        jButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton15ActionPerformed(evt);
+            }
+        });
 
         jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/limpar.png"))); // NOI18N
         jButton14.setText("Excluir");
+        jButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton14ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -964,6 +974,18 @@ public class TelaInicio extends javax.swing.JFrame {
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+        // TODO add your handling code here:
+        TelaAlteraUsuario telaAltera = new TelaAlteraUsuario();
+        telaAltera.setVisible(true);
+    }//GEN-LAST:event_jButton15ActionPerformed
+
+    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+        // TODO add your handling code here:
+        TelaExcluiUsuario excluiUser = new TelaExcluiUsuario();
+        excluiUser.setVisible(true);
+    }//GEN-LAST:event_jButton14ActionPerformed
     private void jScrollPaneActionPerformed(java.awt.event.ActionEvent evt) {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables

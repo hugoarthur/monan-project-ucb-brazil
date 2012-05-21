@@ -39,6 +39,8 @@ public class TelaNovoProjeto extends javax.swing.JFrame {
         setTitle("PROJETO - Corpus Generator");
         setResizable(false);
 
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Projeto"));
+
         jLabel1.setText("Nome do Projeto:");
 
         salvarProjeto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/salvar.png"))); // NOI18N
@@ -57,7 +59,7 @@ public class TelaNovoProjeto extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/logon_logo.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/logon_logo.jpg"))); // NOI18N
 
         org.jdesktop.layout.GroupLayout jPanel1Layout = new org.jdesktop.layout.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -70,17 +72,18 @@ public class TelaNovoProjeto extends javax.swing.JFrame {
                         .add(jLabel1)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(jTextField1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 282, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
+                        .addContainerGap(110, Short.MAX_VALUE))
                     .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel1Layout.createSequentialGroup()
                         .add(0, 0, Short.MAX_VALUE)
-                        .add(salvarProjeto)
-                        .add(18, 18, 18)
-                        .add(cancelarProjeto)
-                        .add(27, 27, 27))))
-            .add(jPanel1Layout.createSequentialGroup()
-                .add(113, 113, 113)
-                .add(jLabel2)
-                .add(0, 0, Short.MAX_VALUE))
+                        .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .add(salvarProjeto)
+                                .add(18, 18, 18)
+                                .add(cancelarProjeto)
+                                .add(27, 27, 27))
+                            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .add(jLabel2)
+                                .add(48, 48, 48))))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -93,9 +96,9 @@ public class TelaNovoProjeto extends javax.swing.JFrame {
                 .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(salvarProjeto)
                     .add(cancelarProjeto))
-                .add(40, 40, 40)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 27, Short.MAX_VALUE)
                 .add(jLabel2)
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .add(19, 19, 19))
         );
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
@@ -110,7 +113,7 @@ public class TelaNovoProjeto extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(layout.createSequentialGroup()
-                .addContainerGap(19, Short.MAX_VALUE)
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .add(jPanel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
         );
 

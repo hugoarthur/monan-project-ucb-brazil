@@ -79,7 +79,7 @@ public class TelaCadastraEquipe extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/logo_ucb.png"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/logon_cg.jpg"))); // NOI18N
 
         universidadeComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         universidadeComboBox.addContainerListener(new java.awt.event.ContainerAdapter() {

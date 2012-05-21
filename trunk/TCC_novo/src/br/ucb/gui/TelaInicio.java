@@ -14,13 +14,13 @@ import br.ucb.gui.cadastro.ConfiguraCampos;
 import br.ucb.manipulacao.pdf.Arvore;
 import br.ucb.manipulacao.pdf.ManipulaPDF;
 import br.ucb.service.Sessao;
-import br.ucb.xml.Teste;
+import br.ucb.xml.SalvaXML;
 import javax.swing.JComboBox;
 import javax.swing.JEditorPane;
 import javax.swing.JFrame;
 import javax.swing.JTree;
 
-//import br.ucb.xml.Teste;
+//import br.ucb.xml.SalvaXML;
 /**
  *
  * @author GUICUNHA
@@ -802,7 +802,7 @@ public class TelaInicio extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        Teste teste = new Teste();
+        SalvaXML teste = new SalvaXML();
         String texto = jEditorPane2.getText();
         teste.CriaXML(texto);
         jEditorPane2.setText(null);

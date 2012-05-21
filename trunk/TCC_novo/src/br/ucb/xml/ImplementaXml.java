@@ -19,20 +19,21 @@ import org.jdom2.output.XMLOutputter;
  */
 public class ImplementaXml {
 
-    private String caminho = "xml/arq.xml";
-    private File arq = new File(caminho);
+    private String caminho;
 
-    public void escreverXML(String usu, String proj, String categ, String text) {
+    public void escreverXML(String usu, String proj, String cel, String text) {
 
         Element corpos = new Element("corpos");
         Document documento = new Document(corpos);
         List<Element> lista = new ArrayList();
 
+        this.caminho = caminhoArqXml(proj);
+
         int cont = 0;
-        cont = VerificaArqXML();
+        cont = verificaArqXML();
 
         if (cont == 0) {
-            lista = Lista();
+            lista = lista();
             for (Element e : lista) {
 
                 Element usuario = new Element("usuario");
@@ -41,17 +42,16 @@ public class ImplementaXml {
                 Element projeto = new Element("projeto");
                 projeto.setText(e.getChildText("projeto"));
 
-                Element categoria = new Element("categoria");
-                categoria.setText(e.getChildText("categoria"));
+                Element celula = new Element("celula");
+                celula.setText(e.getChildText("celula"));
 
                 Element texto = new Element("texto");
                 texto.setText(e.getChildText("texto"));
 
                 usuario.addContent(projeto);
-                usuario.addContent(categoria);
+                usuario.addContent(celula);
                 usuario.addContent(texto);
                 corpos.addContent(usuario);
-
 
             }
 
@@ -61,16 +61,14 @@ public class ImplementaXml {
             Element projeto = new Element("projeto");
             projeto.setText(proj);
 
-            Element categoria = new Element("categoria");
-            categoria.setText(categ);
+            Element celula = new Element("celula");
+            celula.setText(cel);
 
             Element texto = new Element("texto");
             texto.setText(text);
 
-
-
             usuario.addContent(projeto);
-            usuario.addContent(categoria);
+            usuario.addContent(celula);
             usuario.addContent(texto);
             corpos.addContent(usuario);
 
@@ -83,19 +81,16 @@ public class ImplementaXml {
             Element projeto = new Element("projeto");
             projeto.setText(proj);
 
-            Element categoria = new Element("categoria");
-            categoria.setText(categ);
+            Element celula = new Element("categoria");
+            celula.setText(cel);
 
             Element texto = new Element("texto");
             texto.setText(text);
 
-
-
             usuario.addContent(projeto);
-            usuario.addContent(categoria);
+            usuario.addContent(celula);
             usuario.addContent(texto);
             corpos.addContent(usuario);
-
 
         }
 
@@ -103,13 +98,13 @@ public class ImplementaXml {
 
     }
 
-    public static void gerarXml(Document documento) {
+    private void gerarXml(Document documento) {
 
         XMLOutputter xout = new XMLOutputter();
 
         try {
 
-            FileWriter arquivo = new FileWriter(new File("xml/arq.xml"));
+            FileWriter arquivo = new FileWriter(new File(this.caminho));
 
             xout.output(documento, arquivo);
 
@@ -121,20 +116,25 @@ public class ImplementaXml {
 
     }
 
-    public List<Element> Lista() {
+    private List<Element> lista() {
 
         List<Element> lista = new ArrayList();
         XmlReader xmlR = new XmlReader();
 
-        lista = xmlR.ListXml();
+        lista = xmlR.ListXml(this.caminho);
         return lista;
     }
 
-    public int VerificaArqXML() {
-
-        if (!this.arq.exists()) {
+    private int verificaArqXML() {
+        File arq = new File(this.caminho);
+        if (!arq.exists()) {
             return 1;
         }
         return 0;
+    }
+
+    private String caminhoArqXml(String proj) {
+        String caminho = "xml/arquivo" + proj + ".xml";
+        return caminho;
     }
 }

@@ -836,7 +836,9 @@ public class TelaInicio extends javax.swing.JFrame {
         // TODO add your handling code here:
         SalvaXML teste = new SalvaXML();
         String texto = jEditorPane2.getText();
-        teste.CriaXML(texto);
+        String nomeCelula = getComboBox().getSelectedItem().toString();
+        System.out.print(nomeCelula);
+        teste.CriaXML(nomeCelula, texto);
         jEditorPane2.setText(null);
     }//GEN-LAST:event_jButton1ActionPerformed
     private void jList3MouseClicked(java.awt.event.MouseEvent evt) {
@@ -1157,4 +1159,13 @@ public class TelaInicio extends javax.swing.JFrame {
         jList1.setModel(setar.listModel());
         jList1.repaint();
     }
+
+    public JComboBox getjComboBox1() {
+        return jComboBox1;
+    }
+
+    public void setjComboBox1(JComboBox jComboBox1) {
+        this.jComboBox1 = jComboBox1;
+    }
+    
 }

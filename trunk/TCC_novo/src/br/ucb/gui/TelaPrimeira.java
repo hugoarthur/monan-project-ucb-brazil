@@ -88,7 +88,7 @@ public class TelaPrimeira extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(jList2);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/logon_logo.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/logon_logo.jpg"))); // NOI18N
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -105,16 +105,15 @@ public class TelaPrimeira extends javax.swing.JFrame {
                                 .add(jButton3)
                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                    .add(jButton4)
                                     .add(layout.createSequentialGroup()
-                                        .add(14, 14, 14)
+                                        .add(40, 40, 40)
                                         .add(jButton1)
                                         .add(18, 18, 18)
-                                        .add(jButton2))
-                                    .add(jButton4))
-                                .add(84, 84, 84))
-                            .add(jScrollPane2)))
+                                        .add(jButton2))))
+                            .add(jScrollPane2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 452, Short.MAX_VALUE)))
                     .add(layout.createSequentialGroup()
-                        .add(114, 114, 114)
+                        .add(28, 28, 28)
                         .add(jLabel1)
                         .add(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
@@ -122,9 +121,9 @@ public class TelaPrimeira extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
+                .add(12, 12, 12)
                 .add(jLabel1)
-                .add(24, 24, 24)
+                .add(18, 18, 18)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(jButton1)
                     .add(jButton2))

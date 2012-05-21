@@ -837,7 +837,6 @@ public class TelaInicio extends javax.swing.JFrame {
         SalvaXML teste = new SalvaXML();
         String texto = jEditorPane2.getText();
         String nomeCelula = getComboBox().getSelectedItem().toString();
-        System.out.print(nomeCelula);
         teste.CriaXML(nomeCelula, texto);
         jEditorPane2.setText(null);
     }//GEN-LAST:event_jButton1ActionPerformed

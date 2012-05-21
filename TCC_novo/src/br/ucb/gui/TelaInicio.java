@@ -57,6 +57,10 @@ public class TelaInicio extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
+        jMenuItem6 = new javax.swing.JMenuItem();
+        jMenu11 = new javax.swing.JMenu();
+        jMenu12 = new javax.swing.JMenu();
+        jMenu13 = new javax.swing.JMenu();
         categoriaPanel = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
@@ -148,7 +152,8 @@ public class TelaInicio extends javax.swing.JFrame {
         jMenu7 = new javax.swing.JMenu();
         jMenuItem27 = new javax.swing.JMenuItem();
         jSeparator23 = new javax.swing.JPopupMenu.Separator();
-        jMenuItem31 = new javax.swing.JMenuItem();
+        jMenu14 = new javax.swing.JMenu();
+        jMenuItem20 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
         jMenuItem32 = new javax.swing.JMenuItem();
         jSeparator26 = new javax.swing.JPopupMenu.Separator();
@@ -165,6 +170,14 @@ public class TelaInicio extends javax.swing.JFrame {
         jMenuItem40 = new javax.swing.JMenuItem();
 
         jLabel2.setText("jLabel2");
+
+        jMenuItem6.setText("jMenuItem6");
+
+        jMenu11.setText("jMenu11");
+
+        jMenu12.setText("jMenu12");
+
+        jMenu13.setText("jMenu13");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("PROJETO - Corpus Generator\n");
@@ -695,8 +708,17 @@ public class TelaInicio extends javax.swing.JFrame {
         jMenu4.add(jMenu7);
         jMenu4.add(jSeparator23);
 
-        jMenuItem31.setText("Excluir Projeto");
-        jMenu4.add(jMenuItem31);
+        jMenu14.setText("Projeto");
+
+        jMenuItem20.setText("Consultar Projetos");
+        jMenuItem20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem20ActionPerformed(evt);
+            }
+        });
+        jMenu14.add(jMenuItem20);
+
+        jMenu4.add(jMenu14);
 
         jMenuBar1.add(jMenu4);
 
@@ -986,6 +1008,12 @@ public class TelaInicio extends javax.swing.JFrame {
         TelaExcluiUsuario excluiUser = new TelaExcluiUsuario();
         excluiUser.setVisible(true);
     }//GEN-LAST:event_jButton14ActionPerformed
+
+    private void jMenuItem20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem20ActionPerformed
+        // TODO add your handling code here:
+        TelaProjeto telaProjeto = new TelaProjeto();
+        telaProjeto.setVisible(true);
+    }//GEN-LAST:event_jMenuItem20ActionPerformed
     private void jScrollPaneActionPerformed(java.awt.event.ActionEvent evt) {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1021,6 +1049,10 @@ public class TelaInicio extends javax.swing.JFrame {
     private javax.swing.JList jList3;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu10;
+    private javax.swing.JMenu jMenu11;
+    private javax.swing.JMenu jMenu12;
+    private javax.swing.JMenu jMenu13;
+    private javax.swing.JMenu jMenu14;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
@@ -1042,13 +1074,13 @@ public class TelaInicio extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem18;
     private javax.swing.JMenuItem jMenuItem19;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem20;
     private javax.swing.JMenuItem jMenuItem23;
     private javax.swing.JMenuItem jMenuItem24;
     private javax.swing.JMenuItem jMenuItem25;
     private javax.swing.JMenuItem jMenuItem26;
     private javax.swing.JMenuItem jMenuItem27;
     private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem31;
     private javax.swing.JMenuItem jMenuItem32;
     private javax.swing.JMenuItem jMenuItem33;
     private javax.swing.JMenuItem jMenuItem36;
@@ -1058,6 +1090,7 @@ public class TelaInicio extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem40;
     private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPanel jPanel1;

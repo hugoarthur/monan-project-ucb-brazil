@@ -161,8 +161,7 @@ public class TelaInicio extends javax.swing.JFrame {
         jMenu7 = new javax.swing.JMenu();
         jMenuItem27 = new javax.swing.JMenuItem();
         jSeparator23 = new javax.swing.JPopupMenu.Separator();
-        jMenu14 = new javax.swing.JMenu();
-        jMenuItem20 = new javax.swing.JMenuItem();
+        jMenuItem7 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
         jMenuItem32 = new javax.swing.JMenuItem();
         jSeparator26 = new javax.swing.JPopupMenu.Separator();
@@ -735,17 +734,13 @@ public class TelaInicio extends javax.swing.JFrame {
         jMenu4.add(jMenu7);
         jMenu4.add(jSeparator23);
 
-        jMenu14.setText("Projeto");
-
-        jMenuItem20.setText("Consultar Projetos");
-        jMenuItem20.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItem7.setText("Projetos");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem20ActionPerformed(evt);
+                jMenuItem7ActionPerformed(evt);
             }
         });
-        jMenu14.add(jMenuItem20);
-
-        jMenu4.add(jMenu14);
+        jMenu4.add(jMenuItem7);
 
         jMenuBar1.add(jMenu4);
 
@@ -1037,11 +1032,11 @@ public class TelaInicio extends javax.swing.JFrame {
         excluiUser.setVisible(true);
     }//GEN-LAST:event_jButton14ActionPerformed
 
-    private void jMenuItem20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem20ActionPerformed
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
         // TODO add your handling code here:
         TelaProjeto telaProjeto = new TelaProjeto();
         telaProjeto.setVisible(true);
-    }//GEN-LAST:event_jMenuItem20ActionPerformed
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
     private void jScrollPaneActionPerformed(java.awt.event.ActionEvent evt) {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1082,7 +1077,6 @@ public class TelaInicio extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu11;
     private javax.swing.JMenu jMenu12;
     private javax.swing.JMenu jMenu13;
-    private javax.swing.JMenu jMenu14;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
@@ -1104,7 +1098,6 @@ public class TelaInicio extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem18;
     private javax.swing.JMenuItem jMenuItem19;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem20;
     private javax.swing.JMenuItem jMenuItem23;
     private javax.swing.JMenuItem jMenuItem24;
     private javax.swing.JMenuItem jMenuItem25;
@@ -1121,6 +1114,7 @@ public class TelaInicio extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem40;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPanel jPanel1;

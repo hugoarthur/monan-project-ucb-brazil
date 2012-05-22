@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<corpos>
+    <usuario id="1">
+        <projeto>1</projeto>
+        <categoria>Introducao</categoria>
+        <texto>The Apache PDFBox™ library is an open source Java tool for working with PDF 
+            documents. This project allows creation of new PDF documents, manipulation of existing 
+            documents and the ability to extract content from documents. Apache PDFBox also includes
+        </texto>
+    </usuario>
+</corpos>

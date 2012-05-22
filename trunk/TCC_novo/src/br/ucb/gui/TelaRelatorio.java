@@ -35,8 +35,9 @@ public class TelaRelatorio extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("ACOMPANHAMENTO - Corpus Generator");
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Relátorio de Atividades"));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Relátorio de Acompanhamento"));
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);

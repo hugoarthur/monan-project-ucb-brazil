@@ -34,10 +34,10 @@ public class BuscaUsuario implements ActionListener {
         Usuario user = UsuarioDAO.buscaUsuario(getTelaLogin().getLoginTextField().getText(),
                 new String(getTelaLogin().getSenhaPasswordField().getPassword()));
         if(user != null){
-            getTelaLogin().setVisible(false);
-            new TelaPrimeira().setVisible(true);
             Sessao sessao = Sessao.getInstance();
             sessao.setUsuario(user);
+            getTelaLogin().setVisible(false);
+            new TelaPrimeira().setVisible(true);
         }
     }
 

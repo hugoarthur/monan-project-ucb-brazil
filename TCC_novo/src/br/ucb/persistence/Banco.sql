@@ -44,6 +44,7 @@ CREATE  TABLE IF NOT EXISTS `tcc`.`acompanhamento` (
   `id_acompanhamento` INT NOT NULL ,
   `data_acompanhamento` VARCHAR(45) NOT NULL ,
   `txt_acompanhamento` VARCHAR(45) NOT NULL ,
+  `celulaUtilizadas` VARCHAR(45) NOT NULL,
   `projeto_id_projeto` INT NOT NULL ,
   PRIMARY KEY (`id_acompanhamento`, `projeto_id_projeto`) )
 ENGINE = InnoDB;

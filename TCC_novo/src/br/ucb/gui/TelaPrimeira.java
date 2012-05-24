@@ -11,6 +11,11 @@
 
 package br.ucb.gui;
 
+import br.ucb.beans.Projeto;
+import br.ucb.service.Sessao;
+import javax.swing.DefaultListModel;
+import javax.swing.JList;
+
 /**
  *
  * @author guilherme
@@ -19,9 +24,7 @@ public class TelaPrimeira extends javax.swing.JFrame {
 
     /** Creates new form TelaPrimeira */
     public TelaPrimeira() {
-        
         initComponents();
-        
     }
 
     /** This method is called from within the constructor to
@@ -40,13 +43,16 @@ public class TelaPrimeira extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jList2 = new javax.swing.JList();
+        DefaultListModel modelo = new DefaultListModel();
+        for (Projeto proj : Sessao.getInstance().getUsuario().getProjetos()) {
+            modelo.addElement(proj.getNomeProjeto());
+        }
+        nomesProjetos = new javax.swing.JList(modelo);
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         jLabel1 = new javax.swing.JLabel();
 
         setTitle("USUÁRIO - Corpus Generator");
-        setLocation(new java.awt.Point(22, 22));
         setResizable(false);
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/novo_projeto.png"))); // NOI18N
@@ -81,12 +87,7 @@ public class TelaPrimeira extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jList1);
 
-        jList2.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane2.setViewportView(jList2);
+        jScrollPane2.setViewportView(nomesProjetos);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/logon_logo.jpg"))); // NOI18N
 
@@ -176,11 +177,19 @@ public class TelaPrimeira extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JList jList1;
-    private javax.swing.JList jList2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JList nomesProjetos;
     // End of variables declaration//GEN-END:variables
+
+    public JList getNomesProjetos() {
+        return nomesProjetos;
+    }
+
+    public void setNomesProjetos(JList nomesProjetos) {
+        this.nomesProjetos = nomesProjetos;
+    }
 
 }

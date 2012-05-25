@@ -26,7 +26,7 @@ public class UsuarioDAO {
         }
         em.persist(usuario);
         em.getTransaction().commit();
-        //em.close();
+        em.close();
     }
     public static List<Usuario> findAll(){
         

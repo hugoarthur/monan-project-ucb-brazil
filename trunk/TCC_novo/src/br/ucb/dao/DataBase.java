@@ -14,11 +14,12 @@ import javax.persistence.Persistence;
  */
 public class DataBase {
     
+    private static EntityManagerFactory emf;
     private static EntityManager entityManager;
     private static DataBase bd;
 
     private DataBase() {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("TCC_UNIT");
+        setEmf(Persistence.createEntityManagerFactory("TCC_UNIT"));
         setEntityManager(emf.createEntityManager());
     }
 
@@ -30,6 +31,11 @@ public class DataBase {
     }
 
     public EntityManager getEntityManager() {
+        if(entityManager != null)
+        {
+            if(!(entityManager).isOpen())
+                entityManager = getEmf().createEntityManager();
+        }
         return entityManager;
     }
 
@@ -43,5 +49,13 @@ public class DataBase {
 
     public void setBd(DataBase bd) {
         DataBase.bd = bd;
+    }
+
+    public static EntityManagerFactory getEmf() {
+        return emf;
+    }
+
+    public static void setEmf(EntityManagerFactory emf) {
+        DataBase.emf = emf;
     }
 }

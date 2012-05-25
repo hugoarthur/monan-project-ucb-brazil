@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<corpos>
-    <usuario id="1">
-        <projeto>1</projeto>
-        <categoria>Introducao</categoria>
-        <texto>The Apache PDFBox™ library is an open source Java tool for working with PDF 
+<corpos><usuario id="1"><projeto>1</projeto><celula></celula><texto>The Apache PDFBox™ library is an open source Java tool for working with PDF 
             documents. This project allows creation of new PDF documents, manipulation of existing 
             documents and the ability to extract content from documents. Apache PDFBox also includes
-        </texto>
-    </usuario>
-</corpos>
+        </texto></usuario><usuario id="2"><projeto>1</projeto><celula>Abstract</celula><texto>The Apache PDFBox™ library is an open source Java tool for working with PDF &#xD;
+documents. This project allows creation of new PDF documents, manipulation of existing &#xD;
+documents and the ability to extract content from documents. Apache PDFBox also includes &#xD;
+several command line utilities. Apache PDFBox is published under the Apache License v2.0  &#xD;
+Como descrito acima, PDFBox é uma biblioteca que permite manipular arquivos PDF, seja para &#xD;
+criação de novos documentos ou mesmo de documentos já existentes, permitindo a extração de seu &#xD;
+conteúdo.  É  uma  ferramenta  desenvolvido  pelo  Apache  Software  Foundation,  disponível  no &#xD;
+endereço http://pdfbox.apache.org/ </texto></usuario><usuario id="2"><projeto>1</projeto><celula>Introdução</celula><texto>Este  tutorial  demonstra  o  uso  do  PDFBox,  implementando  exemplos  de  cada  funcionalidade &#xD;
+disponível pela biblioteca. Usaremos o Eclise IDE  Indigo, compilando com Java 1.6,   juntamente &#xD;
+com Apache Mavem, porém os exemplos podem ser realizados em qualquer outro ambiente de &#xD;
+desenvolvimento, sem comprometer nenhuma funcionalidade.&#xD;
+Com o objetivo  secundário,  busca  apresentar  o  Apache  Maven aos  desenvolvedores  que  estão &#xD;
+iniciando com essa ferramenta. Caso você já conheça o maven, pode pular estes  detalhes.&#xD;
+Criando o projeto</texto></usuario></corpos>

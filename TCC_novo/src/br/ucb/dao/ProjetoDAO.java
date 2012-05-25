@@ -5,10 +5,7 @@
 package br.ucb.dao;
 
 import br.ucb.beans.Projeto;
-import br.ucb.service.Sessao;
-import java.util.List;
 import javax.persistence.EntityManager;
-import javax.persistence.Query;
 
 /**
  *
@@ -26,7 +23,7 @@ public class ProjetoDAO {
             em.getTransaction().begin();
         em.persist(projeto);
         em.getTransaction().commit();
-        //em.close();
+        em.close();
     }
 
     public static void excluiProjeto() {

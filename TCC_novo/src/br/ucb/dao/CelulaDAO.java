@@ -29,7 +29,7 @@ public class CelulaDAO {
             em.getTransaction().begin();
         em.persist(celula);
         em.getTransaction().commit();
-        //em.close();
+        em.close();
     }
 
     public static void excluiCelula(){

@@ -23,7 +23,7 @@ public class ImplementaXml {
 
     public void escreverXML(String usu, String proj, String cel, String text) {
 
-        Element corpos = new Element("corpos");
+        Element corpos = new Element("corpus");
         Document documento = new Document(corpos);
         List<Element> lista = new ArrayList();
 
@@ -81,7 +81,7 @@ public class ImplementaXml {
             Element projeto = new Element("projeto");
             projeto.setText(proj);
 
-            Element celula = new Element("categoria");
+            Element celula = new Element("celula");
             celula.setText(cel);
 
             Element texto = new Element("texto");

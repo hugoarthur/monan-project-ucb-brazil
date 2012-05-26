@@ -18,8 +18,9 @@ import javax.swing.tree.DefaultMutableTreeNode;
  * @author GUICUNHA
  */
 public class FileTree extends JPanel {
+
     public JEditorPane jEditorPane;
-    
+
     public FileTree(File dir) {
         setLayout(new BorderLayout());
 
@@ -29,7 +30,9 @@ public class FileTree extends JPanel {
 
             public void valueChanged(TreeSelectionEvent e) {
                 DefaultMutableTreeNode node = (DefaultMutableTreeNode) e.getPath().getLastPathComponent();
-                /*------------------------------------------------------------*/
+                /*
+                 * ------------------------------------------------------------
+                 */
                 //------------Classe que manipula a extraçao do PDF-------------
                 ManipulaPDF manipulaPDF = new ManipulaPDF();
                 //--------------------------------------------------------------
@@ -41,22 +44,25 @@ public class FileTree extends JPanel {
                 //--------------------------------------------------------------
                 //---------------Constroi o caminho do arquivo------------------
                 String caminho = "";
-                for( Object pdf : caminhoPdf )
-                    caminho += pdf+"/";
+                for (Object pdf : caminhoPdf) {
+                    caminho += pdf + "/";
+                }
                 //--------------------------------------------------------------
                 //--------Verifica se o que foi selecionado é um arquivo--------
-                if( new File(caminho).isFile() ) {
-                    //----------------Confiramacao do arquivo-------------------
-                    int opcao = JOptionPane.showConfirmDialog(null,"Deseja abrir esse Arquivo?",null,JOptionPane.YES_NO_OPTION);
+                if (new File(caminho).isFile()) {
+                    //-------Confiramacao da abertura do arquivo----------------
+                    int opcao = JOptionPane.showConfirmDialog(null, "Deseja abrir esse Arquivo?", null, JOptionPane.YES_NO_OPTION);
                     //----------------------------------------------------------
-                    if(opcao == JOptionPane.YES_OPTION){ 
+                    if (opcao == JOptionPane.YES_OPTION) {
                         //------Add o texto extraido no campo jEditorPane-------
                         manipulaPDF.setCaminho(caminho);
                         jEditorPane.setText(manipulaPDF.extrairPDF());
                         //------------------------------------------------------
                     }
                 }
-                /*------------------------------------------------------------*/
+                /*
+                 * ------------------------------------------------------------
+                 */
             }
         });
 
@@ -66,7 +72,7 @@ public class FileTree extends JPanel {
     }
 
     DefaultMutableTreeNode addNodes(DefaultMutableTreeNode curTop, File dir) {
-        String curPath = dir.getPath();
+        String curPath = dir.getName();
         DefaultMutableTreeNode curDir = new DefaultMutableTreeNode(curPath);
         if (curTop != null) {
             curTop.add(curDir);
@@ -79,7 +85,7 @@ public class FileTree extends JPanel {
         Collections.sort(ol, String.CASE_INSENSITIVE_ORDER);
         File f;
         Vector files = new Vector();
-        
+
         for (int i = 0; i < ol.size(); i++) {
             String thisObject = (String) ol.elementAt(i);
             String newPath;
@@ -94,7 +100,7 @@ public class FileTree extends JPanel {
                 files.addElement(thisObject);
             }
         }
-        
+
         for (int fnum = 0; fnum < files.size(); fnum++) {
             curDir.add(new DefaultMutableTreeNode(files.elementAt(fnum)));
         }

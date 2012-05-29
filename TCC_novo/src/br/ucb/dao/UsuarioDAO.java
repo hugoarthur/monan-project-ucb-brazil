@@ -16,7 +16,7 @@ import org.slf4j.LoggerFactory;
  *
  * @author GUICUNHA
  */
-public class UsuarioDAO {
+public class UsuarioDAO{
     static Logger logger = LoggerFactory.getLogger(UsuarioDAO.class);
     
     public UsuarioDAO() {

@@ -5,6 +5,7 @@
     <class>br.ucb.beans.Usuario</class>
     <class>br.ucb.beans.Celula</class>
     <class>br.ucb.beans.Projeto</class>
+    <class>br.ucb.beans.Acompanhamento</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/TCCPU"/>
       <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>

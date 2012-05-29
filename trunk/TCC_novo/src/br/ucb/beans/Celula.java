@@ -2,25 +2,27 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package br.ucb.beans;
 
+import java.io.Serializable;
 import javax.persistence.*;
 
 /**
  *
  * @author GUICUNHA
  */
-
 @Entity
-@Table(name="celula")
-public class Celula {
-    @Column(name="id_celula")
+@Table(name = "celula")
+public class Celula implements Serializable {
+
+    @Column(name = "id_celula")
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idCelula;
-    @Column(name="txt_celula")
+    @Column(name = "txt_celula")
     private String txt_celula;
+    @ManyToOne
+    private Acompanhamento acompanhamento;
 
     /**
      * @return the idCelula
@@ -50,6 +52,11 @@ public class Celula {
         this.txt_celula = txt_celula;
     }
 
-   
-   
+    public Acompanhamento getAcompanhamento() {
+        return acompanhamento;
+    }
+
+    public void setAcompanhamento(Acompanhamento acompanhamento) {
+        this.acompanhamento = acompanhamento;
+    }
 }

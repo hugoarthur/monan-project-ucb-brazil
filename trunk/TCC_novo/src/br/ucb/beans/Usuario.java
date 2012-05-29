@@ -4,6 +4,7 @@
  */
 package br.ucb.beans;
 
+import java.io.Serializable;
 import java.util.List;
 import javax.persistence.*;
 
@@ -13,7 +14,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "usuario")
-public class Usuario {
+public class Usuario implements Serializable {
 
     @Column(name = "id_usuario")
     @Id

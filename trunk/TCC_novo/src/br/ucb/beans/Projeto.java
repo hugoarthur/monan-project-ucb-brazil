@@ -4,6 +4,7 @@
  */
 package br.ucb.beans;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -15,7 +16,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "projeto")
-public class Projeto {
+public class Projeto implements Serializable {
 
     @Column(name = "id_projeto")
     @Id
@@ -26,9 +27,14 @@ public class Projeto {
     @Column(name = "data_projeto")
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date dataProjeto;
+    @Lob
+    @Column(name = "arquivo_xml")
+    private byte[] arquivoXml;
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_usuario", nullable = false, referencedColumnName = "id_usuario")
     private List<Usuario> usuarios;
+    @ManyToOne
+    private Acompanhamento acompanhamento;
 
     public Projeto() {
         if (this.usuarios == null) {
@@ -78,11 +84,28 @@ public class Projeto {
         this.dataProjeto = dataProjeto;
     }
 
+    public byte[] getArquivoXml() {
+        return arquivoXml;
+    }
+
+    public void setArquivoXml(byte[] arquivoXml) {
+        this.arquivoXml = arquivoXml;
+    }
+    
+
     public List<Usuario> getUsuarios() {
         return usuarios;
     }
 
     public void setUsuarios(List<Usuario> usuarios) {
         this.usuarios = usuarios;
+    }
+
+    public Acompanhamento getAcompanhamento() {
+        return acompanhamento;
+    }
+
+    public void setAcompanhamento(Acompanhamento acompanhamento) {
+        this.acompanhamento = acompanhamento;
     }
 }

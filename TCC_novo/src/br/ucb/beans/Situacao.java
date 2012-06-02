@@ -15,23 +15,23 @@ import javax.persistence.*;
 @Table(name = "situacao")
 public class Situacao implements Serializable {
 
-    @Column(name = "id_acompanhamento")
+    @Column(name = "id_situcao")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idSituacao;
     @Column(name = "des_situacao")
     private String desSituacao;
-//    @OneToOne(cascade = CascadeType.ALL)
-//    @JoinColumn(name = "id_acompanhamento", nullable = false)
-//    private Acompanhamento acompanhamento;
-//
-//    public Acompanhamento getAcompanhamento() {
-//        return acompanhamento;
-//    }
-//
-//    public void setAcompanhamento(Acompanhamento acompanhamento) {
-//        this.acompanhamento = acompanhamento;
-//    }
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_acompanhamento", nullable = false)
+    private Acompanhamento acompanhamento;
+
+    public Acompanhamento getAcompanhamento() {
+        return acompanhamento;
+    }
+
+    public void setAcompanhamento(Acompanhamento acompanhamento) {
+        this.acompanhamento = acompanhamento;
+    }
 
     public String getDesSituacao() {
         return desSituacao;

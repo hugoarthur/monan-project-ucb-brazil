@@ -29,10 +29,7 @@ public class ImplementaXml {
 
         this.caminho = caminhoArqXml(proj);
 
-        int cont = 0;
-        cont = verificaArqXML();
-
-        if (cont == 0) {
+        if (verificaArqXML()) {
             lista = lista();
             for (Element e : lista) {
 
@@ -125,12 +122,12 @@ public class ImplementaXml {
         return lista;
     }
 
-    private int verificaArqXML() {
+    private boolean verificaArqXML() {
         File arq = new File(this.caminho);
-        if (!arq.exists()) {
-            return 1;
+        if (arq.exists()) {
+            return true;
         }
-        return 0;
+        return false;
     }
 
     private String caminhoArqXml(String proj) {

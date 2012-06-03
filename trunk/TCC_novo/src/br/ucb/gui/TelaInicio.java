@@ -906,7 +906,7 @@ public class TelaInicio extends javax.swing.JFrame {
 
     private void jMenuItem33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem33ActionPerformed
         // TODO add your handling code here:
-        TelaCelulas categorias = new TelaCelulas();
+        TelaUsuarios categorias = new TelaUsuarios();
         categorias.setVisible(true);
     }//GEN-LAST:event_jMenuItem33ActionPerformed
 
@@ -1023,14 +1023,14 @@ public class TelaInicio extends javax.swing.JFrame {
 
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
         // TODO add your handling code here:
-        TelaAlteraUsuario telaAltera = new TelaAlteraUsuario();
-        telaAltera.setVisible(true);
+        TelaUsuarios usertela = new TelaUsuarios();
+        usertela.setVisible(true);
     }//GEN-LAST:event_jButton15ActionPerformed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
         // TODO add your handling code here:
-        TelaExcluiUsuario excluiUser = new TelaExcluiUsuario();
-        excluiUser.setVisible(true);
+        TelaUsuarios usertela = new TelaUsuarios();
+        usertela.setVisible(true);
     }//GEN-LAST:event_jButton14ActionPerformed
 
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed

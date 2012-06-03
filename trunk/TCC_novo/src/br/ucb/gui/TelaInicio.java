@@ -10,7 +10,7 @@
  */
 package br.ucb.gui;
 
-import br.ucb.gui.cadastro.ConfiguraCampos;
+import br.ucb.gui.ActionListeners.ConfiguraCampos;
 import br.ucb.manipulacao.pdf.Arvore;
 import br.ucb.manipulacao.pdf.ManipulaPDF;
 import br.ucb.service.Sessao;

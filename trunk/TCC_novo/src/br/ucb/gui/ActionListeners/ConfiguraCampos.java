@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.ucb.gui.cadastro;
+package br.ucb.gui.ActionListeners;
 
 import br.ucb.beans.Celula;
 import br.ucb.beans.Projeto;
@@ -10,7 +10,7 @@ import br.ucb.beans.Usuario;
 import br.ucb.dao.CelulaDAO;
 import br.ucb.dao.UsuarioDAO;
 import br.ucb.service.Sessao;
-import java.util.ArrayList;
+import java.util.List;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 
@@ -22,13 +22,21 @@ public class ConfiguraCampos {
 
     public DefaultListModel listModel() {
         DefaultListModel listModel = new DefaultListModel();
+        
         if (UsuarioDAO.findAll() != null) {
+            
             for (Usuario usuario : UsuarioDAO.findAll()) {
+                
                 if (usuario.getTipoUsuario() == 1) {
-                    ArrayList<Projeto> list = new ArrayList<Projeto>();
+                    
+                    List<Projeto> list = usuario.getProjetos();
+                    
                     for (Projeto proj : list) {
+                        
                         if (proj.getIdProjeto() == Sessao.getInstance().getProjeto().getIdProjeto()) {
+                            
                             listModel.addElement(usuario.getNome());
+                            
                         }
                     }
 

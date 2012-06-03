@@ -10,7 +10,8 @@
  */
 package br.ucb.gui;
 
-import br.ucb.gui.cadastro.ConfiguraCampos;
+import br.ucb.gui.ActionListeners.ConfiguraCampos;
+
 
 /**
  *

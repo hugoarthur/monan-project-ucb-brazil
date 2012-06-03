@@ -4,6 +4,7 @@
  */
 package br.ucb.service;
 
+import br.ucb.beans.Projeto;
 import br.ucb.beans.Usuario;
 import javax.swing.JFrame;
 
@@ -15,6 +16,7 @@ public class Sessao {
 
     private static Sessao instance = null;
     private Usuario usuario;
+    private Projeto projeto;
     private JFrame tela;
 
     private Sessao() {
@@ -41,5 +43,13 @@ public class Sessao {
             instance = new Sessao();
         }
         return instance;
+    }
+
+    public Projeto getProjeto() {
+        return projeto;
+    }
+
+    public void setProjeto(Projeto projeto) {
+        this.projeto = projeto;
     }
 }

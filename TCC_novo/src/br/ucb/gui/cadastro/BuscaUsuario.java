@@ -33,7 +33,7 @@ public class BuscaUsuario implements ActionListener {
     public void buscaUsuario() {
         Usuario user = UsuarioDAO.buscaUsuario(getTelaLogin().getLoginTextField().getText(),
                 new String(getTelaLogin().getSenhaPasswordField().getPassword()));
-        if(user != null){
+        if (user != null) {
             Sessao sessao = Sessao.getInstance();
             sessao.setUsuario(user);
             getTelaLogin().setVisible(false);
@@ -48,6 +48,4 @@ public class BuscaUsuario implements ActionListener {
     public void setTelaLogin(TelaLogin telaLogin) {
         this.telaLogin = telaLogin;
     }
-
-    
 }

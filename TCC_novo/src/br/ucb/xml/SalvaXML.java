@@ -12,19 +12,18 @@ import javax.swing.JOptionPane;
  * @author Osmar jr
  */
 public class SalvaXML {
-    
-    public void CriaXML(String nomeCelula, String texto){
-                
+
+    public void CriaXML(String nomeCelula, String texto) {
+
         ImplementaXml xml = new ImplementaXml();
         String usuario = Sessao.getInstance().getUsuario().getIdUsuario().toString();
         String projeto = "1";
-        
-        if (!"".equals(texto)){
+
+        if (!"".equals(texto)) {
             xml.escreverXML(usuario, projeto, nomeCelula, texto);
             JOptionPane.showMessageDialog(null, "Salvo com Sucesso");
+        } else {
+            JOptionPane.showMessageDialog(null, "Nenhum texto foi selecionado");
         }
-        else
-            JOptionPane.showMessageDialog(null, "Nenhum texto foi selecionado");     
     }
-    
 }

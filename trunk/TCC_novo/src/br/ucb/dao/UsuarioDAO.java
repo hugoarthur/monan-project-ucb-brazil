@@ -16,13 +16,13 @@ import org.slf4j.LoggerFactory;
  *
  * @author GUICUNHA
  */
-public class UsuarioDAO{
+public class UsuarioDAO {
+    
     static Logger logger = LoggerFactory.getLogger(UsuarioDAO.class);
     
     public UsuarioDAO() {
-        
     }
-
+    
     public static void insereUsuario(Usuario usuario) {
         EntityManager em = DataBase.getInstance().getEntityManager();
         if (!em.getTransaction().isActive()) {
@@ -32,38 +32,52 @@ public class UsuarioDAO{
         em.getTransaction().commit();
         em.close();
     }
-    public static List<Usuario> findAll(){
+    
+    public static List<Usuario> findAll() {
         
         EntityManager em = DataBase.getInstance().getEntityManager();
         Query query = em.createQuery("SELECT c FROM Usuario c");
         List<Usuario> lista = null;
-        try{
+        try {
             lista = (List<Usuario>) query.getResultList();
             return lista;
-        }catch (javax.persistence.NoResultException e) {
-            JOptionPane.showMessageDialog(null, "vazio","Warning",JOptionPane.WARNING_MESSAGE);
+        } catch (javax.persistence.NoResultException e) {
+            JOptionPane.showMessageDialog(null, "vazio", "Warning", JOptionPane.WARNING_MESSAGE);
         }
         return lista;
     }
-    public static void excluiUsuario() {
+    
+    public static void excluiUsuario(String nome) {
+        EntityManager em = DataBase.getInstance().getEntityManager();
+        em.getTransaction().begin();
+        try {
+            Usuario usu = em.find(Usuario.class, nome);
+            em.remove(usu);
+        } catch (Exception e) {
+            e.printStackTrace();
+            em.getTransaction().rollback();
+            
+        } finally {
+            em.close();
+        }
     }
-
+    
     public static void alteraUsuario() {
     }
-
+    
     public static Usuario buscaUsuario(String login, String senha) {
-        logger.info("Buscando por: "+login);
+        logger.info("Buscando por: " + login);
         EntityManager em = DataBase.getInstance().getEntityManager();
         Query query = em.createQuery("SELECT u FROM Usuario u WHERE u.login = :login AND u.senha = :senha");
         query.setParameter("login", login);
         query.setParameter("senha", senha);
         try {
             Usuario user = (Usuario) query.getSingleResult();
-            logger.info("Usuário encontrado com login: "+login);
+            logger.info("Usuário encontrado com login: " + login);
             return user;
         } catch (javax.persistence.NoResultException e) {
             logger.error("Usuário não encontrado!");
-            JOptionPane.showMessageDialog(null, "Usuário não encontrado","Erro",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Usuário não encontrado", "Erro", JOptionPane.ERROR_MESSAGE);
         }
         return null;
     }

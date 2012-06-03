@@ -12,12 +12,6 @@
 package br.ucb.gui;
 
 import br.ucb.gui.cadastro.CadastrarUsuario;
-import java.awt.Container;
-import java.util.ArrayList;
-import java.util.List;
-import javax.swing.ComboBoxModel;
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.JComboBox;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 

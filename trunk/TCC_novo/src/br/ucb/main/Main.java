@@ -5,7 +5,6 @@
 package br.ucb.main;
 
 import br.ucb.gui.TelaLogin;
-
 /**
  *
  * @author GUICUNHA
@@ -18,5 +17,7 @@ public class Main {
     public static void main(String[] args) {
         TelaLogin login = new TelaLogin();
         login.setVisible(true);
+        CriaPastas criaPastas = new CriaPastas();
+        criaPastas.verificaDir();
     }
 }

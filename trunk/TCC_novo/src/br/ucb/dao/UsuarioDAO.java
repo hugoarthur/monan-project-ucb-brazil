@@ -17,12 +17,12 @@ import org.slf4j.LoggerFactory;
  * @author GUICUNHA
  */
 public class UsuarioDAO {
-    
+
     static Logger logger = LoggerFactory.getLogger(UsuarioDAO.class);
-    
+
     public UsuarioDAO() {
     }
-    
+
     public static void insereUsuario(Usuario usuario) {
         EntityManager em = DataBase.getInstance().getEntityManager();
         if (!em.getTransaction().isActive()) {
@@ -31,10 +31,11 @@ public class UsuarioDAO {
         em.persist(usuario);
         em.getTransaction().commit();
         em.close();
+        logger.info("Inserindo usuário: " + "Nome: " + usuario.getNome() + "Login: " + usuario.getLogin());
     }
-    
+
     public static List<Usuario> findAll() {
-        
+
         EntityManager em = DataBase.getInstance().getEntityManager();
         Query query = em.createQuery("SELECT c FROM Usuario c");
         List<Usuario> lista = null;
@@ -42,29 +43,30 @@ public class UsuarioDAO {
             lista = (List<Usuario>) query.getResultList();
             return lista;
         } catch (javax.persistence.NoResultException e) {
-            JOptionPane.showMessageDialog(null, "vazio", "Warning", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Não há usuários cadastrados!", "Warning", JOptionPane.WARNING_MESSAGE);
+            logger.error("Não há usuários cadastrados!");
         }
         return lista;
     }
-    
-    public static void excluiUsuario(String nome) {
+
+    public static void excluiUsuario(Integer id) {
+        logger.info("Procurando usuário com id: " + id + " para exclusão");
         EntityManager em = DataBase.getInstance().getEntityManager();
         em.getTransaction().begin();
         try {
-            Usuario usu = em.find(Usuario.class, nome);
+            Usuario usu = em.find(Usuario.class, id);
             em.remove(usu);
         } catch (Exception e) {
-            e.printStackTrace();
             em.getTransaction().rollback();
-            
+
         } finally {
             em.close();
         }
     }
-    
+
     public static void alteraUsuario() {
     }
-    
+
     public static Usuario buscaUsuario(String login, String senha) {
         logger.info("Buscando por: " + login);
         EntityManager em = DataBase.getInstance().getEntityManager();

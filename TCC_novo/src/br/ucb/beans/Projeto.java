@@ -108,4 +108,11 @@ public class Projeto implements Serializable {
     public void setAcompanhamento(Acompanhamento acompanhamento) {
         this.acompanhamento = acompanhamento;
     }
+
+    @Override
+    public String toString() {
+        return this.getNomeProjeto();
+    }
+    
+    
 }

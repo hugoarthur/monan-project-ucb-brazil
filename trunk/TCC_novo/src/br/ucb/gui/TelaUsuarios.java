@@ -10,6 +10,7 @@
  */
 package br.ucb.gui;
 
+import br.ucb.beans.Usuario;
 import br.ucb.gui.ActionListeners.ConfiguraCampos;
 
 
@@ -23,7 +24,7 @@ public class TelaUsuarios extends javax.swing.JFrame {
      * Creates new form TelaCategorias
      */
     private ConfiguraCampos setar = new ConfiguraCampos();
-
+    private Usuario user;
     public TelaUsuarios() {
         initComponents();
         listCelulas();
@@ -120,10 +121,19 @@ public class TelaUsuarios extends javax.swing.JFrame {
     private void alteraUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alteraUsuarioActionPerformed
         // TODO add your handling code here:
         TelaAlteraUsuario alteraUser = new TelaAlteraUsuario();
+        alteraUser.setNomeTextField(user.getNome());
         alteraUser.setVisible(true);
         alteraUser.setSize(456, 291);
     }//GEN-LAST:event_alteraUsuarioActionPerformed
 
+    private void jList1MouseClicked(java.awt.event.MouseEvent evt){
+        
+        int selectedIndex = jList1.getSelectedIndex();
+        this.user = (Usuario) jList1.getModel().getElementAt(selectedIndex);
+        System.out.println("nome = " + user.getNome());
+        
+    }
+    
     private void excluirUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluirUsuarioActionPerformed
         // TODO add your handling code here:
         TelaExcluiUsuario excluiUser = new TelaExcluiUsuario();
@@ -152,7 +162,7 @@ public class TelaUsuarios extends javax.swing.JFrame {
 
     public void listCelulas() {
         jList1.removeAll();
-        jList1.setModel(setar.listModelCel());
+        jList1.setModel(setar.listaUser());
         jList1.repaint();
     }
 }

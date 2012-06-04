@@ -11,6 +11,9 @@
 
 package br.ucb.gui;
 
+import br.ucb.gui.ActionListeners.ConfiguraJtable;
+import javax.swing.JTable;
+
 /**
  *
  * @author GUICUNHA
@@ -20,7 +23,8 @@ public class TelaAcompanhamento extends javax.swing.JFrame {
     /** Creates new form TelaAcompanhamento */
     public TelaAcompanhamento() {
         initComponents();
-        
+        ConfiguraJtable confTable = new ConfiguraJtable();
+        confTable.configuraJtable();
     }
 
     /** This method is called from within the constructor to
@@ -108,5 +112,16 @@ public class TelaAcompanhamento extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
-
+    
+    public JTable getJTable(){
+        
+        return jTable1;
+        
+    }
+    
+    public void setJTable(JTable jtable){
+       
+        this.jTable1 = jtable;
+        
+    }
 }

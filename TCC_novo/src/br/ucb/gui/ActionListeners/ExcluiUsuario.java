@@ -21,21 +21,10 @@ public class ExcluiUsuario implements ActionListener {
     public ExcluiUsuario(TelaExcluiUsuario form) {
 
         setTelaLogin(form);
-        buscaUser();
-
     }
 
     public void actionPerformed(ActionEvent e) {
-    }
-
-    public void buscaUser() {
-
-        Usuario user = UsuarioDAO.buscaUsuario(getTelaExcluiUsuario().getLoginTextField().getText(),
-                new String(getTelaExcluiUsuario().getSenhaPasswordField().getPassword()));
-        if (user != null) {
-            UsuarioDAO.excluiUsuario(Integer.SIZE);
-        }
-
+        
     }
 
     public TelaExcluiUsuario getTelaExcluiUsuario() {

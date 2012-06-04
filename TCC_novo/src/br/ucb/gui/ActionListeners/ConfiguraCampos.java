@@ -57,7 +57,7 @@ public class ConfiguraCampos {
         if (UsuarioDAO.findAll() != null) {
 
             for (Usuario usuario : UsuarioDAO.findAll()) {
-                listModel.addElement(usuario.getNome());
+                listModel.addElement(usuario);
             }
 
         } else {

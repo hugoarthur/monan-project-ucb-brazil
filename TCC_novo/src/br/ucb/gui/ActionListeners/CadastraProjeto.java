@@ -2,10 +2,9 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.ucb.gui.cadastro;
+package br.ucb.gui.ActionListeners;
 
 import br.ucb.beans.Projeto;
-import br.ucb.beans.Usuario;
 import br.ucb.constants.Constants;
 import br.ucb.dao.ProjetoDAO;
 import br.ucb.gui.TelaInicio;
@@ -13,7 +12,6 @@ import br.ucb.gui.TelaNovoProjeto;
 import br.ucb.service.Sessao;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 import java.util.Date;
 
 /**

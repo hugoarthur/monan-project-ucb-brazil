@@ -11,7 +11,7 @@
 
 package br.ucb.gui;
 
-import br.ucb.gui.cadastro.BuscaUsuario;
+import br.ucb.gui.ActionListeners.BuscaUsuario;
 
 import javax.swing.JButton;
 import javax.swing.JPasswordField;

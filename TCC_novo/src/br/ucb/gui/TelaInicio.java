@@ -128,10 +128,6 @@ public class TelaInicio extends javax.swing.JFrame {
         jSeparator6 = new javax.swing.JPopupMenu.Separator();
         jMenuItem8 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        jMenuItem9 = new javax.swing.JMenuItem();
-        jSeparator8 = new javax.swing.JPopupMenu.Separator();
-        jMenuItem10 = new javax.swing.JMenuItem();
-        jSeparator9 = new javax.swing.JPopupMenu.Separator();
         jMenuItem11 = new javax.swing.JMenuItem();
         jSeparator10 = new javax.swing.JPopupMenu.Separator();
         jMenuItem12 = new javax.swing.JMenuItem();
@@ -150,8 +146,6 @@ public class TelaInicio extends javax.swing.JFrame {
         jMenuItem18 = new javax.swing.JMenuItem();
         jSeparator16 = new javax.swing.JPopupMenu.Separator();
         jMenuItem19 = new javax.swing.JMenuItem();
-        jSeparator20 = new javax.swing.JPopupMenu.Separator();
-        jMenuItem23 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenuItem24 = new javax.swing.JMenuItem();
         jSeparator18 = new javax.swing.JPopupMenu.Separator();
@@ -583,8 +577,6 @@ public class TelaInicio extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Equipe", jPanel4);
 
-        jMenu1.setText("Arquivo");
-
         jMenu8.setText("Novo");
 
         jMenuItem1.setText("Projeto");
@@ -614,8 +606,6 @@ public class TelaInicio extends javax.swing.JFrame {
 
         jMenu1.add(jMenu9);
         jMenu1.add(jSeparator2);
-
-        jMenuItem4.setText("Salvar Como");
         jMenu1.add(jMenuItem4);
         jMenu1.add(jSeparator3);
 
@@ -634,16 +624,6 @@ public class TelaInicio extends javax.swing.JFrame {
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Editar");
-
-        jMenuItem9.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Z, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem9.setText("Desfazer Excluir");
-        jMenu2.add(jMenuItem9);
-        jMenu2.add(jSeparator8);
-
-        jMenuItem10.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_X, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem10.setText("Recortar");
-        jMenu2.add(jMenuItem10);
-        jMenu2.add(jSeparator9);
 
         jMenuItem11.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem11.setText("Copiar");
@@ -668,6 +648,11 @@ public class TelaInicio extends javax.swing.JFrame {
         jMenu10.setText("Categorizar");
 
         jMenuItem15.setText("Todas as Células");
+        jMenuItem15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem15ActionPerformed(evt);
+            }
+        });
         jMenu10.add(jMenuItem15);
 
         jMenu2.add(jMenu10);
@@ -715,10 +700,6 @@ public class TelaInicio extends javax.swing.JFrame {
             }
         });
         jMenu3.add(jMenuItem19);
-        jMenu3.add(jSeparator20);
-
-        jMenuItem23.setText("Tela Cheia");
-        jMenu3.add(jMenuItem23);
 
         jMenuBar1.add(jMenu3);
 
@@ -730,14 +711,33 @@ public class TelaInicio extends javax.swing.JFrame {
                 jMenuItem24ActionPerformed(evt);
             }
         });
+        jMenuItem24.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+                jMenuItem24AncestorRemoved(evt);
+            }
+        });
         jMenu4.add(jMenuItem24);
         jMenu4.add(jSeparator18);
 
         jMenuItem25.setText("Alterar Status");
+        jMenuItem25.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem25ActionPerformed(evt);
+            }
+        });
         jMenu4.add(jMenuItem25);
         jMenu4.add(jSeparator21);
 
         jMenuItem26.setText("Criar Relatório");
+        jMenuItem26.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem26ActionPerformed(evt);
+            }
+        });
         jMenu4.add(jMenuItem26);
         jMenu4.add(jSeparator22);
 
@@ -1063,6 +1063,28 @@ public class TelaInicio extends javax.swing.JFrame {
         TelaAcompanhamento acompanhamento = new TelaAcompanhamento();
         acompanhamento.setVisible(true);
     }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jMenuItem24AncestorRemoved(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jMenuItem24AncestorRemoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem24AncestorRemoved
+
+    private void jMenuItem26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem26ActionPerformed
+        // TODO add your handling code here:
+        TelaRelatorio relatorio = new TelaRelatorio();
+        relatorio.setVisible(true);
+    }//GEN-LAST:event_jMenuItem26ActionPerformed
+
+    private void jMenuItem25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem25ActionPerformed
+        // TODO add your handling code here:
+        TelaProjeto projeto = new TelaProjeto();
+        projeto.setVisible(true);
+    }//GEN-LAST:event_jMenuItem25ActionPerformed
+
+    private void jMenuItem15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem15ActionPerformed
+        // TODO add your handling code here:
+        TelaCelulas celulas = new TelaCelulas();
+        celulas.setVisible(true);
+    }//GEN-LAST:event_jMenuItem15ActionPerformed
     private void jScrollPaneActionPerformed(java.awt.event.ActionEvent evt) {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1114,7 +1136,6 @@ public class TelaInicio extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem13;
@@ -1125,7 +1146,6 @@ public class TelaInicio extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem18;
     private javax.swing.JMenuItem jMenuItem19;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem23;
     private javax.swing.JMenuItem jMenuItem24;
     private javax.swing.JMenuItem jMenuItem25;
     private javax.swing.JMenuItem jMenuItem26;
@@ -1143,7 +1163,6 @@ public class TelaInicio extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
-    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -1163,7 +1182,6 @@ public class TelaInicio extends javax.swing.JFrame {
     private javax.swing.JPopupMenu.Separator jSeparator16;
     private javax.swing.JPopupMenu.Separator jSeparator18;
     private javax.swing.JPopupMenu.Separator jSeparator2;
-    private javax.swing.JPopupMenu.Separator jSeparator20;
     private javax.swing.JPopupMenu.Separator jSeparator21;
     private javax.swing.JPopupMenu.Separator jSeparator22;
     private javax.swing.JPopupMenu.Separator jSeparator23;
@@ -1175,8 +1193,6 @@ public class TelaInicio extends javax.swing.JFrame {
     private javax.swing.JPopupMenu.Separator jSeparator32;
     private javax.swing.JPopupMenu.Separator jSeparator6;
     private javax.swing.JPopupMenu.Separator jSeparator7;
-    private javax.swing.JPopupMenu.Separator jSeparator8;
-    private javax.swing.JPopupMenu.Separator jSeparator9;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JTree jTree1;

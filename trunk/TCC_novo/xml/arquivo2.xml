@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<corpus><usuario id="1"><projeto>2</projeto><celula>abstract</celula><texto> botaoExtrairClick(java.awt.event.ActionEvent evt) {&#xD;
+String caminhoArquivo = this.campoArquivo.getText();&#xD;
+PDFExtraction pdfExtraction = new PDFExtraction();&#xD;
+this.campoTextoExtraido.setText(pdfExtraction.extrairTexto(caminhoArquivo));&#xD;
+this.labelCampoTextoExtraido.setText("Texto: " + pdfExtraction.getNumeroPaginas(caminhoArquivo) + " &#xD;
+páginas");</texto></usuario></corpus>

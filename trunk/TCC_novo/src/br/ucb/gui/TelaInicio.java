@@ -15,6 +15,7 @@ import br.ucb.manipulacao.pdf.Arvore;
 import br.ucb.manipulacao.pdf.ManipulaPDF;
 import br.ucb.service.Sessao;
 import br.ucb.xml.ExportaXml;
+import br.ucb.xml.Exportando;
 import br.ucb.xml.SalvaXML;
 import javax.swing.JComboBox;
 import javax.swing.JEditorPane;
@@ -1096,6 +1097,8 @@ public class TelaInicio extends javax.swing.JFrame {
         // TODO add your handling code here:
         ExportaXml exportXml = new ExportaXml();
         exportXml.exportar();
+//        Exportando xml = new Exportando();
+//        xml.exportado();
     }//GEN-LAST:event_jMenuItem27ActionPerformed
     private void jScrollPaneActionPerformed(java.awt.event.ActionEvent evt) {
     }

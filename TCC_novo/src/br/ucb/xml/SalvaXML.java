@@ -17,8 +17,8 @@ public class SalvaXML {
 
         ImplementaXml xml = new ImplementaXml();
         String usuario = Sessao.getInstance().getUsuario().getIdUsuario().toString();
-        String projeto = "1";
-
+        String projeto = Sessao.getInstance().getProjeto().getIdProjeto().toString();
+        
         if (!"".equals(texto)) {
             xml.escreverXML(usuario, projeto, nomeCelula, texto);
             JOptionPane.showMessageDialog(null, "Salvo com Sucesso");

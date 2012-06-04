@@ -11,7 +11,7 @@
 
 package br.ucb.gui;
 
-import br.ucb.gui.cadastro.CadastraCelula;
+import br.ucb.gui.ActionListeners.CadastraCelula;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 

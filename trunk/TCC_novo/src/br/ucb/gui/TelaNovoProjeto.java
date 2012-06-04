@@ -4,7 +4,7 @@
  */
 package br.ucb.gui;
 
-import br.ucb.gui.cadastro.CadastraProjeto;
+import br.ucb.gui.ActionListeners.CadastraProjeto;
 import br.ucb.service.Sessao;
 import javax.swing.JButton;
 import javax.swing.JTextField;

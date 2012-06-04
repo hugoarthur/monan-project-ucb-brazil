@@ -63,10 +63,6 @@ public class TelaNovaCelula extends javax.swing.JFrame {
         jMenuItem32 = new javax.swing.JMenuItem();
         jSeparator26 = new javax.swing.JPopupMenu.Separator();
         jMenuItem33 = new javax.swing.JMenuItem();
-        jSeparator27 = new javax.swing.JPopupMenu.Separator();
-        jMenuItem34 = new javax.swing.JMenuItem();
-        jSeparator29 = new javax.swing.JPopupMenu.Separator();
-        jMenuItem36 = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
         jMenuItem37 = new javax.swing.JMenuItem();
         jSeparator30 = new javax.swing.JPopupMenu.Separator();
@@ -162,14 +158,6 @@ public class TelaNovaCelula extends javax.swing.JFrame {
 
         jMenuItem33.setText("Células");
         jMenu5.add(jMenuItem33);
-        jMenu5.add(jSeparator27);
-
-        jMenuItem34.setText("Modelo de Fluxo");
-        jMenu5.add(jMenuItem34);
-        jMenu5.add(jSeparator29);
-
-        jMenuItem36.setText("Recuperar Relatório");
-        jMenu5.add(jMenuItem36);
 
         jMenuBar1.add(jMenu5);
 
@@ -222,7 +210,8 @@ public class TelaNovaCelula extends javax.swing.JFrame {
                 .addGap(29, 29, 29))
         );
 
-        pack();
+        java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
+        setBounds((screenSize.width-479)/2, (screenSize.height-280)/2, 479, 280);
     }// </editor-fold>//GEN-END:initComponents
 
     private void salvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvarActionPerformed
@@ -268,8 +257,6 @@ public class TelaNovaCelula extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem15;
     private javax.swing.JMenuItem jMenuItem32;
     private javax.swing.JMenuItem jMenuItem33;
-    private javax.swing.JMenuItem jMenuItem34;
-    private javax.swing.JMenuItem jMenuItem36;
     private javax.swing.JMenuItem jMenuItem37;
     private javax.swing.JMenuItem jMenuItem38;
     private javax.swing.JMenuItem jMenuItem39;
@@ -282,8 +269,6 @@ public class TelaNovaCelula extends javax.swing.JFrame {
     private javax.swing.JPopupMenu.Separator jSeparator12;
     private javax.swing.JPopupMenu.Separator jSeparator13;
     private javax.swing.JPopupMenu.Separator jSeparator26;
-    private javax.swing.JPopupMenu.Separator jSeparator27;
-    private javax.swing.JPopupMenu.Separator jSeparator29;
     private javax.swing.JPopupMenu.Separator jSeparator30;
     private javax.swing.JPopupMenu.Separator jSeparator31;
     private javax.swing.JPopupMenu.Separator jSeparator32;

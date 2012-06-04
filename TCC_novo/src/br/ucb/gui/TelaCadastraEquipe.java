@@ -47,12 +47,10 @@ public class TelaCadastraEquipe extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         universidadeComboBox = new javax.swing.JComboBox();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("NOVO USUÁRIO - Corpus Generator");
-        setLocation(new java.awt.Point(350, 200));
         setResizable(false);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Novo Usuário", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Lucida Grande", 0, 13), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Novo Usuário", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, null, new java.awt.Color(102, 102, 102)));
         jPanel1.setForeground(new java.awt.Color(102, 102, 102));
 
         NomeLabel.setText("Nome : ");
@@ -105,11 +103,11 @@ public class TelaCadastraEquipe extends javax.swing.JFrame {
                             .add(jPanel1Layout.createSequentialGroup()
                                 .add(NomeLabel)
                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                                .add(NomeTextField))
+                                .add(NomeTextField, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 340, Short.MAX_VALUE))
                             .add(jPanel1Layout.createSequentialGroup()
                                 .add(UniversidadeLabel)
                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                                .add(universidadeComboBox, 0, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .add(universidadeComboBox, 0, 308, Short.MAX_VALUE))
                             .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .add(0, 161, Short.MAX_VALUE)
                                 .add(Cadastrar)
@@ -121,8 +119,8 @@ public class TelaCadastraEquipe extends javax.swing.JFrame {
                                     .add(LoginLabel))
                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
                                 .add(jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                    .add(LoginTextField)
-                                    .add(SenhaPasswordField)))))
+                                    .add(LoginTextField, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 340, Short.MAX_VALUE)
+                                    .add(SenhaPasswordField, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 340, Short.MAX_VALUE)))))
                     .add(jPanel1Layout.createSequentialGroup()
                         .add(125, 125, 125)
                         .add(jLabel5)))
@@ -172,7 +170,8 @@ public class TelaCadastraEquipe extends javax.swing.JFrame {
                 .add(jPanel1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        pack();
+        java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
+        setBounds((screenSize.width-455)/2, (screenSize.height-397)/2, 455, 397);
     }// </editor-fold>//GEN-END:initComponents
 
     private void CadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastrarActionPerformed

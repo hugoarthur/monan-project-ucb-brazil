@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<corpus><usuario id="1"><projeto>1</projeto><celula>resumo</celula><texto>private JScrollPane scrolCampoTextoExtraido;&#xD;
+public Janela() {&#xD;
+super.setSize(650, 550);&#xD;
+super.setLayout(null);&#xD;
+this.labelCampoArquivo = new JLabel("Arquivo: ");&#xD;
+this.labelCampoArquivo.setBounds(10, 10, 100, 25);&#xD;
+add(this.labelCampoArquivo);&#xD;
+this.campoArquivo = new JTextField();&#xD;
+this.campoArquivo.setBounds(100, 10, 400, 25);&#xD;
+add(this.campoArquivo);&#xD;
+this.botaoExtrair = new JButton("Extrair");&#xD;
+this.botaoExtrair.setBounds(500, 10, 100, 25);&#xD;
+add(this.botaoExtrair);&#xD;
+this.labelCampoTextoExtraido = new JLabel("Texto:");&#xD;
+this.labelCampoTextoExtraido.setBounds(10, 50, 150, 25);&#xD;
+add(this.labelCampoTextoExtraido);&#xD;
+this.campoTextoExtraido = new JTextArea();&#xD;
+this.scrolCampoTextoExtraido = new JScrollPane(this.campoTextoExtraido);&#xD;
+add(this.scrolCampoTextoExtraido);&#xD;
+this.scrolCampoTextoExtraido.setBounds(10, 80, 600, 400);&#xD;
+this.botaoExtrair.addActionListener(new ActionListener() {&#xD;
+public void actionPerformed(ActionEvent evt) {&#xD;
+botaoExtrairClick(evt);&#xD;
+}</texto></usuario><usuario id="1"><projeto>1</projeto><celula>introdução</celula><texto>}&#xD;
+Configurando a classe Main para exibir a janela quando iniciado o sistema.&#xD;
+Main.java&#xD;
+package ivansalvadori.pdfboxtutorial;&#xD;
+import ivansalvadori.pdfboxtutorial.view.Janela;&#xD;
+public class Main {&#xD;
+public static void main(String[] args) {</texto></usuario></corpus>

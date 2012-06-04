@@ -121,7 +121,6 @@ public class TelaUsuarios extends javax.swing.JFrame {
     private void alteraUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alteraUsuarioActionPerformed
         // TODO add your handling code here:
         TelaAlteraUsuario alteraUser = new TelaAlteraUsuario();
-        alteraUser.setNomeTextField(user.getNome());
         alteraUser.setVisible(true);
         alteraUser.setSize(456, 291);
     }//GEN-LAST:event_alteraUsuarioActionPerformed
@@ -130,7 +129,7 @@ public class TelaUsuarios extends javax.swing.JFrame {
         
         int selectedIndex = jList1.getSelectedIndex();
         this.user = (Usuario) jList1.getModel().getElementAt(selectedIndex);
-        System.out.println("nome = " + user.getNome());
+        System.out.println("nome" + this.user.getNome());
         
     }
     
@@ -164,5 +163,10 @@ public class TelaUsuarios extends javax.swing.JFrame {
         jList1.removeAll();
         jList1.setModel(setar.listaUser());
         jList1.repaint();
+    }
+    public Usuario getUsuario(){
+        
+       return this.user;
+       
     }
 }

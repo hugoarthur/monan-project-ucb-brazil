@@ -11,13 +11,7 @@
 
 package br.ucb.gui;
 
-import br.ucb.gui.ActionListeners.CadastrarUsuario;
-import java.awt.Container;
-import java.util.ArrayList;
-import java.util.List;
-import javax.swing.ComboBoxModel;
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.JComboBox;
+import br.ucb.beans.Usuario;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
@@ -26,11 +20,13 @@ import javax.swing.JTextField;
  * @author GUICUNHA
  */
 public class TelaAlteraUsuario extends javax.swing.JFrame {
-
     /** Creates new form TelaCadastro */
+    private TelaUsuarios telaUser;
     public TelaAlteraUsuario() {
         initComponents();
         setItemUniverdidade();
+        Usuario user = telaUser.getUsuario();
+        setNomeTextField(new JTextField(user.getNome()));
     }
 
     /** This method is called from within the constructor to

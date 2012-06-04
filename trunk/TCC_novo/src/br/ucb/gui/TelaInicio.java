@@ -14,6 +14,7 @@ import br.ucb.gui.ActionListeners.ConfiguraCampos;
 import br.ucb.manipulacao.pdf.Arvore;
 import br.ucb.manipulacao.pdf.ManipulaPDF;
 import br.ucb.service.Sessao;
+import br.ucb.xml.ExportaXml;
 import br.ucb.xml.SalvaXML;
 import javax.swing.JComboBox;
 import javax.swing.JEditorPane;
@@ -577,6 +578,8 @@ public class TelaInicio extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Equipe", jPanel4);
 
+        jMenu1.setText("Arquivo");
+
         jMenu8.setText("Novo");
 
         jMenuItem1.setText("Projeto");
@@ -741,9 +744,12 @@ public class TelaInicio extends javax.swing.JFrame {
         jMenu4.add(jMenuItem26);
         jMenu4.add(jSeparator22);
 
-        jMenu7.setText("Exportar");
-
         jMenuItem27.setText("Arquivo XML");
+        jMenuItem27.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem27ActionPerformed(evt);
+            }
+        });
         jMenu7.add(jMenuItem27);
 
         jMenu4.add(jMenu7);
@@ -1085,6 +1091,12 @@ public class TelaInicio extends javax.swing.JFrame {
         TelaCelulas celulas = new TelaCelulas();
         celulas.setVisible(true);
     }//GEN-LAST:event_jMenuItem15ActionPerformed
+
+    private void jMenuItem27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem27ActionPerformed
+        // TODO add your handling code here:
+        ExportaXml exportXml = new ExportaXml();
+        exportXml.exportar();
+    }//GEN-LAST:event_jMenuItem27ActionPerformed
     private void jScrollPaneActionPerformed(java.awt.event.ActionEvent evt) {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -65,6 +65,11 @@ public class TelaLogin extends javax.swing.JFrame {
                 entrarActionPerformed(evt);
             }
         });
+        entrar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                entrarKeyPressed(evt);
+            }
+        });
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/novo_membro.png"))); // NOI18N
         jButton2.setText("Novo Usuário");
@@ -73,6 +78,8 @@ public class TelaLogin extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
+
+        senhaPasswordField.setNextFocusableComponent(entrar);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -165,6 +172,10 @@ public class TelaLogin extends javax.swing.JFrame {
         TelaCadastroUsuario cadastro = new TelaCadastroUsuario();
         cadastro.setVisible(true);
 }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void entrarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_entrarKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_entrarKeyPressed
 
     /**
     * @param args the command line arguments

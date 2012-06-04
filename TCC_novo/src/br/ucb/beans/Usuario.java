@@ -128,4 +128,9 @@ public class Usuario implements Serializable {
     public void setProjetos(List<Projeto> projetos) {
         this.projetos = projetos;
     }
+
+    @Override
+    public String toString() {
+        return this.nome;
+    }
 }

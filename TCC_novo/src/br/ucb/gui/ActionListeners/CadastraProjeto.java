@@ -21,7 +21,6 @@ import java.util.Date;
 public class CadastraProjeto implements ActionListener {
 
     private TelaNovoProjeto telaNovoProjeto;
-    private TelaInicio telaIni = new TelaInicio();
     
     public CadastraProjeto(TelaNovoProjeto form) {
         setTelaNovoProjeto(form);
@@ -40,14 +39,7 @@ public class CadastraProjeto implements ActionListener {
             projeto.getUsuarios().add(Sessao.getInstance().getUsuario());
         projeto.setDataProjeto(new Date());
         ProjetoDAO.insereProjeto(projeto);
-    }
-
-    public TelaInicio getTelaIni() {
-        return telaIni;
-    }
-
-    public void setTelaIni(TelaInicio telaIni) {
-        this.telaIni = telaIni;
+        Sessao.getInstance().setProjeto(projeto);
     }
 
     public TelaNovoProjeto getTelaNovoProjeto() {

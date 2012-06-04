@@ -22,6 +22,13 @@ public class Sessao {
     private Sessao() {
     }
 
+    public static Sessao getInstance() {
+        if (instance == null) {
+            instance = new Sessao();
+        }
+        return instance;
+    }
+    
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
@@ -36,13 +43,6 @@ public class Sessao {
 
     public void setTela(JFrame tela) {
         this.tela = tela;
-    }
-
-    public static Sessao getInstance() {
-        if (instance == null) {
-            instance = new Sessao();
-        }
-        return instance;
     }
 
     public Projeto getProjeto() {

@@ -12,6 +12,7 @@
 package br.ucb.gui;
 
 import br.ucb.beans.Projeto;
+import br.ucb.gui.ActionListeners.AbrirProjetoRecente;
 import br.ucb.service.Sessao;
 import javax.swing.DefaultListModel;
 import javax.swing.JList;
@@ -154,8 +155,11 @@ public class TelaPrimeira extends javax.swing.JFrame {
 
     private void abrirRecenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_abrirRecenteActionPerformed
         // TODO add your handling code here:
-        int selectedIndex = nomesProjetos.getSelectedIndex();
-        Projeto projetoSelecionado = (Projeto)nomesProjetos.getModel().getElementAt(selectedIndex);
+        abrirRecente.addActionListener(new AbrirProjetoRecente(this));
+        TelaInicio novoProjeto = new TelaInicio();
+        novoProjeto.setVisible(true);
+        Sessao.getInstance().setTela(novoProjeto);
+        this.setVisible(false);
     }//GEN-LAST:event_abrirRecenteActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed

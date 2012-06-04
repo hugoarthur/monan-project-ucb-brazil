@@ -159,7 +159,8 @@ public class TelaLogin extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        pack();
+        java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
+        setBounds((screenSize.width-528)/2, (screenSize.height-393)/2, 528, 393);
     }// </editor-fold>//GEN-END:initComponents
 
     private void entrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entrarActionPerformed

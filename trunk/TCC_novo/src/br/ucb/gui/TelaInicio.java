@@ -290,7 +290,7 @@ public class TelaInicio extends javax.swing.JFrame {
         jEditorPane1.setBackground(new java.awt.Color(255, 255, 204));
         jEditorPane1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jEditorPane1.setEditable(false);
-        jEditorPane1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jEditorPane1.setFont(new java.awt.Font("Arial", 0, 12));
         jEditorPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jEditorPane1.setDragEnabled(true);
         jEditorPane1.setPreferredSize(new java.awt.Dimension(100, 50));
@@ -866,7 +866,8 @@ public class TelaInicio extends javax.swing.JFrame {
                         .addGap(97, 97, 97))))
         );
 
-        pack();
+        java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
+        setBounds((screenSize.width-1091)/2, (screenSize.height-853)/2, 1091, 853);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

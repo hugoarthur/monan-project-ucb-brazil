@@ -122,7 +122,7 @@ public class TelaUsuarios extends javax.swing.JFrame {
         // TODO add your handling code here:
         TelaAlteraUsuario alteraUser = new TelaAlteraUsuario();
         alteraUser.setVisible(true);
-        alteraUser.setSize(456, 291);
+        
     }//GEN-LAST:event_alteraUsuarioActionPerformed
 
     private void jList1MouseClicked(java.awt.event.MouseEvent evt){
@@ -137,7 +137,7 @@ public class TelaUsuarios extends javax.swing.JFrame {
         // TODO add your handling code here:
         TelaExcluiUsuario excluiUser = new TelaExcluiUsuario();
         excluiUser.setVisible(true);
-        excluiUser.setSize(456,291);
+        
     }//GEN-LAST:event_excluirUsuarioActionPerformed
 
     /**

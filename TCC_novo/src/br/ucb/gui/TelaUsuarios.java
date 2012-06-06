@@ -12,6 +12,7 @@ package br.ucb.gui;
 
 import br.ucb.beans.Usuario;
 import br.ucb.gui.ActionListeners.ConfiguraCampos;
+import java.awt.event.ActionEvent;
 
 
 /**
@@ -26,8 +27,10 @@ public class TelaUsuarios extends javax.swing.JFrame {
     private ConfiguraCampos setar = new ConfiguraCampos();
     private Usuario user;
     public TelaUsuarios() {
+        
         initComponents();
         listCelulas();
+        
     }
 
     /**
@@ -161,13 +164,15 @@ public class TelaUsuarios extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     public void listCelulas() {
+        
         jList1.removeAll();
         jList1.setModel(setar.listaUser());
         jList1.repaint();
+        
     }
     public Usuario getUsuario(){
         
-       return this.user;
+       return user;
        
     }
 }

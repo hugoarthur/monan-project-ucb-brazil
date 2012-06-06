@@ -924,8 +924,10 @@ public class TelaInicio extends javax.swing.JFrame {
 
     private void jMenuItem32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem32ActionPerformed
         // TODO add your handling code here:
-        TelaAcompanhamento acompanhamento = new TelaAcompanhamento();
-        acompanhamento.setVisible(true);
+//        TelaAcompanhamento telaAcomp = new TelaAcompanhamento();
+//        telaAcomp.setVisible(true);
+        JanelaTeste janela = new JanelaTeste();
+        janela.setVisible(true);
     }//GEN-LAST:event_jMenuItem32ActionPerformed
 
     private void jMenuItem33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem33ActionPerformed

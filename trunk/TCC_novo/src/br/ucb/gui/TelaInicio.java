@@ -15,7 +15,6 @@ import br.ucb.manipulacao.pdf.Arvore;
 import br.ucb.manipulacao.pdf.ManipulaPDF;
 import br.ucb.service.Sessao;
 import br.ucb.xml.ExportaXml;
-import br.ucb.xml.Exportando;
 import br.ucb.xml.SalvaXML;
 import javax.swing.JComboBox;
 import javax.swing.JEditorPane;
@@ -924,10 +923,7 @@ public class TelaInicio extends javax.swing.JFrame {
 
     private void jMenuItem32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem32ActionPerformed
         // TODO add your handling code here:
-//        TelaAcompanhamento telaAcomp = new TelaAcompanhamento();
-//        telaAcomp.setVisible(true);
         JanelaTeste janela = new JanelaTeste();
-        janela.setVisible(true);
     }//GEN-LAST:event_jMenuItem32ActionPerformed
 
     private void jMenuItem33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem33ActionPerformed

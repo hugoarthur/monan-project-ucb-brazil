@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<corpus><usuario id="1"><projeto>1</projeto><dissertação>PDFBox.Tutorial.pdf</dissertação><celula>abstract</celula><texto>The Apache PDFBox™ library is an open source Java tool for working with PDF &#xD;
+documents. This project allows creation of new PDF documents, manipulation of existing &#xD;
+documents and the ability to extract content from documents. Apache PDFBox also includes &#xD;
+several command line utilities. Apache PDFBox is published under the Apache License v2.0  &#xD;
+Como descrito acima, PDFBox é uma biblioteca que permite manipular arquivos PDF, seja para &#xD;
+criação de novos documentos ou mesmo de documentos já existentes, permitindo a extração de seu &#xD;
+conteúdo.  É  uma  ferramenta  desenvolvido  pelo  Apache  Software  Foundation,  disponível  no &#xD;
+endereço http://pdfbox.apache.org/ .</texto></usuario><usuario id="1"><projeto>1</projeto><dissertação>PDFBox.Tutorial.pdf</dissertação><celula>Conclusao</celula><texto>Configurando a classe Main para exibir a janela quando iniciado o sistema.&#xD;
+Main.java&#xD;
+package ivansalvadori.pdfboxtutorial;&#xD;
+import ivansalvadori.pdfboxtutorial.view.Janela;</texto></usuario></corpus>

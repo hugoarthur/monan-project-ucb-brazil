@@ -10,9 +10,12 @@ import br.ucb.beans.Usuario;
 import br.ucb.dao.CelulaDAO;
 import br.ucb.dao.UsuarioDAO;
 import br.ucb.service.Sessao;
+import br.ucb.xml.XmlReader;
+import java.util.ArrayList;
 import java.util.List;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
+import org.jdom2.Element;
 
 /**
  *
@@ -98,8 +101,45 @@ public class ConfiguraCampos {
 
     }
 
-    public DefaultListModel listNomePdf() {
-        DefaultListModel listModel = new DefaultListModel();
-        return listModel;
+    public List<Element> listaElemento() {
+
+        XmlReader xmlR = new XmlReader();
+        List<Element> listaElemento = new ArrayList<Element>();
+
+        String caminhoArquivo = ("./xml/" + Sessao.getInstance().getProjeto().getNomeProjeto() + ".xml");
+        listaElemento = xmlR.ListXml(caminhoArquivo);
+
+        return listaElemento;
+
+    }
+
+    public ArrayList linhaTable() {
+
+        String status;
+        String utilizada;
+        String nUtilizada;
+
+        String nomeDissertacao;
+        String nomeCelula;
+
+        ArrayList dados = new ArrayList();
+        List<Element> listaElemento = new ArrayList<Element>();
+
+        listaElemento = listaElemento();
+
+        for (Element e : listaElemento) {
+
+            nomeDissertacao = e.getChildText("dissertação");
+            nomeCelula = e.getChildText("celula");
+
+            status = "Andamento";
+            utilizada = "X";
+            nUtilizada = "";
+
+            dados.add(new String[]{nomeDissertacao, nomeCelula, utilizada, nUtilizada, status});
+
+        }
+
+        return dados;
     }
 }

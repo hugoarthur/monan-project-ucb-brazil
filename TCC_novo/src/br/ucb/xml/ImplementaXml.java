@@ -23,7 +23,7 @@ public class ImplementaXml {
 
     private String caminho;
 
-    public void escreverXML(String usu, String proj, String cel, String text) {
+    public void escreverXML(String usu, String proj, String cel, String text, String nomeArquivo) {
 
         Element corpos = new Element("corpus");
         Document documento = new Document(corpos);
@@ -47,7 +47,11 @@ public class ImplementaXml {
                 Element texto = new Element("texto");
                 texto.setText(e.getChildText("texto"));
 
+                Element nomeArq = new Element("dissertação");
+                nomeArq.setText(e.getChildText("dissertação"));
+
                 usuario.addContent(projeto);
+                usuario.addContent(nomeArq);
                 usuario.addContent(celula);
                 usuario.addContent(texto);
                 corpos.addContent(usuario);
@@ -66,7 +70,11 @@ public class ImplementaXml {
             Element texto = new Element("texto");
             texto.setText(text);
 
+            Element nomeArq = new Element("dissertação");
+            nomeArq.setText(nomeArquivo);
+
             usuario.addContent(projeto);
+            usuario.addContent(nomeArq);
             usuario.addContent(celula);
             usuario.addContent(texto);
             corpos.addContent(usuario);
@@ -86,7 +94,11 @@ public class ImplementaXml {
             Element texto = new Element("texto");
             texto.setText(text);
 
+            Element nomeArq = new Element("dissertação");
+            nomeArq.setText(nomeArquivo);
+
             usuario.addContent(projeto);
+            usuario.addContent(nomeArq);
             usuario.addContent(celula);
             usuario.addContent(texto);
             corpos.addContent(usuario);
@@ -104,12 +116,12 @@ public class ImplementaXml {
         try {
 
             FileWriter arquivo = new FileWriter(new File(this.caminho));
-            
+
             xout.output(documento, arquivo);
-            
+
             XmlReader xmlR = new XmlReader();
             xmlR.ListXml(this.caminho);
-            
+
         } catch (IOException e) {
 
             e.printStackTrace();
@@ -136,7 +148,7 @@ public class ImplementaXml {
     }
 
     private String caminhoArqXml() {
-        String caminho = "./xml/"+Sessao.getInstance().getProjeto().getNomeProjeto()+".xml";
+        String caminho = "./xml/" + Sessao.getInstance().getProjeto().getNomeProjeto() + ".xml";
         return caminho;
     }
 }

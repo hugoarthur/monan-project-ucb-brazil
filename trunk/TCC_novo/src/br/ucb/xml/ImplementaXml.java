@@ -4,6 +4,8 @@
  */
 package br.ucb.xml;
 
+import br.ucb.dao.ProjetoDAO;
+import br.ucb.service.Sessao;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -27,7 +29,7 @@ public class ImplementaXml {
         Document documento = new Document(corpos);
         List<Element> lista = new ArrayList();
 
-        this.caminho = caminhoArqXml(proj);
+        this.caminho = caminhoArqXml();
 
         if (verificaArqXML()) {
             lista = lista();
@@ -102,9 +104,12 @@ public class ImplementaXml {
         try {
 
             FileWriter arquivo = new FileWriter(new File(this.caminho));
-
+            
             xout.output(documento, arquivo);
-
+            
+            XmlReader xmlR = new XmlReader();
+            xmlR.ListXml(this.caminho);
+            
         } catch (IOException e) {
 
             e.printStackTrace();
@@ -130,8 +135,8 @@ public class ImplementaXml {
         return false;
     }
 
-    private String caminhoArqXml(String proj) {
-        String caminho = "xml/arquivo" + proj + ".xml";
+    private String caminhoArqXml() {
+        String caminho = Sessao.getInstance().getProjeto().getNomeProjeto()+".xml";
         return caminho;
     }
 }

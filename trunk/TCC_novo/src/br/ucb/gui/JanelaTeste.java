@@ -3,6 +3,7 @@
  */
 package br.ucb.gui;
 
+import br.ucb.gui.ActionListeners.ConfiguraCampos;
 import br.ucb.gui.ActionListeners.SimpleTableModel;
 import java.awt.BorderLayout;
 import java.util.ArrayList;
@@ -22,6 +23,7 @@ public class JanelaTeste {
     private JPanel panel = new JPanel(new BorderLayout());
     private JButton botao = new JButton("Registrar Relatório de Acompanhamento");
     private BorderLayout layout = new BorderLayout();
+    private ConfiguraCampos confCampos = new ConfiguraCampos();
 
     public JanelaTeste() {
 
@@ -57,13 +59,21 @@ public class JanelaTeste {
     private void setaTable() {
 
         ArrayList dados = new ArrayList();
-        String[] colunas = new String[]{"Produção científica", "celulas", "utilizada", "não utilizada", "Status"};
+        String[] colunas = new String[]{"Produção Científica", "Celulas", "Utilizada", "Não Utilizada", "Status"};
 
-        dados.add(new String[]{"Produção_1", "Abstract", "X", "", "Concluído"});
-        dados.add(new String[]{"Produção_02", "Conclusão", "X", "", "Andamento"});
+        dados = linhaTable();
 
         SimpleTableModel modelo = new SimpleTableModel(dados, colunas);
         this.tabela = new JTable(modelo);
+
+    }
+
+    private ArrayList linhaTable() {
+
+        ArrayList dados = new ArrayList();
+        dados = confCampos.linhaTable();
+        
+        return dados;
 
     }
 }

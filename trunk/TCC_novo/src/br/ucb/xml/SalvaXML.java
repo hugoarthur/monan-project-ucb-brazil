@@ -19,9 +19,9 @@ public class SalvaXML {
         String usuario = Sessao.getInstance().getUsuario().getIdUsuario().toString();
         String projeto = Sessao.getInstance().getProjeto().getIdProjeto().toString();
         String nomeArquivo = Sessao.getInstance().getNomeArquivoAtual();
-        
+
         if (!"".equals(texto)) {
-            xml.escreverXML(usuario, projeto, nomeCelula, texto);
+            xml.escreverXML(usuario, projeto, nomeCelula, texto, nomeArquivo);
             JOptionPane.showMessageDialog(null, "Salvo com Sucesso");
         } else {
             JOptionPane.showMessageDialog(null, "Nenhum texto foi selecionado");

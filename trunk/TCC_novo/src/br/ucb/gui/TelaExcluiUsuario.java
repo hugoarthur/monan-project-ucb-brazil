@@ -8,16 +8,11 @@
  *
  * Created on 28/03/2012, 14:58:53
  */
-
 package br.ucb.gui;
 
-import br.ucb.gui.ActionListeners.CadastrarUsuario;
-import java.awt.Container;
-import java.util.ArrayList;
-import java.util.List;
-import javax.swing.ComboBoxModel;
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.JComboBox;
+import br.ucb.beans.Usuario;
+import br.ucb.dao.UsuarioDAO;
+import javax.swing.JButton;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
@@ -27,8 +22,11 @@ import javax.swing.JTextField;
  */
 public class TelaExcluiUsuario extends javax.swing.JFrame {
 
-    /** Creates new form TelaCadastro */
-    public TelaExcluiUsuario() {
+    private Usuario usuario;
+
+    public TelaExcluiUsuario(TelaUsuarios telaUsers) {
+        int selectedIndex = telaUsers.getjList1().getSelectedIndex();
+        setUsuario((Usuario) telaUsers.getjList1().getModel().getElementAt(selectedIndex));
         initComponents();
         setItemUniverdidade();
     }
@@ -47,14 +45,14 @@ public class TelaExcluiUsuario extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         NomeLabel = new javax.swing.JLabel();
         NomeTextField = new javax.swing.JTextField();
-        Cadastrar = new javax.swing.JButton();
+        Excluir = new javax.swing.JButton();
         Cancelar = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         UniversidadeLabel = new javax.swing.JLabel();
         universidadeComboBox = new javax.swing.JComboBox();
         LoginLabel = new javax.swing.JLabel();
-        LoginTextField = new javax.swing.JTextField();
+        LoginTextField = new javax.swing.JTextField(getUsuario().getLogin());
         SenhaLabel = new javax.swing.JLabel();
         SenhaPasswordField = new javax.swing.JPasswordField();
 
@@ -77,15 +75,17 @@ public class TelaExcluiUsuario extends javax.swing.JFrame {
             }
         });
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Excluir Usuário", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, null, java.awt.Color.darkGray));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Excluir Usuário", 0, 0, null, java.awt.Color.darkGray));
 
         NomeLabel.setText("Nome : ");
 
-        Cadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/salvar.png"))); // NOI18N
-        Cadastrar.setText("Excluir");
-        Cadastrar.addActionListener(new java.awt.event.ActionListener() {
+        NomeTextField.setEditable(false);
+
+        Excluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/salvar.png"))); // NOI18N
+        Excluir.setText("Excluir");
+        Excluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CadastrarActionPerformed(evt);
+                ExcluirActionPerformed(evt);
             }
         });
 
@@ -175,7 +175,7 @@ public class TelaExcluiUsuario extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 177, Short.MAX_VALUE)
-                .addComponent(Cadastrar)
+                .addComponent(Excluir)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Cancelar)
                 .addGap(13, 13, 13))
@@ -195,7 +195,7 @@ public class TelaExcluiUsuario extends javax.swing.JFrame {
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Cadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Excluir, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Cancelar))
                 .addGap(34, 34, 34)
                 .addComponent(jLabel5)
@@ -225,9 +225,9 @@ public class TelaExcluiUsuario extends javax.swing.JFrame {
         setBounds((screenSize.width-446)/2, (screenSize.height-486)/2, 446, 486);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void CadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastrarActionPerformed
-        //getCadastrar().addActionListener(new CadastrarUsuario(this));
-    }//GEN-LAST:event_CadastrarActionPerformed
+    private void ExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExcluirActionPerformed
+        UsuarioDAO.excluiUsuario(getUsuario());
+    }//GEN-LAST:event_ExcluirActionPerformed
 
     private void CancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarActionPerformed
         // TODO add your handling code here:
@@ -236,7 +236,6 @@ public class TelaExcluiUsuario extends javax.swing.JFrame {
 
     private void formComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_formComponentAdded
         // TODO add your handling code here:
-
     }//GEN-LAST:event_formComponentAdded
 
     private void universidadeComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_universidadeComboBoxActionPerformed
@@ -248,19 +247,19 @@ public class TelaExcluiUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_universidadeComboBoxComponentAdded
 
     /**
-    * @param args the command line arguments
-    */
+     * @param args the command line arguments
+     */
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
+
             public void run() {
-                new TelaCadastroUsuario().setVisible(true);           
+                new TelaCadastroUsuario().setVisible(true);
             }
         });
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Cadastrar;
     private javax.swing.JButton Cancelar;
+    private javax.swing.JButton Excluir;
     private javax.swing.JLabel LoginLabel;
     private javax.swing.JTextField LoginTextField;
     private javax.swing.JLabel NomeLabel;
@@ -300,18 +299,12 @@ public class TelaExcluiUsuario extends javax.swing.JFrame {
         this.SenhaPasswordField = senhaPasswordField;
     }
 
-    /**
-     * @return the Cadastrar
-     */
-    public javax.swing.JButton getCadastrar() {
-        return Cadastrar;
+    public JButton getExcluir() {
+        return Excluir;
     }
 
-    /**
-     * @param Cadastrar the Cadastrar to set
-     */
-    public void setCadastrar(javax.swing.JButton Cadastrar) {
-        this.Cadastrar = Cadastrar;
+    public void setExcluir(JButton Excluir) {
+        this.Excluir = Excluir;
     }
 
     /**
@@ -447,13 +440,18 @@ public class TelaExcluiUsuario extends javax.swing.JFrame {
         this.universidadeComboBox = universidadeComboBox;
     }
 
-    private void setItemUniverdidade(){
+    private void setItemUniverdidade() {
         universidadeComboBox.removeAllItems();
         universidadeComboBox.addItem("Universidade Católica de Brasília");
         universidadeComboBox.addItem("Universidade Federal Fluminense");
         universidadeComboBox.addItem("Universidade Federal de Santa Catarina");
     }
 
-    
+    public Usuario getUsuario() {
+        return usuario;
+    }
 
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
 }

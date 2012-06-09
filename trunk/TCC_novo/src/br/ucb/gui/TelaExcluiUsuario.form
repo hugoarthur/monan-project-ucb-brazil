@@ -92,7 +92,7 @@
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="0" pref="177" max="32767" attributes="0"/>
-                  <Component id="Cadastrar" min="-2" max="-2" attributes="0"/>
+                  <Component id="Excluir" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="Cancelar" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
@@ -116,7 +116,7 @@
                   <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="Cadastrar" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                      <Component id="Excluir" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                       <Component id="Cancelar" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
@@ -133,8 +133,11 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="NomeTextField">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+          </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="Cadastrar">
+        <Component class="javax.swing.JButton" name="Excluir">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/br/ucb/img/salvar.png"/>
@@ -142,7 +145,7 @@
             <Property name="text" type="java.lang.String" value="Excluir"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CadastrarActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ExcluirActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="Cancelar">
@@ -251,6 +254,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="LoginTextField">
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JTextField(getUsuario().getLogin())"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JLabel" name="SenhaLabel">
               <Properties>

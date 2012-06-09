@@ -12,6 +12,8 @@
 package br.ucb.gui;
 
 import br.ucb.beans.Usuario;
+import br.ucb.gui.ActionListeners.AlteraUsuario;
+import javax.swing.JButton;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
@@ -21,12 +23,12 @@ import javax.swing.JTextField;
  */
 public class TelaAlteraUsuario extends javax.swing.JFrame {
     /** Creates new form TelaCadastro */
-    private TelaUsuarios telaUser;
-    public TelaAlteraUsuario() {
+    private Usuario usuario;
+    public TelaAlteraUsuario(TelaUsuarios telaUsers) {
+        int selectedIndex = telaUsers.getjList1().getSelectedIndex();
+        setUsuario((Usuario) telaUsers.getjList1().getModel().getElementAt(selectedIndex));
         initComponents();
         setItemUniverdidade();
-        Usuario user = telaUser.getUsuario();
-        setNomeTextField(new JTextField(user.getNome()));
     }
 
     /** This method is called from within the constructor to
@@ -42,19 +44,19 @@ public class TelaAlteraUsuario extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         NomeLabel = new javax.swing.JLabel();
-        NomeTextField = new javax.swing.JTextField();
-        Cadastrar = new javax.swing.JButton();
+        NomeTextField = new JTextField(getUsuario().getNome());
+        Alterar = new javax.swing.JButton();
         Cancelar = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         UniversidadeLabel = new javax.swing.JLabel();
         universidadeComboBox = new javax.swing.JComboBox();
         LoginLabel = new javax.swing.JLabel();
-        LoginTextField = new javax.swing.JTextField();
+        LoginTextField = new JTextField(getUsuario().getLogin());
         SenhaLabel = new javax.swing.JLabel();
-        SenhaPasswordField = new javax.swing.JPasswordField();
+        SenhaPasswordField = new JPasswordField(getUsuario().getSenha());
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jTextField1 = new JTextField(getUsuario().getNome());
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -75,15 +77,15 @@ public class TelaAlteraUsuario extends javax.swing.JFrame {
             }
         });
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Alterar Usuário", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, null, java.awt.Color.darkGray));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Alterar Usuário", 0, 0, null, java.awt.Color.darkGray));
 
         NomeLabel.setText("Nome : ");
 
-        Cadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/salvar.png"))); // NOI18N
-        Cadastrar.setText("Alterar");
-        Cadastrar.addActionListener(new java.awt.event.ActionListener() {
+        Alterar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/salvar.png"))); // NOI18N
+        Alterar.setText("Alterar");
+        Alterar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CadastrarActionPerformed(evt);
+                AlterarActionPerformed(evt);
             }
         });
 
@@ -122,8 +124,6 @@ public class TelaAlteraUsuario extends javax.swing.JFrame {
         SenhaLabel.setText("Senha :");
 
         jLabel1.setText("Nome:");
-
-        jTextField1.setText("jTextField1");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -191,7 +191,7 @@ public class TelaAlteraUsuario extends javax.swing.JFrame {
                         .addGap(0, 147, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(0, 182, Short.MAX_VALUE)
-                        .addComponent(Cadastrar)
+                        .addComponent(Alterar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(Cancelar)))
                 .addContainerGap())
@@ -207,7 +207,7 @@ public class TelaAlteraUsuario extends javax.swing.JFrame {
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Cadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Alterar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Cancelar))
                 .addGap(28, 28, 28)
                 .addComponent(jLabel5)
@@ -237,9 +237,10 @@ public class TelaAlteraUsuario extends javax.swing.JFrame {
         setBounds((screenSize.width-450)/2, (screenSize.height-555)/2, 450, 555);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void CadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastrarActionPerformed
+    private void AlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlterarActionPerformed
         //getCadastrar().addActionListener(new CadastrarUsuario(this));
-    }//GEN-LAST:event_CadastrarActionPerformed
+        new AlteraUsuario(this, getUsuario());
+    }//GEN-LAST:event_AlterarActionPerformed
 
     private void CancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarActionPerformed
         // TODO add your handling code here:
@@ -271,7 +272,7 @@ public class TelaAlteraUsuario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Cadastrar;
+    private javax.swing.JButton Alterar;
     private javax.swing.JButton Cancelar;
     private javax.swing.JLabel LoginLabel;
     private javax.swing.JTextField LoginTextField;
@@ -314,19 +315,15 @@ public class TelaAlteraUsuario extends javax.swing.JFrame {
         this.SenhaPasswordField = senhaPasswordField;
     }
 
-    /**
-     * @return the Cadastrar
-     */
-    public javax.swing.JButton getCadastrar() {
-        return Cadastrar;
+    public JButton getAlterar() {
+        return Alterar;
     }
 
-    /**
-     * @param Cadastrar the Cadastrar to set
-     */
-    public void setCadastrar(javax.swing.JButton Cadastrar) {
-        this.Cadastrar = Cadastrar;
+    public void setAlterar(JButton Alterar) {
+        this.Alterar = Alterar;
     }
+
+    
 
     /**
      * @return the Cancelar
@@ -466,6 +463,14 @@ public class TelaAlteraUsuario extends javax.swing.JFrame {
         universidadeComboBox.addItem("Universidade Católica de Brasília");
         universidadeComboBox.addItem("Universidade Federal Fluminense");
         universidadeComboBox.addItem("Universidade Federal de Santa Catarina");
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 
     

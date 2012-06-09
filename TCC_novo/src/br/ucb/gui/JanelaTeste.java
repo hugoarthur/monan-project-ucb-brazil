@@ -8,6 +8,7 @@ import java.awt.BorderLayout;
 import java.util.ArrayList;
 import javax.swing.*;
 import javax.swing.table.JTableHeader;
+
 /**
  *
  * @author Osmar jr
@@ -34,7 +35,7 @@ public class JanelaTeste {
         panel.add(scrolCampo);
 
         frame.add(panel);
-        frame.setSize(700, 200);
+        frame.setSize(700, 400);
         frame.setVisible(true);
 
         botao.addActionListener(new java.awt.event.ActionListener() {
@@ -56,10 +57,10 @@ public class JanelaTeste {
     private void setaTable() {
 
         ArrayList dados = new ArrayList();
-        String[] colunas = new String[]{"coluna1", "coluna2", "coluna3", "coluna4"};
+        String[] colunas = new String[]{"Produção científica", "celulas", "utilizada", "não utilizada", "Status"};
 
-        dados.add(new String[]{"linha 1-1", "linha 1-2", "linha 1-3", "linha 1-4"});
-        dados.add(new String[]{"linha 2-1", "linha 2-2", "linha 2-3", "linha 2-4"});
+        dados.add(new String[]{"Produção_1", "Abstract", "X", "", "Concluído"});
+        dados.add(new String[]{"Produção_02", "Conclusão", "X", "", "Andamento"});
 
         SimpleTableModel modelo = new SimpleTableModel(dados, colunas);
         this.tabela = new JTable(modelo);

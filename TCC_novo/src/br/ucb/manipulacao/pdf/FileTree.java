@@ -4,6 +4,8 @@
  */
 package br.ucb.manipulacao.pdf;
 
+import br.ucb.gui.TelaInicio;
+import br.ucb.service.Sessao;
 import java.awt.BorderLayout;
 import java.io.File;
 import java.util.Collections;
@@ -18,16 +20,16 @@ import javax.swing.tree.DefaultMutableTreeNode;
  * @author GUICUNHA
  */
 public class FileTree extends JPanel {
-
+    
     public JEditorPane jEditorPane;
-
+    
     public FileTree(File dir) {
         setLayout(new BorderLayout());
-
+        
         JTree tree = new JTree(addNodes(null, dir));
-
+        
         tree.addTreeSelectionListener(new TreeSelectionListener() {
-
+            
             public void valueChanged(TreeSelectionEvent e) {
                 DefaultMutableTreeNode node = (DefaultMutableTreeNode) e.getPath().getLastPathComponent();
                 /*
@@ -36,9 +38,9 @@ public class FileTree extends JPanel {
                 //------------Classe que manipula a extraçao do PDF-------------
                 ManipulaPDF manipulaPDF = new ManipulaPDF();
                 //--------------------------------------------------------------
-                //---------------Pega o nome do PDF ----------------------------
-                Object nomePdf = e.getPath().getLastPathComponent();
-                //--------------------------------------------------------------
+                
+                Sessao.getInstance().setNomeArquivoAtual(e.getPath().getLastPathComponent().toString());
+                
                 //---------------Pega o caminho do Arquivo----------------------
                 Object[] caminhoPdf = e.getPath().getPath();
                 //--------------------------------------------------------------
@@ -65,12 +67,12 @@ public class FileTree extends JPanel {
                  */
             }
         });
-
+        
         JScrollPane scrollpane = new JScrollPane();
         scrollpane.getViewport().add(tree);
         add(BorderLayout.CENTER, scrollpane);
     }
-
+    
     DefaultMutableTreeNode addNodes(DefaultMutableTreeNode curTop, File dir) {
         String curPath = dir.getName();
         DefaultMutableTreeNode curDir = new DefaultMutableTreeNode(curPath);
@@ -85,7 +87,7 @@ public class FileTree extends JPanel {
         Collections.sort(ol, String.CASE_INSENSITIVE_ORDER);
         File f;
         Vector files = new Vector();
-
+        
         for (int i = 0; i < ol.size(); i++) {
             String thisObject = (String) ol.elementAt(i);
             String newPath;
@@ -100,7 +102,7 @@ public class FileTree extends JPanel {
                 files.addElement(thisObject);
             }
         }
-
+        
         for (int fnum = 0; fnum < files.size(); fnum++) {
             curDir.add(new DefaultMutableTreeNode(files.elementAt(fnum)));
         }

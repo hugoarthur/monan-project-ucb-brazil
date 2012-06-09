@@ -18,6 +18,7 @@ public class SalvaXML {
         ImplementaXml xml = new ImplementaXml();
         String usuario = Sessao.getInstance().getUsuario().getIdUsuario().toString();
         String projeto = Sessao.getInstance().getProjeto().getIdProjeto().toString();
+        String nomeArquivo = Sessao.getInstance().getNomeArquivoAtual();
         
         if (!"".equals(texto)) {
             xml.escreverXML(usuario, projeto, nomeCelula, texto);

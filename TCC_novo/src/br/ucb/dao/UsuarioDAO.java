@@ -49,13 +49,13 @@ public class UsuarioDAO {
         return lista;
     }
 
-    public static void excluiUsuario(Integer id) {
-        logger.info("Procurando usuário com id: " + id + " para exclusão");
+    public static void excluiUsuario(Usuario usuario) {
         EntityManager em = DataBase.getInstance().getEntityManager();
         em.getTransaction().begin();
         try {
-            Usuario usu = em.find(Usuario.class, id);
-            em.remove(usu);
+            em.remove(em.getReference(Usuario.class, usuario.getIdUsuario()));
+            em.getTransaction().commit();
+            JOptionPane.showMessageDialog(null, "Usuário deletado com sucesso!");
         } catch (Exception e) {
             em.getTransaction().rollback();
 
@@ -64,7 +64,14 @@ public class UsuarioDAO {
         }
     }
 
-    public static void alteraUsuario() {
+    public static void alteraUsuario(Usuario usuario) {
+        EntityManager em = DataBase.getInstance().getEntityManager();
+        if (!em.getTransaction().isActive()) {
+            em.getTransaction().begin();
+        }
+        em.merge(usuario);
+        em.getTransaction().commit();
+        em.close();
     }
 
     public static Usuario buscaUsuario(String login, String senha) {

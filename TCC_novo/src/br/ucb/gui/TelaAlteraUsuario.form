@@ -98,7 +98,7 @@
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace min="0" pref="182" max="32767" attributes="0"/>
-                          <Component id="Cadastrar" min="-2" max="-2" attributes="0"/>
+                          <Component id="Alterar" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="Cancelar" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -119,7 +119,7 @@
                   <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="Cadastrar" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                      <Component id="Alterar" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                       <Component id="Cancelar" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
@@ -136,8 +136,11 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="NomeTextField">
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new JTextField(getUsuario().getNome())"/>
+          </AuxValues>
         </Component>
-        <Component class="javax.swing.JButton" name="Cadastrar">
+        <Component class="javax.swing.JButton" name="Alterar">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/br/ucb/img/salvar.png"/>
@@ -145,7 +148,7 @@
             <Property name="text" type="java.lang.String" value="Alterar"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CadastrarActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AlterarActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="Cancelar">
@@ -265,6 +268,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="LoginTextField">
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new JTextField(getUsuario().getLogin())"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JLabel" name="SenhaLabel">
               <Properties>
@@ -272,6 +278,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JPasswordField" name="SenhaPasswordField">
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new JPasswordField(getUsuario().getSenha())"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel1">
               <Properties>
@@ -279,9 +288,9 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField1">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="jTextField1"/>
-              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new JTextField(getUsuario().getNome())"/>
+              </AuxValues>
             </Component>
           </SubComponents>
         </Container>

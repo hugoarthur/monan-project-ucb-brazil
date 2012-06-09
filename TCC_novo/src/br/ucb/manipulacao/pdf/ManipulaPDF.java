@@ -4,6 +4,8 @@
  */
 package br.ucb.manipulacao.pdf;
 
+import br.ucb.service.Sessao;
+
 /**
  *
  * @author Osmar jr

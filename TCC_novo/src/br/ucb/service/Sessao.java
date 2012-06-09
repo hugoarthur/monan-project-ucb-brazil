@@ -18,6 +18,7 @@ public class Sessao {
     private Usuario usuario;
     private Projeto projeto;
     private JFrame tela;
+    private String nomeArquivoAtual;
 
     private Sessao() {
     }
@@ -51,5 +52,13 @@ public class Sessao {
 
     public void setProjeto(Projeto projeto) {
         this.projeto = projeto;
+    }
+
+    public String getNomeArquivoAtual() {
+        return nomeArquivoAtual;
+    }
+
+    public void setNomeArquivoAtual(String nomeArquivoAtual) {
+        this.nomeArquivoAtual = nomeArquivoAtual;
     }
 }

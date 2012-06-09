@@ -11,8 +11,10 @@
 package br.ucb.gui;
 
 import br.ucb.beans.Usuario;
+import br.ucb.dao.UsuarioDAO;
 import br.ucb.gui.ActionListeners.ConfiguraCampos;
-import java.awt.event.ActionEvent;
+import javax.swing.DefaultListModel;
+import javax.swing.JList;
 
 
 /**
@@ -44,19 +46,18 @@ public class TelaUsuarios extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList();
+        DefaultListModel modelo = new DefaultListModel();
+        for (Usuario user : UsuarioDAO.findAll()) {
+            modelo.addElement(user);
+        }
+        jList1 = new javax.swing.JList(modelo);
         alteraUsuario = new javax.swing.JButton();
         excluirUsuario = new javax.swing.JButton();
 
         setTitle("Usuários - Corpus Generator");
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Usuários", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, null, java.awt.Color.darkGray));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Usuários", 0, 0, null, java.awt.Color.darkGray));
 
-        jList1.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
         jScrollPane1.setViewportView(jList1);
 
         alteraUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/nova_celula.png"))); // NOI18N
@@ -124,22 +125,15 @@ public class TelaUsuarios extends javax.swing.JFrame {
 
     private void alteraUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alteraUsuarioActionPerformed
         // TODO add your handling code here:
-        TelaAlteraUsuario alteraUser = new TelaAlteraUsuario();
+        TelaAlteraUsuario alteraUser = new TelaAlteraUsuario(this);
         alteraUser.setVisible(true);
         
     }//GEN-LAST:event_alteraUsuarioActionPerformed
 
-    private void jList1MouseClicked(java.awt.event.MouseEvent evt){
-        
-        int selectedIndex = jList1.getSelectedIndex();
-        this.user = (Usuario) jList1.getModel().getElementAt(selectedIndex);
-        System.out.println("nome" + this.user.getNome());
-        
-    }
     
     private void excluirUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluirUsuarioActionPerformed
         // TODO add your handling code here:
-        TelaExcluiUsuario excluiUser = new TelaExcluiUsuario();
+        TelaExcluiUsuario excluiUser = new TelaExcluiUsuario(this);
         excluiUser.setVisible(true);
         
     }//GEN-LAST:event_excluirUsuarioActionPerformed
@@ -174,5 +168,13 @@ public class TelaUsuarios extends javax.swing.JFrame {
         
        return user;
        
+    }
+
+    public JList getjList1() {
+        return jList1;
+    }
+
+    public void setjList1(JList jList1) {
+        this.jList1 = jList1;
     }
 }

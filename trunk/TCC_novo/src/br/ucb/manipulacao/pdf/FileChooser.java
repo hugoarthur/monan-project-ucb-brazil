@@ -8,9 +8,9 @@ public class FileChooser {
 
     public String caminho() {
         
-        String caminhoArquivo = "";
-        
+        String caminhoArquivo = "";        
         JFileChooser arquivo = new JFileChooser();
+        
         arquivo.setFileFilter(new ExtensionFileFilter("Arquivos PDF", "pdf"));
         
         int retorno = arquivo.showOpenDialog(null);

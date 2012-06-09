@@ -29,7 +29,7 @@ public class Projeto implements Serializable {
     private Date dataProjeto;
     @Lob
     @Column(name = "arquivo_xml")
-    private byte[] arquivoXml;
+    private String arquivoXml;
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_usuario", nullable = false, referencedColumnName = "id_usuario")
     private List<Usuario> usuarios;
@@ -84,11 +84,11 @@ public class Projeto implements Serializable {
         this.dataProjeto = dataProjeto;
     }
 
-    public byte[] getArquivoXml() {
+    public String getArquivoXml() {
         return arquivoXml;
     }
 
-    public void setArquivoXml(byte[] arquivoXml) {
+    public void setArquivoXml(String arquivoXml) {
         this.arquivoXml = arquivoXml;
     }
     

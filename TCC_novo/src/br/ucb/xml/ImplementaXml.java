@@ -4,7 +4,6 @@
  */
 package br.ucb.xml;
 
-import br.ucb.dao.ProjetoDAO;
 import br.ucb.service.Sessao;
 import java.io.File;
 import java.io.FileWriter;

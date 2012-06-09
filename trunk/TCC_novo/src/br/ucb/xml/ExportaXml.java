@@ -1,22 +1,36 @@
 package br.ucb.xml;
 
+
+import br.ucb.service.Sessao;
 import java.io.*;
 
-public class ExportaXml{
-    public static void exportar(){
+public class ExportaXml {
+
+    private String caminho;
+    
+    public static void exportar() {
+        String nome = (Sessao.getInstance().getProjeto().getNomeProjeto() + ".xml");
         // arquivo a ser movido
-        File arquivo = new File("D:\\USERS\\guicunha\\Desktop\\work\\TCC_novo\\trunk\\TCC_novo\\xml\\arquivo1.xml");
+        File arquivo = new File("./xml/"+nome);
 
         // diretorio de destino
-        File dir = new File("D:\\USERS\\guicunha\\Desktop");
+        File dir = new File("/Users/guilherme/Desktop");
 
         // move o arquivo para o novo diretorio
         boolean ok = arquivo.renameTo(new File(dir, arquivo.getName()));
-        if(ok){
+        if (ok) {
             System.out.println("Arquivo foi movido com sucesso");
-        }
-        else{
+        } else {
             System.out.println("Nao foi possivel mover o arquivo");
         }
     }
+    
+    public String getCaminho() {
+        return caminho;
+    }
+    
+    public void setCaminho(String caminho) {
+        this.caminho = caminho;
+    }
+
 }

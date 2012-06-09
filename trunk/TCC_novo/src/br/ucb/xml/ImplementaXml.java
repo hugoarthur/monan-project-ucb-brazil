@@ -136,7 +136,7 @@ public class ImplementaXml {
     }
 
     private String caminhoArqXml() {
-        String caminho = Sessao.getInstance().getProjeto().getNomeProjeto()+".xml";
+        String caminho = "./xml/"+Sessao.getInstance().getProjeto().getNomeProjeto()+".xml";
         return caminho;
     }
 }

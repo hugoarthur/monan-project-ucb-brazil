@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<corpus><usuario id="1"><projeto>2</projeto><celula>adsasd</celula><texto>olCampoTextoExtraido = new JScrollPane(this.campoTextoExtraido);&#xD;
+add(this.scrolCampoTextoExtraido);&#xD;
+this.scrolCampoTextoExtraido.setBounds(10, 80, 600, 400);&#xD;
+this.botaoExtrair.addActionListener(new ActionListen
+        </texto></usuario><usuario id="1"><projeto>2</projeto><celula>adsasd</celula><texto>&#xD;
+});&#xD;
+}&#xD;
+private void botaoExtrairClick(java.awt.event.ActionEvent evt) {&#xD;
+String caminhoArquivo = this.campoArquivo.getText();&#xD;
+PDFExtraction pdfExtraction = new PDFExtraction();&#xD;
+this.campoTextoExtraido.setText(pdfExtraction.extrairTexto(caminhoArquivo));&#xD;
+this.labelCampoTextoExtraido.setText("Texto: " + pdfExtraction.getNumeroPaginas(caminhoArquivo) + " &#xD;
+páginas");
+        </texto></usuario><usuario id="1"><projeto>2</projeto><celula>adsasd</celula><texto>adsad</texto></usuario><usuario id="1"><projeto>2</projeto><celula>adsasd</celula><texto>a</texto></usuario></corpus>

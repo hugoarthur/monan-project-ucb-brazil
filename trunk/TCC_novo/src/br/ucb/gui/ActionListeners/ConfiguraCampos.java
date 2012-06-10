@@ -147,13 +147,14 @@ public class ConfiguraCampos {
 
             for (Celula celula : CelulaDAO.findAll()) {
 
-                status = "";
-                utilizada = "";
-                nUtilizada = "";
-                nomeDissertacao = "";
-                nomeCelula = "";
 
                 for (Element e : listaElemento) {
+
+                    status = "";
+                    utilizada = "";
+                    nUtilizada = "";
+                    nomeDissertacao = "";
+                    nomeCelula = "";
 
                     if (celula.getTxt_celula().equals(e.getChildText("celula"))) {
 

@@ -20,7 +20,12 @@ public class CriaPastas {
         if (!verificaDiretorio(this.caminho)) {
             criaDir(this.caminho);
         }
-
+        
+        this.caminho = "./xml";
+        if (!verificaDiretorio(this.caminho)) {
+            criaDir(this.caminho);
+        }
+        
         this.caminho = "./ArquivosPDF/Universidade Católica de Brasília";
         if (!verificaDiretorio(this.caminho)) {
             criaDir(this.caminho);

@@ -32,8 +32,21 @@ public class CelulaDAO {
         em.close();
     }
 
-    public static void excluiCelula(){
-        
+    public static boolean excluiCelula(Celula celula) {
+        boolean retorno = false;
+        EntityManager em = DataBase.getInstance().getEntityManager();
+        em.getTransaction().begin();
+        try {
+            em.remove(em.getReference(Celula.class, celula.getIdCelula()));
+            em.getTransaction().commit();
+            JOptionPane.showMessageDialog(null, "Célula deletado com sucesso!");
+            retorno = true;
+        } catch (Exception e) {
+            em.getTransaction().rollback();
+        } finally {
+            em.close();
+        }
+        return retorno;
     }
 
     public static void alteraCelula(){

@@ -99,7 +99,7 @@ public class ConfiguraCampos {
                 listModel.addElement(celula.getTxt_celula());
             }
         } else {
-            listModel.addElement("vazio");
+            listModel.addElement("Vazio");
         }
 
         return listModel;

@@ -72,8 +72,9 @@ public class JanelaTeste {
 
         ArrayList dados = new ArrayList();
         dados = confCampos.linhaTable();
-        
+
         return dados;
 
     }
+    
 }

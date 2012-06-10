@@ -12,10 +12,8 @@ package br.ucb.gui;
 
 import br.ucb.beans.Usuario;
 import br.ucb.dao.UsuarioDAO;
-import br.ucb.gui.ActionListeners.ConfiguraCampos;
 import javax.swing.DefaultListModel;
 import javax.swing.JList;
-
 
 /**
  *
@@ -26,13 +24,10 @@ public class TelaUsuarios extends javax.swing.JFrame {
     /**
      * Creates new form TelaCategorias
      */
-    private ConfiguraCampos setar = new ConfiguraCampos();
     private Usuario user;
+
     public TelaUsuarios() {
-        
         initComponents();
-        listCelulas();
-        
     }
 
     /**
@@ -56,8 +51,9 @@ public class TelaUsuarios extends javax.swing.JFrame {
 
         setTitle("Usuários - Corpus Generator");
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Usuários", 0, 0, null, java.awt.Color.darkGray));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Usuários", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, null, java.awt.Color.darkGray));
 
+        jList1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(jList1);
 
         alteraUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/nova_celula.png"))); // NOI18N
@@ -127,15 +123,14 @@ public class TelaUsuarios extends javax.swing.JFrame {
         // TODO add your handling code here:
         TelaAlteraUsuario alteraUser = new TelaAlteraUsuario(this);
         alteraUser.setVisible(true);
-        
+
     }//GEN-LAST:event_alteraUsuarioActionPerformed
 
-    
     private void excluirUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluirUsuarioActionPerformed
         // TODO add your handling code here:
         TelaExcluiUsuario excluiUser = new TelaExcluiUsuario(this);
         excluiUser.setVisible(true);
-        
+
     }//GEN-LAST:event_excluirUsuarioActionPerformed
 
     /**
@@ -157,17 +152,8 @@ public class TelaUsuarios extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 
-    public void listCelulas() {
-        
-        jList1.removeAll();
-        jList1.setModel(setar.listaUser());
-        jList1.repaint();
-        
-    }
-    public Usuario getUsuario(){
-        
-       return user;
-       
+    public Usuario getUsuario() {
+        return user;
     }
 
     public JList getjList1() {

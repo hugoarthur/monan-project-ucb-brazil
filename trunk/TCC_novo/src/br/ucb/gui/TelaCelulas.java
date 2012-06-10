@@ -10,8 +10,10 @@
  */
 package br.ucb.gui;
 
-import br.ucb.gui.ActionListeners.ConfiguraCampos;
-
+import br.ucb.beans.Celula;
+import br.ucb.dao.CelulaDAO;
+import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -22,11 +24,8 @@ public class TelaCelulas extends javax.swing.JFrame {
     /**
      * Creates new form TelaCategorias
      */
-    private ConfiguraCampos setar = new ConfiguraCampos();
-
     public TelaCelulas() {
         initComponents();
-        listCelulas();
     }
 
     /**
@@ -40,19 +39,19 @@ public class TelaCelulas extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList();
+        DefaultListModel modelo = new DefaultListModel();
+        for (Celula celula : CelulaDAO.findAll()) {
+            modelo.addElement(celula);
+        }
+        jList1 = new javax.swing.JList(modelo);
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        excluir = new javax.swing.JButton();
 
         setTitle("CÉLULAS - Corpus Generator");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Células", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, null, java.awt.Color.darkGray));
 
-        jList1.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
+        jList1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(jList1);
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/nova_celula.png"))); // NOI18N
@@ -63,8 +62,13 @@ public class TelaCelulas extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/limpar.png"))); // NOI18N
-        jButton2.setText("Excluir");
+        excluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/limpar.png"))); // NOI18N
+        excluir.setText("Excluir");
+        excluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                excluirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -78,14 +82,14 @@ public class TelaCelulas extends javax.swing.JFrame {
                         .addGap(0, 401, Short.MAX_VALUE)
                         .addComponent(jButton1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2)))
+                        .addComponent(excluir)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
+                    .addComponent(excluir)
                     .addComponent(jButton1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -120,6 +124,15 @@ public class TelaCelulas extends javax.swing.JFrame {
         novaCategoria.setSize(456, 291);
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void excluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluirActionPerformed
+        // TODO add your handling code here:
+        int selectedIndex = jList1.getSelectedIndex();
+        Celula celula = (Celula) jList1.getModel().getElementAt(selectedIndex);
+        JOptionPane.showConfirmDialog(null, "Tem certeza que deseja deletar a célula "+celula+"?");
+        if(CelulaDAO.excluiCelula(celula))
+            this.dispose();
+    }//GEN-LAST:event_excluirActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -132,16 +145,10 @@ public class TelaCelulas extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton excluir;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JList jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
-
-    public void listCelulas() {
-        jList1.removeAll();
-        jList1.setModel(setar.listModelCel());
-        jList1.repaint();
-    }
 }

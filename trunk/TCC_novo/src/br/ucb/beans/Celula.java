@@ -59,4 +59,9 @@ public class Celula implements Serializable {
     public void setAcompanhamento(Acompanhamento acompanhamento) {
         this.acompanhamento = acompanhamento;
     }
+
+    @Override
+    public String toString() {
+        return txt_celula;
+    }
 }

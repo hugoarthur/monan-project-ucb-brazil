@@ -11,6 +11,7 @@
 package br.ucb.gui;
 
 import br.ucb.beans.Usuario;
+import br.ucb.constants.Constants;
 import br.ucb.dao.UsuarioDAO;
 import javax.swing.JButton;
 import javax.swing.JPasswordField;
@@ -23,12 +24,13 @@ import javax.swing.JTextField;
 public class TelaExcluiUsuario extends javax.swing.JFrame {
 
     private Usuario usuario;
-
+    private TelaUsuarios telaUsers;
+    
     public TelaExcluiUsuario(TelaUsuarios telaUsers) {
         int selectedIndex = telaUsers.getjList1().getSelectedIndex();
         setUsuario((Usuario) telaUsers.getjList1().getModel().getElementAt(selectedIndex));
+        setTelaUsers(telaUsers);
         initComponents();
-        setItemUniverdidade();
     }
 
     /** This method is called from within the constructor to
@@ -39,22 +41,22 @@ public class TelaExcluiUsuario extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        bindingGroup = new org.jdesktop.beansbinding.BindingGroup();
 
         jPanel2 = new javax.swing.JPanel();
+        jTextField1 = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
-        NomeLabel = new javax.swing.JLabel();
-        NomeTextField = new javax.swing.JTextField();
         Excluir = new javax.swing.JButton();
         Cancelar = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         UniversidadeLabel = new javax.swing.JLabel();
-        universidadeComboBox = new javax.swing.JComboBox();
         LoginLabel = new javax.swing.JLabel();
-        LoginTextField = new javax.swing.JTextField(getUsuario().getLogin());
-        SenhaLabel = new javax.swing.JLabel();
-        SenhaPasswordField = new javax.swing.JPasswordField();
+        universidadeTextField = new javax.swing.JTextField(getUsuario().getLogin());
+        NomeLabel = new javax.swing.JLabel();
+        NomeLabel1 = new javax.swing.JLabel();
+        tipoUsuarioTextField = new javax.swing.JTextField(getUsuario().getLogin());
+        loginTextField = new javax.swing.JTextField(getUsuario().getLogin());
+        nomeTextField = new javax.swing.JTextField();
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -67,6 +69,8 @@ public class TelaExcluiUsuario extends javax.swing.JFrame {
             .addGap(0, 100, Short.MAX_VALUE)
         );
 
+        jTextField1.setText("jTextField1");
+
         setTitle("EXCLUSÃO - Corpus Generator");
         setResizable(false);
         addContainerListener(new java.awt.event.ContainerAdapter() {
@@ -75,11 +79,7 @@ public class TelaExcluiUsuario extends javax.swing.JFrame {
             }
         });
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Excluir Usuário", 0, 0, null, java.awt.Color.darkGray));
-
-        NomeLabel.setText("Nome : ");
-
-        NomeTextField.setEditable(false);
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Excluir Usuário", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, null, java.awt.Color.darkGray));
 
         Excluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/salvar.png"))); // NOI18N
         Excluir.setText("Excluir");
@@ -103,78 +103,75 @@ public class TelaExcluiUsuario extends javax.swing.JFrame {
 
         UniversidadeLabel.setText("Universidade :");
 
-        universidadeComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, universidadeComboBox, org.jdesktop.beansbinding.ELProperty.create("${instituicao}"), universidadeComboBox, org.jdesktop.beansbinding.BeanProperty.create("selectedItem"), "");
-        bindingGroup.addBinding(binding);
-
-        universidadeComboBox.addContainerListener(new java.awt.event.ContainerAdapter() {
-            public void componentAdded(java.awt.event.ContainerEvent evt) {
-                universidadeComboBoxComponentAdded(evt);
-            }
-        });
-        universidadeComboBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                universidadeComboBoxActionPerformed(evt);
-            }
-        });
-
         LoginLabel.setText("Login :");
 
-        SenhaLabel.setText("Senha :");
+        universidadeTextField.setEditable(false);
+        universidadeTextField.setText(getUsuario().getUniversidade());
+
+        NomeLabel.setText("Nome : ");
+
+        NomeLabel1.setText("Tipo de usuário : ");
+
+        tipoUsuarioTextField.setEditable(false);
+        tipoUsuarioTextField.setText(getUsuario().getTipoUsuario() == Constants.COORDENADOR ? "Coordenador" : "Equipe");
+
+        loginTextField.setEditable(false);
+        loginTextField.setText(getUsuario().getLogin());
+
+        nomeTextField.setEditable(false);
+        nomeTextField.setText(getUsuario().getNome());
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(UniversidadeLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(universidadeComboBox, 0, 291, Short.MAX_VALUE)
-                .addGap(12, 12, 12))
-            .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(SenhaLabel)
-                    .addComponent(LoginLabel))
-                .addGap(18, 18, 18)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(LoginLabel)
+                            .addComponent(UniversidadeLabel)
+                            .addComponent(NomeLabel))
+                        .addGap(18, 18, 18))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(NomeLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(SenhaPasswordField, javax.swing.GroupLayout.DEFAULT_SIZE, 311, Short.MAX_VALUE)
-                    .addComponent(LoginTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 311, Short.MAX_VALUE))
+                    .addComponent(tipoUsuarioTextField)
+                    .addComponent(universidadeTextField)
+                    .addComponent(loginTextField, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(nomeTextField))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(UniversidadeLabel)
-                    .addComponent(universidadeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LoginLabel)
-                    .addComponent(LoginTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(NomeLabel)
+                    .addComponent(nomeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(UniversidadeLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(LoginLabel)
+                            .addComponent(loginTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(universidadeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(SenhaLabel)
-                    .addComponent(SenhaPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(NomeLabel1)
+                    .addComponent(tipoUsuarioTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(85, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(NomeLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(NomeTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 331, Short.MAX_VALUE))
-                    .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 177, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Excluir)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Cancelar)
@@ -183,15 +180,11 @@ public class TelaExcluiUsuario extends javax.swing.JFrame {
                 .addGap(127, 127, 127)
                 .addComponent(jLabel5)
                 .addContainerGap(151, Short.MAX_VALUE))
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NomeLabel)
-                    .addComponent(NomeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(51, 51, 51)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -219,14 +212,15 @@ public class TelaExcluiUsuario extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        bindingGroup.bind();
-
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
         setBounds((screenSize.width-446)/2, (screenSize.height-486)/2, 446, 486);
     }// </editor-fold>//GEN-END:initComponents
 
     private void ExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExcluirActionPerformed
-        UsuarioDAO.excluiUsuario(getUsuario());
+        if(UsuarioDAO.excluiUsuario(getUsuario())){
+            this.dispose();
+            getTelaUsers().dispose();
+        }
     }//GEN-LAST:event_ExcluirActionPerformed
 
     private void CancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarActionPerformed
@@ -237,14 +231,6 @@ public class TelaExcluiUsuario extends javax.swing.JFrame {
     private void formComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_formComponentAdded
         // TODO add your handling code here:
     }//GEN-LAST:event_formComponentAdded
-
-    private void universidadeComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_universidadeComboBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_universidadeComboBoxActionPerformed
-
-    private void universidadeComboBoxComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_universidadeComboBoxComponentAdded
-        // TODO add your handling code here:
-    }//GEN-LAST:event_universidadeComboBoxComponentAdded
 
     /**
      * @param args the command line arguments
@@ -261,42 +247,30 @@ public class TelaExcluiUsuario extends javax.swing.JFrame {
     private javax.swing.JButton Cancelar;
     private javax.swing.JButton Excluir;
     private javax.swing.JLabel LoginLabel;
-    private javax.swing.JTextField LoginTextField;
     private javax.swing.JLabel NomeLabel;
-    private javax.swing.JTextField NomeTextField;
-    private javax.swing.JLabel SenhaLabel;
-    private javax.swing.JPasswordField SenhaPasswordField;
+    private javax.swing.JLabel NomeLabel1;
     private javax.swing.JLabel UniversidadeLabel;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JComboBox universidadeComboBox;
-    private org.jdesktop.beansbinding.BindingGroup bindingGroup;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField loginTextField;
+    private javax.swing.JTextField nomeTextField;
+    private javax.swing.JTextField tipoUsuarioTextField;
+    private javax.swing.JTextField universidadeTextField;
     // End of variables declaration//GEN-END:variables
 
     public JTextField getLoginTextField() {
-        return LoginTextField;
+        return universidadeTextField;
     }
 
     public void setLoginTextField(JTextField LoginTextField) {
-        this.LoginTextField = LoginTextField;
-    }
-
-    public JTextField getNomeTextField() {
-        return NomeTextField;
-    }
-
-    public void setNomeTextField(JTextField NomeTextField) {
-        this.NomeTextField = NomeTextField;
-    }
-
-    public JPasswordField getSenhaSenhaPasswordField() {
-        return getSenhaPasswordField();
+        this.universidadeTextField = LoginTextField;
     }
 
     public void setSenhaPasswordField(JPasswordField senhaPasswordField) {
-        this.SenhaPasswordField = senhaPasswordField;
+        this.nomeTextField = senhaPasswordField;
     }
 
     public JButton getExcluir() {
@@ -347,27 +321,6 @@ public class TelaExcluiUsuario extends javax.swing.JFrame {
      */
     public void setNomeLabel(javax.swing.JLabel NomeLabel) {
         this.NomeLabel = NomeLabel;
-    }
-
-    /**
-     * @return the SenhaLabel
-     */
-    public javax.swing.JLabel getSenhaLabel() {
-        return SenhaLabel;
-    }
-
-    /**
-     * @param SenhaLabel the SenhaLabel to set
-     */
-    public void setSenhaLabel(javax.swing.JLabel SenhaLabel) {
-        this.SenhaLabel = SenhaLabel;
-    }
-
-    /**
-     * @return the SenhaPasswordField
-     */
-    public javax.swing.JPasswordField getSenhaPasswordField() {
-        return SenhaPasswordField;
     }
 
     /**
@@ -426,32 +379,39 @@ public class TelaExcluiUsuario extends javax.swing.JFrame {
         this.jPanel2 = jPanel2;
     }
 
-    /**
-     * @return the universidadeComboBox
-     */
-    public javax.swing.JComboBox getUniversidadeComboBox() {
-        return universidadeComboBox;
+    public void setNomeTextField(JPasswordField nomeTextField) {
+        this.nomeTextField = nomeTextField;
     }
 
-    /**
-     * @param universidadeComboBox the universidadeComboBox to set
-     */
-    public void setUniversidadeComboBox(javax.swing.JComboBox universidadeComboBox) {
-        this.universidadeComboBox = universidadeComboBox;
+    public JTextField getTipoUsuarioTextField() {
+        return tipoUsuarioTextField;
     }
 
-    private void setItemUniverdidade() {
-        universidadeComboBox.removeAllItems();
-        universidadeComboBox.addItem("Universidade Católica de Brasília");
-        universidadeComboBox.addItem("Universidade Federal Fluminense");
-        universidadeComboBox.addItem("Universidade Federal de Santa Catarina");
+    public void setTipoUsuarioTextField(JTextField tipoUsuarioTextField) {
+        this.tipoUsuarioTextField = tipoUsuarioTextField;
     }
 
+    public JTextField getUniversidadeTextField() {
+        return universidadeTextField;
+    }
+
+    public void setUniversidadeTextField(JTextField universidadeTextField) {
+        this.universidadeTextField = universidadeTextField;
+    }
+    
     public Usuario getUsuario() {
         return usuario;
     }
 
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
+    }
+
+    public TelaUsuarios getTelaUsers() {
+        return telaUsers;
+    }
+
+    public void setTelaUsers(TelaUsuarios telaUsers) {
+        this.telaUsers = telaUsers;
     }
 }

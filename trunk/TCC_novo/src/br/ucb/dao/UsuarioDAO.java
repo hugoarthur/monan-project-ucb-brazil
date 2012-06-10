@@ -49,19 +49,21 @@ public class UsuarioDAO {
         return lista;
     }
 
-    public static void excluiUsuario(Usuario usuario) {
+    public static boolean excluiUsuario(Usuario usuario) {
+        boolean retorno = false;
         EntityManager em = DataBase.getInstance().getEntityManager();
         em.getTransaction().begin();
         try {
             em.remove(em.getReference(Usuario.class, usuario.getIdUsuario()));
             em.getTransaction().commit();
             JOptionPane.showMessageDialog(null, "Usuário deletado com sucesso!");
+            retorno = true;
         } catch (Exception e) {
             em.getTransaction().rollback();
-
         } finally {
             em.close();
         }
+        return retorno;
     }
 
     public static void alteraUsuario(Usuario usuario) {

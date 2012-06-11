@@ -44,7 +44,8 @@ public class TelaAjuda extends javax.swing.JFrame {
             .addGap(0, 300, Short.MAX_VALUE)
         );
 
-        pack();
+        java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
+        setBounds((screenSize.width-400)/2, (screenSize.height-322)/2, 400, 322);
     }// </editor-fold>//GEN-END:initComponents
 
     /**

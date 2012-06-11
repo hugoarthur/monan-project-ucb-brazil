@@ -170,8 +170,6 @@ public class TelaInicio extends javax.swing.JFrame {
         jMenuItem36 = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
         jMenuItem37 = new javax.swing.JMenuItem();
-        jSeparator30 = new javax.swing.JPopupMenu.Separator();
-        jMenuItem38 = new javax.swing.JMenuItem();
         jSeparator31 = new javax.swing.JPopupMenu.Separator();
         jMenuItem39 = new javax.swing.JMenuItem();
         jSeparator32 = new javax.swing.JPopupMenu.Separator();
@@ -193,7 +191,7 @@ public class TelaInicio extends javax.swing.JFrame {
         setBounds(new java.awt.Rectangle(200, 30, 0, 0));
         setMinimumSize(new java.awt.Dimension(800, 600));
 
-        categoriaPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(0), "Célula", 0, 0, new java.awt.Font("Calibri", 0, 18), java.awt.Color.darkGray)); // NOI18N
+        categoriaPanel.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED), "Célula", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Calibri", 0, 18), java.awt.Color.darkGray)); // NOI18N
         categoriaPanel.setToolTipText("");
 
         jLabel7.setText("Escolha a Célula:");
@@ -206,10 +204,10 @@ public class TelaInicio extends javax.swing.JFrame {
             }
         });
         jButton1.addInputMethodListener(new java.awt.event.InputMethodListener() {
-            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
-            }
             public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
                 jButton1InputMethodTextChanged(evt);
+            }
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
             }
         });
 
@@ -283,14 +281,14 @@ public class TelaInicio extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(0), "Projeto", 0, 0, new java.awt.Font("Calibri", 0, 18), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED), "Projeto", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Calibri", 0, 18), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel2.setMaximumSize(new java.awt.Dimension(0, 0));
 
         jEditorPane1.setBackground(new java.awt.Color(255, 255, 204));
         jEditorPane1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jEditorPane1.setEditable(false);
-        jEditorPane1.setFont(new java.awt.Font("Arial", 0, 12));
-        jEditorPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jEditorPane1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jEditorPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jEditorPane1.setDragEnabled(true);
         jEditorPane1.setPreferredSize(new java.awt.Dimension(100, 50));
         jScrollPane1.setViewportView(jEditorPane1);
@@ -331,19 +329,19 @@ public class TelaInicio extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 501, Short.MAX_VALUE))
         );
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(0), "Status", 0, 0, new java.awt.Font("Calibri", 0, 18), new java.awt.Color(102, 102, 102))); // NOI18N
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED), "Status", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Calibri", 0, 18), new java.awt.Color(102, 102, 102))); // NOI18N
         jPanel3.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 jPanel3AncestorAdded(evt);
             }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
         });
 
         jTree1.setBackground(new java.awt.Color(204, 255, 204));
-        jTree1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Diretório Atual", 0, 0, new java.awt.Font("Arial", 0, 12))); // NOI18N
+        jTree1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Diretório Atual", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 12))); // NOI18N
         jTree1.setForeground(new java.awt.Color(0, 51, 255));
         jTree1.addContainerListener(new java.awt.event.ContainerAdapter() {
             public void componentAdded(java.awt.event.ContainerEvent evt) {
@@ -364,8 +362,8 @@ public class TelaInicio extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
-            .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
+            .addComponent(jScrollPane2)
+            .addComponent(jScrollPane7)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel10)
@@ -390,7 +388,7 @@ public class TelaInicio extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jToolBar1.setBorder(javax.swing.BorderFactory.createEtchedBorder(0));
+        jToolBar1.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));
         jToolBar1.setRollover(true);
         jToolBar1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jToolBar1.add(jLabel1);
@@ -485,10 +483,10 @@ public class TelaInicio extends javax.swing.JFrame {
             }
         });
         jButton11.addInputMethodListener(new java.awt.event.InputMethodListener() {
-            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
-            }
             public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
                 jButton11InputMethodTextChanged(evt);
+            }
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
             }
         });
         jToolBar1.add(jButton11);
@@ -569,14 +567,14 @@ public class TelaInicio extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -613,6 +611,8 @@ public class TelaInicio extends javax.swing.JFrame {
 
         jMenu1.add(jMenu9);
         jMenu1.add(jSeparator2);
+
+        jMenuItem4.setText("hahaha");
         jMenu1.add(jMenuItem4);
         jMenu1.add(jSeparator3);
 
@@ -719,12 +719,12 @@ public class TelaInicio extends javax.swing.JFrame {
             }
         });
         jMenuItem24.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-                jMenuItem24AncestorRemoved(evt);
-            }
             public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+                jMenuItem24AncestorRemoved(evt);
             }
         });
         jMenu4.add(jMenuItem24);
@@ -747,6 +747,8 @@ public class TelaInicio extends javax.swing.JFrame {
         });
         jMenu4.add(jMenuItem26);
         jMenu4.add(jSeparator22);
+
+        jMenu7.setText("Exportar");
 
         jMenuItem27.setText("Arquivo XML");
         jMenuItem27.addActionListener(new java.awt.event.ActionListener() {
@@ -803,15 +805,6 @@ public class TelaInicio extends javax.swing.JFrame {
             }
         });
         jMenu6.add(jMenuItem37);
-        jMenu6.add(jSeparator30);
-
-        jMenuItem38.setText("Fale Conosco");
-        jMenuItem38.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem38ActionPerformed(evt);
-            }
-        });
-        jMenu6.add(jMenuItem38);
         jMenu6.add(jSeparator31);
 
         jMenuItem39.setText("Reportar Problema");
@@ -852,7 +845,7 @@ public class TelaInicio extends javax.swing.JFrame {
                         .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 113, Short.MAX_VALUE)))
+                        .addGap(0, 31, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -871,7 +864,7 @@ public class TelaInicio extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(categoriaPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 11, Short.MAX_VALUE))
+                                .addGap(0, 16, Short.MAX_VALUE))
                             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(97, 97, 97))))
         );
@@ -937,30 +930,6 @@ public class TelaInicio extends javax.swing.JFrame {
         TelaCelulas celulas = new TelaCelulas();
         celulas.setVisible(true);
     }//GEN-LAST:event_jMenuItem33ActionPerformed
-
-    private void jMenuItem37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem37ActionPerformed
-        // TODO add your handling code here:
-        TelaAjuda ajuda = new TelaAjuda();
-        ajuda.setVisible(true);
-    }//GEN-LAST:event_jMenuItem37ActionPerformed
-
-    private void jMenuItem38ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem38ActionPerformed
-        // TODO add your handling code here:
-        TelaFale fale = new TelaFale();
-        fale.setVisible(true);
-    }//GEN-LAST:event_jMenuItem38ActionPerformed
-
-    private void jMenuItem39ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem39ActionPerformed
-        // TODO add your handling code here:
-        TelaReport report = new TelaReport();
-        report.setVisible(true);
-    }//GEN-LAST:event_jMenuItem39ActionPerformed
-
-    private void jMenuItem40ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem40ActionPerformed
-        // TODO add your handling code here:
-        TelaSobre sobre = new TelaSobre();
-        sobre.setVisible(true);
-    }//GEN-LAST:event_jMenuItem40ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
@@ -1111,6 +1080,24 @@ public class TelaInicio extends javax.swing.JFrame {
             Logger.getLogger(TelaInicio.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jMenuItem27ActionPerformed
+
+    private void jMenuItem40ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem40ActionPerformed
+        // TODO add your handling code here:
+        TelaSobre sobre = new TelaSobre();
+        sobre.setVisible(true);
+    }//GEN-LAST:event_jMenuItem40ActionPerformed
+
+    private void jMenuItem39ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem39ActionPerformed
+        // TODO add your handling code here:
+        TelaReport report = new TelaReport();
+        report.setVisible(true);
+    }//GEN-LAST:event_jMenuItem39ActionPerformed
+
+    private void jMenuItem37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem37ActionPerformed
+        // TODO add your handling code here:
+        TelaAjuda ajuda = new TelaAjuda();
+        ajuda.setVisible(true);
+    }//GEN-LAST:event_jMenuItem37ActionPerformed
     private void jScrollPaneActionPerformed(java.awt.event.ActionEvent evt) {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1181,7 +1168,6 @@ public class TelaInicio extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem33;
     private javax.swing.JMenuItem jMenuItem36;
     private javax.swing.JMenuItem jMenuItem37;
-    private javax.swing.JMenuItem jMenuItem38;
     private javax.swing.JMenuItem jMenuItem39;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem40;
@@ -1214,7 +1200,6 @@ public class TelaInicio extends javax.swing.JFrame {
     private javax.swing.JPopupMenu.Separator jSeparator26;
     private javax.swing.JPopupMenu.Separator jSeparator27;
     private javax.swing.JPopupMenu.Separator jSeparator3;
-    private javax.swing.JPopupMenu.Separator jSeparator30;
     private javax.swing.JPopupMenu.Separator jSeparator31;
     private javax.swing.JPopupMenu.Separator jSeparator32;
     private javax.swing.JPopupMenu.Separator jSeparator6;

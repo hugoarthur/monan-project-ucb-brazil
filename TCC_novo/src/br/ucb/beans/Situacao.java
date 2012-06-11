@@ -21,8 +21,7 @@ public class Situacao implements Serializable {
     private Integer idSituacao;
     @Column(name = "des_situacao")
     private String desSituacao;
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_acompanhamento", nullable = false)
+    @ManyToOne
     private Acompanhamento acompanhamento;
 
     public Acompanhamento getAcompanhamento() {

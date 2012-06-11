@@ -126,11 +126,11 @@ public class TelaNovoProjeto extends javax.swing.JFrame {
 
     private void salvarProjetoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvarProjetoActionPerformed
         // TODO add your handling code here:
-        TelaInicio novoProjeto = new TelaInicio();
-        novoProjeto.setVisible(true);
-        Sessao.getInstance().setTela(novoProjeto);
         getSalvarProjeto().addActionListener(new CadastraProjeto(this));
         this.setVisible(false);
+        TelaInicio telaInicio = new TelaInicio();
+        telaInicio.setVisible(true);
+        Sessao.getInstance().setTela(telaInicio);
     }//GEN-LAST:event_salvarProjetoActionPerformed
 
     private void cancelarProjetoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarProjetoActionPerformed

@@ -45,17 +45,15 @@ public class ConfiguraCampos {
 
                         }
                     }
-
                 }
             }
         } else {
             listModel.addElement("vazio");
         }
-
         return listModel;
     }
 
-    //Lista de Todos os Usuários
+    //Lista de Todos os Usuários do Projeto.
     public DefaultListModel listaUser() {
 
         DefaultListModel listModel = new DefaultListModel();
@@ -72,7 +70,7 @@ public class ConfiguraCampos {
         return listModel;
     }
 
-    //Lista de Células da Combobox da TelaInicial
+    //Lista as Células na Combobox da TelaInicial.
     public DefaultComboBoxModel comboModel() {
 
         DefaultComboBoxModel comboModel = new DefaultComboBoxModel();
@@ -89,7 +87,7 @@ public class ConfiguraCampos {
         return comboModel;
     }
 
-    //Lista de todas as Células
+    //Lista de todas as Células do projeto.
     public DefaultListModel listModelCel() {
 
         DefaultListModel listModel = new DefaultListModel();
@@ -124,12 +122,11 @@ public class ConfiguraCampos {
 
         }
 
-
         return listaElemento;
 
     }
 
-    //Seta as linhas da Tabela da TelaAcompanhamento
+    //Adiciona as linhas na Tabela da TelaAcompanhamento
     public ArrayList linhaTable() {
 
         String status;
@@ -140,43 +137,78 @@ public class ConfiguraCampos {
 
         ArrayList dados = new ArrayList();
 
-        if (listaElemento() != null) {
+        if (CelulaDAO.findAll() != null) {
 
             for (Celula celula : CelulaDAO.findAll()) {
 
-                for (Element e : listaElemento()) {
+                if (listaElemento() != null) {
 
-                    status = "";
-                    utilizada = "";
-                    nUtilizada = "";
-                    nomeDissertacao = "";
-                    nomeCelula = "";
+                    for (Element e : listaElemento()) {
 
-                    if (celula.getTxt_celula().equals(e.getChildText("celula"))) {
+                        status = "";
+                        utilizada = "";
+                        nUtilizada = "";
+                        nomeDissertacao = "";
+                        nomeCelula = "";
 
-                        nomeDissertacao = e.getChildText("dissertação");
-                        nomeCelula = e.getChildText("celula");
+                        if (celula.getTxt_celula().equals(e.getChildText("celula"))) {
 
-                        status = "Andamento";
-                        utilizada = "X";
+                            nomeDissertacao = e.getChildText("dissertação");
+                            nomeCelula = e.getChildText("celula");
 
-                        dados.add(new String[]{nomeDissertacao, nomeCelula, utilizada, nUtilizada, status});
+                            status = "Andamento";
+                            utilizada = "X";
 
-                    } else {
+                            dados.add(new String[]{nomeDissertacao, nomeCelula, utilizada, nUtilizada, status});
 
-                        nomeCelula = celula.getTxt_celula();
-                        nUtilizada = "X";
-                        dados.add(new String[]{nomeDissertacao, nomeCelula, utilizada, nUtilizada, status});
+                        } else {
+
+                            nomeCelula = celula.getTxt_celula();
+                            nUtilizada = "X";
+                            dados.add(new String[]{nomeDissertacao, nomeCelula, utilizada, nUtilizada, status});
+
+                        }
 
                     }
 
+
+                } else {
+                    
+                    nomeCelula = celula.getTxt_celula();
+                    nomeDissertacao = "";
+                    
+                    status="";
+                    utilizada = "";
+                    nUtilizada = "X";
+                    
+                    dados.add(new String[]{nomeDissertacao, nomeCelula, utilizada, nUtilizada, status});
+                    
                 }
 
             }
 
         } else {
 
-            dados = linhaTableDefault();
+            if (listaElemento() != null) {
+
+                for (Element e : listaElemento()) {
+
+                    nomeDissertacao = e.getChildText("dissertação");
+                    nomeCelula = e.getChildText("celula");
+                    
+                    status = "Andamento";
+                    nUtilizada = "";
+                    utilizada = "X";
+                    
+                    dados.add(new String[]{nomeDissertacao, nomeCelula, utilizada, nUtilizada, status});
+
+                }
+
+            } else {
+
+                dados = linhaTableDefault();
+
+            }
 
         }
 
@@ -184,7 +216,7 @@ public class ConfiguraCampos {
 
     }
 
-    //Linha Default da tabela da TelaAcompanhamento, quando os valores forem nulos
+    //Linha Default da tabela da TelaAcompanhamento.
     private ArrayList linhaTableDefault() {
 
         ArrayList dados = new ArrayList();
@@ -203,25 +235,26 @@ public class ConfiguraCampos {
 
     }
 
+    // Adiciona as Dissertaçoes Utilizadas na Jlist da TelaInicio.
     public DefaultListModel listaPdf() {
 
         DefaultListModel listModel = new DefaultListModel();
 
         if (listaElemento() != null) {
-            
+
             for (Element element : listaElemento()) {
-                
+
                 listModel.addElement(element.getChildText("dissertação"));
 
             }
-            
+
         } else {
-            
+
             listModel.addElement("");
-            
+
         }
 
-        return listModel();
+        return listModel;
 
     }
 }

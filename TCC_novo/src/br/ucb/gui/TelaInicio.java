@@ -45,11 +45,16 @@ public class TelaInicio extends javax.swing.JFrame {
     public TelaInicio() {
 
         initComponents();
+        //Adiciona os Aquivos e patas na jtree do projeto.
         setArvore(new Arvore(this));
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        //Add as céluas na combobox.
         setCombo();
+        //Lista dos nomes dos usuarios que participam da equipe. 
         listEquipe();
+        //Status do Projeto.
         setItemStatus();
+        //Lista de Dissertações utilizadas.
         listPdf();
 
     }
@@ -1228,15 +1233,21 @@ public class TelaInicio extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     public JComboBox getComboBox() {
+        
         return jComboBox1;
+        
     }
 
     public JEditorPane getJEditorPane() {
+        
         return jEditorPane1;
+        
     }
 
     public JTree getJTree1() {
+        
         return jTree1;
+        
     }
 
     public void setCombo() {
@@ -1264,18 +1275,26 @@ public class TelaInicio extends javax.swing.JFrame {
     }
 
     public JComboBox getjComboBox1() {
+        
         return jComboBox1;
+        
     }
 
     public void setjComboBox1(JComboBox jComboBox1) {
+        
         this.jComboBox1 = jComboBox1;
+        
     }
 
     public Arvore getArvore() {
+        
         return arvore;
+        
     }
 
     public void setArvore(Arvore arvore) {
+        
         this.arvore = arvore;
+        
     }
 }

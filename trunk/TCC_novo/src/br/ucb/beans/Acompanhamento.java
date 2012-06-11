@@ -30,6 +30,8 @@ public class Acompanhamento implements Serializable {
     private List<Celula> celulas;
     @OneToMany(mappedBy = "acompanhamento", fetch = FetchType.LAZY)
     private List<Projeto> projetos;
+    @OneToMany(mappedBy = "acompanhamento", fetch = FetchType.LAZY)
+    private List<Situacao> situacoes;
 
     public Date getDataAcompanhamento() {
         return dataAcompanhamento;
@@ -69,5 +71,13 @@ public class Acompanhamento implements Serializable {
 
     public void setProjetos(List<Projeto> projetos) {
         this.projetos = projetos;
+    }
+
+    public List<Situacao> getSituacoes() {
+        return situacoes;
+    }
+
+    public void setSituacoes(List<Situacao> situacoes) {
+        this.situacoes = situacoes;
     }
 }

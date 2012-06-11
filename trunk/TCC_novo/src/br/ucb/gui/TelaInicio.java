@@ -1069,11 +1069,8 @@ public class TelaInicio extends javax.swing.JFrame {
 
     private void jMenuItem27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem27ActionPerformed
         // TODO add your handling code here:
-        ExportaXml exportXml = new ExportaXml();
         try {
-            exportXml.exportar();
-    //        xml.exportado();
-    //        xml.exportado();
+            ExportaXml.exportar();
         } catch (FileNotFoundException ex) {
             Logger.getLogger(TelaInicio.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {

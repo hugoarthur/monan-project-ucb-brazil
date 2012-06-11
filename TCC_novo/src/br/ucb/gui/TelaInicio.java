@@ -16,6 +16,10 @@ import br.ucb.manipulacao.pdf.ManipulaPDF;
 import br.ucb.service.Sessao;
 import br.ucb.xml.ExportaXml;
 import br.ucb.xml.SalvaXML;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JComboBox;
 import javax.swing.JEditorPane;
 import javax.swing.JFrame;
@@ -1097,9 +1101,15 @@ public class TelaInicio extends javax.swing.JFrame {
     private void jMenuItem27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem27ActionPerformed
         // TODO add your handling code here:
         ExportaXml exportXml = new ExportaXml();
-        exportXml.exportar();
-//        Exportando xml = new Exportando();
-//        xml.exportado();
+        try {
+            exportXml.exportar();
+    //        xml.exportado();
+    //        xml.exportado();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(TelaInicio.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(TelaInicio.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jMenuItem27ActionPerformed
     private void jScrollPaneActionPerformed(java.awt.event.ActionEvent evt) {
     }

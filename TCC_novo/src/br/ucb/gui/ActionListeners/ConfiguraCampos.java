@@ -107,7 +107,7 @@ public class ConfiguraCampos {
     }
 
     //Lista dos Elementos do XML
-    private List<Element> listaElemento() {
+    public List<Element> listaElemento() {
 
         XmlReader xmlR = new XmlReader();
         List<Element> listaElemento = new ArrayList<Element>();
@@ -139,16 +139,12 @@ public class ConfiguraCampos {
         String nomeCelula;
 
         ArrayList dados = new ArrayList();
-        List<Element> listaElemento = new ArrayList<Element>();
 
-        listaElemento = listaElemento();
-
-        if (listaElemento != null) {
+        if (listaElemento() != null) {
 
             for (Celula celula : CelulaDAO.findAll()) {
 
-
-                for (Element e : listaElemento) {
+                for (Element e : listaElemento()) {
 
                     status = "";
                     utilizada = "";
@@ -204,6 +200,28 @@ public class ConfiguraCampos {
             return true;
         }
         return false;
+
+    }
+
+    public DefaultListModel listaPdf() {
+
+        DefaultListModel listModel = new DefaultListModel();
+
+        if (listaElemento() != null) {
+            
+            for (Element element : listaElemento()) {
+                
+                listModel.addElement(element.getChildText("dissertação"));
+
+            }
+            
+        } else {
+            
+            listModel.addElement("");
+            
+        }
+
+        return listModel();
 
     }
 }

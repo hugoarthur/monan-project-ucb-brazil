@@ -977,7 +977,7 @@ public class TelaInicio extends javax.swing.JFrame {
 
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
         // TODO add your handling code here:
-        this.setVisible(false);
+        this.dispose();
         new TelaLogin().setVisible(true);
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 

@@ -10,7 +10,14 @@
  */
 package br.ucb.gui;
 
+
+import br.ucb.beans.Projeto;
+import br.ucb.dao.ProjetoDAO;
+import br.ucb.gui.ActionListeners.AbrirAlteraProjeto;
 import br.ucb.gui.ActionListeners.ConfiguraCampos;
+import br.ucb.service.Sessao;
+import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
 
 
 /**
@@ -26,7 +33,6 @@ public class TelaProjeto extends javax.swing.JFrame {
 
     public TelaProjeto() {
         initComponents();
-        listCelulas();
     }
 
     /**
@@ -40,9 +46,13 @@ public class TelaProjeto extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        DefaultListModel modelo = new DefaultListModel();
+        for (Projeto proj : Sessao.getInstance().getUsuario().getProjetos()) {
+            modelo.addElement(proj);
+        }
+        nomesProjetos = new javax.swing.JList(modelo);
+        alteraProjeto = new javax.swing.JButton();
+        excluir = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
 
@@ -50,23 +60,23 @@ public class TelaProjeto extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Projetos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, null, java.awt.Color.darkGray));
 
-        jList1.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane1.setViewportView(jList1);
+        jScrollPane1.setViewportView(nomesProjetos);
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/novo_projeto.png"))); // NOI18N
-        jButton1.setText("Alterar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        alteraProjeto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/novo_projeto.png"))); // NOI18N
+        alteraProjeto.setText("Alterar");
+        alteraProjeto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                alteraProjetoActionPerformed(evt);
             }
         });
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/limpar.png"))); // NOI18N
-        jButton2.setText("Excluir");
+        excluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/limpar.png"))); // NOI18N
+        excluir.setText("Excluir");
+        excluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                excluirActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("Status:");
 
@@ -85,17 +95,17 @@ public class TelaProjeto extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 239, Short.MAX_VALUE)
-                        .addComponent(jButton1)
+                        .addComponent(alteraProjeto)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2)))
+                        .addComponent(excluir)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton1)
+                    .addComponent(excluir)
+                    .addComponent(alteraProjeto)
                     .addComponent(jLabel1)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -124,12 +134,23 @@ public class TelaProjeto extends javax.swing.JFrame {
         setBounds((screenSize.width-691)/2, (screenSize.height-320)/2, 691, 320);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void alteraProjetoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alteraProjetoActionPerformed
         // TODO add your handling code here:
-        TelaNovaCelula novaCategoria = new TelaNovaCelula();
-        novaCategoria.setVisible(true);
-        novaCategoria.setSize(456, 291);
-    }//GEN-LAST:event_jButton1ActionPerformed
+        alteraProjeto.addActionListener(new AbrirAlteraProjeto(this));
+        TelaInicio novoProjeto = new TelaInicio();
+        novoProjeto.setVisible(true);
+        Sessao.getInstance().setTela(novoProjeto);
+        this.setVisible(false);
+    }//GEN-LAST:event_alteraProjetoActionPerformed
+
+    private void excluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_excluirActionPerformed
+        // TODO add your handling code here:
+        int selectedIndex = nomesProjetos.getSelectedIndex();
+        Projeto projeto = (Projeto) nomesProjetos.getModel().getElementAt(selectedIndex);
+        JOptionPane.showConfirmDialog(null, "Tem certeza que deseja deletar o projeto "+projeto+"?");
+        if(ProjetoDAO.excluiProjeto(projeto))
+            this.dispose();
+    }//GEN-LAST:event_excluirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -143,18 +164,32 @@ public class TelaProjeto extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton alteraProjeto;
+    private javax.swing.JButton excluir;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JList jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JList nomesProjetos;
     // End of variables declaration//GEN-END:variables
 
     public void listCelulas() {
-        jList1.removeAll();
-        jList1.setModel(setar.listModelCel());
-        jList1.repaint();
+        getNomesProjetos().removeAll();
+        getNomesProjetos().setModel(setar.listModelCel());
+        getNomesProjetos().repaint();
+    }
+
+    /**
+     * @return the nomesProjetos
+     */
+    public javax.swing.JList getNomesProjetos() {
+        return nomesProjetos;
+    }
+
+    /**
+     * @param nomesProjetos the nomesProjetos to set
+     */
+    public void setNomesProjetos(javax.swing.JList nomesProjetos) {
+        this.nomesProjetos = nomesProjetos;
     }
 }

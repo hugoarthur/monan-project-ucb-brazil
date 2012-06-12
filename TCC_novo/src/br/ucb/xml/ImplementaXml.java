@@ -5,9 +5,7 @@
 package br.ucb.xml;
 
 import br.ucb.service.Sessao;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import org.jdom2.Document;
@@ -46,8 +44,8 @@ public class ImplementaXml {
                 Element texto = new Element("texto");
                 texto.setText(e.getChildText("texto"));
 
-                Element nomeArq = new Element("dissertação");
-                nomeArq.setText(e.getChildText("dissertação"));
+                Element nomeArq = new Element("dissertacao");
+                nomeArq.setText(e.getChildText("dissertacao"));
 
                 usuario.addContent(projeto);
                 usuario.addContent(nomeArq);
@@ -69,7 +67,7 @@ public class ImplementaXml {
             Element texto = new Element("texto");
             texto.setText(text);
 
-            Element nomeArq = new Element("dissertação");
+            Element nomeArq = new Element("dissertacao");
             nomeArq.setText(nomeArquivo);
 
             usuario.addContent(projeto);
@@ -93,7 +91,7 @@ public class ImplementaXml {
             Element texto = new Element("texto");
             texto.setText(text);
 
-            Element nomeArq = new Element("dissertação");
+            Element nomeArq = new Element("dissertacao");
             nomeArq.setText(nomeArquivo);
 
             usuario.addContent(projeto);
@@ -113,14 +111,15 @@ public class ImplementaXml {
         XMLOutputter xout = new XMLOutputter();
 
         try {
+            
+            Writer out = new BufferedWriter(new OutputStreamWriter(  
+                new FileOutputStream(this.caminho), "UTF8"));  
+              
 
-            FileWriter arquivo = new FileWriter(new File(this.caminho));
+            //FileWriter arquivo = new FileWriter(new File(this.caminho));
 
-            xout.output(documento, arquivo);
-
-            XmlReader xmlR = new XmlReader();
-            xmlR.ListXml(this.caminho);
-
+            xout.output(documento, out);
+            
         } catch (IOException e) {
 
             e.printStackTrace();
@@ -139,15 +138,22 @@ public class ImplementaXml {
     }
 
     private boolean verificaArqXML() {
+        
         File arq = new File(this.caminho);
+        
         if (arq.exists()) {
+            
             return true;
         }
+        
         return false;
     }
 
     private String caminhoArqXml() {
+        
         String caminho = "./xml/" + Sessao.getInstance().getProjeto().getNomeProjeto() + ".xml";
+        
         return caminho;
+        
     }
 }

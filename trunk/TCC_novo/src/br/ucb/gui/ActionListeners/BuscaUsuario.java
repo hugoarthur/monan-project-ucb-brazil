@@ -36,7 +36,7 @@ public class BuscaUsuario implements ActionListener {
         if (user != null) {
             Sessao sessao = Sessao.getInstance();
             sessao.setUsuario(user);
-            getTelaLogin().setVisible(false);
+            getTelaLogin().dispose();
             new TelaPrimeira().setVisible(true);
         }
     }

@@ -15,28 +15,27 @@ import org.jdom2.input.SAXBuilder;
  */
 public class XmlReader {
 
-    private Document doc;
-    private String caminhoArq;
-
     public List<Element> ListXml(String caminho) {
-        this.caminhoArq = caminho;
-        XmlR();
-        Element root = this.doc.getRootElement();
-        List<Element> lista = root.getChildren();
-        return lista;
 
-    }
-
-    private void XmlR() {
+        Document doc = null;
 
         SAXBuilder builder = new SAXBuilder();
 
         try {
 
-            this.doc = builder.build(this.caminhoArq);
+            doc = builder.build(caminho);
 
         } catch (Exception e) {
+            
+            e.printStackTrace();
+            
         }
+
+        Element root = doc.getRootElement();
+        
+        List<Element> lista = root.getChildren();
+        
+        return lista;
 
     }
 }

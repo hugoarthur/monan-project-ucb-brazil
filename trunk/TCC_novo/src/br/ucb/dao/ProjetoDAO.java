@@ -11,6 +11,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import javax.persistence.EntityManager;
+import javax.swing.JOptionPane;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -37,7 +38,21 @@ public class ProjetoDAO {
         em.close();
     }
 
-    public static void excluiProjeto() {
+    public static boolean excluiProjeto(Projeto projeto) {
+        boolean retorno = false;
+        EntityManager em = DataBase.getInstance().getEntityManager();
+        em.getTransaction().begin();
+        try {
+            em.remove(em.getReference(Projeto.class, projeto.getIdProjeto()));
+            em.getTransaction().commit();
+            JOptionPane.showMessageDialog(null, "Projeto deletado com sucesso!");
+            retorno = true;
+        } catch (Exception e) {
+            em.getTransaction().rollback();
+        } finally {
+            em.close();
+        }
+        return retorno;
     }
 
     public static void alteraProjeto() {

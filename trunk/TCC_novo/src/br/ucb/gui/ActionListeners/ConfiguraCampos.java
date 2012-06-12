@@ -153,7 +153,7 @@ public class ConfiguraCampos {
 
                         if (celula.getTxt_celula().equals(e.getChildText("celula"))) {
 
-                            nomeDissertacao = e.getChildText("dissertação");
+                            nomeDissertacao = e.getChildText("dissertacao");
                             nomeCelula = e.getChildText("celula");
 
                             status = "Andamento";
@@ -193,7 +193,7 @@ public class ConfiguraCampos {
 
                 for (Element e : listaElemento()) {
 
-                    nomeDissertacao = e.getChildText("dissertação");
+                    nomeDissertacao = e.getChildText("dissertacao");
                     nomeCelula = e.getChildText("celula");
                     
                     status = "Andamento";
@@ -244,7 +244,7 @@ public class ConfiguraCampos {
 
             for (Element element : listaElemento()) {
 
-                listModel.addElement(element.getChildText("dissertação"));
+                listModel.addElement(element.getChildText("dissertacao"));
 
             }
 

@@ -10,6 +10,7 @@ import br.ucb.gui.TelaPrimeira;
 import br.ucb.service.Sessao;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -21,17 +22,29 @@ public class AbrirProjetoRecente implements ActionListener {
 
     public AbrirProjetoRecente(TelaPrimeira telaPrima) {
         setTelaPrimeira(telaPrima);
-        Sessao.getInstance().setProjeto(getProjeto());
-        getTelaPrimeira().setVisible(false);
+        if (getProjeto() != null) {
+            Sessao.getInstance().setProjeto(getProjeto());
+            getTelaPrimeira().dispose();
+            TelaInicio telaInicio = new TelaInicio();
+            telaInicio.setVisible(true);
+            Sessao.getInstance().setTela(telaInicio);
+        } else {
+            JOptionPane.showMessageDialog(null, "Você não selecionou nenhum projeto!", "Warning", JOptionPane.WARNING_MESSAGE);
+        }
     }
 
     public void actionPerformed(ActionEvent e) {
     }
 
     public Projeto getProjeto() {
-        int selectedIndex = getTelaPrimeira().getNomesProjetos().getSelectedIndex();
-        Projeto projetoSelecionado = (Projeto) getTelaPrimeira().getNomesProjetos().getModel().getElementAt(selectedIndex);
-        return projetoSelecionado;
+        Projeto projetoSelecionado = null;
+        try {
+            int selectedIndex = getTelaPrimeira().getNomesProjetos().getSelectedIndex();
+            projetoSelecionado = (Projeto) getTelaPrimeira().getNomesProjetos().getModel().getElementAt(selectedIndex);
+            return projetoSelecionado;
+        } catch (java.lang.ArrayIndexOutOfBoundsException e) {
+            return projetoSelecionado;
+        }
     }
 
     public TelaPrimeira getTelaPrimeira() {

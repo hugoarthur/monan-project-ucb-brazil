@@ -206,7 +206,7 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
 
     private void CancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarActionPerformed
         // TODO add your handling code here:
-        setVisible(false);
+        this.dispose();
     }//GEN-LAST:event_CancelarActionPerformed
 
     private void formComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_formComponentAdded

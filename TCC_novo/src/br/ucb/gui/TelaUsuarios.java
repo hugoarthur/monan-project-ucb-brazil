@@ -12,6 +12,7 @@ package br.ucb.gui;
 
 import br.ucb.beans.Usuario;
 import br.ucb.dao.UsuarioDAO;
+import br.ucb.service.Sessao;
 import javax.swing.DefaultListModel;
 import javax.swing.JList;
 
@@ -43,7 +44,9 @@ public class TelaUsuarios extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         DefaultListModel modelo = new DefaultListModel();
         for (Usuario user : UsuarioDAO.findAll()) {
-            modelo.addElement(user);
+            if (!Sessao.getInstance().getUsuario().equals(user)) {
+                modelo.addElement(user);
+            }
         }
         jList1 = new javax.swing.JList(modelo);
         alteraUsuario = new javax.swing.JButton();

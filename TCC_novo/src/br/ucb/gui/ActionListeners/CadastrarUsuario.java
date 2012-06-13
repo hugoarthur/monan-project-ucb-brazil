@@ -10,6 +10,7 @@ import br.ucb.dao.UsuarioDAO;
 import br.ucb.gui.TelaCadastroUsuario;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -18,39 +19,45 @@ import java.awt.event.ActionListener;
 public class CadastrarUsuario implements ActionListener {
 
     private TelaCadastroUsuario telaCadastro;
+    private StringBuilder mensagemErro;
 
     public CadastrarUsuario(TelaCadastroUsuario form) {
         setTelaCadastro(form);
+        setMensagemErro(new StringBuilder());
         insereUsuarioCoordenador();
-        getTelaCadastro().setVisible(false);
     }
 
     public void actionPerformed(ActionEvent e) {
-        if(getTelaCadastro().getName() == "TelaCadastroUsuario")
-            insereUsuarioCoordenador();
-        else
-            insereUsuarioEquipe();
         //getTelaCadastro().update(null);
     }
 
-    public void insereUsuarioCoordenador(){
-        Usuario user = new Usuario();
-        user.setNome(getTelaCadastro().getNomeTextField().getText());
-        user.setLogin(getTelaCadastro().getLoginTextField().getText());
-        user.setSenha(new String(getTelaCadastro().getSenhaSenhaPasswordField().getPassword()));
-        user.setUniversidade((String)getTelaCadastro().getUniversidadeComboBox().getSelectedItem());
-        user.setTipoUsuario(Constants.COORDENADOR);
-        UsuarioDAO.insereUsuario(user);
+    public void insereUsuarioCoordenador() {
+        if (!validaCampoObrigadorios()) {
+            Usuario user = new Usuario();
+            user.setNome(getTelaCadastro().getNomeTextField().getText());
+            user.setLogin(getTelaCadastro().getLoginTextField().getText());
+            user.setSenha(new String(getTelaCadastro().getSenhaSenhaPasswordField().getPassword()));
+            user.setUniversidade((String) getTelaCadastro().getUniversidadeComboBox().getSelectedItem());
+            user.setTipoUsuario(Constants.COORDENADOR);
+            UsuarioDAO.insereUsuario(user);
+        } else {
+            JOptionPane.showMessageDialog(null, mensagemErro.toString(), "Warning", JOptionPane.WARNING_MESSAGE);
+        }
     }
-    
-    public void insereUsuarioEquipe(){
-        Usuario user = new Usuario();
-        user.setNome(getTelaCadastro().getNomeTextField().getText());
-        user.setLogin(getTelaCadastro().getLoginTextField().getText());
-        user.setSenha(new String(getTelaCadastro().getSenhaSenhaPasswordField().getPassword()));
-        user.setUniversidade((String)getTelaCadastro().getUniversidadeComboBox().getSelectedItem());
-        user.setTipoUsuario(Constants.EQUIPE);
-        UsuarioDAO.insereUsuario(user);
+
+    public void insereUsuarioEquipe() {
+        if (!validaCampoObrigadorios()) {
+            Usuario user = new Usuario();
+            user.setNome(getTelaCadastro().getNomeTextField().getText());
+            user.setLogin(getTelaCadastro().getLoginTextField().getText());
+            user.setSenha(new String(getTelaCadastro().getSenhaSenhaPasswordField().getPassword()));
+            user.setUniversidade((String) getTelaCadastro().getUniversidadeComboBox().getSelectedItem());
+            user.setTipoUsuario(Constants.EQUIPE);
+            UsuarioDAO.insereUsuario(user);
+            getTelaCadastro().dispose();
+        } else {
+            JOptionPane.showMessageDialog(null, mensagemErro.toString(), "Warning", JOptionPane.WARNING_MESSAGE);
+        }
     }
 
     public TelaCadastroUsuario getTelaCadastro() {
@@ -59,5 +66,31 @@ public class CadastrarUsuario implements ActionListener {
 
     public void setTelaCadastro(TelaCadastroUsuario telaCadastro) {
         this.telaCadastro = telaCadastro;
+    }
+
+    public StringBuilder getMensagemErro() {
+        return mensagemErro;
+    }
+
+    public void setMensagemErro(StringBuilder mensagemErro) {
+        this.mensagemErro = mensagemErro;
+    }
+
+    public boolean validaCampoObrigadorios() {
+        boolean erro = false;
+        if (getTelaCadastro().getNomeTextField().getText().isEmpty()) {
+            mensagemErro.append("O nome é um campo obrigatório!\n");
+            erro = true;
+        }
+        if (getTelaCadastro().getLoginTextField().getText().isEmpty()) {
+            mensagemErro.append("O login é um campo obrigatório!\n");
+            erro = true;
+        }
+        if (getTelaCadastro().getSenhaPasswordField().getPassword().length == 0) {
+            mensagemErro.append("A senha é um campo obrigatório!\n");
+            erro = true;
+        }
+
+        return erro;
     }
 }

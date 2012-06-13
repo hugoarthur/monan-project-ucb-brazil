@@ -7,14 +7,15 @@ package br.ucb.gui;
 import br.ucb.gui.ActionListeners.CadastraProjeto;
 import br.ucb.service.Sessao;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JTextField;
 
 /**
  *
  * @author guilherme
  */
-public class TelaNovoProjeto extends javax.swing.JFrame {
-
+public class TelaNovoProjeto extends JFrame {
+    
     /**
      * Creates new form TelaNovoProjeto
      */
@@ -127,15 +128,15 @@ public class TelaNovoProjeto extends javax.swing.JFrame {
     private void salvarProjetoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvarProjetoActionPerformed
         // TODO add your handling code here:
         getSalvarProjeto().addActionListener(new CadastraProjeto(this));
-        this.setVisible(false);
         TelaInicio telaInicio = new TelaInicio();
         telaInicio.setVisible(true);
         Sessao.getInstance().setTela(telaInicio);
+        this.dispose();
     }//GEN-LAST:event_salvarProjetoActionPerformed
 
     private void cancelarProjetoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarProjetoActionPerformed
         // TODO add your handling code here:
-        setVisible(false);
+        this.dispose();
     }//GEN-LAST:event_cancelarProjetoActionPerformed
 
     /**

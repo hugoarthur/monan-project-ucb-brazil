@@ -29,6 +29,9 @@ public class Sessao {
         }
         return instance;
     }
+    public static void killInstance() {
+        instance = null;
+    }
     
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;

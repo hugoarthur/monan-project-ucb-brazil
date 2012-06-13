@@ -10,6 +10,8 @@
  */
 package br.ucb.gui;
 
+import br.ucb.constants.Constants;
+import br.ucb.dao.DataBase;
 import br.ucb.gui.ActionListeners.ConfiguraCampos;
 import br.ucb.manipulacao.pdf.Arvore;
 import br.ucb.manipulacao.pdf.ManipulaPDF;
@@ -45,6 +47,15 @@ public class TelaInicio extends javax.swing.JFrame {
     public TelaInicio() {
 
         initComponents();
+        if(Sessao.getInstance().getUsuario().getTipoUsuario() == Constants.EQUIPE){
+            jButton13.setEnabled(false);
+            jButton14.setEnabled(false);
+            jButton15.setEnabled(false);
+            jButton3.setEnabled(false);
+            jButton9.setEnabled(false);
+            jMenuItem24.setEnabled(false);
+            jMenuItem33.setEnabled(false);
+        }
         //Adiciona os Aquivos e patas na jtree do projeto.
         setArvore(new Arvore(this));
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -978,6 +989,9 @@ public class TelaInicio extends javax.swing.JFrame {
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
         // TODO add your handling code here:
         this.dispose();
+        Sessao.killInstance();
+        DataBase.getEmf().close();
+        DataBase.killInstance();
         new TelaLogin().setVisible(true);
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 

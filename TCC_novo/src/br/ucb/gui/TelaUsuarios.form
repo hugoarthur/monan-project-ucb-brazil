@@ -100,7 +100,7 @@
               </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JList(modelo)"/>
-                <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="DefaultListModel modelo = new DefaultListModel();&#xa;        for (Usuario user : UsuarioDAO.findAll()) {&#xa;            modelo.addElement(user);&#xa;        }"/>
+                <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="DefaultListModel modelo = new DefaultListModel();&#xa;        for (Usuario user : UsuarioDAO.findAll()) {&#xa;            if (!Sessao.getInstance().getUsuario().equals(user)) {&#xa;                modelo.addElement(user);&#xa;            }&#xa;        }"/>
               </AuxValues>
             </Component>
           </SubComponents>

@@ -44,8 +44,6 @@ public class TelaPrimeira extends javax.swing.JFrame {
 
         jButton1 = new javax.swing.JButton();
         abrirRecente = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -71,21 +69,12 @@ public class TelaPrimeira extends javax.swing.JFrame {
         });
 
         abrirRecente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/abrir_projeto.png"))); // NOI18N
-        abrirRecente.setText("Abrir Recente");
+        abrirRecente.setText("Abrir Projeto Selecionado");
         abrirRecente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 abrirRecenteActionPerformed(evt);
             }
         });
-
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/opcoes.png"))); // NOI18N
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/sobre.png"))); // NOI18N
 
         jList1.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -107,23 +96,18 @@ public class TelaPrimeira extends javax.swing.JFrame {
                     .add(layout.createSequentialGroup()
                         .addContainerGap()
                         .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(jSeparator2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 452, Short.MAX_VALUE)
-                            .add(jSeparator1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 452, Short.MAX_VALUE)
+                            .add(jSeparator2)
+                            .add(jSeparator1)
                             .add(layout.createSequentialGroup()
-                                .add(jButton3)
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                    .add(jButton4)
-                                    .add(layout.createSequentialGroup()
-                                        .add(40, 40, 40)
-                                        .add(jButton1)
-                                        .add(18, 18, 18)
-                                        .add(abrirRecente))))
-                            .add(jScrollPane2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 452, Short.MAX_VALUE)))
+                                .add(92, 92, 92)
+                                .add(jButton1)
+                                .add(18, 18, 18)
+                                .add(abrirRecente))
+                            .add(jScrollPane2)))
                     .add(layout.createSequentialGroup()
                         .add(28, 28, 28)
                         .add(jLabel1)
-                        .add(0, 34, Short.MAX_VALUE)))
+                        .add(0, 54, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -141,15 +125,11 @@ public class TelaPrimeira extends javax.swing.JFrame {
                 .add(jScrollPane2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 174, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .add(19, 19, 19)
                 .add(jSeparator2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(12, 12, 12)
-                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                    .add(jButton4, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
-                    .add(jButton3, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-488)/2, (screenSize.height-472)/2, 488, 472);
+        setBounds((screenSize.width-488)/2, (screenSize.height-411)/2, 488, 411);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -163,10 +143,6 @@ public class TelaPrimeira extends javax.swing.JFrame {
         // TODO add your handling code here:
         abrirRecente.addActionListener(new AbrirProjetoRecente(this));
     }//GEN-LAST:event_abrirRecenteActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -182,8 +158,6 @@ public class TelaPrimeira extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton abrirRecente;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JList jList1;
     private javax.swing.JScrollPane jScrollPane1;

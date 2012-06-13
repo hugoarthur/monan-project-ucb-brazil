@@ -32,6 +32,7 @@ public class UsuarioDAO {
         em.getTransaction().commit();
         em.close();
         logger.info("Inserindo usuário: " + "Nome: " + usuario.getNome() + "Login: " + usuario.getLogin());
+        JOptionPane.showMessageDialog(null, "Usuário cadastrado com sucesso!", "Warning", JOptionPane.INFORMATION_MESSAGE);
     }
 
     public static List<Usuario> findAll() {

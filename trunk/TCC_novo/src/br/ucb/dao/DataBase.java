@@ -29,6 +29,9 @@ public class DataBase {
         }
         return bd;
     }
+    public static void killInstance() {
+        bd = null;
+    }
 
     public EntityManager getEntityManager() {
         if(entityManager != null)

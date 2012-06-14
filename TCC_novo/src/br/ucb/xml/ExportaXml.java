@@ -20,33 +20,34 @@ public class ExportaXml {
 
         if (res == JFileChooser.APPROVE_OPTION) {
             File diretorio = fc.getSelectedFile();
+            String nome = (Sessao.getInstance().getProjeto().getNomeProjeto() + ".xml");
+            File source = new File("./xml/" + nome);
+            File destination = new File(fc.getSelectedFile() + "/" + nome);
+            if (destination.exists()) {
+                destination.delete();
+            }
+
+            FileChannel sourceChannel = null;
+            FileChannel destinationChannel = null;
+
+            try {
+                sourceChannel = new FileInputStream(source).getChannel();
+                destinationChannel = new FileOutputStream(destination).getChannel();
+                sourceChannel.transferTo(0, sourceChannel.size(),
+                        destinationChannel);
+            } finally {
+                if (sourceChannel != null && sourceChannel.isOpen()) {
+                    sourceChannel.close();
+                }
+                if (destinationChannel != null && destinationChannel.isOpen()) {
+                    destinationChannel.close();
+                }
+            }
             JOptionPane.showMessageDialog(null, "Arquivo exporta com sucesso para pasta: " + diretorio.getName());
         } else {
             JOptionPane.showMessageDialog(null, "Arquivo não exportado.");
         }
-        String nome = (Sessao.getInstance().getProjeto().getNomeProjeto() + ".xml");
-        File source = new File("./xml/" + nome);
-        File destination = new File(fc.getSelectedFile() + "/" + nome);
-        if (destination.exists()) {
-            destination.delete();
-        }
 
-        FileChannel sourceChannel = null;
-        FileChannel destinationChannel = null;
-
-        try {
-            sourceChannel = new FileInputStream(source).getChannel();
-            destinationChannel = new FileOutputStream(destination).getChannel();
-            sourceChannel.transferTo(0, sourceChannel.size(),
-                    destinationChannel);
-        } finally {
-            if (sourceChannel != null && sourceChannel.isOpen()) {
-                sourceChannel.close();
-            }
-            if (destinationChannel != null && destinationChannel.isOpen()) {
-                destinationChannel.close();
-            }
-        }
     }
 
     public String getCaminho() {

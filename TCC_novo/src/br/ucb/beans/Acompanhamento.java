@@ -5,6 +5,7 @@
 package br.ucb.beans;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.*;
@@ -32,6 +33,10 @@ public class Acompanhamento implements Serializable {
     private List<Projeto> projetos;
     @OneToMany(mappedBy = "acompanhamento", fetch = FetchType.LAZY)
     private List<Situacao> situacoes;
+
+    public Acompanhamento() {
+        this.projetos = new ArrayList<Projeto>();
+    }
 
     public Date getDataAcompanhamento() {
         return dataAcompanhamento;

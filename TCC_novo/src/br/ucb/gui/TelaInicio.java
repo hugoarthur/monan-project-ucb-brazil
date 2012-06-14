@@ -1075,8 +1075,7 @@ public class TelaInicio extends javax.swing.JFrame {
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
-        TelaAcompanhamento acompanhamento = new TelaAcompanhamento();
-        acompanhamento.setVisible(true);
+        JanelaTeste acompanhamento = new JanelaTeste();
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jMenuItem24AncestorRemoved(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jMenuItem24AncestorRemoved

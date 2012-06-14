@@ -909,6 +909,7 @@ public class TelaInicio extends javax.swing.JFrame {
         String texto = jEditorPane2.getText();
         String nomeCelula = getComboBox().getSelectedItem().toString();
         teste.CriaXML(nomeCelula, texto);
+        listPdf();
         jEditorPane2.setText(null);
 
 

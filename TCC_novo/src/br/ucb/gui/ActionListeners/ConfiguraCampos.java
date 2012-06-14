@@ -13,7 +13,9 @@ import br.ucb.service.Sessao;
 import br.ucb.xml.XmlReader;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import org.jdom2.Element;
@@ -143,13 +145,18 @@ public class ConfiguraCampos {
     // Adiciona as Dissertaçoes Utilizadas na Jlist da TelaInicio.
     public DefaultListModel listaPdf() {
         DefaultListModel listModel = new DefaultListModel();
+        List<String> lista = new ArrayList<String>();
         if (listaElemento() != null) {
             for (Element e : listaElemento()) {
-                listModel.addElement(e.getChildText("dissertacao"));
+                lista.add(e.getChildText("dissertacao"));
             }
-        } else {
+            Set<String> temp = new HashSet<String>(lista);
+            lista = new ArrayList<String>(temp);
+            for(String str : lista){
+                listModel.addElement(str);
+            }
+        }else
             listModel.addElement("");
-        }
         return listModel;
     }
 }

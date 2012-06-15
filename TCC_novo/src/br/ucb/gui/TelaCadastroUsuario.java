@@ -12,7 +12,9 @@
 package br.ucb.gui;
 
 import br.ucb.gui.ActionListeners.CadastrarUsuario;
+import javax.swing.ButtonGroup;
 import javax.swing.JPasswordField;
+import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 /**
@@ -24,6 +26,9 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
     /** Creates new form TelaCadastro */
     public TelaCadastroUsuario() {
         initComponents();
+        ButtonGroup group = new ButtonGroup();
+        group.add(jRadioButton1);
+        group.add(jRadioButton2);
         setItemUniverdidade();
     }
 
@@ -50,6 +55,9 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
         Cancelar = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         universidadeComboBox = new javax.swing.JComboBox();
+        UniversidadeLabel1 = new javax.swing.JLabel();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -114,6 +122,12 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
             }
         });
 
+        UniversidadeLabel1.setText("Tipo de usuário :");
+
+        jRadioButton1.setText("Coordenador");
+
+        jRadioButton2.setText("Equipe");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -145,8 +159,18 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
                                     .addComponent(LoginTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 363, Short.MAX_VALUE)
                                     .addComponent(SenhaPasswordField, javax.swing.GroupLayout.DEFAULT_SIZE, 363, Short.MAX_VALUE)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(125, 125, 125)
-                        .addComponent(jLabel5)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(UniversidadeLabel1)
+                                .addGap(18, 18, 18)
+                                .addComponent(jRadioButton1)
+                                .addGap(18, 18, 18)
+                                .addComponent(jRadioButton2))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(126, 126, 126)
+                                .addComponent(jLabel5)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -161,6 +185,12 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
                     .addComponent(universidadeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(UniversidadeLabel))
                 .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jRadioButton2)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(UniversidadeLabel1)
+                        .addComponent(jRadioButton1)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LoginLabel)
                     .addComponent(LoginTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -172,9 +202,9 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Cadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Cancelar))
-                .addGap(33, 33, 33)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel5)
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -191,7 +221,7 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
         bindingGroup.bind();
@@ -202,7 +232,6 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
 
     private void CadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastrarActionPerformed
         getCadastrar().addActionListener(new CadastrarUsuario(this));
-        this.dispose();
     }//GEN-LAST:event_CadastrarActionPerformed
 
     private void CancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelarActionPerformed
@@ -244,9 +273,12 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel SenhaLabel;
     private javax.swing.JPasswordField SenhaPasswordField;
     private javax.swing.JLabel UniversidadeLabel;
+    private javax.swing.JLabel UniversidadeLabel1;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JComboBox universidadeComboBox;
     private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
@@ -429,6 +461,19 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
         universidadeComboBox.addItem("Universidade Federal de Santa Catarina");
     }
 
-    
+    public JRadioButton getjRadioButton1() {
+        return jRadioButton1;
+    }
 
+    public void setjRadioButton1(JRadioButton jRadioButton1) {
+        this.jRadioButton1 = jRadioButton1;
+    }
+
+    public JRadioButton getjRadioButton2() {
+        return jRadioButton2;
+    }
+
+    public void setjRadioButton2(JRadioButton jRadioButton2) {
+        this.jRadioButton2 = jRadioButton2;
+    }
 }

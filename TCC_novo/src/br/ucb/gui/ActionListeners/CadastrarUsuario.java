@@ -8,6 +8,7 @@ import br.ucb.beans.Usuario;
 import br.ucb.constants.Constants;
 import br.ucb.dao.UsuarioDAO;
 import br.ucb.gui.TelaCadastroUsuario;
+import br.ucb.service.Sessao;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
@@ -24,35 +25,26 @@ public class CadastrarUsuario implements ActionListener {
     public CadastrarUsuario(TelaCadastroUsuario form) {
         setTelaCadastro(form);
         setMensagemErro(new StringBuilder());
-        insereUsuarioCoordenador();
+        insereUsuario();
     }
 
     public void actionPerformed(ActionEvent e) {
         //getTelaCadastro().update(null);
     }
 
-    public void insereUsuarioCoordenador() {
+    public void insereUsuario() {
         if (!validaCampoObrigadorios()) {
             Usuario user = new Usuario();
             user.setNome(getTelaCadastro().getNomeTextField().getText());
             user.setLogin(getTelaCadastro().getLoginTextField().getText());
             user.setSenha(new String(getTelaCadastro().getSenhaSenhaPasswordField().getPassword()));
             user.setUniversidade((String) getTelaCadastro().getUniversidadeComboBox().getSelectedItem());
-            user.setTipoUsuario(Constants.COORDENADOR);
-            UsuarioDAO.insereUsuario(user);
-        } else {
-            JOptionPane.showMessageDialog(null, mensagemErro.toString(), "Warning", JOptionPane.WARNING_MESSAGE);
-        }
-    }
-
-    public void insereUsuarioEquipe() {
-        if (!validaCampoObrigadorios()) {
-            Usuario user = new Usuario();
-            user.setNome(getTelaCadastro().getNomeTextField().getText());
-            user.setLogin(getTelaCadastro().getLoginTextField().getText());
-            user.setSenha(new String(getTelaCadastro().getSenhaSenhaPasswordField().getPassword()));
-            user.setUniversidade((String) getTelaCadastro().getUniversidadeComboBox().getSelectedItem());
-            user.setTipoUsuario(Constants.EQUIPE);
+            if (getTelaCadastro().getjRadioButton1().isSelected()) {
+                user.setTipoUsuario(Constants.COORDENADOR);
+            } else {
+                user.setTipoUsuario(Constants.EQUIPE);
+                user.setProjetos(Sessao.getInstance().getUsuario().getProjetos());
+            }
             UsuarioDAO.insereUsuario(user);
             getTelaCadastro().dispose();
         } else {
@@ -82,6 +74,10 @@ public class CadastrarUsuario implements ActionListener {
             mensagemErro.append("O nome é um campo obrigatório!\n");
             erro = true;
         }
+        if (!getTelaCadastro().getjRadioButton1().isSelected() && !getTelaCadastro().getjRadioButton2().isSelected()) {
+            getMensagemErro().append("É necessário informar um tipo de usuário.\n");
+            erro = true;
+        }
         if (getTelaCadastro().getLoginTextField().getText().isEmpty()) {
             mensagemErro.append("O login é um campo obrigatório!\n");
             erro = true;
@@ -90,7 +86,6 @@ public class CadastrarUsuario implements ActionListener {
             mensagemErro.append("A senha é um campo obrigatório!\n");
             erro = true;
         }
-
         return erro;
     }
 }

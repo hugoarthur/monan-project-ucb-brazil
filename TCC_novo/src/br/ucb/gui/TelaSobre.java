@@ -40,6 +40,7 @@ public class TelaSobre extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
 
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("SOBRE - Corpus Generator");
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/logon_logo.jpg"))); // NOI18N
@@ -65,7 +66,7 @@ public class TelaSobre extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addComponent(jLabel2)
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -100,11 +101,11 @@ public class TelaSobre extends javax.swing.JFrame {
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel8)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-434)/2, (screenSize.height-304)/2, 434, 304);
+        setBounds((screenSize.width-434)/2, (screenSize.height-323)/2, 434, 323);
     }// </editor-fold>//GEN-END:initComponents
 
     /**

@@ -31,7 +31,7 @@ public class Usuario implements Serializable {
     @Column(name = "tipoUsuario")
     private Integer tipoUsuario;
     @ManyToMany(mappedBy = "usuarios")
-    @JoinColumn(name = "projeto", nullable = false)
+    @JoinColumn(name = "id_projeto", nullable = false)
     private List<Projeto> projetos;
 
     public Usuario() {

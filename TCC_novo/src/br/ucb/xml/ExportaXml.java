@@ -43,9 +43,9 @@ public class ExportaXml {
                     destinationChannel.close();
                 }
             }
-            JOptionPane.showMessageDialog(null, "Arquivo exporta com sucesso para pasta: " + diretorio.getName());
+            JOptionPane.showMessageDialog(null, "Arquivo exportado com sucesso para pasta: " + diretorio.getName());
         } else {
-            JOptionPane.showMessageDialog(null, "Arquivo não exportado.");
+            JOptionPane.showMessageDialog(null, "Arquivo não exportado!");
         }
 
     }

@@ -305,12 +305,16 @@ public class TelaInicio extends javax.swing.JFrame {
         jEditorPane1.setPreferredSize(new java.awt.Dimension(100, 50));
         jScrollPane1.setViewportView(jEditorPane1);
 
-        jLabel3.setText("Nome:");
+        jLabel3.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
+        jLabel3.setText("Usuário:");
 
+        jLabel6.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         jLabel6.setText(Sessao.getInstance().getUsuario() != null ? Sessao.getInstance().getUsuario().getNome() : "Sem usuário");
 
+        jLabel11.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         jLabel11.setText("Projeto:");
 
+        jLabel12.setFont(new java.awt.Font("Lucida Grande", 0, 14)); // NOI18N
         jLabel12.setText(Sessao.getInstance().getProjeto() != null ? Sessao.getInstance().getProjeto().getNomeProjeto() : "Sem projeto");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -326,7 +330,7 @@ public class TelaInicio extends javax.swing.JFrame {
                 .addComponent(jLabel11)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel12)
-                .addContainerGap(128, Short.MAX_VALUE))
+                .addContainerGap(44, Short.MAX_VALUE))
             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 499, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
@@ -409,7 +413,7 @@ public class TelaInicio extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE))
+                .addComponent(jScrollPane7))
         );
 
         jToolBar1.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED));

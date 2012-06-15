@@ -26,11 +26,14 @@ import org.jdom2.Element;
  */
 public class ConfiguraCampos {
 
+    List<Usuario> usuarios = UsuarioDAO.findAll();
+    List<Celula> celulas = CelulaDAO.findAll();
+
     // Lista de Usuário de Cadas Projeto
     public DefaultListModel listModel() {
         DefaultListModel listModel = new DefaultListModel();
-        if (UsuarioDAO.findAll() != null) {
-            for (Usuario usuario : UsuarioDAO.findAll()) {
+        if (usuarios != null) {
+            for (Usuario usuario : usuarios) {
                 if (usuario.getTipoUsuario() == 1) {
                     List<Projeto> list = usuario.getProjetos();
                     for (Projeto proj : list) {
@@ -49,8 +52,8 @@ public class ConfiguraCampos {
     //Lista de Todos os Usuários do Projeto.
     public DefaultListModel listaUser() {
         DefaultListModel listModel = new DefaultListModel();
-        if (UsuarioDAO.findAll() != null) {
-            for (Usuario usuario : UsuarioDAO.findAll()) {
+        if (usuarios != null) {
+            for (Usuario usuario : usuarios) {
                 listModel.addElement(usuario);
             }
         } else {
@@ -62,8 +65,8 @@ public class ConfiguraCampos {
     //Lista as Células na Combobox da TelaInicial.
     public DefaultComboBoxModel comboModel() {
         DefaultComboBoxModel comboModel = new DefaultComboBoxModel();
-        if (CelulaDAO.findAll() != null) {
-            for (Celula celula : CelulaDAO.findAll()) {
+        if (celulas != null) {
+            for (Celula celula : celulas) {
                 comboModel.addElement(celula.getTxt_celula());
             }
         } else {
@@ -75,8 +78,8 @@ public class ConfiguraCampos {
     //Lista de todas as Células do projeto.
     public DefaultListModel listModelCel() {
         DefaultListModel listModel = new DefaultListModel();
-        if (CelulaDAO.findAll() != null) {
-            for (Celula celula : CelulaDAO.findAll()) {
+        if (celulas != null) {
+            for (Celula celula : celulas) {
                 listModel.addElement(celula.getTxt_celula());
             }
         } else {
@@ -103,8 +106,8 @@ public class ConfiguraCampos {
         ArrayList dados = new ArrayList();
         int aux;
         if (listaElemento() != null) {
-            if (CelulaDAO.findAll() != null) {
-                for (Celula celula : CelulaDAO.findAll()) {
+            if (celulas != null) {
+                for (Celula celula : celulas) {
                     aux = 0;
                     for (Element e : listaElemento()) {
                         if (celula.getTxt_celula().equalsIgnoreCase(e.getChildText("celula"))) {
@@ -152,11 +155,12 @@ public class ConfiguraCampos {
             }
             Set<String> temp = new HashSet<String>(lista);
             lista = new ArrayList<String>(temp);
-            for(String str : lista){
+            for (String str : lista) {
                 listModel.addElement(str);
             }
-        }else
+        } else {
             listModel.addElement("");
+        }
         return listModel;
     }
 }

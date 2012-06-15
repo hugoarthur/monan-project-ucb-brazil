@@ -5,6 +5,7 @@
 package br.ucb.beans;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.*;
 
@@ -30,11 +31,11 @@ public class Usuario implements Serializable {
     private String universidade;
     @Column(name = "tipoUsuario")
     private Integer tipoUsuario;
-    @ManyToMany(mappedBy = "usuarios")
-    @JoinColumn(name = "id_projeto", nullable = false)
+    @ManyToMany
     private List<Projeto> projetos;
 
     public Usuario() {
+        this.projetos = new ArrayList<Projeto>();
     }
 
     /**

@@ -30,16 +30,15 @@ public class Projeto implements Serializable {
     @Lob
     @Column(name = "arquivo_xml")
     private String arquivoXml;
-    @ManyToMany(cascade = CascadeType.PERSIST)
-    @JoinColumn(name = "id_usuario", nullable = false)
+    @ManyToMany(mappedBy = "projetos")
     private List<Usuario> usuarios;
     @ManyToOne
     private Acompanhamento acompanhamento;
+    @Column(name = "status")
+    private String status;
 
     public Projeto() {
-        if (this.usuarios == null) {
-            this.usuarios = new ArrayList<Usuario>();
-        }
+        this.usuarios = new ArrayList<Usuario>();
     }
 
     /**
@@ -91,7 +90,6 @@ public class Projeto implements Serializable {
     public void setArquivoXml(String arquivoXml) {
         this.arquivoXml = arquivoXml;
     }
-    
 
     public List<Usuario> getUsuarios() {
         return usuarios;
@@ -113,6 +111,12 @@ public class Projeto implements Serializable {
     public String toString() {
         return this.getNomeProjeto();
     }
-    
-    
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 }

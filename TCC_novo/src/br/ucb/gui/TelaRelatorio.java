@@ -20,7 +20,7 @@ public class TelaRelatorio extends javax.swing.JFrame {
     /**
      * Creates new form TelaRelatorio
      */
-    private int cont;
+    private int aux;
 
     public TelaRelatorio() {
         initComponents();
@@ -112,8 +112,9 @@ public class TelaRelatorio extends javax.swing.JFrame {
         String texto = jTextArea1.getText();
         acompanhamento.setTxtAcompanhamento(texto);
         acompanhamento.getProjetos().add(Sessao.getInstance().getProjeto());
-        if (cont != 1) {
-            AcompanhamentoDAO.insereAcompanhamento(acompanhamento);
+        AcompanhamentoDAO acompDAO = new AcompanhamentoDAO();
+        if (aux != 1) {
+            acompDAO.insereAcompanhamento(acompanhamento);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -168,23 +169,18 @@ public class TelaRelatorio extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private void getTextArea() {
-        cont = 0;
-        List<Acompanhamento> acompLista = AcompanhamentoDAO.findAll();
-        if (acompLista!= null) {
-            for (Acompanhamento aux : acompLista) {
-                List<Projeto> listaProjeto = aux.getProjetos();
+        aux = 0;
+        if (AcompanhamentoDAO.findAll() != null) {
+            List<Acompanhamento> acompanhamento = AcompanhamentoDAO.findAll();
+            for (Acompanhamento acompLista : acompanhamento) {
+                List<Projeto> listaProjeto = acompLista.getProjetos();
                 for (Projeto proj : listaProjeto) {
-                    System.out.println("nome for 2");
                     if (proj.getIdProjeto() == Sessao.getInstance().getProjeto().getIdProjeto()) {
-                        jTextArea1.setText(aux.getTxtAcompanhamento());
-                        cont = 1;
+                        jTextArea1.setText(acompLista.getTxtAcompanhamento());
+                        aux = 1;
                     }
                 }
-                System.out.println("for 1");
             }
-        } else {
-            
         }
-
     }
 }

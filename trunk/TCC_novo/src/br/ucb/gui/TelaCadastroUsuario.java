@@ -12,16 +12,14 @@
 package br.ucb.gui;
 
 import br.ucb.gui.ActionListeners.CadastrarUsuario;
-import javax.swing.ButtonGroup;
-import javax.swing.JPasswordField;
-import javax.swing.JRadioButton;
-import javax.swing.JTextField;
+import br.ucb.service.Sessao;
+import javax.swing.*;
 
 /**
  *
  * @author GUICUNHA
  */
-public class TelaCadastroUsuario extends javax.swing.JFrame {
+public class TelaCadastroUsuario extends JFrame {
 
     /** Creates new form TelaCadastro */
     public TelaCadastroUsuario() {
@@ -29,6 +27,8 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
         ButtonGroup group = new ButtonGroup();
         group.add(jRadioButton1);
         group.add(jRadioButton2);
+        if(Sessao.getInstance().getUsuario() == null)
+            jRadioButton2.setEnabled(false);
         setItemUniverdidade();
     }
 
@@ -251,17 +251,6 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
     private void universidadeComboBoxComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_universidadeComboBoxComponentAdded
         // TODO add your handling code here:
     }//GEN-LAST:event_universidadeComboBoxComponentAdded
-
-    /**
-    * @param args the command line arguments
-    */
-    public static void main(String args[]) {
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new TelaCadastroUsuario().setVisible(true);           
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Cadastrar;

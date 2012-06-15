@@ -55,7 +55,15 @@ public class ProjetoDAO {
         return retorno;
     }
 
-    public static void alteraProjeto() {
+    public static void alteraProjeto(Projeto projeto) {
+        EntityManager em = DataBase.getInstance().getEntityManager();
+
+        if (!em.getTransaction().isActive()) {
+            em.getTransaction().begin();
+        }
+        em.merge(projeto);
+        em.getTransaction().commit();
+        em.close();
     }
 
     public static void adicionaArquivoXML(String caminho) {

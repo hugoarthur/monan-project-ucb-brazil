@@ -28,11 +28,15 @@ public class UsuarioDAO {
         if (!em.getTransaction().isActive()) {
             em.getTransaction().begin();
         }
-        em.persist(usuario);
-        em.getTransaction().commit();
-        em.close();
-        logger.info("Inserindo usuário: " + "Nome: " + usuario.getNome() + "Login: " + usuario.getLogin());
-        JOptionPane.showMessageDialog(null, "Usuário cadastrado com sucesso!", "Warning", JOptionPane.INFORMATION_MESSAGE);
+        try {
+            em.persist(usuario);
+            em.getTransaction().commit();
+            em.close();
+            logger.info("Inserindo usuário: " + "Nome: " + usuario.getNome() + " - Login: " + usuario.getLogin());
+            JOptionPane.showMessageDialog(null, "Usuário cadastrado com sucesso!", "Warning", JOptionPane.INFORMATION_MESSAGE);
+        } catch(Exception e)  {
+            JOptionPane.showMessageDialog(null, "Ocorreu um erro!", "Erro", JOptionPane.ERROR_MESSAGE);
+        }
     }
 
     public static List<Usuario> findAll() {

@@ -30,8 +30,8 @@ public class Projeto implements Serializable {
     @Lob
     @Column(name = "arquivo_xml")
     private String arquivoXml;
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_usuario", nullable = false, referencedColumnName = "id_usuario")
+    @ManyToMany(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "id_usuario", nullable = false)
     private List<Usuario> usuarios;
     @ManyToOne
     private Acompanhamento acompanhamento;

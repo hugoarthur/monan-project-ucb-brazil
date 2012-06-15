@@ -55,6 +55,9 @@ public class TelaInicio extends javax.swing.JFrame {
             jButton9.setEnabled(false);
             jMenuItem24.setEnabled(false);
             jMenuItem33.setEnabled(false);
+            jButton4.setEnabled(false);
+            jMenu8.setEnabled(false);
+            jMenuItem7.setEnabled(false);
         }
         //Adiciona os Aquivos e patas na jtree do projeto.
         setArvore(new Arvore(this));
@@ -1045,8 +1048,8 @@ public class TelaInicio extends javax.swing.JFrame {
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
         // TODO add your handling code here:
-        TelaCadastraEquipe equipe = new TelaCadastraEquipe();
-        equipe.setVisible(true);
+        TelaCadastroUsuario telaCadastraUsuario = new TelaCadastroUsuario();
+        telaCadastraUsuario.setVisible(true);
     }//GEN-LAST:event_jButton13ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed

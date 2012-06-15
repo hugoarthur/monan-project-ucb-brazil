@@ -38,6 +38,7 @@ public class TelaReport extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
 
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("REPORTAR PROBLEMAS - Corpus Generator");
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/logon_cg.jpg"))); // NOI18N
@@ -71,7 +72,7 @@ public class TelaReport extends javax.swing.JFrame {
                             .addComponent(jLabel5)
                             .addComponent(jLabel4)
                             .addComponent(jLabel6))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(75, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -89,11 +90,11 @@ public class TelaReport extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel6))
                     .addComponent(jLabel1))
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-503)/2, (screenSize.height-134)/2, 503, 134);
+        setBounds((screenSize.width-503)/2, (screenSize.height-145)/2, 503, 145);
     }// </editor-fold>//GEN-END:initComponents
 
     /**

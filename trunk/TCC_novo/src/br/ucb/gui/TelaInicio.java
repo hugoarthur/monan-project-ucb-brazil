@@ -12,6 +12,7 @@ package br.ucb.gui;
 
 import br.ucb.constants.Constants;
 import br.ucb.dao.DataBase;
+import br.ucb.dao.ProjetoDAO;
 import br.ucb.gui.ActionListeners.ConfiguraCampos;
 import br.ucb.manipulacao.pdf.Arvore;
 import br.ucb.manipulacao.pdf.ManipulaPDF;
@@ -22,10 +23,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JComboBox;
-import javax.swing.JEditorPane;
-import javax.swing.JFrame;
-import javax.swing.JTree;
+import javax.swing.*;
 
 //import br.ucb.xml.SalvaXML;
 /**
@@ -47,7 +45,7 @@ public class TelaInicio extends javax.swing.JFrame {
     public TelaInicio() {
 
         initComponents();
-        if(Sessao.getInstance().getUsuario().getTipoUsuario() == Constants.EQUIPE){
+        if (Sessao.getInstance().getUsuario().getTipoUsuario() == Constants.EQUIPE) {
             jButton13.setEnabled(false);
             jButton14.setEnabled(false);
             jButton15.setEnabled(false);
@@ -55,7 +53,6 @@ public class TelaInicio extends javax.swing.JFrame {
             jButton9.setEnabled(true);
             jMenuItem24.setEnabled(false);
             jMenuItem33.setEnabled(false);
-            jButton4.setEnabled(false);
             jMenu8.setEnabled(false);
             jMenuItem7.setEnabled(false);
         }
@@ -70,7 +67,7 @@ public class TelaInicio extends javax.swing.JFrame {
         setItemStatus();
         //Lista de Dissertações utilizadas.
         listPdf();
-        
+
     }
 
     /**
@@ -81,8 +78,9 @@ public class TelaInicio extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     private void setItemStatus() {
         statusComboBox.removeAllItems();
-        statusComboBox.addItem("Concluído");
         statusComboBox.addItem("Em andamento");
+        statusComboBox.addItem("Concluído");
+        statusComboBox.setSelectedItem(Sessao.getInstance().getProjeto().getStatus());
     }
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -216,10 +214,10 @@ public class TelaInicio extends javax.swing.JFrame {
             }
         });
         jButton1.addInputMethodListener(new java.awt.event.InputMethodListener() {
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+            }
             public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
                 jButton1InputMethodTextChanged(evt);
-            }
-            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
             }
         });
 
@@ -462,6 +460,11 @@ public class TelaInicio extends javax.swing.JFrame {
         jButton7.setFocusable(false);
         jButton7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton7.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
         jToolBar1.add(jButton7);
 
         jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/acompanhamento.png"))); // NOI18N
@@ -511,10 +514,10 @@ public class TelaInicio extends javax.swing.JFrame {
             }
         });
         jButton11.addInputMethodListener(new java.awt.event.InputMethodListener() {
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
+            }
             public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
                 jButton11InputMethodTextChanged(evt);
-            }
-            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
             }
         });
         jToolBar1.add(jButton11);
@@ -595,14 +598,14 @@ public class TelaInicio extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -708,6 +711,11 @@ public class TelaInicio extends javax.swing.JFrame {
         jMenu3.add(jSeparator15);
 
         jMenuItem18.setText("Barra de Células");
+        jMenuItem18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem18ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem18);
         jMenu3.add(jSeparator16);
 
@@ -880,7 +888,7 @@ public class TelaInicio extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(categoriaPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 16, Short.MAX_VALUE))
+                                .addGap(0, 0, Short.MAX_VALUE))
                             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(97, 97, 97))))
         );
@@ -989,7 +997,12 @@ public class TelaInicio extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
     private void jMenuItem16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem16ActionPerformed
-        jPanel3.setVisible(false);
+        if (jPanel3.isVisible()) {
+            jPanel3.setVisible(false);
+        }
+        else{
+            jPanel3.setVisible(true);
+        }
     }//GEN-LAST:event_jMenuItem16ActionPerformed
 
     private void jMenuItem16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItem16MouseClicked
@@ -1002,17 +1015,32 @@ public class TelaInicio extends javax.swing.JFrame {
 
     private void jMenuItem17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem17ActionPerformed
         // TODO add your handling code here:
-        jToolBar1.setVisible(false);
+        if (jToolBar1.isVisible()) {
+            jToolBar1.setVisible(false);
+        }
+        else{
+            jToolBar1.setVisible(true);
+        }
     }//GEN-LAST:event_jMenuItem17ActionPerformed
 
     private void jMenuItem18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem18ActionPerformed
         // TODO add your handling code here:
-        categoriaPanel.setVisible(false);
+        if (categoriaPanel.isVisible()) {
+            categoriaPanel.setVisible(false);
+        }
+        else{
+            categoriaPanel.setVisible(true);
+        }
     }//GEN-LAST:event_jMenuItem18ActionPerformed
 
     private void jMenuItem19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem19ActionPerformed
         // TODO add your handling code here:
-        jPanel2.setVisible(false);
+        if (jPanel2.isVisible()) {
+            jPanel2.setVisible(false);
+        }
+        else{
+            jPanel2.setVisible(true);
+        }
     }//GEN-LAST:event_jMenuItem19ActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
@@ -1120,7 +1148,8 @@ public class TelaInicio extends javax.swing.JFrame {
 
     private void ConfirmarStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmarStatusActionPerformed
         // TODO add your handling code here:
-        int selectedItem = getComboBox().getSelectedIndex();
+        Sessao.getInstance().getProjeto().setStatus(getStatusComboBox().getSelectedItem().toString());
+        JOptionPane.showMessageDialog(null, "Status registrado com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_ConfirmarStatusActionPerformed
 
     private void statusComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_statusComboBoxActionPerformed
@@ -1132,6 +1161,12 @@ public class TelaInicio extends javax.swing.JFrame {
         TelaRelatorio relatorio = new TelaRelatorio();
         relatorio.setVisible(true);
     }//GEN-LAST:event_jMenuItem36ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+        ProjetoDAO.alteraProjeto(Sessao.getInstance().getProjeto());
+        JOptionPane.showMessageDialog(null, "Projeto salvo com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_jButton7ActionPerformed
     private void jScrollPaneActionPerformed(java.awt.event.ActionEvent evt) {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1237,68 +1272,77 @@ public class TelaInicio extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     public JComboBox getComboBox() {
-        
+
         return jComboBox1;
-        
+
     }
 
     public JEditorPane getJEditorPane() {
-        
+
         return jEditorPane1;
-        
+
     }
 
     public JTree getJTree1() {
-        
+
         return jTree1;
-        
+
     }
 
     public void setCombo() {
-        
+
         jComboBox1.removeAllItems();
         jComboBox1.setModel(setar.comboModel());
         jComboBox1.repaint();
-        
+
     }
 
     public void listEquipe() {
-        
+
         jList1.removeAll();
         jList1.setModel(setar.listModel());
         jList1.repaint();
-        
+
     }
-    
-    public void listPdf(){
-        
+
+    public void listPdf() {
+
         jList3.removeAll();
         jList3.setModel(setar.listaPdf());
         jList3.repaint();
-        
+
     }
 
     public JComboBox getjComboBox1() {
-        
+
         return jComboBox1;
-        
+
     }
 
     public void setjComboBox1(JComboBox jComboBox1) {
-        
+
         this.jComboBox1 = jComboBox1;
-        
+
     }
 
     public Arvore getArvore() {
-        
+
         return arvore;
-        
+
     }
 
     public void setArvore(Arvore arvore) {
-        
+
         this.arvore = arvore;
-        
+
     }
+
+    public JComboBox getStatusComboBox() {
+        return statusComboBox;
+    }
+
+    public void setStatusComboBox(JComboBox statusComboBox) {
+        this.statusComboBox = statusComboBox;
+    }
+    
 }

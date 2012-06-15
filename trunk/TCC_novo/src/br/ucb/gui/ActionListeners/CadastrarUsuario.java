@@ -45,7 +45,7 @@ public class CadastrarUsuario implements ActionListener {
                 user.setTipoUsuario(Constants.COORDENADOR);
             } else {
                 user.setTipoUsuario(Constants.EQUIPE);
-//                user.setProjetos(Sessao.getInstance().getUsuario().getProjetos());
+                user.setProjetos(Sessao.getInstance().getUsuario().getProjetos());
 //                for (Projeto proj : Sessao.getInstance().getUsuario().getProjetos()) {
 //                    proj.getUsuarios().add(user);
 //                    ProjetoDAO.alteraProjeto(proj);

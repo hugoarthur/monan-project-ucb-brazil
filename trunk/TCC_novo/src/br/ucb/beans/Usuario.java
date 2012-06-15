@@ -133,4 +133,10 @@ public class Usuario implements Serializable {
     public String toString() {
         return this.nome;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        Usuario user = (Usuario)obj;
+        return this.idUsuario == user.idUsuario;
+    }
 }

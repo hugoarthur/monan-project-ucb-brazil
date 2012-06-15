@@ -16,7 +16,11 @@ import javax.swing.JOptionPane;
  */
 public class AcompanhamentoDAO {
 
-    public void insereAcompanhamento(Acompanhamento acompanhamento) {
+    public AcompanhamentoDAO(){
+        
+    }
+    
+    public static void insereAcompanhamento(Acompanhamento acompanhamento) {
         EntityManager em = DataBase.getInstance().getEntityManager();
         if (!em.getTransaction().isActive()) {
             em.getTransaction().begin();

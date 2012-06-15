@@ -22,15 +22,18 @@ public class Situacao implements Serializable {
     @Column(name = "des_situacao")
     private String desSituacao;
     @ManyToOne
-    private Acompanhamento acompanhamento;
-
-    public Acompanhamento getAcompanhamento() {
-        return acompanhamento;
-    }
-
-    public void setAcompanhamento(Acompanhamento acompanhamento) {
-        this.acompanhamento = acompanhamento;
-    }
+    @JoinColumn(name = "id_projeto", nullable = false)
+    private Projeto projeto;
+//    @ManyToOne
+//    private Acompanhamento acompanhamento;
+//
+//    public Acompanhamento getAcompanhamento() {
+//        return acompanhamento;
+//    }
+//
+//    public void setAcompanhamento(Acompanhamento acompanhamento) {
+//        this.acompanhamento = acompanhamento;
+//    }
 
     public String getDesSituacao() {
         return desSituacao;
@@ -46,5 +49,19 @@ public class Situacao implements Serializable {
 
     public void setIdSituacao(Integer idSituacao) {
         this.idSituacao = idSituacao;
+    }
+
+    /**
+     * @return the projeto
+     */
+    public Projeto getProjeto() {
+        return projeto;
+    }
+
+    /**
+     * @param projeto the projeto to set
+     */
+    public void setProjeto(Projeto projeto) {
+        this.projeto = projeto;
     }
 }

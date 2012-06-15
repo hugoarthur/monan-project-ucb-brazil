@@ -254,7 +254,7 @@ public class TelaExcluiUsuario extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
 
             public void run() {
-                new TelaCadastroUsuario().setVisible(true);
+//                new TelaCadastroUsuario().setVisible(true);
             }
         });
     }

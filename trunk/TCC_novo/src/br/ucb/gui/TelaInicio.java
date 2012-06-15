@@ -52,7 +52,7 @@ public class TelaInicio extends javax.swing.JFrame {
             jButton14.setEnabled(false);
             jButton15.setEnabled(false);
             jButton3.setEnabled(false);
-            jButton9.setEnabled(false);
+            jButton9.setEnabled(true);
             jMenuItem24.setEnabled(false);
             jMenuItem33.setEnabled(false);
             jButton4.setEnabled(false);

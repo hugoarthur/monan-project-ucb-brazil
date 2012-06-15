@@ -11,7 +11,9 @@
 package br.ucb.gui;
 
 import br.ucb.beans.Celula;
+import br.ucb.constants.Constants;
 import br.ucb.dao.CelulaDAO;
+import br.ucb.service.Sessao;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 
@@ -26,6 +28,10 @@ public class TelaCelulas extends javax.swing.JFrame {
      */
     public TelaCelulas() {
         initComponents();
+        if(Sessao.getInstance().getUsuario().getTipoUsuario() == Constants.EQUIPE){
+            jButton1.setEnabled(false);
+            excluir.setEnabled(false);
+        }
     }
 
     /**

@@ -10,11 +10,9 @@
  */
 package br.ucb.gui;
 
-import br.ucb.beans.Situacao;
 import br.ucb.constants.Constants;
 import br.ucb.dao.DataBase;
 import br.ucb.gui.ActionListeners.ConfiguraCampos;
-import br.ucb.gui.ActionListeners.CadastraSituacao;
 import br.ucb.manipulacao.pdf.Arvore;
 import br.ucb.manipulacao.pdf.ManipulaPDF;
 import br.ucb.service.Sessao;
@@ -24,7 +22,10 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.*;
+import javax.swing.JComboBox;
+import javax.swing.JEditorPane;
+import javax.swing.JFrame;
+import javax.swing.JTree;
 
 //import br.ucb.xml.SalvaXML;
 /**
@@ -46,7 +47,7 @@ public class TelaInicio extends javax.swing.JFrame {
     public TelaInicio() {
 
         initComponents();
-        if (Sessao.getInstance().getUsuario().getTipoUsuario() == Constants.EQUIPE) {
+        if(Sessao.getInstance().getUsuario().getTipoUsuario() == Constants.EQUIPE){
             jButton13.setEnabled(false);
             jButton14.setEnabled(false);
             jButton15.setEnabled(false);
@@ -69,7 +70,7 @@ public class TelaInicio extends javax.swing.JFrame {
         setItemStatus();
         //Lista de Dissertações utilizadas.
         listPdf();
-
+        
     }
 
     /**
@@ -215,10 +216,10 @@ public class TelaInicio extends javax.swing.JFrame {
             }
         });
         jButton1.addInputMethodListener(new java.awt.event.InputMethodListener() {
-            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
-            }
             public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
                 jButton1InputMethodTextChanged(evt);
+            }
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
             }
         });
 
@@ -461,11 +462,6 @@ public class TelaInicio extends javax.swing.JFrame {
         jButton7.setFocusable(false);
         jButton7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton7.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
-            }
-        });
         jToolBar1.add(jButton7);
 
         jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/ucb/img/acompanhamento.png"))); // NOI18N
@@ -515,10 +511,10 @@ public class TelaInicio extends javax.swing.JFrame {
             }
         });
         jButton11.addInputMethodListener(new java.awt.event.InputMethodListener() {
-            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
-            }
             public void inputMethodTextChanged(java.awt.event.InputMethodEvent evt) {
                 jButton11InputMethodTextChanged(evt);
+            }
+            public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
             }
         });
         jToolBar1.add(jButton11);
@@ -599,14 +595,14 @@ public class TelaInicio extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -884,7 +880,7 @@ public class TelaInicio extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(categoriaPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
+                                .addGap(0, 16, Short.MAX_VALUE))
                             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(97, 97, 97))))
         );
@@ -1124,11 +1120,7 @@ public class TelaInicio extends javax.swing.JFrame {
 
     private void ConfirmarStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConfirmarStatusActionPerformed
         // TODO add your handling code here:
-        String status = getStatusComboBox().getSelectedItem().toString();
-        Situacao situacao = new Situacao();
-        situacao.setDesSituacao(status);
-        CadastraSituacao cadastraS = new CadastraSituacao();
-        cadastraS.isereSituacao(situacao);
+        int selectedItem = getComboBox().getSelectedIndex();
     }//GEN-LAST:event_ConfirmarStatusActionPerformed
 
     private void statusComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_statusComboBoxActionPerformed
@@ -1140,12 +1132,6 @@ public class TelaInicio extends javax.swing.JFrame {
         TelaRelatorio relatorio = new TelaRelatorio();
         relatorio.setVisible(true);
     }//GEN-LAST:event_jMenuItem36ActionPerformed
-
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
-        JOptionPane.showMessageDialog(null, "Projeto salvo com sucesso!");
-
-    }//GEN-LAST:event_jButton7ActionPerformed
     private void jScrollPaneActionPerformed(java.awt.event.ActionEvent evt) {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1251,70 +1237,68 @@ public class TelaInicio extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     public JComboBox getComboBox() {
-
+        
         return jComboBox1;
+        
+    }
 
-    }
-    public JComboBox getStatusComboBox(){
-        return statusComboBox;
-    }
     public JEditorPane getJEditorPane() {
-
+        
         return jEditorPane1;
-
+        
     }
 
     public JTree getJTree1() {
-
+        
         return jTree1;
-
+        
     }
 
     public void setCombo() {
-
+        
         jComboBox1.removeAllItems();
         jComboBox1.setModel(setar.comboModel());
         jComboBox1.repaint();
-
+        
     }
 
     public void listEquipe() {
-
+        
         jList1.removeAll();
         jList1.setModel(setar.listModel());
         jList1.repaint();
-
+        
     }
-
-    public void listPdf() {
-
+    
+    public void listPdf(){
+        
         jList3.removeAll();
         jList3.setModel(setar.listaPdf());
         jList3.repaint();
-
+        
     }
 
     public JComboBox getjComboBox1() {
-
+        
         return jComboBox1;
-
+        
     }
 
     public void setjComboBox1(JComboBox jComboBox1) {
-
+        
         this.jComboBox1 = jComboBox1;
-
+        
     }
 
     public Arvore getArvore() {
-
+        
         return arvore;
-
+        
     }
 
     public void setArvore(Arvore arvore) {
-
+        
         this.arvore = arvore;
-
+        
     }
 }

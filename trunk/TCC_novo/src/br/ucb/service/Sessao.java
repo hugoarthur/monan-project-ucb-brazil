@@ -4,7 +4,6 @@
  */
 package br.ucb.service;
 
-import br.ucb.beans.Acompanhamento;
 import br.ucb.beans.Projeto;
 import br.ucb.beans.Usuario;
 import javax.swing.JFrame;
@@ -20,7 +19,6 @@ public class Sessao {
     private Projeto projeto;
     private JFrame tela;
     private String nomeArquivoAtual;
-    private Acompanhamento acompanhamento;
 
     private Sessao() {
     }
@@ -66,20 +64,4 @@ public class Sessao {
     public void setNomeArquivoAtual(String nomeArquivoAtual) {
         this.nomeArquivoAtual = nomeArquivoAtual;
     }
-
-    /**
-     * @return the acompanhamento
-     */
-    public Acompanhamento getAcompanhamento() {
-        return acompanhamento;
-    }
-
-    /**
-     * @param acompanhamento the acompanhamento to set
-     */
-    public void setAcompanhamento(Acompanhamento acompanhamento) {
-        this.acompanhamento = acompanhamento;
-    }
-    
-    
 }

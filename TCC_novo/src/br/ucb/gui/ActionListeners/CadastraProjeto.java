@@ -5,8 +5,10 @@
 package br.ucb.gui.ActionListeners;
 
 import br.ucb.beans.Projeto;
+import br.ucb.beans.Situacao;
 import br.ucb.constants.Constants;
 import br.ucb.dao.ProjetoDAO;
+import br.ucb.dao.SituacaoDAO;
 import br.ucb.gui.TelaNovoProjeto;
 import br.ucb.service.Sessao;
 import java.awt.event.ActionEvent;
@@ -35,6 +37,9 @@ public class CadastraProjeto implements ActionListener {
         if (Sessao.getInstance().getUsuario().getTipoUsuario() == Constants.COORDENADOR) {
             projeto.getUsuarios().add(Sessao.getInstance().getUsuario());
         }
+        Situacao situacao = new Situacao();
+        situacao.setDesSituacao("Em Andamento");
+        SituacaoDAO.insereSitucao(situacao);
         projeto.setDataProjeto(new Date());
         ProjetoDAO.insereProjeto(projeto);
         Sessao.getInstance().setProjeto(projeto);

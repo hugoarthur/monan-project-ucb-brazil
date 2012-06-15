@@ -35,6 +35,9 @@ public class Projeto implements Serializable {
     private List<Usuario> usuarios;
     @ManyToOne
     private Acompanhamento acompanhamento;
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name="id_situacao", nullable = false)
+    private Situacao situacao;
 
     public Projeto() {
         if (this.usuarios == null) {
@@ -112,6 +115,20 @@ public class Projeto implements Serializable {
     @Override
     public String toString() {
         return this.getNomeProjeto();
+    }
+
+    /**
+     * @return the situacao
+     */
+    public Situacao getSituacao() {
+        return situacao;
+    }
+
+    /**
+     * @param situacao the situacao to set
+     */
+    public void setSituacao(Situacao situacao) {
+        this.situacao = situacao;
     }
     
     

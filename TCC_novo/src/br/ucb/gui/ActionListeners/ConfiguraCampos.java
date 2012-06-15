@@ -7,6 +7,7 @@ package br.ucb.gui.ActionListeners;
 import br.ucb.beans.Celula;
 import br.ucb.beans.Projeto;
 import br.ucb.beans.Usuario;
+import br.ucb.constants.Constants;
 import br.ucb.dao.CelulaDAO;
 import br.ucb.dao.UsuarioDAO;
 import br.ucb.service.Sessao;
@@ -28,12 +29,12 @@ public class ConfiguraCampos {
 
     // Lista de Usuário de Cadas Projeto
     public DefaultListModel listModel() {
+        List<Usuario> listaUsuario = UsuarioDAO.findAll();
         DefaultListModel listModel = new DefaultListModel();
-        if (UsuarioDAO.findAll() != null) {
-            for (Usuario usuario : UsuarioDAO.findAll()) {
-                if (usuario.getTipoUsuario() == 1) {
-                    List<Projeto> list = usuario.getProjetos();
-                    for (Projeto proj : list) {
+        if (listaUsuario != null) {
+            for (Usuario usuario : listaUsuario) {
+                if (usuario.getTipoUsuario() == Constants.EQUIPE) {
+                    for (Projeto proj : usuario.getProjetos()) {
                         if (proj.getIdProjeto() == Sessao.getInstance().getProjeto().getIdProjeto()) {
                             listModel.addElement(usuario.getNome());
                         }
@@ -109,7 +110,11 @@ public class ConfiguraCampos {
                     for (Element e : listaElemento()) {
                         if (celula.getTxt_celula().equalsIgnoreCase(e.getChildText("celula"))) {
                             aux = 1;
-                            dados.add(new String[]{e.getChildText("dissertacao"), celula.getTxt_celula(), "X", "", "Em Adamento"});
+                            if (!"".equals(Sessao.getInstance().getProjeto().getSituacao().getDesSituacao())) {
+                                dados.add(new String[]{e.getChildText("dissertacao"), celula.getTxt_celula(), "X", "", Sessao.getInstance().getProjeto().getSituacao().getDesSituacao()});
+                            } else {
+                                dados.add(new String[]{e.getChildText("dissertacao"), celula.getTxt_celula(), "X", "", "Em andamento"});
+                            }
                         }
                     }
                     if (aux != 1) {
@@ -152,11 +157,12 @@ public class ConfiguraCampos {
             }
             Set<String> temp = new HashSet<String>(lista);
             lista = new ArrayList<String>(temp);
-            for(String str : lista){
+            for (String str : lista) {
                 listModel.addElement(str);
             }
-        }else
+        } else {
             listModel.addElement("");
+        }
         return listModel;
     }
 }

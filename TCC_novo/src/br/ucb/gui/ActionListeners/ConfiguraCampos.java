@@ -65,8 +65,9 @@ public class ConfiguraCampos {
     //Lista as Células na Combobox da TelaInicial.
     public DefaultComboBoxModel comboModel() {
         DefaultComboBoxModel comboModel = new DefaultComboBoxModel();
-        if (celulas != null) {
-            for (Celula celula : celulas) {
+        List<Celula> celulasCombo = CelulaDAO.findAll();
+        if (celulasCombo != null) {
+            for (Celula celula : celulasCombo) {
                 comboModel.addElement(celula.getTxt_celula());
             }
         } else {

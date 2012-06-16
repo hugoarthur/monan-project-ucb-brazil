@@ -28,9 +28,6 @@ public class TelaPrimeira extends javax.swing.JFrame {
      */
     public TelaPrimeira() {
         initComponents();
-        if(Sessao.getInstance().getUsuario().getTipoUsuario() == Constants.EQUIPE){
-            jButton1.setEnabled(true);
-        }
     }
 
     /**

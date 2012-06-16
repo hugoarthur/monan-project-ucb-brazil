@@ -64,4 +64,9 @@ public class Celula implements Serializable {
     public String toString() {
         return txt_celula;
     }
+    @Override
+    public boolean equals(Object obj) {
+        Celula cel = (Celula)obj;
+        return this.txt_celula.equals(cel.txt_celula);
+    }
 }

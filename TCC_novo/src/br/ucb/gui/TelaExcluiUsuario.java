@@ -29,12 +29,13 @@ public class TelaExcluiUsuario extends javax.swing.JFrame {
 
     public TelaExcluiUsuario(TelaUsuarios telaUsers) {
         setTelaUsers(telaUsers);
-        if (getUsuarioSelecionado() != null) {
+        setUsuario(getUsuarioSelecionado());
+        if (getUsuario() != null) {
+            initComponents();
             setUsuario(getUsuarioSelecionado());
         } else {
             JOptionPane.showMessageDialog(null, "Você não selecionou nenhum usuário!", "Warning", JOptionPane.WARNING_MESSAGE);
         }
-        initComponents();
     }
 
     public Usuario getUsuarioSelecionado() {
@@ -66,7 +67,7 @@ public class TelaExcluiUsuario extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         UniversidadeLabel = new javax.swing.JLabel();
         LoginLabel = new javax.swing.JLabel();
-        universidadeTextField = new javax.swing.JTextField(getUsuario().getLogin());
+        universidadeTextField = new javax.swing.JTextField(getUsuario().getUniversidade());
         NomeLabel = new javax.swing.JLabel();
         NomeLabel1 = new javax.swing.JLabel();
         tipoUsuarioTextField = new javax.swing.JTextField(getUsuario().getLogin());
@@ -121,7 +122,6 @@ public class TelaExcluiUsuario extends javax.swing.JFrame {
         LoginLabel.setText("Login :");
 
         universidadeTextField.setEditable(false);
-        universidadeTextField.setText(getUsuario().getUniversidade());
 
         NomeLabel.setText("Nome : ");
 

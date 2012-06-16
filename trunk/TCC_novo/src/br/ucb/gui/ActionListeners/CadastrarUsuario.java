@@ -4,10 +4,8 @@
  */
 package br.ucb.gui.ActionListeners;
 
-import br.ucb.beans.Projeto;
 import br.ucb.beans.Usuario;
 import br.ucb.constants.Constants;
-import br.ucb.dao.ProjetoDAO;
 import br.ucb.dao.UsuarioDAO;
 import br.ucb.gui.TelaCadastroUsuario;
 import br.ucb.service.Sessao;
@@ -46,10 +44,6 @@ public class CadastrarUsuario implements ActionListener {
             } else {
                 user.setTipoUsuario(Constants.EQUIPE);
                 user.setProjetos(Sessao.getInstance().getUsuario().getProjetos());
-//                for (Projeto proj : Sessao.getInstance().getUsuario().getProjetos()) {
-//                    proj.getUsuarios().add(user);
-//                    ProjetoDAO.alteraProjeto(proj);
-//                }
             }
             UsuarioDAO.insereUsuario(user);
             getTelaCadastro().dispose();

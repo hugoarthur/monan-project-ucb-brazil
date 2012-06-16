@@ -52,6 +52,7 @@ public class TelaUsuarios extends javax.swing.JFrame {
         alteraUsuario = new javax.swing.JButton();
         excluirUsuario = new javax.swing.JButton();
 
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Usuários - Corpus Generator");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Usuários", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, null, java.awt.Color.darkGray));

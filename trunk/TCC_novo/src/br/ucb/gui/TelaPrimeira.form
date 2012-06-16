@@ -40,7 +40,7 @@
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="abrirRecente" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jScrollPane2" alignment="0" max="32767" attributes="1"/>
+                          <Component id="jScrollPane2" alignment="0" pref="452" max="32767" attributes="1"/>
                       </Group>
                   </Group>
                   <Group type="102" attributes="0">
